@@ -928,6 +928,70 @@
     color: #999;
     line-height: 1.6;
   }
+  }
+  .video-container {
+    max-width: 900px;
+    margin: 3rem auto 0;
+  }
+  .video-card {
+    position: relative;
+    display: block;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: var(--bg2);
+    aspect-ratio: 16/9;
+    transition: transform .4s cubic-bezier(0.165, 0.84, 0.44, 1), box-shadow .4s ease;
+  }
+  .video-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    border-color: var(--green-accent);
+  }
+  .video-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    transition: opacity .4s ease;
+  }
+  .video-card:hover .video-thumb {
+    opacity: 0.9;
+  }
+  .video-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.6), transparent);
+  }
+  .play-btn {
+    width: 70px;
+    height: 70px;
+    background: var(--green-accent);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-left: 4px;
+    box-shadow: 0 0 30px rgba(124,252,0,0.4);
+    transition: transform .3s ease;
+  }
+  .video-card:hover .play-btn {
+    transform: scale(1.1);
+  }
+  .video-overlay span {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-size: 1.1rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+  }
   @media (max-width: 768px) {
     .mission-grid { grid-template-columns: 1fr; gap: 2rem; }
     nav { padding: 0 1.25rem; }
@@ -1337,6 +1401,29 @@
         <p>Designed for the person who publishes daily, not just for the engineer. A CMS that prioritizes the writing experience above all else.</p>
       </div>
     </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- VIDEO PREVIEW -->
+<section id="video">
+  <div class="reveal">
+    <div class="section-label">Walkthrough</div>
+    <h2 class="section-title">See VonCMS in action.</h2>
+    <p class="section-desc">Watch a complete 1.23.10 "Rentaka" baseline walkthrough and technical overview.</p>
+  </div>
+  
+  <div class="video-container reveal">
+    <a href="https://www.youtube.com/watch?v=glbqEG37aiM" target="_blank" class="video-card">
+      <img src="https://img.youtube.com/vi/glbqEG37aiM/maxresdefault.jpg" alt="VonCMS Walkthrough" class="video-thumb">
+      <div class="video-overlay">
+        <div class="play-btn">
+          <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+        </div>
+        <span>Watch Walkthrough</span>
+      </div>
+    </a>
   </div>
 </section>
 
