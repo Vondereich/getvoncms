@@ -1568,15 +1568,15 @@
       let name = data.name;
       if (!version || !name) return;
 
-      // Aggressive cleaning: remove version number repeats from the name
-      const verNumbers = version.replace(/[^0-9.]/g, '');
-      const nameStart = name.substring(0, 20); // Check the beginning
-      if (nameStart.includes(verNumbers)) {
-        // If the name contains the same version numbers at the start, clean it
-        name = name.replace(new RegExp('^.*?(' + verNumbers.replace(/\./g, '\\.') + ')[^a-zA-Z0-9]*'), '');
+      // Robust cleaning: Find version numbers in the name and remove everything before/including them
+      const verMatch = version.match(/[0-9.]+/);
+      if (verMatch) {
+        const verStr = verMatch[0];
+        const verRegex = new RegExp('^.*?' + verStr.replace(/\./g, '\\.') + '[^a-zA-Z0-9]*');
+        name = name.replace(verRegex, '');
       }
       
-      // Remove any leading dashes/spaces
+      // Final trim
       name = name.replace(/^[ \-—:]+/, '');
 
       const publishedAt = new Date(data.published_at);
@@ -1586,10 +1586,10 @@
       if (badge) badge.textContent = `${version} — ${name} · ${monthYear}`;
 
       const zipName = document.querySelector('[data-gh-zip-name]');
-      if (zipName) zipName.textContent = `voncms-${version}-${name.toLowerCase().replace(/\s+/g, '-')}.zip`;
+      if (zipName) zipName.textContent = `voncms-${version.replace(/\./g, '-')}-${name.toLowerCase().replace(/\s+/g, '-')}.zip`;
 
       const ctaNote = document.querySelector('[data-gh-cta-note]');
-      if (ctaNote) ctaNote.textContent = `${version} "${name}" · PHP 8.2+ · MySQL / MariaDB · Apache or LiteSpeed`;
+      if (ctaNote) ctaNote.textContent = `${version} — ${name} · PHP 8.2+ · MySQL / MariaDB · Apache or LiteSpeed`;
     } catch (err) {
       console.warn('GitHub Release Fetch: Using hardcoded fallback.', err);
     }
