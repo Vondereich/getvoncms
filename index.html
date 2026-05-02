@@ -1568,10 +1568,16 @@
       let name = data.name;
       if (!version || !name) return;
 
-      // Clean up if name repeats version
-      if (name.startsWith(version)) {
-        name = name.replace(version, '').replace(/^[ \-—:]+/, '');
+      // Aggressive cleaning: remove version number repeats from the name
+      const verNumbers = version.replace(/[^0-9.]/g, '');
+      const nameStart = name.substring(0, 20); // Check the beginning
+      if (nameStart.includes(verNumbers)) {
+        // If the name contains the same version numbers at the start, clean it
+        name = name.replace(new RegExp('^.*?(' + verNumbers.replace(/\./g, '\\.') + ')[^a-zA-Z0-9]*'), '');
       }
+      
+      // Remove any leading dashes/spaces
+      name = name.replace(/^[ \-—:]+/, '');
 
       const publishedAt = new Date(data.published_at);
       const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
