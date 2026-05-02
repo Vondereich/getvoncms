@@ -1565,30 +1565,28 @@
       const data = await response.json();
       
       let version = data.tag_name;
-      let name = data.name;
-      if (!version || !name) return;
+      let fullName = data.name;
+      if (!version || !fullName) return;
 
-      // Simplest cleaning: Find version numbers and cut everything before/at them
-      const verNumbers = version.replace(/[^0-9.]/g, '');
-      const vPos = name.indexOf(verNumbers);
-      if (vPos !== -1) {
-        name = name.substring(vPos + verNumbers.length);
+      // Extract only the series name (e.g., "Rentaka") from "v1.23.10 — Rentaka Series Closeout"
+      let seriesName = fullName;
+      if (seriesName.includes('—')) {
+        seriesName = seriesName.split('—')[1].trim().split(' ')[0];
+      } else if (seriesName.includes('"')) {
+        seriesName = seriesName.split('"')[1];
       }
-      
-      // Clean up leading characters
-      name = name.replace(/^[^a-zA-Z0-9]+/, '');
 
       const publishedAt = new Date(data.published_at);
       const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
 
       const badge = document.querySelector('[data-gh-version-badge]');
-      if (badge) badge.textContent = `${version} — ${name} · ${monthYear}`;
+      if (badge) badge.textContent = `Latest Release: ${version} — "${seriesName}" · ${monthYear}`;
 
       const zipName = document.querySelector('[data-gh-zip-name]');
-      if (zipName) zipName.textContent = `voncms-${version.replace(/\./g, '-')}-${name.toLowerCase().replace(/\s+/g, '-')}.zip`;
+      if (zipName) zipName.textContent = `voncms-${version.replace(/\./g, '-')}-${seriesName.toLowerCase()}.zip`;
 
       const ctaNote = document.querySelector('[data-gh-cta-note]');
-      if (ctaNote) ctaNote.textContent = `${version} — ${name} · PHP 8.2+ · MySQL / MariaDB · Apache or LiteSpeed`;
+      if (ctaNote) ctaNote.textContent = `Official Release: ${version} — "${seriesName}" · PHP 8.2+ · MySQL`;
     } catch (err) {
       console.warn('GitHub Release Fetch: Using hardcoded fallback.', err);
     }
