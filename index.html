@@ -1580,13 +1580,13 @@
       const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
 
       const badge = document.querySelector('[data-gh-version-badge]');
-      if (badge) badge.textContent = `Latest Release: ${version} — "${seriesName}" · ${monthYear}`;
+      if (badge) badge.textContent = `Latest Release: ${version} · "${seriesName}" · ${monthYear}`;
 
       const zipName = document.querySelector('[data-gh-zip-name]');
       if (zipName) zipName.textContent = `voncms-${version.replace(/\./g, '-')}-${seriesName.toLowerCase()}.zip`;
 
       const ctaNote = document.querySelector('[data-gh-cta-note]');
-      if (ctaNote) ctaNote.textContent = `Official Release: ${version} — "${seriesName}" · PHP 8.2+ · MySQL`;
+      if (ctaNote) ctaNote.textContent = `Official Release: ${version} · "${seriesName}" · PHP 8.2+ · MySQL`;
     } catch (err) {
       console.warn('GitHub Release Fetch: Using hardcoded fallback.', err);
     }
