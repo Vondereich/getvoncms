@@ -1568,16 +1568,15 @@
       let name = data.name;
       if (!version || !name) return;
 
-      // Robust cleaning: Find version numbers in the name and remove everything before/including them
-      const verMatch = version.match(/[0-9.]+/);
-      if (verMatch) {
-        const verStr = verMatch[0];
-        const verRegex = new RegExp('^.*?' + verStr.replace(/\./g, '\\.') + '[^a-zA-Z0-9]*');
-        name = name.replace(verRegex, '');
+      // Simplest cleaning: Find version numbers and cut everything before/at them
+      const verNumbers = version.replace(/[^0-9.]/g, '');
+      const vPos = name.indexOf(verNumbers);
+      if (vPos !== -1) {
+        name = name.substring(vPos + verNumbers.length);
       }
       
-      // Final trim
-      name = name.replace(/^[ \-—:]+/, '');
+      // Clean up leading characters
+      name = name.replace(/^[^a-zA-Z0-9]+/, '');
 
       const publishedAt = new Date(data.published_at);
       const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
