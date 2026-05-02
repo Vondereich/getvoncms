@@ -1006,7 +1006,24 @@
     .hero-meta-item { text-align: left; }
     section { padding: 4rem 1.25rem; max-width: 100%; }
     .hero-inner { grid-template-columns: 1fr; gap: 2rem; padding: 7rem 0 3rem; }
-    .hero-right { display: none; }
+    .hero-right { 
+      display: flex; 
+      margin-top: 1rem;
+    }
+    .hero-stat-row { 
+      grid-template-columns: 1fr; 
+      gap: 1rem; 
+    }
+    .lh-card {
+      flex-direction: column;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .lh-meta {
+      border-left: none;
+      border-top: 1px solid var(--border);
+      padding: 1rem 0 0;
+    }
     .bridge-section { grid-template-columns: 1fr; padding: 2rem; }
     .bridge-section::before { display: none; }
     .themes-grid { grid-template-columns: 1fr; }
