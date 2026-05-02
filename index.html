@@ -890,7 +890,47 @@
   }
 
   /* ─── RESPONSIVE ─── */
+  .hero-link {
+    color: #999;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color .3s ease;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .hero-link:hover {
+    color: var(--green-accent);
+  }
+  .mission-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.5rem;
+    margin-top: 4rem;
+  }
+  .mission-item {
+    display: flex;
+    gap: 1.25rem;
+  }
+  .mission-icon {
+    font-size: 1.5rem;
+    flex-shrink: 0;
+  }
+  .mission-content strong {
+    display: block;
+    font-size: 1.1rem;
+    font-family: 'Outfit', sans-serif;
+    margin-bottom: 0.5rem;
+  }
+  .mission-content p {
+    font-size: 0.95rem;
+    color: #999;
+    line-height: 1.6;
+  }
   @media (max-width: 768px) {
+    .mission-grid { grid-template-columns: 1fr; gap: 2rem; }
+  }
     nav { padding: 0 1.25rem; }
     .nav-links { display: none; }
     .hero { padding: 7rem 1.25rem 3rem; }
@@ -964,7 +1004,8 @@
       </p>
       <div class="hero-actions">
         <a href="https://github.com/Vondereich/VonCMS/releases" class="btn-primary">↓ Download Free</a>
-        <a href="https://www.youtube.com/watch?v=glbqEG37aiM" class="btn-secondary">▶ Watch Demo</a>
+        <a href="https://skripglobal.com/" class="btn-secondary">🌍 Live Demo</a>
+        <a href="https://www.youtube.com/watch?v=glbqEG37aiM" class="hero-link">▶ Watch Demo</a>
       </div>
       <div class="hero-meta">
         <div class="hero-meta-item">
@@ -1261,6 +1302,41 @@
       <div>
         <strong>Hardened SMTP</strong>
         <span>Direct socket-based SMTP with TLS enforcement, automatic fallback to PHP mail()</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- MISSION & PHILOSOPHY -->
+<section id="mission">
+  <div class="reveal">
+    <div class="section-label">The Vision</div>
+    <h2 class="section-title">Everything you need.<br><em>Nothing you don't.</em></h2>
+    <p class="section-desc">VonCMS arrives with the lights on, the furniture in place, and the kitchen already stocked. No plugin chaos — just pure publishing power.</p>
+  </div>
+  
+  <div class="mission-grid reveal">
+    <div class="mission-item">
+      <div class="mission-icon">🛡️</div>
+      <div class="mission-content">
+        <strong>Open Source Transition</strong>
+        <p>We are on a mission to modernize PHP publishing. VonCMS is planned to move toward full open-source (MIT/GPL) in the v1.25.x release line.</p>
+      </div>
+    </div>
+    <div class="mission-item">
+      <div class="mission-icon">🤖</div>
+      <div class="mission-content">
+        <strong>AI Privacy & Rotation</strong>
+        <p>Your Gemini API keys stay admin-only with built-in rotation and expiry metadata. Advanced AI features without the privacy risk.</p>
+      </div>
+    </div>
+    <div class="mission-item">
+      <div class="mission-icon">⚓</div>
+      <div class="mission-content">
+        <strong>Built for Publishers</strong>
+        <p>Designed for the person who publishes daily, not just for the engineer. A CMS that prioritizes the writing experience above all else.</p>
       </div>
     </div>
   </div>
