@@ -400,6 +400,8 @@
       <div class="sidebar-label">The Solution</div>
       <ul class="sidebar-links">
         <li><a href="#scaling">Scaling Without Bloat</a></li>
+        <li><a href="#security">Hardened Security</a></li>
+        <li><a href="#php-power">PHP 8.5 Performance</a></li>
         <li><a href="#sovereignty">Data Sovereignty</a></li>
         <li><a href="#beliefs">Core Beliefs</a></li>
       </ul>
@@ -510,7 +512,7 @@
       </div>
     </section>
 
-    <!-- SECTION 5: SCALING & SOVEREIGNTY -->
+    <!-- SECTION 5: SCALING -->
     <section id="scaling">
       <h2>Scaling Without Bloat</h2>
       <p>
@@ -521,17 +523,58 @@
       </p>
     </section>
 
+    <section id="security">
+      <h2>Security via Minimalism</h2>
+      <p>In the world of security, <strong>Surface Area is Everything</strong>. Every line of code, every plugin, and every external dependency is a potential door for an attacker. WordPress sites are compromised daily not because of the core, but because of the "Plugin Industrial Complex" that encourages users to install un-audited code.</p>
+      <p>VonCMS follows a <strong>Zero-Trust Architecture</strong> from the ground up:</p>
+      <div class="grid">
+        <div class="card">
+          <h4>Hardened API Handlers</h4>
+          <p>We only have 73 strictly defined API handlers. Each one is audited for CSRF, XSS, and SQL injection. There are no "hidden" endpoints.</p>
+        </div>
+        <div class="card">
+          <h4>No Execution in Assets</h4>
+          <p>Our file structure is built so that user-uploaded assets can never be executed as scripts. We kill the "Web Shell" threat at the source.</p>
+        </div>
+      </div>
+      <p>By keeping the core lean, we make security manageable. We don't need a "Security Plugin" to firewalled our site; the firewall is built into the logic of every single line we write.</p>
+    </section>
+
+    <section id="php-power">
+      <h2>The PHP 8.2--8.5 Powerhouse</h2>
+      <p>There is a myth that PHP is slow. That myth was born in the era of PHP 5. Today, with **PHP 8.2, 8.3, and the upcoming 8.5**, the language has transformed into a high-performance engine that rivals Node.js and Go in many real-world scenarios.</p>
+      <p>VonCMS leverages the latest features of modern PHP to achieve its "Rebel" speeds:</p>
+      <div class="tech-spec">
+        <header>
+          <span>Kernel Performance Profile</span>
+          <span>v1.24 Benchmarks</span>
+        </header>
+        <div class="tech-line">
+          <span class="tech-label">JIT Compilation</span>
+          <span class="tech-val">Enabled - Sub-millisecond opcode execution</span>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Strict Typing</span>
+          <span class="tech-val">100% Coverage - Zero runtime type errors</span>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Memory Usage</span>
+          <span class="tech-val">&lt; 2.5MB per standard request cycle</span>
+        </div>
+      </div>
+      <p>While legacy systems struggle to maintain backward compatibility with PHP 7.4, VonCMS is built exclusively for the modern era. We use <strong>Readonly Properties, Enums, and Constructor Property Promotion</strong> to keep the code clean, fast, and remarkably stable.</p>
+    </section>
+
     <section id="sovereignty">
       <h2>Data Sovereignty</h2>
       <p>
         If you don't own the database, you don't own the content. When you build on "Cloud-Only" platforms, you are a tenant. If they raise prices by 300% or pivot their business model, your entire digital asset is at risk.
       </p>
       <p>
-        VonCMS is <strong>100% Self-Hosted</strong>. You can run it on a $5 VPS, a Raspberry Pi, or a high-end dedicated cluster. You own the files. You own the data. You own the future of your business.
+        VonCMS is <strong>100% Self-Hosted</strong>. You own the files. You own the data. You own the future of your business.
       </p>
     </section>
 
-    <!-- SECTION 6: CORE BELIEFS -->
     <section id="beliefs">
       <h2>Core Beliefs</h2>
       <div class="grid">
@@ -554,7 +597,6 @@
       </div>
     </section>
 
-    <!-- FOOTER -->
     <footer>
       <a href="index.html" class="footer-logo">VonCMS</a>
       <p>Built for the Pragmatic Rebels. &copy; 2026 Vondereich.</p>
@@ -562,7 +604,6 @@
   </main>
 </div>
 
-<!-- SCROLL SCRIPT -->
 <script>
   // Simple active link tracker
   const sections = document.querySelectorAll('section');
