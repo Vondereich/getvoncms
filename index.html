@@ -671,6 +671,83 @@
   .lightbox-close:hover { opacity: 1; }
   .lightbox-trigger { cursor: zoom-in; }
 
+  /* ─── ENGAGEMENT TOAST ─── */
+  .toast {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 1500;
+    width: 320px;
+    background: rgba(15,15,15,0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    transform: translateY(120%);
+    transition: transform 0.6s cubic-bezier(0.19, 1, 0.22, 1);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .toast.active { transform: translateY(0); }
+  .toast-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .toast-title span {
+    width: 6px;
+    height: 6px;
+    background: var(--green-accent);
+    border-radius: 50%;
+  }
+  .toast-desc {
+    font-size: 0.85rem;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .toast-actions {
+    display: flex;
+    gap: 0.75rem;
+  }
+  .toast-btn {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-align: center;
+    text-decoration: none;
+    transition: all 0.2s;
+    font-family: 'JetBrains Mono', monospace;
+    cursor: pointer;
+  }
+  .toast-btn-primary {
+    background: var(--green-accent);
+    color: #000;
+  }
+  .toast-btn-primary:hover { opacity: 0.85; transform: translateY(-2px); }
+  .toast-btn-secondary {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--muted);
+  }
+  .toast-btn-secondary:hover { border-color: var(--muted2); color: var(--text); }
+
+  @media (max-width: 600px) {
+    .toast {
+      left: 1.5rem;
+      right: 1.5rem;
+      width: auto;
+      bottom: 1.5rem;
+    }
+  }
+
   /* ─── FEATURES GRID ─── */
   .features-grid {
     display: grid;
@@ -1899,6 +1976,40 @@
   lightbox.addEventListener('click', (e) => {
     if (e.target !== lightboxImg) closeLightbox();
   });
+
+  // ENGAGEMENT TOAST LOGIC
+  const toastHTML = `
+    <div class="toast" id="engagement-toast">
+      <div class="toast-title"><span></span> Interested in VonCMS?</div>
+      <div class="toast-desc">If you find VonCMS useful, consider giving us a star on GitHub. It helps the rebel cause grow.</div>
+      <div class="toast-actions">
+        <a href="https://github.com/Vondereich/VonCMS" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-star-btn">⭐ Give a Star</a>
+        <div class="toast-btn toast-btn-secondary" id="toast-close-btn">Next time</div>
+      </div>
+    </div>
+  `;
+  document.body.insertAdjacentHTML('beforeend', toastHTML);
+
+  const toast = document.getElementById('engagement-toast');
+  const starBtn = document.getElementById('toast-star-btn');
+  const closeBtn = document.getElementById('toast-close-btn');
+
+  const showToast = () => {
+    if (localStorage.getItem('voncms-toast-dismissed')) return;
+    setTimeout(() => {
+      toast.classList.add('active');
+    }, 5000); // Show after 5 seconds
+  };
+
+  const dismissToast = () => {
+    toast.classList.remove('active');
+    localStorage.setItem('voncms-toast-dismissed', 'true');
+  };
+
+  closeBtn.addEventListener('click', dismissToast);
+  starBtn.addEventListener('click', dismissToast);
+
+  showToast();
 </script>
 </body>
 </html>
