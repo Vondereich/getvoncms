@@ -92,6 +92,7 @@ lightbox.addEventListener('click', (e) => {
 // ENGAGEMENT TOAST LOGIC
 const toastHTML = `
   <div class="toast" id="engagement-toast">
+    <div class="toast-x-close" id="toast-x-btn">&times;</div>
     <div class="toast-title"><span></span> Interested in VonCMS?</div>
     <div class="toast-desc">If you find VonCMS useful, consider giving us a star on GitHub. It helps the rebel cause grow.</div>
     <div class="toast-actions">
@@ -105,6 +106,7 @@ document.body.insertAdjacentHTML('beforeend', toastHTML);
 const toast = document.getElementById('engagement-toast');
 const starBtn = document.getElementById('toast-star-btn');
 const closeBtn = document.getElementById('toast-close-btn');
+const xBtn = document.getElementById('toast-x-btn');
 
 const showToast = () => {
   if (localStorage.getItem('voncms-toast-dismissed')) return;
@@ -120,5 +122,6 @@ const dismissToast = () => {
 
 closeBtn.addEventListener('click', dismissToast);
 starBtn.addEventListener('click', dismissToast);
+xBtn.addEventListener('click', dismissToast);
 
 showToast();

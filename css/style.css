@@ -637,6 +637,18 @@ section {
   gap: 1rem;
 }
 .toast.active { transform: translateY(0); }
+.toast-x-close {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--muted);
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s;
+  padding: 4px;
+}
+.toast-x-close:hover { color: var(--text); }
 .toast-title {
   font-family: 'Outfit', sans-serif;
   font-size: 1.1rem;
