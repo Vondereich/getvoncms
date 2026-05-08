@@ -4,14 +4,18 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.postimg.cc https://img.youtube.com https://i.ytimg.com; connect-src 'self' https://api.github.com;">
-<title>Philosophy · VonCMS · The Pragmatic Rebel in CMS</title>
-<meta name="description" content="Why VonCMS? Exploring the mission behind the pragmatic rebel in CMS, the problems with WordPress legacy, and avoiding the headless trap." />
+<title>Philosophy & Manifesto · VonCMS · The Pragmatic Rebel</title>
+<meta name="description" content="The Pragmatic Rebel Manifesto. Why VonCMS exists, the problems with WordPress legacy, the trap of modern Headless CMS, and the scalability wall of Flat-File systems." />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 
 <style>
+  /* 
+   * ─── DESIGN SYSTEM ───
+   * VonCMS "Rebel" Aesthetics
+   */
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
@@ -21,199 +25,342 @@
     --border: rgba(255,255,255,0.07);
     --green-accent: #7CFC00;
     --accent-dim: rgba(124,252,0,0.12);
+    --accent-glow: rgba(124,252,0,0.25);
     --text: #f0ede8;
     --muted: #888;
     --muted2: #6b6762;
+    --red: #e05252;
+    --nav-height: 70px;
+    --sidebar-width: 320px;
   }
 
-  html { scroll-behavior: smooth; }
+  html { 
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+
+  /* CUSTOM SCROLLBAR */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: var(--bg); }
+  ::-webkit-scrollbar-thumb { background: var(--bg3); border-radius: 10px; }
+  ::-webkit-scrollbar-thumb:hover { background: var(--muted2); }
 
   body {
     background: var(--bg);
     color: var(--text);
     font-family: 'Inter', sans-serif;
-    line-height: 1.7;
+    font-size: 17px;
+    line-height: 1.8;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
   }
 
-  /* NOISE TEXTURE */
+  /* NOISE & GRID BACKGROUND */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    background-image: 
+      radial-gradient(circle at 50% 0%, rgba(124,252,0,0.03) 0%, transparent 50%),
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
     pointer-events: none;
     z-index: 9999;
     opacity: .4;
   }
 
-  /* ─── NAV ─── */
+  /* ─── NAVIGATION ─── */
   nav {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    padding: 0 2rem;
-    height: 60px;
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    padding: 0 3rem;
+    height: var(--nav-height);
     display: flex; align-items: center; justify-content: space-between;
     border-bottom: 1px solid var(--border);
-    background: rgba(8,8,8,0.85);
-    backdrop-filter: blur(12px);
+    background: rgba(8,8,8,0.8);
+    backdrop-filter: blur(20px);
   }
   .nav-logo {
     font-family: 'Outfit', sans-serif;
     font-weight: 900;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     letter-spacing: -0.02em;
     text-transform: uppercase;
     color: var(--text);
-    display: flex; align-items: center; gap: 8px;
+    display: flex; align-items: center; gap: 10px;
     text-decoration: none;
+    transition: transform .2s ease;
   }
+  .nav-logo:hover { transform: scale(1.02); }
   .nav-logo span {
-    width: 8px; height: 8px;
+    width: 10px; height: 10px;
     background: var(--green-accent);
     border-radius: 50%;
+    box-shadow: 0 0 15px var(--accent-glow);
   }
 
-  /* ─── LAYOUT ─── */
-  .docs-container {
-    max-width: 1200px;
-    margin: 60px auto 0;
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 3rem;
-    min-height: calc(100vh - 60px);
+  /* ─── DOCS LAYOUT ─── */
+  .layout {
+    max-width: 1400px;
+    margin: var(--nav-height) auto 0;
+    display: flex;
+    position: relative;
   }
 
   /* ─── SIDEBAR ─── */
   aside {
-    padding: 3rem 2rem;
+    width: var(--sidebar-width);
+    padding: 4rem 2rem;
     border-right: 1px solid var(--border);
     position: sticky;
-    top: 60px;
-    height: calc(100vh - 60px);
+    top: var(--nav-height);
+    height: calc(100vh - var(--nav-height));
     overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
   }
-  .sidebar-title {
-    font-family: 'Outfit', sans-serif;
-    font-size: .75rem;
+  .sidebar-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  .sidebar-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
     text-transform: uppercase;
-    letter-spacing: .1em;
+    letter-spacing: 0.15em;
     color: var(--muted2);
-    margin-bottom: 1.5rem;
+    font-weight: 700;
   }
   .sidebar-links {
     list-style: none;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.5rem;
   }
   .sidebar-links a {
     color: var(--muted);
     text-decoration: none;
-    font-size: .92rem;
-    transition: color .2s;
+    font-size: 0.95rem;
+    padding: 6px 12px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    border-left: 2px solid transparent;
   }
-  .sidebar-links a:hover, .sidebar-links a.active {
+  .sidebar-links a:hover {
+    color: var(--text);
+    background: var(--bg2);
+    border-left-color: var(--green-accent);
+  }
+  .sidebar-links a.active {
     color: var(--green-accent);
+    background: var(--accent-dim);
+    border-left-color: var(--green-accent);
   }
 
-  /* ─── CONTENT ─── */
+  /* ─── MAIN CONTENT ─── */
   main {
-    padding: 4rem 2rem 8rem 0;
-    max-width: 800px;
+    flex: 1;
+    padding: 5rem 6rem 10rem;
+    max-width: 960px;
   }
-  .hero-mini {
-    margin-bottom: 4rem;
+
+  /* ─── HERO ─── */
+  .hero {
+    margin-bottom: 6rem;
+    position: relative;
   }
-  .hero-mini h1 {
+  .hero-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--accent-dim);
+    border: 1px solid var(--green-accent);
+    color: var(--green-accent);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    border-radius: 4px;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
     font-family: 'Outfit', sans-serif;
     font-weight: 900;
-    font-size: 3.5rem;
-    line-height: .95;
+    font-size: clamp(3rem, 5vw, 5rem);
+    line-height: 0.9;
+    letter-spacing: -0.04em;
     text-transform: uppercase;
-    letter-spacing: -0.02em;
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
-  .hero-mini h1 em {
+  .hero h1 em {
     color: var(--green-accent);
     font-style: italic;
   }
-
-  /* ─── TYPOGRAPHY ─── */
-  section {
-    margin-bottom: 5rem;
-    scroll-margin-top: 100px;
+  .hero p.lead {
+    font-size: 1.4rem;
+    color: #a09b95;
+    max-width: 700px;
+    line-height: 1.6;
+    margin-bottom: 3rem;
   }
+
+  /* ─── TYPOGRAPHY & SECTIONS ─── */
+  section {
+    margin-bottom: 8rem;
+    scroll-margin-top: 120px;
+    animation: fadeIn 0.8s ease backwards;
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
   h2 {
     font-family: 'Outfit', sans-serif;
-    font-size: 2rem;
+    font-weight: 800;
+    font-size: 2.4rem;
     text-transform: uppercase;
-    margin-bottom: 1.5rem;
+    letter-spacing: -0.02em;
+    margin-bottom: 2rem;
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 1.5rem;
+    color: var(--text);
   }
   h2::before {
     content: '';
-    width: 24px; height: 2px;
+    display: block;
+    width: 40px; height: 3px;
     background: var(--green-accent);
+    border-radius: 2px;
+  }
+  h3 {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 700;
+    font-size: 1.6rem;
+    margin: 3.5rem 0 1.5rem;
+    color: var(--text);
   }
   p {
-    font-size: 1.1rem;
+    margin-bottom: 1.75rem;
     color: #a09b95;
-    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
   }
-  strong {
-    color: var(--text);
-    font-weight: 600;
-  }
-  .rebel-quote {
-    border-left: 2px solid var(--green-accent);
+  p strong { color: var(--text); font-weight: 600; }
+
+  /* ─── BLOCKS & CARDS ─── */
+  .quote-block {
+    position: relative;
+    padding: 3rem;
     background: var(--bg2);
-    padding: 2rem;
-    border-radius: 0 8px 8px 0;
-    margin: 2.5rem 0;
+    border: 1px solid var(--border);
+    border-left: 4px solid var(--green-accent);
+    border-radius: 0 12px 12px 0;
+    margin: 4rem 0;
+  }
+  .quote-block blockquote {
     font-family: 'JetBrains Mono', monospace;
-    font-size: .95rem;
+    font-size: 1.1rem;
     color: var(--green-accent);
     line-height: 1.6;
+    font-style: italic;
+  }
+  .quote-block cite {
+    display: block;
+    margin-top: 1.5rem;
+    font-size: 0.85rem;
+    color: var(--muted);
+    font-style: normal;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
   }
 
-  .grid-2 {
+  .grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin: 3rem 0;
   }
   .card {
     background: var(--bg2);
     border: 1px solid var(--border);
-    padding: 1.5rem;
-    border-radius: 8px;
+    padding: 2rem;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
   }
-  .card h3 {
+  .card:hover {
+    border-color: var(--green-accent);
+    background: var(--bg3);
+    transform: translateY(-5px);
+  }
+  .card h4 {
     font-family: 'Outfit', sans-serif;
-    font-size: 1.1rem;
-    margin-bottom: .75rem;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
     color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
   }
   .card p {
-    font-size: .92rem;
+    font-size: 0.95rem;
     margin-bottom: 0;
+    line-height: 1.6;
   }
 
+  .tech-spec {
+    background: #000;
+    border: 1px solid var(--border);
+    padding: 1.5rem;
+    border-radius: 8px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.85rem;
+    margin: 2rem 0;
+  }
+  .tech-spec header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
+    color: var(--muted);
+  }
+  .tech-line {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+  }
+  .tech-label { color: var(--green-accent); min-width: 140px; }
+  .tech-val { color: var(--muted); }
+
+  /* ─── FOOTER ─── */
   footer {
     border-top: 1px solid var(--border);
-    padding: 4rem 0;
+    padding: 6rem 0;
     text-align: center;
     color: var(--muted2);
-    font-size: .85rem;
+  }
+  .footer-logo {
+    font-family: 'Outfit', sans-serif;
+    font-weight: 900;
+    font-size: 1.2rem;
+    color: var(--text);
+    margin-bottom: 1rem;
+    display: block;
+    text-decoration: none;
   }
 
-  @media (max-width: 900px) {
-    .docs-container { grid-template-columns: 1fr; }
+  /* ─── RESPONSIVE ─── */
+  @media (max-width: 1100px) {
+    aside { width: 240px; }
+    main { padding: 4rem 3rem; }
+  }
+  @media (max-width: 850px) {
     aside { display: none; }
-    main { padding: 4rem 2rem; max-width: 100%; }
-    .hero-mini h1 { font-size: 2.5rem; }
+    nav { padding: 0 1.5rem; }
+    main { padding: 4rem 1.5rem; width: 100%; }
+    .hero h1 { font-size: 3rem; }
   }
 </style>
 </head>
@@ -224,87 +371,221 @@
     <span></span>
     VonCMS
   </a>
-  <ul style="list-style:none; display:flex; gap:1.5rem; align-items:center;">
-    <li><a href="index.html" style="color:var(--muted); text-decoration:none; font-size:.9rem;">Back to Home</a></li>
-    <li><a href="https://github.com/Vondereich/VonCMS" style="background:var(--green-accent); color:#000; padding:6px 16px; border-radius:4px; font-weight:600; text-decoration:none; font-size:.8rem;">GitHub</a></li>
+  <ul style="list-style:none; display:flex; gap:2rem; align-items:center;">
+    <li><a href="index.html" style="color:var(--muted); text-decoration:none; font-size:.9rem; font-weight:500;">Home</a></li>
+    <li><a href="https://github.com/Vondereich/VonCMS" style="background:var(--green-accent); color:#000; padding:8px 18px; border-radius:6px; font-weight:700; text-decoration:none; font-size:.85rem; text-transform:uppercase; letter-spacing:0.02em;">GitHub</a></li>
   </ul>
 </nav>
 
-<div class="docs-container">
+<div class="layout">
   <aside>
-    <div class="sidebar-title">Manifesto</div>
-    <ul class="sidebar-links">
-      <li><a href="#why-us">Why VonCMS?</a></li>
-      <li><a href="#headless-trap">The Headless Trap</a></li>
-      <li><a href="#vendor-lockin">Vendor Lock-in</a></li>
-      <li><a href="#wp-legacy">WordPress Legacy</a></li>
-      <li><a href="#our-belief">Our Beliefs</a></li>
-    </ul>
+    <div class="sidebar-group">
+      <div class="sidebar-label">Identity</div>
+      <ul class="sidebar-links">
+        <li><a href="#the-rebel" class="active">The Pragmatic Rebel</a></li>
+        <li><a href="#why-us">Why VonCMS Exists</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-label">The Critiques</div>
+      <ul class="sidebar-links">
+        <li><a href="#headless-trap">The Headless Trap</a></li>
+        <li><a href="#flat-file-myth">The Flat-File Myth</a></li>
+        <li><a href="#wp-legacy">WordPress Legacy</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-label">The Solution</div>
+      <ul class="sidebar-links">
+        <li><a href="#scaling">Scaling Without Bloat</a></li>
+        <li><a href="#sovereignty">Data Sovereignty</a></li>
+        <li><a href="#beliefs">Core Beliefs</a></li>
+      </ul>
+    </div>
   </aside>
 
   <main>
-    <div class="hero-mini">
-      <h1>The <em>Pragmatic</em> Rebel<br>Manifesto.</h1>
-      <p>Explaining why we built VonCMS and why the modern web is broken.</p>
-    </div>
+    <!-- HERO SECTION -->
+    <header class="hero" id="the-rebel">
+      <div class="hero-badge">The Manifesto v1.0</div>
+      <h1>The <em>Pragmatic</em><br>Rebel Manifesto.</h1>
+      <p class="lead">
+        We are building VonCMS for the publishers who are tired of being held hostage by bloated legacy monoliths and expensive subscription traps.
+      </p>
+    </header>
 
+    <!-- SECTION 1: WHY US -->
     <section id="why-us">
-      <h2>Why VonCMS?</h2>
-      <p>VonCMS started because we were tired of the "Bloat-First" mentality. Most modern CMS solutions fall into two categories: they are either <strong>too heavy</strong> (WordPress) or <strong>too complex</strong> (Enterprise Headless).</p>
-      <p>We are the <strong>Pragmatic Rebel</strong>. We rebel against the status quo by being practically efficient. We don't want 1,000 plugins to do a simple task. We want 200 core files that actually work.</p>
-      <div class="rebel-quote">
-        "We prioritize the publisher, not the plugin developer. If a feature is essential, it should be in the core. If it's not, it shouldn't exist."
+      <h2>Why VonCMS Exists</h2>
+      <p>
+        The modern web is suffering from an <strong>Efficiency Crisis</strong>. In an era where hardware is faster than ever, our software has become inexplicably slower. We have reached a point where a simple content site requires a 500MB installation, 40 plugins, and a specialized sysadmin just to survive a minor update.
+      </p>
+      <p>
+        This isn't progress; it's a <strong>Maintenance Trap</strong>.
+      </p>
+      <p>
+        VonCMS was born out of a simple, rebellious desire: to build a professional-grade publishing engine that respects the publisher's time, the server's resources, and the reader's patience. We stripped away 20 years of legacy baggage to create a sharp, surgical blade in a world of rusty, oversized axes.
+      </p>
+      <div class="quote-block">
+        <blockquote>
+          "Elite software is defined not by how much you can add, but by how much you can take away without losing the soul of the product."
+        </blockquote>
+        <cite>— The VonCMS Engineering Philosophy</cite>
       </div>
     </section>
 
+    <!-- SECTION 2: THE HEADLESS TRAP -->
     <section id="headless-trap">
       <h2>The Headless Trap</h2>
-      <p>The "Headless CMS" trend promised freedom but often delivered a higher bill and more complexity. Many headless solutions charge per API call, per user, or per content type.</p>
-      <p><strong>VonCMS gives you the Headless advantage without the Headless trap:</strong></p>
-      <div class="grid-2">
+      <p>
+        The "Headless Revolution" promised freedom from the monolith, but for many, it delivered a <strong>Subscription Prison</strong>. Most modern Headless CMS solutions operate on a "Nickel and Dime" model. They charge you per user seat, per API call, per content type, and even per image transformation.
+      </p>
+      <p>
+        As your business grows, their bill grows faster. You end up in a situation where you're afraid to scale because every new visitor or content piece increases your monthly overhead. That's not a partnership; that's <strong>Digital Serfdom</strong>.
+      </p>
+      <div class="grid">
         <div class="card">
-          <h3>No Per-API Cost</h3>
-          <p>It's your server. Call your API 1 million times. It costs you $0 extra.</p>
+          <h4>No Metered Scaling</h4>
+          <p>VonCMS is yours. Whether you have 10 visitors or 10 million, your cost remains the same. We don't believe in taxing your success.</p>
         </div>
         <div class="card">
-          <h3>Native React 19</h3>
-          <p>The frontend is a modern Vite project. No complex "connector" needed.</p>
+          <h4>True Decoupling</h4>
+          <p>Pairing a React 19 frontend with a lean PHP core gives you headless speed without the cloud-managed headache.</p>
         </div>
       </div>
     </section>
 
-    <section id="vendor-lockin">
-      <h2>Vendor Lock-in</h2>
-      <p>When you use a proprietary CMS, you are renting your own data. If they raise prices or shut down, you are stuck.</p>
-      <p>VonCMS is <strong>Self-Hosted</strong>. You own the database. You own the files. You can move from a $5 VPS to a dedicated server in 5 minutes. No one can pull the plug on your content business.</p>
+    <!-- SECTION 3: THE FLAT-FILE MYTH -->
+    <section id="flat-file-myth">
+      <h2>The Flat-File Myth</h2>
+      <p>
+        Markdown-based "Flat-File" CMSs are a popular choice for developers. They look beautiful at 10 posts. They feel fast at 50 posts. But then, you reach the <strong>Scaling Wall</strong>.
+      </p>
+      <p>
+        Once you hit 1,000+ content files, the system begins to choke. Every page load requires the CMS to scan directories, parse file metadata, and read raw text from the disk. Without a database to index your content, complex operations like <strong>searching, filtering by tags, or generating related posts</strong> become resource-intensive nightmares.
+      </p>
+      <div class="tech-spec">
+        <header>
+          <span>Analysis: Flat-File vs Database Scaling</span>
+          <span>v1.24 Performance Audit</span>
+        </header>
+        <div class="tech-line">
+          <span class="tech-label">Directory Scan</span>
+          <span class="tech-val">O(n) - Slows down linearly with content growth</span>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">Query Speed</span>
+          <span class="tech-val">Requires full file parsing into RAM</span>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">VonCMS Approach</span>
+          <span class="tech-val">Lean SQL Indexing (O(log n)) - Instant at any scale</span>
+        </div>
+      </div>
+      <p>
+        VonCMS is <strong>Database-Powered but Lean</strong>. We use a highly optimized SQL structure (MySQL/MariaDB or SQLite) to ensure that whether you have 10 posts or 100,000 posts, your query speed remains in the sub-millisecond range. We believe in scaling that lasts a decade, not just a weekend project.
+      </p>
     </section>
 
+    <!-- SECTION 4: WORDPRESS LEGACY -->
     <section id="wp-legacy">
-      <h2>WordPress Legacy</h2>
-      <p>WordPress is 20+ years of legacy code layered on top of itself. It is the definition of a monolith that has lost its way.</p>
-      <p>VonCMS is <strong>56x lighter</strong> than a standard WordPress install. This isn't just a number—it means faster SEO rankings, lower server CPU usage, and a developer experience that doesn't involve hunting for CSS conflicts in 50 different plugins.</p>
-    </section>
-
-    <section id="our-belief">
-      <h2>Our Beliefs</h2>
-      <p>We believe the web should be fast, private, and owned by the creators.</p>
-      <div class="grid-2">
+      <h2>The WordPress Legacy Debt</h2>
+      <p>
+        WordPress is the 2003 solution for a 2026 world. It's a monolith carrying two decades of backward compatibility debt. To make WordPress "modern," you have to layer on more plugins, more caching, and more complexity, which only leads to more security vulnerabilities.
+      </p>
+      <p>
+        This is the <strong>Plugin Industrial Complex</strong>. WordPress intentionally leaves gaps in its core functionality so a marketplace of developers can sell you solutions for problems that shouldn't exist in the first place.
+      </p>
+      <div class="grid">
         <div class="card">
-          <h3>Performance is a Human Right</h3>
-          <p>A slow site is a barrier to information. VonCMS is built for sub-second speeds.</p>
+          <h4>56x Lighter</h4>
+          <p>A fresh VonCMS install is ~2.5MB. A "Modern" WP install with SEO/Security plugins often exceeds 150MB. That's pure bloat.</p>
         </div>
         <div class="card">
-          <h3>Security via Simplicity</h3>
-          <p>Fewer moving parts means fewer attack vectors. 73 API handlers, all audited.</p>
+          <h4>Zero Maintenance Debt</h4>
+          <p>No more "Plugin Update" roulette where one minor patch breaks your entire site layout on a Sunday morning.</p>
         </div>
       </div>
     </section>
 
+    <!-- SECTION 5: SCALING & SOVEREIGNTY -->
+    <section id="scaling">
+      <h2>Scaling Without Bloat</h2>
+      <p>
+        Traditional scaling means "Throw more RAM at it." The VonCMS way is "Make the code more efficient." By utilizing React 19's sub-second UI responsiveness and a lean PHP core, we reduce the server load significantly.
+      </p>
+      <p>
+        This isn't just about speed; it's about <strong>Sustainability</strong>. A site that requires fewer CPU cycles to render is a site that costs less to host and has a smaller carbon footprint.
+      </p>
+    </section>
+
+    <section id="sovereignty">
+      <h2>Data Sovereignty</h2>
+      <p>
+        If you don't own the database, you don't own the content. When you build on "Cloud-Only" platforms, you are a tenant. If they raise prices by 300% or pivot their business model, your entire digital asset is at risk.
+      </p>
+      <p>
+        VonCMS is <strong>100% Self-Hosted</strong>. You can run it on a $5 VPS, a Raspberry Pi, or a high-end dedicated cluster. You own the files. You own the data. You own the future of your business.
+      </p>
+    </section>
+
+    <!-- SECTION 6: CORE BELIEFS -->
+    <section id="beliefs">
+      <h2>Core Beliefs</h2>
+      <div class="grid">
+        <div class="card">
+          <h4>Performance is a Right</h4>
+          <p>A slow site is a barrier to information. We aim for 100/100 Lighthouse scores by architecture, not by luck.</p>
+        </div>
+        <div class="card">
+          <h4>Security via Minimalism</h4>
+          <p>You can't hack what isn't there. Fewer moving parts means fewer attack vectors. 73 audited API handlers, that's it.</p>
+        </div>
+        <div class="card">
+          <h4>The Publisher is King</h4>
+          <p>Software should serve the writer, not the developers. We prioritize "Writing Time" over "Configuration Hell."</p>
+        </div>
+        <div class="card">
+          <h4>No Pro-Walls</h4>
+          <p>We don't hide essential features behind a paywall. What you see is the full-powered, battle-ready engine.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
     <footer>
-      &copy; 2026 VonCMS · Built for the Pragmatic Rebel.
+      <a href="index.html" class="footer-logo">VonCMS</a>
+      <p>Built for the Pragmatic Rebels. &copy; 2026 Vondereich.</p>
     </footer>
   </main>
 </div>
+
+<!-- SCROLL SCRIPT -->
+<script>
+  // Simple active link tracker
+  const sections = document.querySelectorAll('section');
+  const navLinks = document.querySelectorAll('.sidebar-links a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      const sectionHeight = section.clientHeight;
+      if (pageYOffset >= (sectionTop - 150)) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    navLinks.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
 
 </body>
 </html>
