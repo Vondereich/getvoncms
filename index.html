@@ -14,14 +14,14 @@
 <meta property="og:url" content="https://github.com/Vondereich/VonCMS" />
 <meta property="og:title" content="VonCMS · The Pragmatic Rebel in CMS" />
 <meta property="og:description" content="The ultra-fast, self-hosted CMS that gets out of your way. 56x lighter than WordPress. Experience the pragmatic rebel in modern publishing." />
-<meta property="og:image" content="upload/TechpressDemo.png" />
+<meta property="og:image" content="upload/TechpressDemo.webp" />
 
 <!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://github.com/Vondereich/VonCMS" />
 <meta property="twitter:title" content="VonCMS · The Pragmatic Rebel in CMS" />
 <meta property="twitter:description" content="56x lighter than WordPress. Zero plugin headaches. Built for the pragmatic rebel." />
-<meta property="twitter:image" content="upload/TechpressDemo.png" />
+<meta property="twitter:image" content="upload/TechpressDemo.webp" />
 
 <link rel="canonical" href="https://github.com/Vondereich/VonCMS" />
 
@@ -51,7 +51,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/style.css">
+<style>
+  :root {
+    --bg: #080808; --bg2: #0f0f0f; --bg3: #161616;
+    --border: rgba(255,255,255,0.07); --green-accent: #7CFC00;
+    --text: #f0ede8; --muted: #6b6762; --muted2: #888;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+  nav { position: fixed; top: 0; width: 100%; height: 60px; background: rgba(8,8,8,0.85); backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid var(--border); }
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 0 3rem; }
+  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 55fr 45fr; gap: 5rem; }
+</style>
+<link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="css/style.css"></noscript>
 
 </head>
 <body>
@@ -347,7 +359,7 @@
         </div>
         <div class="browser-url">editor · VonCMS</div>
       </div>
-      <img src="upload/Editor.png" alt="VonCMS Post Editor" class="editor-img lightbox-trigger">
+      <img src="upload/Editor.webp" alt="VonCMS Editor" class="editor-img" loading="lazy" width="800" height="540" />
     </div>
     
     <div class="editor-features">
@@ -550,7 +562,7 @@
   
   <div class="video-container reveal">
     <a href="https://www.youtube.com/watch?v=glbqEG37aiM" target="_blank" class="video-card">
-      <img src="https://img.youtube.com/vi/glbqEG37aiM/maxresdefault.jpg" alt="VonCMS Walkthrough" class="video-thumb">
+      <img src="https://img.youtube.com/vi/glbqEG37aiM/maxresdefault.jpg" alt="VonCMS Walkthrough" class="video-thumb" loading="lazy" width="960" height="540">
       <div class="video-overlay">
         <div class="play-btn">
           <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
@@ -575,7 +587,7 @@
     <div class="theme-card flagship">
       <div class="theme-preview-img">
         <div class="theme-badge">FLAGSHIP</div>
-        <img src="upload/TechpressDemo.png" alt="VonCMS TechPress" />
+        <img src="upload/TechpressDemo.webp" alt="VonCMS TechPress" loading="lazy" width="600" height="375" />
       </div>
       <div class="theme-info">
         <h3>TechPress</h3>
@@ -587,7 +599,7 @@
     <div class="theme-card extensions">
       <div class="theme-preview-img">
         <div class="theme-badge secondary">CORE FEATURE</div>
-        <img src="upload/extension.png" alt="VonCMS Extensions" />
+        <img src="upload/extension.webp" alt="VonCMS Extensions" loading="lazy" width="600" height="375" />
       </div>
       <div class="theme-info">
         <h3>Extensions</h3>
@@ -662,7 +674,7 @@
   <div class="footer-right">Built with React 19 + Vite 6 + PHP 8.2--8.5 · Proprietary Baseline</div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js" defer></script>
 
 </body>
 </html>
