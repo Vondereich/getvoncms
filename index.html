@@ -594,6 +594,51 @@
     100% { opacity: 0.4; }
   }
 
+  /* ─── EDITOR SHOWCASE ─── */
+  .editor-showcase {
+    margin-top: 4rem;
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 4rem;
+    align-items: center;
+  }
+  .editor-img {
+    width: 100%;
+    display: block;
+    object-fit: cover;
+    max-height: 540px;
+    object-position: top;
+  }
+  .editor-features {
+    display: flex;
+    flex-direction: column;
+    gap: 2.5rem;
+  }
+  .editor-feat-item {
+    padding-left: 1.5rem;
+    border-left: 2px solid var(--border);
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .editor-feat-item:hover {
+    border-left-color: var(--green-accent);
+    transform: translateX(8px);
+  }
+  .editor-feat-item strong {
+    display: block;
+    font-family: 'Outfit', sans-serif;
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text);
+  }
+  .editor-feat-item span {
+    font-size: 1rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+  @media (max-width: 992px) {
+    .editor-showcase { grid-template-columns: 1fr; gap: 3rem; }
+  }
+
   /* ─── FEATURES GRID ─── */
   .features-grid {
     display: grid;
@@ -1390,6 +1435,46 @@
       <div class="status-indicator">
         <span class="status-dot"></span>
         SYSTEMS OPTIMIZED · RENTAKA BASELINE ACTIVE
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- WRITING EXPERIENCE -->
+<section id="editor">
+  <div class="reveal">
+    <div class="section-label">The Interface</div>
+    <h2 class="section-title">A writing experience<br>that breathes.</h2>
+    <p class="section-desc">Distraction-free. Surgical precision. Everything you need to craft high-impact content without the clutter.</p>
+  </div>
+
+  <div class="editor-showcase reveal">
+    <div class="browser-frame">
+      <div class="browser-bar">
+        <div class="browser-dots">
+          <div class="browser-dot"></div>
+          <div class="browser-dot"></div>
+          <div class="browser-dot"></div>
+        </div>
+        <div class="browser-url">editor · VonCMS</div>
+      </div>
+      <img src="upload/Editor.png" alt="VonCMS Post Editor" class="editor-img">
+    </div>
+    
+    <div class="editor-features">
+      <div class="editor-feat-item">
+        <strong>Instant Preview</strong>
+        <span>What you see is exactly what your readers get.</span>
+      </div>
+      <div class="editor-feat-item">
+        <strong>Auto-Save</strong>
+        <span>Never lose a word. VonCMS saves as you think.</span>
+      </div>
+      <div class="editor-feat-item">
+        <strong>Clean Output</strong>
+        <span>No junk HTML. Just semantic, SEO-ready markup.</span>
       </div>
     </div>
   </div>
