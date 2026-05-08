@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.postimg.cc https://img.youtube.com https://i.ytimg.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.postimg.cc https://img.youtube.com https://i.ytimg.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self';">
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <title>VonCMS · The Pragmatic Rebel in CMS · Ultra-Fast & Self-Hosted</title>
 <meta name="description" content="VonCMS is the pragmatic rebel in CMS. Ultra-fast, lightweight, and self-hosted, it's 56x lighter than WordPress. Built for those who want power without the bloat." />
@@ -1561,6 +1560,11 @@
 </footer>
 
 <script>
+  // Security: Frame Buster (Anti-Clickjacking)
+  if (window.top !== window.self) {
+    window.top.location = window.self.location;
+  }
+
   // Force scroll to top on reload
   if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';

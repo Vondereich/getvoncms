@@ -3,8 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.postimg.cc https://img.youtube.com https://i.ytimg.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; frame-ancestors 'none';">
-<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.postimg.cc https://img.youtube.com https://i.ytimg.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self';">
 <title>Philosophy & Manifesto · VonCMS · The Pragmatic Rebel</title>
 <meta name="description" content="The Pragmatic Rebel Manifesto. Why VonCMS exists, the problems with WordPress legacy, the trap of modern Headless CMS, and the scalability wall of Flat-File systems." />
 
@@ -644,6 +643,11 @@
 </div>
 
 <script>
+  // Security: Frame Buster (Anti-Clickjacking)
+  if (window.top !== window.self) {
+    window.top.location = window.self.location;
+  }
+
   // Force scroll to top on reload
   if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
