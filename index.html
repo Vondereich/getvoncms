@@ -1565,7 +1565,9 @@
   if (history.scrollRestoration) {
     history.scrollRestoration = 'manual';
   }
-  window.scrollTo(0, 0);
+  window.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => window.scrollTo(0, 0), 10);
+  });
 
   // Scroll reveal
   const reveals = document.querySelectorAll('.reveal');
