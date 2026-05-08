@@ -109,7 +109,9 @@ const closeBtn = document.getElementById('toast-close-btn');
 const xBtn = document.getElementById('toast-x-btn');
 
 const showToast = () => {
-  if (localStorage.getItem('voncms-toast-dismissed')) return;
+  // Using sessionStorage: cleared when tab/browser is closed
+  if (sessionStorage.getItem('voncms-toast-dismissed')) return;
+  
   setTimeout(() => {
     toast.classList.add('active');
   }, 5000); // Show after 5 seconds
@@ -117,7 +119,7 @@ const showToast = () => {
 
 const dismissToast = () => {
   toast.classList.remove('active');
-  localStorage.setItem('voncms-toast-dismissed', 'true');
+  sessionStorage.setItem('voncms-toast-dismissed', 'true');
 };
 
 closeBtn.addEventListener('click', dismissToast);
