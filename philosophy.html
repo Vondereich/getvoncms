@@ -399,9 +399,11 @@
     <div class="sidebar-group">
       <div class="sidebar-label">The Solution</div>
       <ul class="sidebar-links">
+        <li><a href="#workflow">The Workflow Choice</a></li>
         <li><a href="#scaling">Scaling Without Bloat</a></li>
         <li><a href="#security">Hardened Security</a></li>
         <li><a href="#php-power">PHP 8.5 Performance</a></li>
+        <li><a href="#ai-partnership">Human-AI Partnership</a></li>
         <li><a href="#sovereignty">Data Sovereignty</a></li>
         <li><a href="#beliefs">Core Beliefs</a></li>
       </ul>
@@ -411,7 +413,7 @@
   <main>
     <!-- HERO SECTION -->
     <header class="hero" id="the-rebel">
-      <div class="hero-badge">The Manifesto v1.0</div>
+      <div class="hero-badge">The Manifesto v1.1</div>
       <h1>The <em>Pragmatic</em><br>Rebel Manifesto.</h1>
       <p class="lead">
         We are building VonCMS for the publishers who are tired of being held hostage by bloated legacy monoliths and expensive subscription traps.
@@ -438,6 +440,27 @@
       </div>
     </section>
 
+    <!-- SECTION: THE WORKFLOW CHOICE -->
+    <section id="workflow">
+      <h2>The Daily Workflow Choice</h2>
+      <p>
+        Most people think they are choosing a CMS based on a feature list. They are wrong. You're not just picking a CMS; <strong>you're picking your daily frustration for the next three years.</strong>
+      </p>
+      <p>
+        When you choose WordPress, you're choosing to be a "Plugin Manager." When you choose Headless, you're choosing to be a "DevOps Orchestrator." When you choose VonCMS, you're choosing to be a <strong>Publisher</strong>.
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h4>The Maintenance Reality</h4>
+          <p>WordPress Year 3: Plugin costs add up, security overhead grows, and the site gets slower. You spend more time "fixing" than "writing."</p>
+        </div>
+        <div class="card">
+          <h4>The VonCMS Reality</h4>
+          <p>Install once, works forever. OTA (Over-The-Air) updates keep the core fresh while you focus 100% on your content strategy.</p>
+        </div>
+      </div>
+    </section>
+
     <!-- SECTION 2: THE HEADLESS TRAP -->
     <section id="headless-trap">
       <h2>The Headless Trap</h2>
@@ -453,8 +476,8 @@
           <p>VonCMS is yours. Whether you have 10 visitors or 10 million, your cost remains the same. We don't believe in taxing your success.</p>
         </div>
         <div class="card">
-          <h4>True Decoupling</h4>
-          <p>Pairing a React 19 frontend with a lean PHP core gives you headless speed without the cloud-managed headache.</p>
+          <h4>Where does your data live?</h4>
+          <p>With headless platforms, your content sits on their servers. If they change pricing or shut down, your site goes dark. With VonCMS, you own the keys.</p>
         </div>
       </div>
     </section>
@@ -463,7 +486,7 @@
     <section id="flat-file-myth">
       <h2>The Flat-File Myth</h2>
       <p>
-        Markdown-based "Flat-File" CMSs are a popular choice for developers. They look beautiful at 10 posts. They feel fast at 50 posts. But then, you reach the <strong>Scaling Wall</strong>.
+        Markdown-based "Flat-File" CMSs look beautiful at 10 posts. They feel fast at 50 posts. But then, you reach the <strong>Scaling Wall</strong>.
       </p>
       <p>
         Once you hit 1,000+ content files, the system begins to choke. Every page load requires the CMS to scan directories, parse file metadata, and read raw text from the disk. Without a database to index your content, complex operations like <strong>searching, filtering by tags, or generating related posts</strong> become resource-intensive nightmares.
@@ -487,18 +510,23 @@
         </div>
       </div>
       <p>
-        VonCMS is <strong>Database-Powered but Lean</strong>. We use a highly optimized SQL structure (MySQL/MariaDB or SQLite) to ensure that whether you have 10 posts or 100,000 posts, your query speed remains in the sub-millisecond range. We believe in scaling that lasts a decade, not just a weekend project.
+        VonCMS is <strong>Database-Powered but Lean</strong>. We use a highly optimized SQL structure to ensure that whether you have 10 posts or 100,000 posts, your query speed remains in the sub-millisecond range.
       </p>
+    </section>
+
+    <!-- SECTION: THE INFRASTRUCTURE ILLUSION -->
+    <section id="infra-illusion">
+      <h2>The Infrastructure Illusion</h2>
+      <p>Platforms like <strong>EmDash</strong> claim to be open-source but are practically hard-locked to specific cloud providers (Cloudflare). They rely on proprietary primitives that make it almost impossible to migrate elsewhere without a total rewrite.</p>
+      <p><strong>VonCMS is Infrastructure-Agnostic.</strong></p>
+      <p>Whether it's a $3 shared host, a VPS, or a Raspberry Pi, VonCMS runs because it uses standard LAMP/LEMP primitives. True freedom isn't just about the license; it's about the ability to move your business whenever you want.</p>
     </section>
 
     <!-- SECTION 4: WORDPRESS LEGACY -->
     <section id="wp-legacy">
       <h2>The WordPress Legacy Debt</h2>
       <p>
-        WordPress is the 2003 solution for a 2026 world. It's a monolith carrying two decades of backward compatibility debt. To make WordPress "modern," you have to layer on more plugins, more caching, and more complexity, which only leads to more security vulnerabilities.
-      </p>
-      <p>
-        This is the <strong>Plugin Industrial Complex</strong>. WordPress intentionally leaves gaps in its core functionality so a marketplace of developers can sell you solutions for problems that shouldn't exist in the first place.
+        WordPress is the 2003 solution for a 2026 world. It carries two decades of backward compatibility debt. This has created the <strong>Plugin Industrial Complex</strong>—a system where WordPress intentionally leaves gaps in its core functionality so a marketplace of developers can sell you solutions for problems that shouldn't exist.
       </p>
       <div class="grid">
         <div class="card">
@@ -506,8 +534,8 @@
           <p>A fresh VonCMS install is ~2.5MB. A "Modern" WP install with SEO/Security plugins often exceeds 150MB. That's pure bloat.</p>
         </div>
         <div class="card">
-          <h4>Zero Maintenance Debt</h4>
-          <p>No more "Plugin Update" roulette where one minor patch breaks your entire site layout on a Sunday morning.</p>
+          <h4>The Maintenance Roulette</h4>
+          <p>The average WP site runs 20-30 plugins. Each one is a dependency you didn't write and can't audit. Each update is a gamble.</p>
         </div>
       </div>
     </section>
@@ -518,26 +546,21 @@
       <p>
         Traditional scaling means "Throw more RAM at it." The VonCMS way is "Make the code more efficient." By utilizing React 19's sub-second UI responsiveness and a lean PHP core, we reduce the server load significantly.
       </p>
-      <p>
-        This isn't just about speed; it's about <strong>Sustainability</strong>. A site that requires fewer CPU cycles to render is a site that costs less to host and has a smaller carbon footprint.
-      </p>
     </section>
 
     <section id="security">
       <h2>Security via Minimalism</h2>
-      <p>In the world of security, <strong>Surface Area is Everything</strong>. Every line of code, every plugin, and every external dependency is a potential door for an attacker. WordPress sites are compromised daily not because of the core, but because of the "Plugin Industrial Complex" that encourages users to install un-audited code.</p>
-      <p>VonCMS follows a <strong>Zero-Trust Architecture</strong> from the ground up:</p>
+      <p>In the world of security, <strong>Surface Area is Everything</strong>. Every line of code, every plugin, and every external dependency is a potential door for an attacker.</p>
       <div class="grid">
         <div class="card">
           <h4>Hardened API Handlers</h4>
-          <p>We only have 73 strictly defined API handlers. Each one is audited for CSRF, XSS, and SQL injection. There are no "hidden" endpoints.</p>
+          <p>We only have 73 strictly defined API handlers. Each one is audited for CSRF, XSS, and SQL injection.</p>
         </div>
         <div class="card">
           <h4>No Execution in Assets</h4>
-          <p>Our file structure is built so that user-uploaded assets can never be executed as scripts. We kill the "Web Shell" threat at the source.</p>
+          <p>User-uploaded assets can never be executed as scripts. We kill the "Web Shell" threat at the source.</p>
         </div>
       </div>
-      <p>By keeping the core lean, we make security manageable. We don't need a "Security Plugin" to firewalled our site; the firewall is built into the logic of every single line we write.</p>
     </section>
 
     <section id="php-power">

@@ -103,7 +103,7 @@ Not because it's the easiest to build. Because it's the easiest to **live with**
 
 | Detail         | Value                                     |
 | -------------- | ----------------------------------------- |
-| Stable release | `v1.23.10 "Rentaka"`                      |
+| Stable release | `v1.24.1 "HourGlass"`                     |
 | Minimum PHP    | `8.2+` (support: 8.2–8.5)                 |
 | Architecture   | React 19 frontend + PHP API backend       |
 | Hosting        | Shared hosting, cPanel, VPS — your choice |
