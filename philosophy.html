@@ -644,6 +644,12 @@
 </div>
 
 <script>
+  // Force scroll to top on reload
+  if (history.scrollRestoration) {
+    history.scrollRestoration = 'manual';
+  }
+  window.scrollTo(0, 0);
+
   // Simple active link tracker
   const sections = document.querySelectorAll('section');
   const navLinks = document.querySelectorAll('.sidebar-links a');
