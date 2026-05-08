@@ -1,0 +1,124 @@
+// Security: Frame Buster (Anti-Clickjacking)
+if (window.top !== window.self) {
+  window.top.location = window.self.location;
+}
+
+// Force scroll to top on reload
+if (history.scrollRestoration) {
+  history.scrollRestoration = 'manual';
+}
+window.addEventListener('DOMContentLoaded', () => {
+  setTimeout(() => window.scrollTo(0, 0), 10);
+});
+
+// Scroll reveal
+const reveals = document.querySelectorAll('.reveal');
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+reveals.forEach(el => observer.observe(el));
+
+// Auto-fetch latest GitHub release
+async function fetchLatestRelease() {
+  try {
+    const response = await fetch('https://api.github.com/repos/Vondereich/VonCMS/releases/latest');
+    if (!response.ok) return;
+    const data = await response.json();
+    
+    let version = data.tag_name;
+    let fullName = data.name;
+    if (!version || !fullName) return;
+
+    // Extract only the series name (e.g., "Rentaka") from "v1.23.10 · Rentaka"
+    let seriesName = fullName;
+    const dash = fullName.includes('—') ? '—' : (fullName.includes('·') ? '·' : null);
+    if (dash) {
+      seriesName = seriesName.split(dash)[1].trim().split(' ')[0];
+    } else if (seriesName.includes('"')) {
+      seriesName = seriesName.split('"')[1];
+    }
+
+    const publishedAt = new Date(data.published_at);
+    const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+
+    const badge = document.querySelector('[data-gh-version-badge]');
+    if (badge) badge.textContent = `${version} · Stable Release · ${monthYear}`;
+
+    const zipName = document.querySelector('[data-gh-zip-name]');
+    if (zipName) zipName.textContent = `voncms-${version.replace(/\./g, '-')}.zip`;
+
+    const ctaNote = document.querySelector('[data-gh-cta-note]');
+    if (ctaNote) ctaNote.textContent = `Latest Stable: ${version} · PHP 8.2+ · MySQL · Apache`;
+  } catch (err) {
+    console.warn('GitHub Release Fetch: Using hardcoded fallback.', err);
+  }
+}
+fetchLatestRelease();
+
+// LIGHTBOX LOGIC
+const lightbox = document.createElement('div');
+lightbox.id = 'lightbox';
+lightbox.innerHTML = `
+  <div class="lightbox-close">&times;</div>
+  <img src="" alt="Full size view">
+`;
+document.body.appendChild(lightbox);
+
+const lightboxImg = lightbox.querySelector('img');
+const triggers = document.querySelectorAll('.lightbox-trigger');
+
+triggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    lightboxImg.src = trigger.src;
+    lightbox.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+
+const closeLightbox = () => {
+  lightbox.classList.remove('active');
+  document.body.style.overflow = 'auto';
+};
+
+lightbox.addEventListener('click', (e) => {
+  if (e.target !== lightboxImg) closeLightbox();
+});
+
+// ENGAGEMENT TOAST LOGIC
+const toastHTML = `
+  <div class="toast" id="engagement-toast">
+    <div class="toast-title"><span></span> Interested in VonCMS?</div>
+    <div class="toast-desc">If you find VonCMS useful, consider giving us a star on GitHub. It helps the rebel cause grow.</div>
+    <div class="toast-actions">
+      <a href="https://github.com/Vondereich/VonCMS" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-star-btn">⭐ Give a Star</a>
+      <div class="toast-btn toast-btn-secondary" id="toast-close-btn">Next time</div>
+    </div>
+  </div>
+`;
+document.body.insertAdjacentHTML('beforeend', toastHTML);
+
+const toast = document.getElementById('engagement-toast');
+const starBtn = document.getElementById('toast-star-btn');
+const closeBtn = document.getElementById('toast-close-btn');
+
+const showToast = () => {
+  if (localStorage.getItem('voncms-toast-dismissed')) return;
+  setTimeout(() => {
+    toast.classList.add('active');
+  }, 5000); // Show after 5 seconds
+};
+
+const dismissToast = () => {
+  toast.classList.remove('active');
+  localStorage.setItem('voncms-toast-dismissed', 'true');
+};
+
+closeBtn.addEventListener('click', dismissToast);
+starBtn.addEventListener('click', dismissToast);
+
+showToast();
