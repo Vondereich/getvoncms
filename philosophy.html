@@ -140,11 +140,15 @@
   .sidebar-links a {
     color: var(--muted);
     text-decoration: none;
-    font-size: 0.95rem;
+    font-size: 0.85rem;
     padding: 6px 12px;
     border-radius: 6px;
     transition: all 0.2s ease;
     border-left: 2px solid transparent;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    align-items: center;
+    gap: 8px;
   }
   .sidebar-links a:hover {
     color: var(--text);
@@ -155,6 +159,15 @@
     color: var(--green-accent);
     background: var(--accent-dim);
     border-left-color: var(--green-accent);
+  }
+  .sidebar-links a.active::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: var(--green-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--green-accent);
+    flex-shrink: 0;
   }
 
   /* ─── MAIN CONTENT ─── */
@@ -638,6 +651,9 @@
     <footer>
       <a href="index.html" class="footer-logo">VonCMS</a>
       <p>Built for the Pragmatic Rebels. &copy; 2026 Vondereich.</p>
+      <div style="font-size: 0.7rem; color: var(--muted2); font-family: 'JetBrains Mono', monospace; margin-top: 1rem;">
+        React 19 + Vite 6 + PHP 8.2--8.5 · Proprietary Baseline
+      </div>
     </footer>
   </main>
 </div>

@@ -130,9 +130,10 @@
   .nav-links a {
     color: var(--muted2);
     text-decoration: none;
-    font-size: .92rem;
+    font-size: .82rem;
     font-weight: 500;
-    letter-spacing: .01em;
+    font-family: 'JetBrains Mono', monospace;
+    letter-spacing: .02em;
     transition: color .2s;
   }
   .nav-links a:hover { color: var(--text); }
@@ -474,60 +475,124 @@
   }
 
   /* ─── COMPARE TABLE ─── */
-  .compare-wrap {
-    margin-top: 3rem;
+  .compare-container {
+    margin-top: 4rem;
+    background: rgba(10, 10, 10, 0.4);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border);
-    border-radius: 12px;
+    border-radius: 16px;
     overflow: hidden;
+    box-shadow: 0 40px 100px -20px rgba(0,0,0,0.6);
+  }
+  .compare-header {
+    padding: 1.25rem 2rem;
+    background: rgba(255,255,255,0.03);
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .compare-tab {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: var(--muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  .compare-tab.active {
+    background: var(--accent-dim);
+    color: var(--green-accent);
+    box-shadow: 0 0 20px rgba(124,252,0,0.1);
+  }
+  .compare-table-wrapper {
+    overflow-x: auto;
+    position: relative;
+  }
+  .compare-table-wrapper::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(rgba(124,252,0,0.02) 50%, transparent 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    opacity: 0.3;
   }
   .compare-table {
     width: 100%;
     border-collapse: collapse;
-    font-size: .95rem;
+    min-width: 600px;
   }
-  .compare-table thead th {
-    padding: 1.2rem 1.5rem;
+  .compare-table th {
     text-align: left;
-    background: var(--bg3);
-    border-bottom: 1px solid var(--border);
+    padding: 1.5rem 2rem;
+    background: rgba(255,255,255,0.01);
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 1rem;
-    font-weight: 700;
-    letter-spacing: .06em;
+    font-size: 1.1rem;
+    font-weight: 800;
     text-transform: uppercase;
-  }
-  .compare-table thead th:first-child {
+    letter-spacing: 0.05em;
     color: var(--muted);
-    font-weight: 500;
-    font-family: 'Barlow', sans-serif;
-    font-size: .82rem;
-    text-transform: none;
-    letter-spacing: 0;
-  }
-  .th-von { color: var(--green-accent) !important; }
-  .compare-table tbody tr {
     border-bottom: 1px solid var(--border);
-    transition: background .2s;
   }
-  .compare-table tbody tr:last-child { border-bottom: none; }
-  .compare-table tbody tr:hover { background: rgba(255,255,255,.02); }
+  .compare-table th.highlight {
+    color: var(--green-accent);
+    background: rgba(124,252,0,0.02);
+  }
   .compare-table td {
-    padding: 1rem 1.5rem;
+    padding: 1.25rem 2rem;
+    border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-size: 0.95rem;
     color: #a09b95;
-    font-size: .95rem;
+    transition: all 0.2s ease;
+  }
+  .compare-table tbody tr:hover td {
+    background: rgba(255,255,255,0.02);
+    color: #fff;
   }
   .compare-table td:first-child {
-    color: var(--text);
-    font-weight: 500;
-    font-size: .9rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--muted2);
+    width: 25%;
   }
-  .compare-table td.von {
-    color: var(--text);
+  .compare-table td.highlight {
+    color: #fff;
     font-weight: 600;
+    background: rgba(124,252,0,0.01);
   }
-  .win { color: var(--green) !important; font-weight: 600 !important; }
-  .bad { color: var(--muted) !important; }
-  .check { font-size: 1rem; }
+  .compare-footer {
+    padding: 1rem 2rem;
+    background: rgba(0,0,0,0.2);
+    border-top: 1px solid var(--border);
+  }
+  .status-indicator {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.65rem;
+    font-weight: 700;
+    color: var(--muted2);
+    letter-spacing: 0.05em;
+  }
+  .status-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--green-accent);
+    border-radius: 50%;
+    box-shadow: 0 0 10px var(--green-accent);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { opacity: 0.4; }
+    50% { opacity: 1; }
+    100% { opacity: 0.4; }
+  }
 
   /* ─── FEATURES GRID ─── */
   .features-grid {
@@ -1260,6 +1325,72 @@
       <div class="feature-title">WYSIWYG Editor</div>
       <div class="feature-desc">A rich text editor that stays out of the way. Write clean content without fighting the interface.</div>
       <span class="feature-tag">EDITOR</span>
+    </div>
+  </div>
+</section>
+
+<div class="full-divider"></div>
+
+<!-- COMPARISON (HACKER DASHBOARD STYLE) -->
+<section id="versus">
+  <div class="reveal">
+    <div class="section-label">The Showdown</div>
+    <h2 class="section-title">VonCMS vs. The Giant.</h2>
+    <p class="section-desc">Why settle for a 21-year-old legacy system when you can have a modern baseline?</p>
+  </div>
+
+  <div class="compare-container reveal">
+    <div class="compare-header">
+      <div class="compare-tab active">System Metrics</div>
+    </div>
+    <div class="compare-table-wrapper">
+      <table class="compare-table">
+        <thead>
+          <tr>
+            <th>Metric</th>
+            <th>WordPress (Legacy)</th>
+            <th class="highlight">VonCMS (Rentaka)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Base Payload</td>
+            <td>~72MB (Core only)</td>
+            <td class="highlight">1.2MB (Lighter)</td>
+          </tr>
+          <tr>
+            <td>Database Queries</td>
+            <td>40-120 per page</td>
+            <td class="highlight">2-5 (Optimized)</td>
+          </tr>
+          <tr>
+            <td>Plugin Dependency</td>
+            <td>Required for SEO/Ads/Security</td>
+            <td class="highlight">0 (All Native)</td>
+          </tr>
+          <tr>
+            <td>Frontend Tech</td>
+            <td>Classic PHP / jQuery</td>
+            <td class="highlight">React 19 + Vite</td>
+          </tr>
+          <tr>
+            <td>Security Model</td>
+            <td>Reactive (Patches)</td>
+            <td class="highlight">Hardened Baseline</td>
+          </tr>
+          <tr>
+            <td>Asset Management</td>
+            <td>Manual / Plugin required</td>
+            <td class="highlight">Auto WebP + CDN Ready</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="compare-footer">
+      <div class="status-indicator">
+        <span class="status-dot"></span>
+        SYSTEMS OPTIMIZED · RENTAKA BASELINE ACTIVE
+      </div>
     </div>
   </div>
 </section>
