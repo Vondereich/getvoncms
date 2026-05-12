@@ -84,7 +84,7 @@ nav {
 
 /* ─── DOCS LAYOUT ─── */
 .layout {
-  max-width: 1400px;
+  max-width: 1300px;
   margin: var(--nav-height) auto 0;
   display: flex;
   justify-content: center;
@@ -94,7 +94,7 @@ nav {
 /* ─── SIDEBAR ─── */
 aside {
   width: var(--sidebar-width);
-  padding: 4rem 2rem;
+  padding: 2rem 2rem;
   border-right: 1px solid var(--border);
   position: sticky;
   top: var(--nav-height);
@@ -102,18 +102,18 @@ aside {
   overflow-y: auto;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
 }
 .sidebar-group {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.5rem;
 }
 .sidebar-label {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.7rem;
+  font-size: 0.65rem;
   text-transform: uppercase;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.1em;
   color: var(--muted2);
   font-weight: 700;
 }
@@ -121,13 +121,13 @@ aside {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.25rem;
 }
 .sidebar-links a {
   color: var(--muted);
   text-decoration: none;
   font-size: 0.85rem;
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 6px;
   transition: all 0.2s ease;
   border-left: 2px solid transparent;
@@ -148,8 +148,8 @@ aside {
 }
 .sidebar-links a.active::before {
   content: '';
-  width: 6px;
-  height: 6px;
+  width: 5px;
+  height: 5px;
   background: var(--green-accent);
   border-radius: 50%;
   box-shadow: 0 0 10px var(--green-accent);
@@ -159,27 +159,25 @@ aside {
 /* ─── MAIN CONTENT ─── */
 main {
   flex: 1;
-  padding: 5rem 6rem 10rem;
-  max-width: 960px;
+  padding: 1.5rem 4rem 4rem;
+  max-width: 900px;
 }
 
 /* ─── HERO ─── */
 .hero {
-  margin-bottom: 6rem;
+  margin-bottom: 2rem;
   position: relative;
 }
 .hero-badge {
   display: inline-block;
-  padding: 4px 12px;
+  padding: 3px 10px;
   background: var(--accent-dim);
   border: 1px solid var(--green-accent);
   color: var(--green-accent);
   font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   font-weight: 700;
   border-radius: 4px;
-  text-transform: uppercase;
-  margin-bottom: 2rem;
 }
 .hero h1 {
   font-family: 'Outfit', sans-serif;
@@ -204,8 +202,8 @@ main {
 
 /* ─── TYPOGRAPHY & SECTIONS ─── */
 section {
-  margin-bottom: 8rem;
-  scroll-margin-top: 120px;
+  margin-bottom: 1rem;
+  scroll-margin-top: 100px;
   animation: fadeIn 0.8s ease backwards;
 }
 @keyframes fadeIn {
@@ -236,7 +234,7 @@ h3 {
   font-family: 'Outfit', sans-serif;
   font-weight: 700;
   font-size: 1.6rem;
-  margin: 3.5rem 0 1.5rem;
+  margin: 1.5rem 0 1rem;
   color: var(--text);
 }
 p {
@@ -249,12 +247,12 @@ p strong { color: var(--text); font-weight: 600; }
 /* ─── BLOCKS & CARDS ─── */
 .quote-block {
   position: relative;
-  padding: 3rem;
+  padding: 2.5rem;
   background: var(--bg2);
   border: 1px solid var(--border);
   border-left: 4px solid var(--green-accent);
   border-radius: 0 12px 12px 0;
-  margin: 4rem 0;
+  margin: 2rem 0;
 }
 .quote-block blockquote {
   font-family: 'JetBrains Mono', monospace;
@@ -277,7 +275,7 @@ p strong { color: var(--text); font-weight: 600; }
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1.5rem;
-  margin: 3rem 0;
+  margin: 1.5rem 0;
 }
 .card {
   background: var(--bg2);
@@ -335,7 +333,7 @@ p strong { color: var(--text); font-weight: 600; }
 
 /* ─── SECTION SPACING ─── */
 main section {
-  padding: 3rem 0;
+  padding: 1rem 0;
   border-bottom: 1px solid var(--border);
 }
 
