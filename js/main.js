@@ -54,6 +54,8 @@ async function fetchLatestRelease() {
 
     const ctaNote = document.querySelector('[data-gh-cta-note]');
     if (ctaNote) ctaNote.textContent = `Latest Stable: ${version} · PHP 8.2+ · MySQL · Apache`;
+
+    console.log(`VonCMS: Version ${version} fetched successfully.`);
   } catch (err) {
     console.warn('GitHub Release Fetch: Using hardcoded fallback.', err);
   }
