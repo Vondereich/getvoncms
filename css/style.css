@@ -389,7 +389,7 @@ nav {
 
 /* ─── SECTION BASE ─── */
 section {
-  padding: 6rem 3rem;
+  padding: 4rem 3rem;
   max-width: 1200px;
   margin: 0 auto;
   width: 100%;
@@ -1066,8 +1066,8 @@ section {
 /* ─── FOOTER ─── */
 footer {
   max-width: 1200px;
-  margin: 6rem auto 0;
-  padding: 4rem 3rem;
+  margin: 2rem auto 0;
+  padding: 3rem 3rem;
   border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
@@ -1095,9 +1095,10 @@ footer {
 }
 .footer-links a:hover { color: var(--text); }
 .footer-right {
-  font-size: .75rem;
+  font-size: .7rem;
   color: var(--muted);
   font-family: 'JetBrains Mono', monospace;
+  opacity: 0.8;
 }
 
 /* ─── DIVIDER ─── */
