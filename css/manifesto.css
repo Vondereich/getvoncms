@@ -335,9 +335,20 @@ p strong { color: var(--text); font-weight: 600; }
 
 /* ─── SECTION SPACING ─── */
 main section {
-  padding: 6rem 0;
+  padding: 3rem 0;
   border-bottom: 1px solid var(--border);
-  min-height: 40vh; /* Ensures sections are tall enough for scroll-spy */
+}
+
+/* ─── LIGHTBOX (IMAGE ZOOM) ─── */
+#lightbox {
+  position: fixed; z-index: 20000; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.9); display: none; align-items: center; justify-content: center;
+  cursor: zoom-out; backdrop-filter: blur(10px);
+}
+#lightbox.active { display: flex; }
+#lightbox img { max-width: 90%; max-height: 85%; border-radius: 8px; box-shadow: 0 0 50px rgba(0,0,0,0.5); }
+.lightbox-close {
+  position: absolute; top: 2rem; right: 2rem; font-size: 2.5rem; color: #fff; cursor: pointer;
 }
 
 /* ─── ENGAGEMENT TOAST ─── */
