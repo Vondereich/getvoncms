@@ -116,7 +116,7 @@ document.body.appendChild(lightbox);
 
 const lightboxImg = lightbox.querySelector('img');
 // Target all images except nav logos and footer brand icons
-const triggers = document.querySelectorAll('main img, section img, .cta-section img, header img');
+const triggers = document.querySelectorAll('main img, section img, .cta-section img, header img, .hero img');
 
 triggers.forEach(trigger => {
   trigger.style.cursor = 'zoom-in';
