@@ -105,7 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initSidebarLogic();
 });
 
-// LIGHTBOX LOGIC
+// UNIVERSAL LIGHTBOX LOGIC
 const lightbox = document.createElement('div');
 lightbox.id = 'lightbox';
 lightbox.innerHTML = `
@@ -115,9 +115,11 @@ lightbox.innerHTML = `
 document.body.appendChild(lightbox);
 
 const lightboxImg = lightbox.querySelector('img');
-const triggers = document.querySelectorAll('.lightbox-trigger');
+// Target all images except nav logos and footer brand icons
+const triggers = document.querySelectorAll('main img, section img, .cta-section img, header img');
 
 triggers.forEach(trigger => {
+  trigger.style.cursor = 'zoom-in';
   trigger.addEventListener('click', () => {
     lightboxImg.src = trigger.src;
     lightbox.classList.add('active');
