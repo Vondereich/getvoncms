@@ -451,7 +451,6 @@ main section {
 footer {
   margin-top: 2rem;
   padding: 3rem 0;
-  border-top: 1px solid var(--border);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -477,9 +476,10 @@ footer {
 }
 .footer-links a:hover { color: var(--text); }
 .footer-right {
-  font-size: .75rem;
+  font-size: .7rem;
   color: var(--muted);
   font-family: 'JetBrains Mono', monospace;
+  opacity: 0.8;
 }
 
 /* ─── RESPONSIVE ─── */
