@@ -477,8 +477,9 @@ footer {
 }
 .footer-links a:hover { color: var(--text); }
 .footer-right {
-  font-size: 0.85rem;
-  color: var(--muted2);
+  font-size: .75rem;
+  color: var(--muted);
+  font-family: 'JetBrains Mono', monospace;
 }
 
 /* ─── RESPONSIVE ─── */
