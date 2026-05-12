@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.postimg.cc https://img.youtube.com https://i.ytimg.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self';">
+<title>Documentation · VonCMS · The Pragmatic Rebel</title>
+<meta name="description" content="Official VonCMS Documentation. Installation guides, security hardening, performance benchmarks, and system architecture deep-dives." />
+<link rel="icon" type="image/png" href="upload/logo.png">
+<link rel="apple-touch-icon" href="upload/logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #080808; --bg2: #0f0f0f; --bg3: #161616;
+    --border: rgba(255,255,255,0.07); --green-accent: #7CFC00;
+    --text: #f0ede8; --muted: #888; --nav-height: 70px; --sidebar-width: 320px;
+  }
+  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
+  a { text-decoration: none; color: inherit; }
+  nav { position: fixed; top: 0; width: 100%; height: var(--nav-height); background: rgba(8,8,8,0.8); backdrop-filter: blur(20px); z-index: 1000; border-bottom: 1px solid var(--border); }
+  .layout { max-width: 1400px; margin: var(--nav-height) auto 0; display: flex; justify-content: center; }
+</style>
+<link rel="preload" href="css/manifesto.css" as="style">
+<link rel="stylesheet" href="css/manifesto.css">
+
+</head>
+<body>
+
+<nav>
+  <a href="index.html" class="nav-logo">
+    <img src="upload/logo.png" alt="VonCMS Logo" style="height: 32px; width: auto;">
+    VonCMS
+  </a>
+  <ul style="list-style:none; display:flex; gap:2rem; align-items:center;">
+    <li><a href="index.html" style="color:var(--muted); text-decoration:none; font-size:.9rem; font-weight:500;">Home</a></li>
+    <li><a href="philosophy.html" style="color:var(--muted); text-decoration:none; font-size:.9rem; font-weight:500;">Philosophy</a></li>
+    <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" style="background:var(--green-accent); color:#000; padding:8px 18px; border-radius:6px; font-weight:700; text-decoration:none; font-size:.85rem; text-transform:uppercase; letter-spacing:0.02em;">GitHub</a></li>
+  </ul>
+</nav>
+
+<div class="layout">
+  <aside>
+    <div class="sidebar-group">
+      <div class="sidebar-label">Getting Started</div>
+      <ul class="sidebar-links">
+        <li><a href="#introduction" class="active">Introduction</a></li>
+        <li><a href="#install">Installation</a></li>
+        <li><a href="#requirements">Requirements</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-label">Core Systems</div>
+      <ul class="sidebar-links">
+        <li><a href="#security">Security Hardening</a></li>
+        <li><a href="#architecture">Architecture</a></li>
+        <li><a href="#api">API Handlers</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-label">Performance</div>
+      <ul class="sidebar-links">
+        <li><a href="#benchmarks">Benchmarks</a></li>
+        <li><a href="#optimization">Optimization</a></li>
+      </ul>
+    </div>
+
+    <div class="sidebar-group">
+      <div class="sidebar-label">Extensions</div>
+      <ul class="sidebar-links">
+        <li><a href="#themes">Theme Engine</a></li>
+        <li><a href="#plugins">Built-in Plugins</a></li>
+      </ul>
+    </div>
+  </aside>
+
+  <main>
+    <!-- HERO SECTION -->
+    <header class="hero" id="introduction">
+      <div class="hero-badge">Documentation v1.24.2</div>
+      <h1>Official <em>VonCMS</em><br>Documentation.</h1>
+      <p class="lead">
+        Learn how to install, secure, and scale your publishing engine. Built for speed, hardened by design.
+      </p>
+    </header>
+
+    <!-- INSTALLATION -->
+    <section id="install">
+      <h2>Installation Guide</h2>
+      <p>
+        VonCMS is designed to be installed in under 2 minutes. We've eliminated the need for complex CLI tools, Node.js dependencies, or build steps on your production server.
+      </p>
+      <div class="quote-block">
+        <blockquote>
+          "The fastest installation is the one that doesn't require a terminal."
+        </blockquote>
+      </div>
+      <h3>Steps to Install:</h3>
+      <ol style="color:var(--muted); line-height:2; margin-top:1.5rem;">
+        <li><strong>Download:</strong> Get the latest stable release from GitHub.</li>
+        <li><strong>Upload:</strong> Extract the contents into your web root (e.g., <code>public_html</code>).</li>
+        <li><strong>Launch:</strong> Navigate to your domain in the browser.</li>
+        <li><strong>Wizard:</strong> Follow the intuitive 2-minute setup wizard to connect your database and create your admin account.</li>
+      </ol>
+    </section>
+
+    <!-- REQUIREMENTS -->
+    <section id="requirements">
+      <h2>System Requirements</h2>
+      <p>VonCMS runs on standard LAMP/LEMP stacks. We prioritize stability and modern PHP features.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>Server</h4>
+          <p>Apache or LiteSpeed (preferred). Nginx is supported with custom rewrite rules.</p>
+        </div>
+        <div class="card">
+          <h4>PHP</h4>
+          <p>PHP 8.2 or higher. We optimized the core for PHP 8.5 performance.</p>
+        </div>
+        <div class="card">
+          <h4>Database</h4>
+          <p>MySQL 5.7+ or MariaDB 10.3+. Full-text search enabled for elite performance.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECURITY -->
+    <section id="security">
+      <h2>Security Hardening</h2>
+      <p>
+        VonCMS features a "Hardened by Default" architecture. Unlike other systems where you need to install security plugins, VonCMS has deep-level protection baked into every handler.
+      </p>
+      <ul>
+        <li><strong>CSRF Protection:</strong> Token-based validation on all state-changing requests.</li>
+        <li><strong>Integrity Radar:</strong> The core monitors its own file integrity and alerts you to tampered files.</li>
+        <li><strong>Path Guard:</strong> Advanced absolute path resolution to prevent directory traversal attacks.</li>
+        <li><strong>API Binding:</strong> All 73+ API endpoints are bound to strict session and role checks.</li>
+      </ul>
+    </section>
+
+    <!-- ARCHITECTURE -->
+    <section id="architecture">
+      <h2>Architecture Deep-Dive</h2>
+      <p>
+        We use a <strong>Hybrid Decoupled Architecture</strong>. The admin panel is a modern React 19 application bundled with Vite for surgical responsiveness, while the theme layer uses high-performance PHP templates for maximum SEO and sub-second Time to First Byte (TTFB).
+      </p>
+      <div class="grid">
+        <div class="card">
+          <h4>React 19 Admin</h4>
+          <p>A fast, reactive state management system for managing complex content without page reloads.</p>
+        </div>
+        <div class="card">
+          <h4>PHP 8 Core</h4>
+          <p>Lean, specialized handlers that process requests up to 56x faster than legacy monoliths.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENCHMARKS -->
+    <section id="benchmarks">
+      <h2>Performance Benchmarks</h2>
+      <p>We don't just say we're fast; we prove it. VonCMS is built to handle high-traffic publishers without the need for expensive caching layers.</p>
+      <table style="width:100%; border-collapse:collapse; margin-top:2rem; font-size:0.9rem;">
+        <tr style="border-bottom:1px solid var(--border);">
+          <th style="text-align:left; padding:12px; color:var(--text);">Metric</th>
+          <th style="text-align:left; padding:12px; color:var(--muted);">WordPress</th>
+          <th style="text-align:left; padding:12px; color:var(--green-accent);">VonCMS</th>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px;">Base Size</td>
+          <td style="padding:12px;">72MB+</td>
+          <td style="padding:12px;">Under 1MB</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px;">DB Queries (Home)</td>
+          <td style="padding:12px;">40-120</td>
+          <td style="padding:12px;">2-5</td>
+        </tr>
+        <tr style="border-bottom:1px solid var(--border);">
+          <td style="padding:12px;">Search Speed</td>
+          <td style="padding:12px;">800ms+</td>
+          <td style="padding:12px;">133ms</td>
+        </tr>
+      </table>
+    </section>
+
+    <footer style="margin-top: 4rem; border-top: 1px solid var(--border); padding-top: 2rem;">
+      <a href="index.html">
+        <div class="footer-brand">
+          <img src="upload/logo.png" alt="VonCMS Logo" style="height: 24px; width: auto; vertical-align: middle; margin-right: 8px;">
+          VonCMS
+        </div>
+      </a>
+      <ul style="list-style:none; display:flex; gap:1.5rem; padding:0; margin: 1rem 0; font-size: 0.85rem; color:var(--muted);">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="philosophy.html">Philosophy</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#install">Install</a></li>
+      </ul>
+      <p style="font-size: 0.85rem; color: var(--muted2);">Empowering the Pragmatic Rebels. &copy; 2026 Vondereich.</p>
+    </footer>
+  </main>
+</div>
+
+<script src="js/main.js" defer></script>
+<script>
+  // Simple sidebar active state toggle
+  const links = document.querySelectorAll('.sidebar-links a');
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Scroll spy for sidebar
+  const sections = document.querySelectorAll('section, header');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (pageYOffset >= sectionTop - 100) {
+        current = section.getAttribute('id');
+      }
+    });
+
+    links.forEach(link => {
+      link.classList.remove('active');
+      if (link.getAttribute('href').includes(current)) {
+        link.classList.add('active');
+      }
+    });
+  });
+</script>
+</body>
+</html>
