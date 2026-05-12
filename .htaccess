@@ -7,6 +7,9 @@
   Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data: https://i.postimg.cc https://img.youtube.com https://i.ytimg.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self';"
 </IfModule>
 
+# Custom 404 Redirect
+ErrorDocument 404 /index.html
+
 <IfModule mod_expires.c>
   ExpiresActive On
   
