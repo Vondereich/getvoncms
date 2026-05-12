@@ -56,11 +56,54 @@ async function fetchLatestRelease() {
     if (ctaNote) ctaNote.textContent = `Latest Stable: ${version} · PHP 8.2+ · MySQL · Apache`;
 
     console.log(`VonCMS: Version ${version} fetched successfully.`);
-  } catch (err) {
-    console.warn('GitHub Release Fetch: Using hardcoded fallback.', err);
+    // Trigger engagement toast
+    setTimeout(showEngagementToast, 8000);
+  } catch (error) {
+    console.error("VonCMS: Release fetch failed.", error);
   }
 }
-fetchLatestRelease();
+
+// Sidebar Scroll Spy & Active State (Docs/Manifesto)
+const initSidebarLogic = () => {
+  const links = document.querySelectorAll('.sidebar-links a');
+  const sections = document.querySelectorAll('section[id], header[id]');
+  
+  if (!links.length || !sections.length) return;
+
+  // Active state on click
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      links.forEach(l => l.classList.remove('active'));
+      link.classList.add('active');
+    });
+  });
+
+  // Scroll spy
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        links.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          }
+        });
+      }
+    });
+  }, { 
+    rootMargin: '-10% 0px -80% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(section => spyObserver.observe(section));
+};
+
+// Global Init
+document.addEventListener('DOMContentLoaded', () => {
+  fetchLatestRelease();
+  initSidebarLogic();
+});
 
 // LIGHTBOX LOGIC
 const lightbox = document.createElement('div');
