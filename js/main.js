@@ -119,6 +119,9 @@ const lightboxImg = lightbox.querySelector('img');
 const triggers = document.querySelectorAll('main img, section img, .cta-section img, header img, .hero img');
 
 triggers.forEach(trigger => {
+  // Ignore nav and footer images
+  if (trigger.closest('nav, footer')) return;
+
   trigger.style.cursor = 'zoom-in';
   trigger.addEventListener('click', () => {
     lightboxImg.src = trigger.src;
