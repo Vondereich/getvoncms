@@ -182,11 +182,15 @@ img {
 }
 
 .hero h1 {
+  color: var(--green);
   font-family: "Outfit", sans-serif;
   font-size: clamp(5rem, 15vw, 13rem);
   line-height: 0.78;
   letter-spacing: 0;
   text-transform: uppercase;
+  text-shadow:
+    0 0 18px rgba(167, 255, 79, 0.24),
+    0 0 54px rgba(167, 255, 79, 0.13);
 }
 
 .hero-lede {
@@ -414,7 +418,14 @@ main > section {
 }
 
 .split-section .browser-frame img {
-  max-height: 720px;
+  height: clamp(360px, 42vw, 520px);
+  max-height: none;
+  object-fit: cover;
+  object-position: top left;
+}
+
+.split-section .browser-frame {
+  align-self: start;
 }
 
 .proof-panel {

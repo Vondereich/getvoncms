@@ -170,7 +170,8 @@ main {
 }
 .hero-badge {
   display: inline-block;
-  padding: 3px 10px;
+  padding: 6px 12px;
+  margin-bottom: 1.1rem;
   background: var(--accent-dim);
   border: 1px solid var(--green-accent);
   color: var(--green-accent);
@@ -178,6 +179,7 @@ main {
   font-size: 0.7rem;
   font-weight: 700;
   border-radius: 4px;
+  line-height: 1.35;
 }
 .hero h1 {
   font-family: 'Outfit', sans-serif;
