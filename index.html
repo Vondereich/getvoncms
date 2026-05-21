@@ -4,44 +4,41 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>VonCMS · The Pragmatic Rebel in CMS · Ultra-Fast & Self-Hosted</title>
-<meta name="description" content="VonCMS is the pragmatic rebel in CMS. Ultra-fast, lightweight, and self-hosted, it's 56x lighter than WordPress. Built for those who want power without the bloat." />
-<meta name="keywords" content="VonCMS, Pragmatic Rebel, CMS, fast CMS, PHP CMS, React 19 CMS, self-hosted CMS, WordPress alternative, modern CMS" />
+<title>VonCMS - Premium Self-Hosted Publishing CMS</title>
+<meta name="description" content="VonCMS is a premium self-hosted CMS for fast publishing teams. React 19, PHP, built-in SEO, ads, AI writing, security hardening, and WordPress migration without plugin sprawl." />
+<meta name="keywords" content="VonCMS, premium CMS, self-hosted CMS, PHP CMS, React CMS, WordPress alternative, publishing CMS, SEO CMS" />
 <link rel="icon" type="image/png" href="upload/logo.png">
 <link rel="apple-touch-icon" href="upload/logo.png">
 
-<!-- Open Graph / Facebook -->
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://github.com/Vondereich/VonCMS" />
-<meta property="og:title" content="VonCMS · The Pragmatic Rebel in CMS" />
-<meta property="og:description" content="The ultra-fast, self-hosted CMS that gets out of your way. 56x lighter than WordPress. Experience the pragmatic rebel in modern publishing." />
+<meta property="og:title" content="VonCMS - Premium Self-Hosted Publishing CMS" />
+<meta property="og:description" content="A fast, self-hosted publishing system with premium editorial tools, native SEO, built-in security, and no plugin dependency maze." />
 <meta property="og:image" content="upload/TechpressDemo.webp" />
 
-<!-- Twitter -->
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://github.com/Vondereich/VonCMS" />
-<meta property="twitter:title" content="VonCMS · The Pragmatic Rebel in CMS" />
-<meta property="twitter:description" content="56x lighter than WordPress. Zero plugin headaches. Built for the pragmatic rebel." />
+<meta property="twitter:title" content="VonCMS - Premium Self-Hosted Publishing CMS" />
+<meta property="twitter:description" content="Premium publishing tools, native SEO, fast React frontend, and hardened PHP backend in one self-hosted CMS." />
 <meta property="twitter:image" content="upload/TechpressDemo.webp" />
 
 <link rel="canonical" href="https://github.com/Vondereich/VonCMS" />
 
-<!-- Structured Data (JSON-LD) -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "SoftwareApplication",
   "name": "VonCMS",
   "operatingSystem": "Linux, Windows, Web",
-  "applicationCategory": "BusinessApplication, CMS",
+  "applicationCategory": "CMS",
   "offers": {
     "@type": "Offer",
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "VonCMS is a ultra-fast, self-hosted CMS powered by React 19 and PHP. 56x lighter than WordPress with zero plugin headaches.",
+  "description": "VonCMS is a premium self-hosted CMS powered by React 19 and PHP with built-in SEO, publishing, security, and migration tooling.",
   "softwareVersion": "1.24.2",
-  "releaseNotes": "https://github.com/Vondereich/VonCMS/blob/main/Changelog.md",
+  "releaseNotes": "https://github.com/Vondereich/VonCMS/releases",
   "author": {
     "@type": "Organization",
     "name": "Vondereich"
@@ -51,632 +48,301 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;900&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
-<style>
-  :root {
-    --bg: #080808; --bg2: #0f0f0f; --bg3: #161616;
-    --border: rgba(255,255,255,0.07); --green-accent: #7CFC00;
-    --text: #f0ede8; --muted: #6b6762; --muted2: #888;
-  }
-  body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; margin: 0; }
-  a { text-decoration: none; color: inherit; }
-  nav { position: fixed; top: 0; width: 100%; height: 60px; background: rgba(8,8,8,0.85); backdrop-filter: blur(12px); z-index: 100; border-bottom: 1px solid var(--border); }
-  .hero { min-height: 100vh; display: flex; align-items: center; padding: 0 3rem; }
-  .hero-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 55fr 45fr; gap: 5rem; }
-</style>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
 <link rel="preload" href="css/style.css" as="style">
 <link rel="stylesheet" href="css/style.css">
-
 </head>
 <body>
-
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">
-    <img src="upload/logo.png" alt="VonCMS Logo" style="height: 32px; width: auto;">
-    VonCMS
-  </div>
-  <ul class="nav-links">
+<nav class="site-nav">
+  <a class="nav-logo" href="#top" aria-label="VonCMS home">
+    <img src="upload/logo.png" alt="" width="32" height="32">
+    <span>VonCMS</span>
+  </a>
+  <ul class="nav-links" aria-label="Primary navigation">
+    <li><a href="#product">Product</a></li>
     <li><a href="#features">Features</a></li>
-    <li><a href="philosophy.html">Philosophy</a></li>
+    <li><a href="#migration">Migration</a></li>
     <li><a href="docs.html">Docs</a></li>
-    <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="nav-cta">GitHub →</a></li>
+    <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="nav-cta">GitHub</a></li>
   </ul>
 </nav>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-grid-bg"></div>
-  <div class="hero-glow"></div>
-  <div class="hero-inner">
-    <!-- LEFT -->
-    <div class="hero-left">
-      <div class="hero-badge-container">
-        <div class="hero-badge" style="margin-bottom: 0;">The Pragmatic Rebel in CMS</div>
-        <div class="hero-badge" data-gh-version-badge style="margin-bottom: 0; opacity: 0.7; border-color: var(--border); background: transparent; color: var(--muted2);">v1.24.2 · Stable Release</div>
+<header class="hero" id="top">
+  <div class="hero-media" aria-hidden="true">
+    <img src="upload/TechpressDemo.webp" alt="">
+  </div>
+  <div class="hero-shade"></div>
+  <div class="hero-content">
+    <div class="eyebrow-row">
+      <span class="eyebrow">Premium self-hosted CMS</span>
+      <span class="eyebrow muted" data-gh-version-badge>v1.24.2 Stable</span>
+    </div>
+    <h1>VonCMS</h1>
+    <p class="hero-lede">
+      A polished publishing system for people who want WordPress-class capability without plugin sprawl, dashboard drag, or hosting drama.
+    </p>
+    <div class="hero-actions">
+      <a href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer" class="btn-primary">Download latest</a>
+      <a href="https://skripglobal.com/" rel="noopener noreferrer" class="btn-secondary">View live demo</a>
+    </div>
+    <dl class="hero-proof" aria-label="VonCMS product highlights">
+      <div><dt>React 19</dt><dd>Frontend</dd></div>
+      <div><dt>PHP 8.2+</dt><dd>Backend</dd></div>
+      <div><dt>0</dt><dd>SEO plugins needed</dd></div>
+      <div><dt>2 min</dt><dd>Install flow</dd></div>
+    </dl>
+  </div>
+</header>
+
+<main>
+  <section class="ticker" aria-label="Platform capabilities">
+    <div class="ticker-track">
+      <span>React 19 + Vite</span>
+      <span>PHP 8.2+</span>
+      <span>Native SEO</span>
+      <span>AI Writing</span>
+      <span>WordPress XML Migration</span>
+      <span>IndexNow</span>
+      <span>llms.txt</span>
+      <span>Ads Manager</span>
+      <span>CSRF Hardening</span>
+      <span>React 19 + Vite</span>
+      <span>PHP 8.2+</span>
+      <span>Native SEO</span>
+      <span>AI Writing</span>
+      <span>WordPress XML Migration</span>
+      <span>IndexNow</span>
+      <span>llms.txt</span>
+      <span>Ads Manager</span>
+      <span>CSRF Hardening</span>
+    </div>
+  </section>
+
+  <section class="product-section reveal" id="product">
+    <div class="section-copy">
+      <span class="section-kicker">Product</span>
+      <h2>Built like a modern publishing suite, shipped like a lightweight CMS.</h2>
+      <p>VonCMS combines a clean editorial cockpit, fast public themes, native SEO controls, monetization surfaces, media handling, and maintenance tooling in one self-hosted package.</p>
+    </div>
+    <div class="product-showcase">
+      <div class="browser-frame large">
+        <div class="browser-bar">
+          <span></span><span></span><span></span>
+          <p>skripglobal.com</p>
+        </div>
+        <img src="upload/TechpressDemo.webp" alt="VonCMS TechPress public site preview" class="lightbox-trigger" loading="lazy" width="1200" height="720">
       </div>
-      <h1 class="hero-title">
-        The CMS that<br>
-        <em>gets out</em><br>
-        <span class="line2">of your way.</span>
-      </h1>
-      <p class="hero-sub">
-        <strong>The pragmatic rebel in CMS.</strong> Ultra-fast, self-hosted, and zero plugin headaches.
-        VonCMS pairs React 19 with PHP to deliver a system that's
-        56× lighter than WordPress · and actually enjoyable to use.
-      </p>
-      <div class="hero-actions">
-        <a href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer" class="btn-primary">↓ Download Free</a>
-        <a href="https://skripglobal.com/" rel="noopener noreferrer" class="btn-secondary">🌍 Live Demo</a>
-      </div>
-      <div class="hero-meta">
-        <div class="hero-meta-item">
-          <strong>133ms</strong>
-          <span>Search speed</span>
-        </div>
-        <div class="hero-meta-item">
-          <strong>~200</strong>
-          <span>Core files</span>
-        </div>
-        <div class="hero-meta-item">
-          <strong>100</strong>
-          <span>SEO score</span>
-        </div>
-        <div class="hero-meta-item">
-          <strong>2min</strong>
-          <span>Setup time</span>
-        </div>
+      <div class="proof-panel">
+        <div><strong>100</strong><span>SEO-ready publishing baseline</span></div>
+        <div><strong>Built-in</strong><span>Ads, scheduling, AI, sitemap, IndexNow</span></div>
+        <div><strong>Self-hosted</strong><span>Apache, LiteSpeed, MySQL, MariaDB</span></div>
       </div>
     </div>
+  </section>
 
-    <!-- RIGHT: Dashboard widgets -->
-    <div class="hero-right">
-
-      <!-- Browser mockup with real dashboard -->
+  <section class="split-section reveal" id="editor">
+    <div class="visual-stack">
       <div class="browser-frame">
         <div class="browser-bar">
-          <div class="browser-dots">
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-            <div class="browser-dot"></div>
-          </div>
-          <div class="browser-url">admin · VonCMS</div>
+          <span></span><span></span><span></span>
+          <p>admin / editor</p>
         </div>
-        <img
-          src="upload/TechpressDemo.webp"
-          alt="VonCMS Dashboard"
-          class="lightbox-trigger"
-          style="width:100%; display:block; object-fit:cover; max-height:220px; object-position:top;"
-        />
+        <img src="upload/Editor.webp" alt="VonCMS editor interface with AI assistant and SEO panel" class="lightbox-trigger" loading="lazy" width="1200" height="760">
       </div>
-
-      <!-- Lighthouse scores -->
-      <div class="lh-card">
-        <div class="lh-scores">
-          <div class="lh-score">
-            <div class="lh-circle perfect">100</div>
-            <div class="lh-label">SEO</div>
-          </div>
-          <div class="lh-score">
-            <div class="lh-circle perfect">100</div>
-            <div class="lh-label">Perf</div>
-          </div>
-          <div class="lh-score">
-            <div class="lh-circle good">98</div>
-            <div class="lh-label">A11y</div>
-          </div>
-          <div class="lh-score">
-            <div class="lh-circle good">95</div>
-            <div class="lh-label">Best</div>
-          </div>
-        </div>
-        <div class="lh-meta">
-          <div class="lh-title">Lighthouse Audit</div>
-          <div class="lh-url">↗ skripglobal.com · live on VonCMS</div>
-        </div>
+    </div>
+    <div class="section-copy">
+      <span class="section-kicker">Editorial cockpit</span>
+      <h2>Write, optimize, publish, and monetize from one focused workspace.</h2>
+      <p>The editor keeps the writing canvas clean while the right-side controls handle publishing status, featured images, excerpts, AI drafting, and SEO health.</p>
+      <div class="mini-grid">
+        <div><strong>Tiptap editor</strong><span>Modern writing surface with clean output.</span></div>
+        <div><strong>AI assistant</strong><span>Draft and review without replacing the author.</span></div>
+        <div><strong>SEO health</strong><span>Guidance stays close to the publish action.</span></div>
+        <div><strong>Media flow</strong><span>Featured image and gallery controls in context.</span></div>
       </div>
-
-      <!-- Stat row -->
-      <div class="hero-stat-row">
-        <div class="hero-stat-box">
-          <strong>56×</strong>
-          <span>Faster than WP</span>
-        </div>
-        <div class="hero-stat-box">
-          <strong>0</strong>
-          <span>Plugins needed</span>
-        </div>
-        <div class="hero-stat-box">
-          <strong>PHP</strong>
-          <span>+ React 19</span>
-        </div>
-      </div>
-
     </div>
-  </div>
-</div>
+  </section>
 
-<!-- TICKER -->
-<div class="ticker">
-  <div class="ticker-track">
-    <div class="ticker-item"><span class="dot">◆</span> React 19 + Vite 6</div>
-    <div class="ticker-item"><span class="dot">◆</span> PHP 8.2--8.5</div>
-    <div class="ticker-item"><span class="dot">◆</span> 73+ API Handlers</div>
-    <div class="ticker-item"><span class="dot">◆</span> 6 Bundled Themes</div>
-    <div class="ticker-item"><span class="dot">◆</span> IndexNow Native</div>
-    <div class="ticker-item"><span class="dot">◆</span> AI Summary Native</div>
-    <div class="ticker-item"><span class="dot">◆</span> WordPress XML Migrator</div>
-    <div class="ticker-item"><span class="dot">◆</span> SEO Dashboard</div>
-    <div class="ticker-item"><span class="dot">◆</span> Content Scheduling</div>
-    <div class="ticker-item"><span class="dot">◆</span> CSRF Protection</div>
-    <div class="ticker-item"><span class="dot">◆</span> Self-Hosted</div>
-    <div class="ticker-item"><span class="dot">◆</span> Apache + LiteSpeed</div>
-    <!-- duplicate for seamless loop -->
-    <div class="ticker-item"><span class="dot">◆</span> React 19 + Vite 6</div>
-    <div class="ticker-item"><span class="dot">◆</span> PHP 8.2--8.5</div>
-    <div class="ticker-item"><span class="dot">◆</span> 73+ API Handlers</div>
-    <div class="ticker-item"><span class="dot">◆</span> 6 Bundled Themes</div>
-    <div class="ticker-item"><span class="dot">◆</span> IndexNow Native</div>
-    <div class="ticker-item"><span class="dot">◆</span> AI Summary Native</div>
-    <div class="ticker-item"><span class="dot">◆</span> WordPress XML Migrator</div>
-    <div class="ticker-item"><span class="dot">◆</span> SEO Dashboard</div>
-    <div class="ticker-item"><span class="dot">◆</span> Content Scheduling</div>
-    <div class="ticker-item"><span class="dot">◆</span> CSRF Protection</div>
-    <div class="ticker-item"><span class="dot">◆</span> Self-Hosted</div>
-    <div class="ticker-item"><span class="dot">◆</span> Apache + LiteSpeed</div>
-  </div>
-</div>
+  <section class="feature-section reveal" id="features">
+    <div class="section-copy centered">
+      <span class="section-kicker">Core features</span>
+      <h2>Premium capability without a plugin shopping list.</h2>
+      <p>Everything here ships as part of the baseline so the site stays maintainable after launch.</p>
+    </div>
+    <div class="features-grid">
+      <article>
+        <span>01</span>
+        <h3>Native SEO Suite</h3>
+        <p>Meta, Open Graph, structured data, sitemap, canonical URLs, IndexNow, and llms.txt support.</p>
+      </article>
+      <article>
+        <span>02</span>
+        <h3>Publisher Workflow</h3>
+        <p>Drafts, scheduled publishing, editor tools, smart tags, excerpts, and content-focused admin screens.</p>
+      </article>
+      <article>
+        <span>03</span>
+        <h3>Monetization Ready</h3>
+        <p>Ads Manager supports practical placements without sending the site into plugin dependency land.</p>
+      </article>
+      <article>
+        <span>04</span>
+        <h3>Security Baseline</h3>
+        <p>CSRF protection, session checks, role validation, rate limiting, path guards, and integrity monitoring.</p>
+      </article>
+      <article>
+        <span>05</span>
+        <h3>Media Handling</h3>
+        <p>Upload, organize, select, and optimize media with publisher-friendly file management.</p>
+      </article>
+      <article>
+        <span>06</span>
+        <h3>Theme System</h3>
+        <p>Production-ready themes give new installs a real publication shape from day one.</p>
+      </article>
+    </div>
+  </section>
 
-<!-- FEATURES -->
-<section id="features">
-  <div class="reveal">
-    <div class="section-label">What's Included</div>
-    <h2 class="section-title">Everything. Out of the box.</h2>
-    <p class="section-desc">Auto WebP, AI Writer, IndexNow, llms.txt, Smart Tags, Integrity Radar — all core, zero plugins.</p>
-  </div>
-  <div class="features-grid reveal">
-    <div class="feature-card">
-      <span class="feature-icon">⚡</span>
-      <div class="feature-title">React 19 + Vite Frontend</div>
-      <div class="feature-desc">Sub-second page loads powered by the latest React with Vite bundling. Fast by default, not by configuration.</div>
-      <span class="feature-tag">PERFORMANCE</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🔍</span>
-      <div class="feature-title">VonSEO — Lighthouse 100</div>
-      <div class="feature-desc">Meta tags, Open Graph, structured data, and canonical URLs baked right in. No Yoast. No configuration maze.</div>
-      <span class="feature-tag">SEO</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">💰</span>
-      <div class="feature-title">Built-in Ads Manager</div>
-      <div class="feature-desc">Header, sidebar, and in-feed ad placements. AdSense-ready. Monetize without touching a plugin marketplace.</div>
-      <span class="feature-tag">MONETIZATION</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">📂</span>
-      <div class="feature-title">Drag-Drop File Manager</div>
-      <div class="feature-desc">Upload, organize, and manage your media with an intuitive drag-and-drop interface. No FTP needed.</div>
-      <span class="feature-tag">CONTENT</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">🕒</span>
-      <div class="feature-title">Content Scheduling</div>
-      <div class="feature-desc">Queue posts to publish at exactly the right time. Set it, forget it, and wake up to live content.</div>
-      <span class="feature-tag">PUBLISHING</span>
-    </div>
-    <div class="feature-card">
-      <span class="feature-icon">✏️</span>
-      <div class="feature-title">Tiptap Powered Editor</div>
-      <div class="feature-desc">A modern, headless editor that stays out of your way. Write clean content without fighting the interface.</div>
-      <span class="feature-tag">EDITOR</span>
-    </div>
-  </div>
-</section>
-
-<div class="full-divider"></div>
-
-<!-- COMPARISON (HACKER DASHBOARD STYLE) -->
-<section id="versus">
-  <div class="reveal">
-    <div class="section-label">The Showdown</div>
-    <h2 class="section-title">VonCMS vs. The Giant.</h2>
-    <p class="section-desc">Why settle for a 21-year-old legacy system when you can have a modern baseline?</p>
-  </div>
-
-  <div class="compare-container reveal">
-    <div class="compare-header">
-      <div class="compare-tab active">System Metrics</div>
+  <section class="comparison-band reveal" id="comparison">
+    <div class="section-copy">
+      <span class="section-kicker">Positioning</span>
+      <h2>A cleaner baseline than legacy CMS stacks.</h2>
+      <p>VonCMS is designed for owners who want the core publishing, SEO, security, migration, and monetization path already assembled.</p>
     </div>
     <div class="compare-table-wrapper">
       <table class="compare-table">
         <thead>
           <tr>
-            <th>Metric</th>
-            <th>WordPress (Legacy)</th>
-            <th class="highlight">VonCMS (Rentaka)</th>
+            <th>Area</th>
+            <th>Plugin-heavy stack</th>
+            <th>VonCMS baseline</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Base Payload</td>
-            <td>~72MB (Core only)</td>
-            <td class="highlight">Under 1MB (Lighter)</td>
+            <td>SEO</td>
+            <td>External plugin configuration</td>
+            <td>Native controls and crawler files</td>
           </tr>
           <tr>
-            <td>Database Queries</td>
-            <td>40-120 per page</td>
-            <td class="highlight">2-5 (Optimized)</td>
+            <td>Publishing</td>
+            <td>Mixed editor and plugin screens</td>
+            <td>Focused admin workflow</td>
           </tr>
           <tr>
-            <td>Plugin Dependency</td>
-            <td>Required for SEO/Ads/Security</td>
-            <td class="highlight">0 (All Native)</td>
+            <td>Performance</td>
+            <td>Theme and plugin dependent</td>
+            <td>React frontend with lean PHP APIs</td>
           </tr>
           <tr>
-            <td>Frontend Tech</td>
-            <td>Classic PHP / jQuery</td>
-            <td class="highlight">React 19 + Vite</td>
+            <td>Security</td>
+            <td>Patchwork of add-ons</td>
+            <td>Hardened application baseline</td>
           </tr>
           <tr>
-            <td>Security Model</td>
-            <td>Reactive (Patches)</td>
-            <td class="highlight">Hardened Baseline</td>
-          </tr>
-          <tr>
-            <td>Asset Management</td>
-            <td>Manual / Plugin required</td>
-            <td class="highlight">Auto WebP + CDN Ready</td>
+            <td>Ownership</td>
+            <td>Marketplace dependency</td>
+            <td>Self-hosted package</td>
           </tr>
         </tbody>
       </table>
     </div>
-    <div class="compare-footer">
-      <div class="status-indicator">
-        <span class="status-dot"></span>
-        SYSTEMS OPTIMIZED · RENTAKA BASELINE ACTIVE
-      </div>
-    </div>
-  </div>
-</section>
+  </section>
 
-<div class="full-divider"></div>
+  <section class="migration-section reveal" id="migration">
+    <div class="section-copy">
+      <span class="section-kicker">Migration</span>
+      <h2>Bring WordPress content over without dragging the old stack with it.</h2>
+      <p>Upload a WXR export, process posts in batches, extract images, avoid duplicate imports, and recover incomplete runs.</p>
+    </div>
+    <div class="steps">
+      <div><strong>01</strong><span>Export WordPress WXR</span></div>
+      <div><strong>02</strong><span>Upload into WP Bridge</span></div>
+      <div><strong>03</strong><span>Import posts and media</span></div>
+      <div><strong>04</strong><span>Review and publish on VonCMS</span></div>
+    </div>
+  </section>
 
-<!-- WRITING EXPERIENCE -->
-<section id="editor">
-  <div class="reveal">
-    <div class="section-label">The Interface</div>
-    <h2 class="section-title">A writing experience<br>that breathes.</h2>
-    <p class="section-desc">Distraction-free. Surgical precision. Powered by Tiptap for the cleanest content output in the game.</p>
-  </div>
+  <section class="theme-section reveal">
+    <div class="section-copy centered">
+      <span class="section-kicker">Design system</span>
+      <h2>Premium themes and extension surfaces from the first install.</h2>
+    </div>
+    <div class="theme-grid">
+      <article>
+        <img src="upload/TechpressDemo.webp" alt="TechPress theme preview" loading="lazy" width="600" height="380">
+        <div><strong>TechPress</strong><span>News and magazine publishing baseline</span></div>
+      </article>
+      <article>
+        <img src="upload/extension.webp" alt="VonCMS extensions manager preview" loading="lazy" width="600" height="380">
+        <div><strong>Extensions</strong><span>Built-in extension management surface</span></div>
+      </article>
+    </div>
+  </section>
 
-  <div class="editor-showcase reveal">
-    <div class="browser-frame">
-      <div class="browser-bar">
-        <div class="browser-dots">
-          <div class="browser-dot"></div>
-          <div class="browser-dot"></div>
-          <div class="browser-dot"></div>
-        </div>
-        <div class="browser-url">editor · VonCMS</div>
-      </div>
-      <img src="upload/Editor.webp" alt="VonCMS Editor" class="editor-img" loading="lazy" width="800" height="540" />
+  <section class="quickstart-section reveal" id="quickstart">
+    <div class="section-copy">
+      <span class="section-kicker">Install</span>
+      <h2>Upload, connect, publish.</h2>
+      <p>No local build chain is required for normal deployment. Download the release, upload it to hosting, connect the database, and finish the browser installer.</p>
     </div>
-    
-    <div class="editor-features">
-      <div class="editor-feat-item">
-        <strong>Instant Preview</strong>
-        <span>What you see is exactly what your readers get.</span>
-      </div>
-      <div class="editor-feat-item">
-        <strong>Auto-Save</strong>
-        <span>Never lose a word. VonCMS saves as you think.</span>
-      </div>
-      <div class="editor-feat-item">
-        <strong>Clean Output</strong>
-        <span>No junk HTML. Just semantic, SEO-ready markup.</span>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="terminal-card">
+      <div class="terminal-head"><span></span><span></span><span></span><p>production setup</p></div>
+      <pre><code># Requirements
+PHP 8.2+ / MySQL 5.7+ or MariaDB 10.3+ / Apache or LiteSpeed
 
-<div class="full-divider"></div>
+# Download
+https://github.com/Vondereich/VonCMS/releases
 
-<!-- BRIDGE -->
-<section>
-  <div class="reveal">
-    <div class="section-label">WordPress Migration</div>
-    <h2 class="section-title">WordPress XML Migrator</h2>
-    <p class="section-desc">Escape WordPress in minutes. Upload your WXR export and let VonCMS handle the rest · safely, without duplicates.</p>
-  </div>
-  <div class="bridge-section reveal" style="margin-top: 3rem;">
-    <div>
-      <h3 style="font-family:'Barlow Condensed',sans-serif; font-size:2rem; font-weight:900; text-transform:uppercase; letter-spacing:-0.01em; margin-bottom:.75rem; line-height:.95;">
-        One-click migration.<br>Zero stress.
-      </h3>
-      <p style="color:#a09b95; font-size:1rem; line-height:1.75; margin-bottom:1.5rem;">
-        Handles 1,000+ posts in batch without timeouts. Auto-extracts featured images,
-        detects duplicates on re-run, and self-heals incomplete imports.
-      </p>
-      <div style="display:flex; flex-wrap:wrap; gap:.75rem;">
-        <div style="display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--muted2);">
-          <span style="color:var(--green);">✓</span> Batch 1,000+ posts
-        </div>
-        <div style="display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--muted2);">
-          <span style="color:var(--green);">✓</span> Auto-extract images
-        </div>
-        <div style="display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--muted2);">
-          <span style="color:var(--green);">✓</span> Smart deduplication
-        </div>
-        <div style="display:flex; align-items:center; gap:6px; font-size:.8rem; color:var(--muted2);">
-          <span style="color:var(--green);">✓</span> Self-healing import
-        </div>
-      </div>
-    </div>
-    <div class="bridge-steps">
-      <div class="bridge-step">
-        <div class="bridge-step-num">01</div>
-        <div class="bridge-step-text">
-          <strong>Export from WordPress</strong>
-          <span>Tools → Export → All content → Download WXR file</span>
-        </div>
-      </div>
-      <div class="bridge-step">
-        <div class="bridge-step-num">02</div>
-        <div class="bridge-step-text">
-          <strong>Upload to VonCMS</strong>
-          <span>Admin → WP Bridge → Upload your .xml file</span>
-        </div>
-      </div>
-      <div class="bridge-step">
-        <div class="bridge-step-num">03</div>
-        <div class="bridge-step-text">
-          <strong>Click Import</strong>
-          <span>VonCMS processes posts, images, and categories automatically</span>
-        </div>
-      </div>
-      <div class="bridge-step">
-        <div class="bridge-step-num">04</div>
-        <div class="bridge-step-text">
-          <strong>Done. You're free.</strong>
-          <span>All posts live. No duplicates. No broken imports.</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+# Upload and install
+unzip <span data-gh-zip-name>voncms-latest.zip</span> -d public_html/
+open https://yourdomain.com
 
-<div class="full-divider"></div>
+# Done
+database connected
+admin account created
+VonCMS is live</code></pre>
+    </div>
+  </section>
 
-<!-- SECURITY -->
-<section id="security">
-  <div class="reveal">
-    <div class="section-label">Security</div>
-    <h2 class="section-title">Phase 2 Security Hardening.<br>Multi-layer<br>protection.</h2>
-    <p class="section-desc">Security built into the architecture · not bolted on afterward.</p>
-  </div>
-  <div class="sec-pipeline reveal">
-    <div class="sec-node">73 API Handlers</div>
-    <div class="sec-arrow">→</div>
-    <div class="sec-node">Role Check</div>
-    <div class="sec-arrow">→</div>
-    <div class="sec-node">CSRF</div>
-    <div class="sec-arrow">→</div>
-    <div class="sec-node">Session</div>
-    <div class="sec-arrow">→</div>
-    <div class="sec-node">Path Guard</div>
-    <div class="sec-arrow">→</div>
-    <div class="sec-node">Admin Check</div>
-    <div class="sec-arrow">→</div>
-    <div class="sec-node">Execute</div>
-  </div>
-  <div class="sec-items reveal">
-    <div class="sec-item">
-      <span class="sec-item-icon">🛡️</span>
-      <div>
-        <strong>CSRF Protection</strong>
-        <span>Token-based forgery prevention on every write endpoint and form submission</span>
-      </div>
+  <section class="video-section reveal">
+    <div class="section-copy centered">
+      <span class="section-kicker">Walkthrough</span>
+      <h2>See the product in motion.</h2>
+      <p>Watch a technical walkthrough and product baseline overview.</p>
     </div>
-    <div class="sec-item">
-      <span class="sec-item-icon">🔗</span>
-      <div>
-        <strong>Session Binding</strong>
-        <span>Server-side session validation across all 73 API endpoints · no exceptions</span>
-      </div>
-    </div>
-    <div class="sec-item">
-      <span class="sec-item-icon">⏱️</span>
-      <div>
-        <strong>Rate Limiting</strong>
-        <span>Brute-force and flooding protection baked in at the middleware layer</span>
-      </div>
-    </div>
-    <div class="sec-item">
-      <span class="sec-item-icon">🔒</span>
-      <div>
-        <strong>Path Guard</strong>
-        <span>Full absolute path resolution and hardening · eliminates directory traversal and hosting ghost bugs</span>
-      </div>
-    </div>
-    <div class="sec-item">
-      <span class="sec-item-icon">🕵️</span>
-      <div>
-        <strong>Integrity Radar</strong>
-        <span>Self-healing core · automatically detects and alerts on tampered or corrupted system files</span>
-      </div>
-    </div>
-    <div class="sec-item">
-      <span class="sec-item-icon">🔐</span>
-      <div>
-        <strong>Hardened SMTP</strong>
-        <span>Direct socket-based SMTP with TLS enforcement, automatic fallback to PHP mail()</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="full-divider"></div>
-
-<!-- MISSION & PHILOSOPHY -->
-<section id="mission">
-  <div class="reveal">
-    <div class="section-label">The Vision</div>
-    <h2 class="section-title">Everything you need.<br><em>Nothing you don't.</em></h2>
-    <p class="section-desc">VonCMS arrives with the lights on, the furniture in place, and the kitchen already stocked. No plugin chaos · just pure publishing power.</p>
-  </div>
-  
-  <div class="mission-grid reveal">
-    <div class="mission-item">
-      <div class="mission-icon">🛡️</div>
-      <div class="mission-content">
-        <strong>Open Source Transition</strong>
-        <p>We are on a mission to modernize PHP publishing. VonCMS is planned to move toward full open-source (MIT/GPL) in upcoming major releases.</p>
-      </div>
-    </div>
-    <div class="mission-item">
-      <div class="mission-icon">🤖</div>
-      <div class="mission-content">
-        <strong>AI Privacy & Rotation</strong>
-        <p>Your Gemini API keys stay admin-only with built-in rotation and expiry metadata. Advanced AI features without the privacy risk.</p>
-      </div>
-    </div>
-    <div class="mission-item">
-      <div class="mission-icon">⚓</div>
-      <div class="mission-content">
-        <strong>Built for Publishers</strong>
-        <p>Designed for the person who publishes daily, not just for the engineer. A CMS that prioritizes the writing experience above all else.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="full-divider"></div>
-
-<!-- VIDEO PREVIEW -->
-<section id="video">
-  <div class="reveal">
-    <div class="section-label">Walkthrough</div>
-    <h2 class="section-title">See VonCMS in action.</h2>
-    <p class="section-desc">Watch a complete 1.23.10 "Rentaka" baseline walkthrough and technical overview.</p>
-  </div>
-  
-  <div class="video-container reveal">
-    <a href="https://www.youtube.com/watch?v=glbqEG37aiM" target="_blank" class="video-card">
-      <img src="https://img.youtube.com/vi/glbqEG37aiM/maxresdefault.jpg" alt="VonCMS Walkthrough" class="video-thumb" loading="lazy" width="960" height="540">
-      <div class="video-overlay">
-        <div class="play-btn">
-          <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
-        </div>
-        <span>Watch Walkthrough</span>
-      </div>
+    <a href="https://www.youtube.com/watch?v=glbqEG37aiM" target="_blank" rel="noopener noreferrer" class="video-card">
+      <img src="https://img.youtube.com/vi/glbqEG37aiM/maxresdefault.jpg" alt="VonCMS walkthrough video thumbnail" loading="lazy" width="960" height="540">
+      <span>Watch walkthrough</span>
     </a>
-  </div>
-</section>
+  </section>
 
-<div class="full-divider"></div>
-
-<!-- THEMES -->
-<section>
-  <div class="reveal">
-    <div class="section-label">Themes</div>
-    <h2 class="section-title">Six premium themes.<br>All production-ready.</h2>
-    <p class="section-desc">Not starter templates · fully built, opinionated designs shipping with every install.</p>
-  </div>
-  <div class="themes-grid reveal">
-    <!-- Theme 1 -->
-    <div class="theme-card flagship">
-      <div class="theme-preview-img">
-        <div class="theme-badge">FLAGSHIP</div>
-        <img src="upload/TechpressDemo.webp" alt="VonCMS TechPress" loading="lazy" width="600" height="375" />
-      </div>
-      <div class="theme-info">
-        <h3>TechPress</h3>
-        <p>Premium News & Magazine baseline</p>
-      </div>
+  <section class="cta-section reveal">
+    <span class="section-kicker">Get started</span>
+    <h2>Launch a faster publishing stack.</h2>
+    <p>Free to download, self-hosted, and designed for serious publishing without CMS bloat.</p>
+    <div class="hero-actions center">
+      <a href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer" class="btn-primary">Download VonCMS</a>
+      <a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="btn-secondary">Star on GitHub</a>
     </div>
+    <p class="cta-note" data-gh-cta-note>Latest stable: v1.24.2 - PHP 8.2+ - MySQL - Apache</p>
+  </section>
+</main>
 
-    <!-- Extension Showcase -->
-    <div class="theme-card extensions">
-      <div class="theme-preview-img">
-        <div class="theme-badge secondary">CORE FEATURE</div>
-        <img src="upload/extension.webp" alt="VonCMS Extensions" loading="lazy" width="600" height="375" />
-      </div>
-      <div class="theme-info">
-        <h3>Extensions</h3>
-        <p>Native Built-in Plugin Engine</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="full-divider"></div>
-
-<!-- QUICKSTART -->
-<section id="quickstart">
-  <div class="reveal">
-    <div class="section-label">Installation</div>
-    <h2 class="section-title">Up in 2 minutes.</h2>
-    <p class="section-desc">No CLI. No Node.js dependency hell. Upload, extract, open browser, done.</p>
-  </div>
-  <div class="quickstart reveal">
-    <div class="qs-header">
-      <div class="qs-dots">
-        <div class="qs-dot"></div>
-        <div class="qs-dot"></div>
-        <div class="qs-dot"></div>
-      </div>
-      <span class="qs-label">bash · installation guide</span>
-    </div>
-    <div class="qs-body">
-      <div><span class="qs-comment"># System Requirements: PHP 8.2+, MySQL 5.7+ / MariaDB 10.3+, Apache/LiteSpeed</span></div>
-      <div>&nbsp;</div>
-      <div><span class="qs-step">STEP 1</span> <span class="qs-comment">→ Download from GitHub Releases</span></div>
-      <div><span class="qs-cmd">  wget </span><span class="qs-highlight">https://github.com/Vondereich/VonCMS/releases</span></div>
-      <div>&nbsp;</div>
-      <div><span class="qs-step">STEP 2</span> <span class="qs-comment">→ Upload to your hosting (cPanel / DirectAdmin)</span></div>
-      <div><span class="qs-cmd">  unzip <span data-gh-zip-name>voncms-latest.zip</span> -d public_html/</span></div>
-      <div>&nbsp;</div>
-      <div><span class="qs-step">STEP 3</span> <span class="qs-comment">→ Open your domain in browser</span></div>
-      <div><span class="qs-cmd">  open </span><span class="qs-highlight">https://yourdomain.com</span></div>
-      <div>&nbsp;</div>
-      <div><span class="qs-step">STEP 4</span> <span class="qs-comment">→ Follow the 2-minute installation wizard</span></div>
-      <div><span class="qs-cmd">  <span class="qs-highlight">✓</span> Database connected</span></div>
-      <div><span class="qs-cmd">  <span class="qs-highlight">✓</span> Admin account created</span></div>
-      <div><span class="qs-cmd">  <span class="qs-highlight">✓</span> VonCMS is live.</span></div>
-    </div>
-  </div>
-</section>
-
-<div class="full-divider"></div>
-
-<!-- CTA -->
-<div class="cta-section reveal">
-  <div class="section-label">Get Started</div>
-  <h2 class="cta-title">Stop fighting your CMS.<br><em>Start publishing.</em></h2>
-  <p class="cta-desc">Free. Self-hosted. No subscription. Everything you need to run a fast, modern content site.</p>
-  <div class="cta-actions">
-    <a href="https://github.com/Vondereich/VonCMS/releases" class="btn-primary">↓ Download VonCMS Free</a>
-    <a href="https://github.com/Vondereich/VonCMS" class="btn-secondary">⭐ Star on GitHub</a>
-  </div>
-  <p class="cta-note" data-gh-cta-note>Latest Stable: v1.24.2 · PHP 8.2+ · MySQL · Apache</p>
-</div>
-
-<!-- FOOTER -->
 <footer>
   <div class="footer-brand">
-    <img src="upload/logo.png" alt="VonCMS Logo" style="height: 24px; width: auto; vertical-align: middle; margin-right: 8px;">
-    VonCMS
+    <img src="upload/logo.png" alt="" width="28" height="28">
+    <span>VonCMS</span>
   </div>
   <ul class="footer-links">
+    <li><a href="#product">Product</a></li>
     <li><a href="#features">Features</a></li>
     <li><a href="philosophy.html">Philosophy</a></li>
-    <li><a href="docs.html">Documentation</a></li>
+    <li><a href="docs.html">Docs</a></li>
   </ul>
-  <div class="footer-right">Built with React 19 + Vite 6 + PHP 8.2--8.5 · Proprietary Baseline</div>
+  <p>React 19 + Vite + PHP 8.2+ self-hosted CMS</p>
 </footer>
 
 <script src="js/main.js" defer></script>
-
 </body>
 </html>

@@ -56,8 +56,7 @@ async function fetchLatestRelease() {
     if (ctaNote) ctaNote.textContent = `Latest Stable: ${version} · PHP 8.2+ · MySQL · Apache`;
 
     console.log(`VonCMS: Version ${version} fetched successfully.`);
-    // Trigger engagement toast
-    setTimeout(showEngagementToast, 8000);
+    // The toast initializes below; release fetch only updates visible metadata.
   } catch (error) {
     console.error("VonCMS: Release fetch failed.", error);
   }
