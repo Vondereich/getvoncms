@@ -102,6 +102,36 @@ const initSidebarLogic = () => {
 document.addEventListener('DOMContentLoaded', () => {
   fetchLatestRelease();
   initSidebarLogic();
+
+  // ── BURGER MENU TOGGLE ──
+  const burger = document.getElementById('burger-btn');
+  const navLinks = document.getElementById('nav-links');
+
+  if (burger && navLinks) {
+    burger.addEventListener('click', () => {
+      const isOpen = navLinks.classList.toggle('open');
+      burger.classList.toggle('active');
+      burger.setAttribute('aria-expanded', isOpen);
+    });
+
+    // Close menu when a nav link is clicked
+    navLinks.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navLinks.classList.remove('open');
+        burger.classList.remove('active');
+        burger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    // Close menu on outside click
+    document.addEventListener('click', (e) => {
+      if (!burger.contains(e.target) && !navLinks.contains(e.target)) {
+        navLinks.classList.remove('open');
+        burger.classList.remove('active');
+        burger.setAttribute('aria-expanded', 'false');
+      }
+    });
+  }
 });
 
 // UNIVERSAL LIGHTBOX LOGIC
