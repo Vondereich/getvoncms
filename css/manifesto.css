@@ -82,6 +82,33 @@ nav {
   box-shadow: 0 0 15px var(--accent-glow);
 }
 
+.nav-links-manifesto {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  list-style: none;
+}
+.nav-links-manifesto a {
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.nav-links-manifesto a:hover {
+  color: var(--text);
+}
+.nav-links-manifesto .nav-cta {
+  background: var(--green-accent);
+  color: #000 !important;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
 /* ─── DOCS LAYOUT ─── */
 .layout {
   max-width: 1300px;
@@ -563,7 +590,7 @@ footer {
   }
 
   .nav-links-manifesto {
-    display: none !important;
+    display: none;
     position: fixed;
     top: var(--nav-height);
     left: 0;
@@ -580,7 +607,7 @@ footer {
   }
 
   .nav-links-manifesto.open {
-    display: flex !important;
+    display: flex;
   }
 
   .nav-links-manifesto li {
@@ -588,9 +615,9 @@ footer {
   }
 
   .nav-links-manifesto a {
-    display: block !important;
-    padding: 0.85rem 0 !important;
-    font-size: 1rem !important;
+    display: block;
+    padding: 0.85rem 0;
+    font-size: 1rem;
     border-bottom: 1px solid var(--border);
   }
 
