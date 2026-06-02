@@ -3,47 +3,32 @@
 Version: `1.24.2`
 Software: `VonCMS`
 Publisher: `Vondereich`
+License: `GPL-3.0`
 
-This file is a plain-language summary for the current release line. It explains the general usage model of VonCMS, but it is not a replacement for any separate commercial agreement or written permission from the publisher.
+VonCMS is open-source software distributed under the GNU General Public License v3.0 (GPL-3.0).
 
 ## License model
 
-VonCMS is distributed as proprietary software.
+You are free to:
+- **Use**: Install and run VonCMS for any purpose (personal, commercial, or enterprise).
+- **Modify**: Change the source code to suit your needs.
+- **Distribute**: Share copies of the original or modified code.
 
-You may use VonCMS to build and operate your own sites within the scope of your licensed copy or approved distribution.
-
-## What this generally allows
-
-- installing VonCMS on your own site or client project
-- using the bundled core features, themes, and plugins as part of that installation
-- customizing configuration, content, and normal site behavior for your deployment
-
-## What this does not grant by default
-
-- ownership of the VonCMS core
-- redistribution of the core as your own product
-- resale or relicensing of the core without permission
-- bundling VonCMS into another commercial product or auto-installer without approval
-- removing authorship or branding in ways not covered by a separate agreement
+Under the following terms:
+- **Copyleft (ShareAlike)**: If you distribute modified versions of VonCMS, they must also be released under the GPL-3.0 license.
+- **Source Code**: You must make the source code available when distributing the software.
+- **State Changes**: You must state changes made to the original code.
 
 ## Themes, plugins, and extensions
 
-Bundled themes, plugins, and supporting assets remain part of the VonCMS product unless a separate license states otherwise.
-
-If you plan to redistribute modified themes, bundle custom builds for clients at scale, or offer VonCMS as part of a managed platform, get written approval first.
-
-## Official distribution
-
-Use official release packages and official project channels when distributing or installing VonCMS.
+Themes and plugins that tightly integrate with the VonCMS core API are generally considered derivative works and must comply with the GPL-3.0 license.
 
 ## Warranty disclaimer
 
-VonCMS is provided as-is, without any guarantee that it will fit every hosting environment or business use case.
-
-You are responsible for testing updates, keeping backups, and verifying your hosting setup.
+VonCMS is provided "as is", without warranty of any kind, express or implied, including but not limited to the warranties of merchantability, fitness for a particular purpose and noninfringement.
 
 ## Contact
 
-For licensing, partnerships, redistribution, or white-label questions:
+For alternative licensing, partnerships, or enterprise support questions:
 
 `kurama87@gmail.com`
