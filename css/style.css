@@ -605,7 +605,7 @@ main > section {
 
 .compare-table {
   width: 100%;
-  min-width: 680px;
+  min-width: 540px;
   border-collapse: collapse;
   text-align: left;
 }
