@@ -639,6 +639,34 @@ main > section {
   font-weight: 600;
 }
 
+@media (max-width: 980px) {
+  .compare-table {
+    min-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .compare-table th,
+  .compare-table td {
+    padding: 1rem 0.75rem;
+    font-size: 0.88rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .compare-table-wrapper {
+    margin-top: 2rem;
+  }
+  .compare-table {
+    min-width: 480px;
+  }
+  .compare-table th,
+  .compare-table td {
+    padding: 0.85rem 0.6rem;
+    font-size: 0.8rem;
+  }
+}
+
 .steps {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
