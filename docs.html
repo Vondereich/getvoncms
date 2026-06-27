@@ -3,10 +3,23 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Documentation · VonCMS</title>
-<meta name="description" content="VonCMS documentation overview for installation, requirements, architecture, themes, plugins, security, routing, upgrades, and release checks." />
+<title>VonCMS Documentation | Hybrid Publishing Suite Setup</title>
+<meta name="description" content="Read the VonCMS documentation for installing and running a hybrid publishing suite with React 19 frontend, PHP REST API backend, SEO output, ad compatibility, themes, plugins, and no Node.js production requirement." />
+<meta name="keywords" content="VonCMS documentation, hybrid publishing suite docs, VonCMS install, PHP REST API CMS docs, React 19 CMS docs, self-hosted publishing documentation, news portal CMS setup" />
 <link rel="icon" type="image/png" href="upload/logo.png">
 <link rel="apple-touch-icon" href="upload/logo.png">
+
+<link rel="canonical" href="https://github.com/Vondereich/VonCMS" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://github.com/Vondereich/VonCMS" />
+<meta property="og:title" content="VonCMS Documentation | Hybrid Publishing Suite Setup" />
+<meta property="og:description" content="Deploy ZIP installation, React 19 frontend, PHP REST API backend, SEO output, ad compatibility, themes, plugins, routing, upgrades, and release checks for VonCMS." />
+<meta property="og:image" content="upload/owl2.png" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://github.com/Vondereich/VonCMS" />
+<meta property="twitter:title" content="VonCMS Documentation | Hybrid Publishing Suite Setup" />
+<meta property="twitter:description" content="Guides for installing, operating, extending, and verifying the self-hosted VonCMS publishing suite." />
+<meta property="twitter:image" content="upload/owl2.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -57,6 +70,7 @@
       <ul class="sidebar-links">
         <li><a href="#routing">Routing</a></li>
         <li><a href="#security">Security</a></li>
+        <li><a href="#docs-map">Documentation Map</a></li>
         <li><a href="#release">Release Checks</a></li>
       </ul>
     </div>
@@ -67,7 +81,7 @@
       <div class="hero-badge">Documentation v1.25.1</div>
       <h1>Run it on hosting. Extend it from source.</h1>
       <p class="lead">
-        VonCMS is a lightweight PHP and React CMS for shared hosting. Use the Deploy ZIP for runtime installs, or use the source repository when you want custom themes, plugins, APIs, fixes, and release packages.
+        VonCMS is a hybrid publishing suite for publishers, from personal blogs to high-traffic news portals. Use the Deploy ZIP for runtime installs, or use the source repository when you want custom themes, plugins, APIs, fixes, and release packages.
       </p>
     </header>
 
@@ -197,6 +211,29 @@
         <li>Back up files and database before upgrades.</li>
         <li>Review security-sensitive PHP API changes with focused tests.</li>
       </ul>
+    </section>
+
+    <section id="docs-map">
+      <h2>Documentation Map</h2>
+      <p>The full VonCMS developer and operator docs live in the source repository. Use the focused file for the area you are changing instead of treating the README as the only source.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>Install &amp; Upgrade</h4>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md" rel="noopener noreferrer">Installation</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/UPGRADE.md" rel="noopener noreferrer">Upgrade</a>, and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/VPS.md" rel="noopener noreferrer">VPS deployment</a> cover hosting, updates, and server notes.</p>
+        </div>
+        <div class="card">
+          <h4>Runtime Internals</h4>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/API.md" rel="noopener noreferrer">API</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/ROUTING.md" rel="noopener noreferrer">Routing</a>, and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/SECURITY.md" rel="noopener noreferrer">Security</a> explain the PHP runtime, route handling, and review boundaries.</p>
+        </div>
+        <div class="card">
+          <h4>Customization</h4>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/THEME_DEVELOPMENT.md" rel="noopener noreferrer">Theme development</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/PLUGIN_DEVELOPMENT.md" rel="noopener noreferrer">Plugin development</a>, and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/CUSTOM_FONTS.md" rel="noopener noreferrer">Custom fonts</a> cover source-level changes.</p>
+        </div>
+        <div class="card">
+          <h4>Project Truth</h4>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/CHANGELOG.md" rel="noopener noreferrer">Changelog</a> is shipped release truth. <a href="https://github.com/Vondereich/VonCMS/blob/main/CONTRIBUTING.md" rel="noopener noreferrer">Contributing</a> covers issues, pull requests, and security reporting.</p>
+        </div>
+      </div>
     </section>
 
     <section id="release">
