@@ -15,6 +15,7 @@
   --line: rgba(17, 41, 107, 0.14);
   --line-strong: rgba(17, 41, 107, 0.24);
   --shadow: 0 24px 70px rgba(17, 41, 107, 0.13);
+  --nav-height: 72px;
 }
 
 html {
@@ -25,6 +26,7 @@ html {
 
 body {
   min-width: 320px;
+  padding-top: var(--nav-height);
   overflow-x: hidden;
   background: var(--paper);
   color: var(--ink);
@@ -45,18 +47,22 @@ img {
 }
 
 .site-nav {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  height: 72px;
+  height: var(--nav-height);
   padding: 0 clamp(1rem, 4vw, 3rem);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  background: rgba(255, 255, 255, 0.92);
-  border-bottom: 1px solid var(--line);
-  backdrop-filter: blur(18px);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.58));
+  border-bottom: 1px solid rgba(255, 255, 255, 0.62);
+  box-shadow: 0 18px 44px rgba(17, 41, 107, 0.1);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
 }
 
 .nav-logo,
@@ -71,11 +77,31 @@ img {
   letter-spacing: 0;
 }
 
+.nav-logo {
+  transition: color 180ms ease, transform 180ms ease;
+}
+
 .nav-logo img,
 .footer-brand img {
   width: 34px;
   height: 34px;
   object-fit: contain;
+}
+
+.nav-logo img {
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
+.nav-logo:hover {
+  color: var(--blue);
+  transform: translateY(-1px);
+}
+
+.nav-logo:hover img {
+  transform: translateY(-1px) scale(1.08);
+  filter:
+    drop-shadow(0 0 10px rgba(255, 203, 5, 0.55))
+    drop-shadow(0 8px 18px rgba(0, 80, 157, 0.18));
 }
 
 .nav-links,
@@ -315,10 +341,9 @@ img {
 .hero-visual {
   position: relative;
   min-width: 0;
-  width: min(560px, 100%);
+  width: min(640px, 100%);
   justify-self: end;
   display: grid;
-  gap: 0.9rem;
 }
 
 .brand-poster,
@@ -366,7 +391,7 @@ img {
 }
 
 .mascot-poster img {
-  width: min(125%, 700px);
+  width: min(142%, 820px);
   max-width: none;
   height: auto;
   object-fit: contain;
@@ -1060,24 +1085,36 @@ footer p {
 .toast {
   position: fixed;
   right: 1.25rem;
-  bottom: 1.25rem;
+  bottom: clamp(2rem, 8vh, 4.5rem);
   z-index: 10001;
   width: min(380px, calc(100vw - 2.5rem));
-  padding: 1.15rem;
-  border: 1px solid var(--line);
+  padding: 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.72);
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(18px);
-  box-shadow: var(--shadow);
-  transform: translateY(140%);
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255, 203, 5, 0.24), transparent 42%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.78));
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  box-shadow: 0 28px 70px rgba(17, 41, 107, 0.18);
+  transform: translateY(18px) scale(0.98);
   opacity: 0;
   pointer-events: none;
-  transition: opacity 240ms ease, transform 240ms ease;
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+.toast::before {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: 4px;
+  border-radius: 8px 0 0 8px;
+  background: linear-gradient(180deg, var(--yellow), var(--blue));
 }
 
 .toast.active {
   opacity: 1;
-  transform: translateY(0);
+  transform: translateY(0) scale(1);
   pointer-events: auto;
 }
 
@@ -1094,41 +1131,59 @@ footer p {
   padding-right: 1.8rem;
   color: var(--navy);
   font-family: "Outfit", Arial, sans-serif;
+  font-size: 1.12rem;
   font-weight: 900;
+  line-height: 1.05;
 }
 
 .toast-title span {
   display: inline-block;
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   margin-right: 0.45rem;
   border-radius: 50%;
   background: var(--yellow);
+  box-shadow: 0 0 0 5px rgba(255, 203, 5, 0.18);
 }
 
 .toast-desc {
-  margin-top: 0.45rem;
+  margin-top: 0.65rem;
   color: var(--body);
   font-size: 0.9rem;
+  line-height: 1.55;
 }
 
 .toast-actions {
   display: flex;
-  gap: 0.6rem;
-  margin-top: 1rem;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
 }
 
 .toast-btn {
-  padding: 0.55rem 0.75rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0.6rem 0.82rem;
   border-radius: 6px;
   font-size: 0.82rem;
   font-weight: 800;
   cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease;
 }
 
 .toast-btn-primary {
   color: var(--navy);
-  background: var(--yellow);
+  background: linear-gradient(180deg, var(--yellow-soft), var(--yellow));
+  box-shadow: 0 10px 24px rgba(255, 203, 5, 0.28);
+}
+
+.toast-btn:hover {
+  transform: translateY(-1px);
+}
+
+.toast-btn-primary:hover {
+  box-shadow: 0 14px 30px rgba(255, 203, 5, 0.34);
 }
 
 .toast-btn-secondary {
@@ -1188,7 +1243,7 @@ footer p {
 
   .hero-visual {
     justify-self: center;
-    width: min(460px, 100%);
+    width: min(520px, 100%);
     margin-bottom: 1rem;
   }
 
@@ -1197,7 +1252,7 @@ footer p {
   }
 
   .mascot-poster img {
-    width: min(108%, 500px);
+    width: min(116%, 590px);
     max-width: none;
   }
 
@@ -1268,13 +1323,13 @@ footer p {
   }
 
   .hero-visual {
-    width: min(410px, 100%);
+    width: min(455px, 100%);
     margin-top: 0.25rem;
     margin-bottom: 1.4rem;
   }
 
   .mascot-poster img {
-    width: 106%;
+    width: 112%;
   }
 
   .hero-proof,
@@ -1324,8 +1379,12 @@ footer p {
 }
 
 @media (max-width: 540px) {
+  body {
+    --nav-height: 66px;
+  }
+
   .site-nav {
-    height: 66px;
+    height: var(--nav-height);
   }
 
   .nav-links {
@@ -1344,17 +1403,13 @@ footer p {
   }
 
   .hero-visual {
-    width: min(350px, 100%);
+    width: min(385px, 100%);
     margin-top: 0.4rem;
     margin-bottom: 1.25rem;
   }
 
   .mascot-poster img {
-    width: 106%;
-  }
-
-  .release-card {
-    padding: 0.85rem;
+    width: 112%;
   }
 
   .ticker-track {
@@ -1375,5 +1430,19 @@ footer p {
 
   .compare-table {
     min-width: 500px;
+  }
+
+  .toast {
+    left: 0.75rem;
+    right: auto;
+    bottom: 1rem;
+    width: calc(100dvw - 1.5rem);
+    max-width: 360px;
+    padding: 1.1rem;
+  }
+
+  .toast-actions {
+    display: grid;
+    grid-template-columns: 1fr;
   }
 }

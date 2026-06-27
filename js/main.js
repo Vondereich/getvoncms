@@ -145,13 +145,9 @@ lightbox.innerHTML = `
 document.body.appendChild(lightbox);
 
 const lightboxImg = lightbox.querySelector('img');
-// Target all images except nav logos and footer brand icons
-const triggers = document.querySelectorAll('main img, section img, .cta-section img, header img, .hero img');
+const triggers = document.querySelectorAll('.lightbox-trigger');
 
 triggers.forEach(trigger => {
-  // Ignore nav and footer images
-  if (trigger.closest('nav, footer')) return;
-
   trigger.style.cursor = 'zoom-in';
   trigger.addEventListener('click', () => {
     lightboxImg.src = trigger.src;
@@ -173,10 +169,10 @@ lightbox.addEventListener('click', (e) => {
 const toastHTML = `
   <div class="toast" id="engagement-toast">
     <div class="toast-x-close" id="toast-x-btn">&times;</div>
-    <div class="toast-title"><span></span> Interested in VonCMS?</div>
-    <div class="toast-desc">If VonCMS looks useful for your publishing stack, consider giving the project a star on GitHub.</div>
+    <div class="toast-title"><span></span> Support VonCMS</div>
+    <div class="toast-desc">If this publishing suite looks useful, star the project so more publishers and developers can find it.</div>
     <div class="toast-actions">
-      <a href="https://github.com/Vondereich/VonCMS" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-star-btn">⭐ Give a Star</a>
+      <a href="https://github.com/Vondereich/VonCMS" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-star-btn">Star on GitHub</a>
       <div class="toast-btn toast-btn-secondary" id="toast-close-btn">Next time</div>
     </div>
   </div>
