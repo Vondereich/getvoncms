@@ -1,4 +1,4 @@
-# Introduction to VonCMS v1.24.2 "HourGlass"
+# Introduction to VonCMS v1.25.1 "OpenGate"
 
 ## Publishing should not feel like plugin maintenance.
 
@@ -43,11 +43,11 @@ It's not trying to be everything. It's trying to be **the right thing** for peop
 - **Your data. Your server. Your rules.** VonCMS keeps your content on your hosting and under your control instead of pushing you into someone else's platform model.
 - **Built for publishers first.** From the admin dashboard to the editor to the theme system, the product is meant to reduce friction for the people doing the publishing work.
 
-## This is v1.24.2 "HourGlass"
+## This is v1.25.1 "OpenGate"
 
-_"HourGlass" - the editor-first line after Rentaka, focused on turning the hardened baseline into a calmer publishing workflow._
+_"OpenGate" - the open-source publishing suite line, focused on making the source easier to inspect, extend, and package._
 
-**HourGlass** builds on the closed `v1.23.x` Rentaka baseline with the new TipTap editor foundation, cleaner writing surfaces, and safer publishing polish.
+**OpenGate** builds on the prior publishing baseline with clearer docs, source-level customization paths, and release packaging discipline.
 
 It keeps the **Hybrid Decoupled CMS** identity, the server-bound admin scalability work, and the installer/repair hardening together under one stable line without introducing a separate Node.js production requirement.
 

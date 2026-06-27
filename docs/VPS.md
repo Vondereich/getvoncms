@@ -60,8 +60,16 @@ Once connected, you should see a shell prompt like `root@ubuntu:~#`.
 Run this command on the server:
 
 ```bash
-URL=https://www.aapanel.com/script/install_7.0_en.sh && if [ -f /usr/bin/curl ];then curl -ksSO "$URL" ;else wget --no-check-certificate -O install_7.0_en.sh "$URL";fi;bash install_7.0_en.sh ipssl
+URL=https://www.aapanel.com/script/install_7.0_en.sh
+if command -v curl >/dev/null 2>&1; then
+  curl -fsSLO "$URL"
+else
+  wget -O install_7.0_en.sh "$URL"
+fi
+bash install_7.0_en.sh ipssl
 ```
+
+Do not bypass TLS certificate checks for installer scripts. If the download fails because of a certificate error, fix the server clock, CA certificates, or network path before running the installer.
 
 After installation finishes, aaPanel will show:
 
