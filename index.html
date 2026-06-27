@@ -4,23 +4,23 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>VonCMS - Premium Self-Hosted Publishing CMS</title>
-<meta name="description" content="VonCMS is a premium self-hosted CMS for fast publishing teams. React 19, PHP, built-in SEO, ads, AI writing, security hardening, and WordPress migration without plugin sprawl." />
-<meta name="keywords" content="VonCMS, premium CMS, self-hosted CMS, PHP CMS, React CMS, WordPress alternative, publishing CMS, SEO CMS" />
+<title>VonCMS - Self-Hosted Publishing CMS</title>
+<meta name="description" content="VonCMS is a lightweight PHP and React CMS for shared hosting, built for publishers who want modern admin tools, clean themes, SEO output, and extensibility without a heavy plugin stack." />
+<meta name="keywords" content="VonCMS, self-hosted CMS, PHP CMS, React CMS, publishing CMS, shared hosting CMS, WordPress alternative, SEO CMS" />
 <link rel="icon" type="image/png" href="upload/logo.png">
 <link rel="apple-touch-icon" href="upload/logo.png">
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://github.com/Vondereich/VonCMS" />
-<meta property="og:title" content="VonCMS - Premium Self-Hosted Publishing CMS" />
-<meta property="og:description" content="A fast, self-hosted publishing system with premium editorial tools, native SEO, built-in security, and no plugin dependency maze." />
-<meta property="og:image" content="upload/TechpressDemo.webp" />
+<meta property="og:title" content="VonCMS - Self-Hosted Publishing CMS" />
+<meta property="og:description" content="A lightweight PHP and React CMS for shared hosting with native publishing, SEO, themes, extensions, and developer workflows." />
+<meta property="og:image" content="upload/banner1.png" />
 
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://github.com/Vondereich/VonCMS" />
-<meta property="twitter:title" content="VonCMS - Premium Self-Hosted Publishing CMS" />
-<meta property="twitter:description" content="Premium publishing tools, native SEO, fast React frontend, and hardened PHP backend in one self-hosted CMS." />
-<meta property="twitter:image" content="upload/TechpressDemo.webp" />
+<meta property="twitter:title" content="VonCMS - Self-Hosted Publishing CMS" />
+<meta property="twitter:description" content="Modern admin tools, clean public themes, SEO-friendly output, and extensibility without running a heavy plugin stack." />
+<meta property="twitter:image" content="upload/banner1.png" />
 
 <link rel="canonical" href="https://github.com/Vondereich/VonCMS" />
 
@@ -36,9 +36,9 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "VonCMS is a premium self-hosted CMS powered by React 19 and PHP with built-in SEO, publishing, security, and migration tooling.",
-  "softwareVersion": "1.24.2",
-  "releaseNotes": "https://github.com/Vondereich/VonCMS/releases",
+  "description": "VonCMS is a lightweight PHP and React CMS for shared hosting, built for publishers who want a modern admin dashboard, clean public themes, SEO-friendly output, and extensibility without running a heavy plugin stack.",
+  "softwareVersion": "1.25.1",
+  "releaseNotes": "https://github.com/Vondereich/VonCMS/releases/tag/v1.25.1",
   "author": {
     "@type": "Organization",
     "name": "Vondereich"
@@ -55,7 +55,7 @@
 <body>
 <nav class="site-nav">
   <a class="nav-logo" href="#top" aria-label="VonCMS home">
-    <img src="upload/logo.png" alt="" width="32" height="32">
+    <img src="upload/logo.png" alt="" width="34" height="34">
     <span>VonCMS</span>
   </a>
   <button class="burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -63,248 +63,276 @@
   </button>
   <ul class="nav-links" id="nav-links" aria-label="Primary navigation">
     <li><a href="#product">Product</a></li>
-    <li><a href="#features">Features</a></li>
-    <li><a href="#migration">Migration</a></li>
+    <li><a href="#included">Included</a></li>
+    <li><a href="#install">Install</a></li>
     <li><a href="docs.html">Docs</a></li>
     <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="nav-cta">GitHub</a></li>
   </ul>
 </nav>
 
 <header class="hero" id="top">
-  <div class="hero-media" aria-hidden="true">
-    <img src="upload/TechpressDemo.webp" alt="">
-  </div>
-  <div class="hero-shade"></div>
   <div class="hero-content">
     <div class="eyebrow-row">
-      <span class="eyebrow">Premium self-hosted CMS</span>
-      <span class="eyebrow muted" data-gh-version-badge>v1.24.2 Stable</span>
+      <span class="eyebrow">Self-hosted publishing CMS</span>
+      <span class="eyebrow muted" data-gh-version-badge>v1.25.1 OpenGate</span>
     </div>
-    <h1>VonCMS</h1>
+    <h1>Publishing CMS for owned websites.</h1>
     <p class="hero-lede">
-      A polished publishing system for people who want WordPress-class capability without plugin sprawl, dashboard drag, or hosting drama.
+      VonCMS pairs a React 19 editorial dashboard with a PHP and MySQL runtime for publishers who want modern admin tools, clean themes, SEO-friendly output, and no heavy plugin stack.
     </p>
     <div class="hero-actions">
-      <a href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer" class="btn-primary">Download latest</a>
+      <a href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer" class="btn-primary">Download Deploy ZIP</a>
       <a href="https://skripglobal.com/" rel="noopener noreferrer" class="btn-secondary">View live demo</a>
     </div>
-    <dl class="hero-proof" aria-label="VonCMS product highlights">
-      <div><dt>React 19</dt><dd>Frontend</dd></div>
-      <div><dt>PHP 8.2+</dt><dd>Backend</dd></div>
-      <div><dt>0</dt><dd>SEO plugins needed</dd></div>
-      <div><dt>2 min</dt><dd>Install flow</dd></div>
+    <dl class="hero-proof" aria-label="VonCMS product facts">
+      <div><dt>PHP + MySQL</dt><dd>Shared-hosting runtime</dd></div>
+      <div><dt>React 19</dt><dd>Admin dashboard</dd></div>
+      <div><dt>No Node</dt><dd>Needed for production hosting</dd></div>
     </dl>
+  </div>
+  <div class="hero-visual">
+    <div class="brand-poster">
+      <img src="upload/banner1.png" alt="VonCMS publishing software brand preview" width="1672" height="941">
+    </div>
+    <div class="release-card">
+      <span>Current release</span>
+      <strong data-gh-version-badge>v1.25.1 OpenGate</strong>
+      <p>Deploy ZIP for runtime sites. Source repository for developers, agencies, custom themes, plugins, and release packages.</p>
+    </div>
   </div>
 </header>
 
 <main>
   <section class="ticker" aria-label="Platform capabilities">
     <div class="ticker-track">
-      <span>React 19 + Vite</span>
+      <span>Shared hosting</span>
+      <span>React 19 admin</span>
       <span>PHP 8.2+</span>
-      <span>Native SEO</span>
-      <span>AI Writing</span>
-      <span>WordPress XML Migration</span>
-      <span>IndexNow</span>
-      <span>llms.txt</span>
-      <span>Ads Manager</span>
-      <span>CSRF Hardening</span>
-      <span>React 19 + Vite</span>
+      <span>MySQL 5.7+</span>
+      <span>Native SEO output</span>
+      <span>Bundled themes</span>
+      <span>Plugin and extension surface</span>
+      <span>Deploy ZIP install</span>
+      <span>Shared hosting</span>
+      <span>React 19 admin</span>
       <span>PHP 8.2+</span>
-      <span>Native SEO</span>
-      <span>AI Writing</span>
-      <span>WordPress XML Migration</span>
-      <span>IndexNow</span>
-      <span>llms.txt</span>
-      <span>Ads Manager</span>
-      <span>CSRF Hardening</span>
+      <span>MySQL 5.7+</span>
+      <span>Native SEO output</span>
+      <span>Bundled themes</span>
+      <span>Plugin and extension surface</span>
+      <span>Deploy ZIP install</span>
     </div>
   </section>
 
   <section class="product-section reveal" id="product">
     <div class="section-copy">
       <span class="section-kicker">Product</span>
-      <h2>Built like a modern publishing suite, shipped like a lightweight CMS.</h2>
-      <p>VonCMS combines a clean editorial cockpit, fast public themes, native SEO controls, monetization surfaces, media handling, and maintenance tooling in one self-hosted package.</p>
+      <h2>Built for publishers who own the stack.</h2>
+      <p>VonCMS keeps normal hosting simple while still giving developers source-level control. Runtime sites install from a release ZIP. Source users can fork, customize, build, test, and package their own release.</p>
     </div>
     <div class="product-showcase">
-      <div class="browser-frame large">
+      <div class="browser-frame">
         <div class="browser-bar">
           <span></span><span></span><span></span>
-          <p>skripglobal.com</p>
+          <p>public theme preview</p>
         </div>
         <img src="upload/TechpressDemo.webp" alt="VonCMS TechPress public site preview" class="lightbox-trigger" loading="lazy" width="1200" height="720">
       </div>
       <div class="proof-panel">
-        <div><strong>100</strong><span>SEO-ready publishing baseline</span></div>
-        <div><strong>Built-in</strong><span>Ads, scheduling, AI, sitemap, IndexNow</span></div>
-        <div><strong>Self-hosted</strong><span>Apache, LiteSpeed, MySQL, MariaDB</span></div>
+        <div><strong>Public themes</strong><span>Default, TechPress, Digest, Portfolio, Prism, and Corporate Pro.</span></div>
+        <div><strong>SEO output</strong><span>Server-rendered metadata, sitemap, feeds, JSON-LD, canonical URLs, and social cards.</span></div>
+        <div><strong>Owned runtime</strong><span>Standard PHP and MySQL deployment on Apache or LiteSpeed hosting.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="split-section reveal" id="editor">
+  <section class="split-section reveal" id="publishing">
     <div class="visual-stack">
       <div class="browser-frame">
         <div class="browser-bar">
           <span></span><span></span><span></span>
           <p>admin / editor</p>
         </div>
-        <img src="upload/Editor.webp" alt="VonCMS editor interface with AI assistant and SEO panel" class="lightbox-trigger" loading="lazy" width="1200" height="760">
+        <img src="upload/Editor.webp" alt="VonCMS editor interface with writing and SEO controls" class="lightbox-trigger" loading="lazy" width="1200" height="760">
       </div>
     </div>
     <div class="section-copy">
-      <span class="section-kicker">Editorial cockpit</span>
-      <h2>Write, optimize, publish, and monetize from one focused workspace.</h2>
-      <p>The editor keeps the writing canvas clean while the right-side controls handle publishing status, featured images, excerpts, AI drafting, and SEO health.</p>
+      <span class="section-kicker">Publishing workflow</span>
+      <h2>Write, manage, optimize, and publish from one dashboard.</h2>
+      <p>The React admin dashboard covers posts, pages, drafts, scheduled publishing, rich editing, media tools, settings, users, comments, contact forms, newsletters, audit logs, and repair tools.</p>
       <div class="mini-grid">
-        <div><strong>Tiptap editor</strong><span>Modern writing surface with clean output.</span></div>
-        <div><strong>AI assistant</strong><span>Draft and review without replacing the author.</span></div>
-        <div><strong>SEO health</strong><span>Guidance stays close to the publish action.</span></div>
-        <div><strong>Media flow</strong><span>Featured image and gallery controls in context.</span></div>
+        <div><strong>TipTap editor</strong><span>Rich authoring surface for posts, pages, excerpts, metadata, keywords, and responsive images.</span></div>
+        <div><strong>Media manager</strong><span>Upload, organize, select, and reuse media inside the publishing flow.</span></div>
+        <div><strong>Admin tools</strong><span>Users, roles, comments, settings, forms, newsletters, logs, and database utilities.</span></div>
+        <div><strong>Repair flow</strong><span>Operational tools for routing, upgrades, and production maintenance.</span></div>
       </div>
     </div>
   </section>
 
-  <section class="feature-section reveal" id="features">
+  <section class="feature-section reveal" id="included">
     <div class="section-copy centered">
-      <span class="section-kicker">Core features</span>
-      <h2>Premium capability without a plugin shopping list.</h2>
-      <p>Everything here ships as part of the baseline so the site stays maintainable after launch.</p>
+      <span class="section-kicker">Included baseline</span>
+      <h2>Core publishing features without a plugin pile.</h2>
+      <p>The important site features ship as part of the baseline so a normal publishing site does not start life as a dependency maze.</p>
     </div>
     <div class="features-grid">
       <article>
         <span>01</span>
-        <h3>Native SEO Suite</h3>
-        <p>Meta, Open Graph, structured data, sitemap, canonical URLs, IndexNow, and llms.txt support.</p>
+        <h3>Content</h3>
+        <p>Posts, pages, drafts, scheduled publishing, categories, excerpts, metadata, keywords, quick edit, and responsive images.</p>
       </article>
       <article>
         <span>02</span>
-        <h3>Publisher Workflow</h3>
-        <p>Drafts, scheduled publishing, editor tools, smart tags, excerpts, and content-focused admin screens.</p>
+        <h3>Public Site</h3>
+        <p>Bundled themes, menus, profiles, category views, search, comments, feeds, sitemap, robots output, and llms.txt.</p>
       </article>
       <article>
         <span>03</span>
-        <h3>Monetization Ready</h3>
-        <p>Ads Manager supports practical placements without sending the site into plugin dependency land.</p>
+        <h3>Extensions</h3>
+        <p>Built-in SEO, analytics, gift widget, related posts, promo bar, and AI summary plugins with activation controls.</p>
       </article>
       <article>
         <span>04</span>
-        <h3>Security Baseline</h3>
-        <p>CSRF protection, session checks, role validation, rate limiting, path guards, and integrity monitoring.</p>
-      </article>
-      <article>
-        <span>05</span>
-        <h3>Media Handling</h3>
-        <p>Upload, organize, select, and optimize media with publisher-friendly file management.</p>
-      </article>
-      <article>
-        <span>06</span>
-        <h3>Theme System</h3>
-        <p>Production-ready themes give new installs a real publication shape from day one.</p>
+        <h3>Developer Surface</h3>
+        <p>Theme registry, plugin registration, PHP APIs, smoke tests, release packaging, source docs, and GPL-3.0-only licensing.</p>
       </article>
     </div>
   </section>
 
-  <section class="comparison-band reveal" id="comparison">
+  <section class="comparison-band reveal" id="positioning">
     <div class="section-copy">
       <span class="section-kicker">Positioning</span>
-      <h2>A cleaner baseline than legacy CMS stacks.</h2>
-      <p>VonCMS is designed for owners who want the core publishing, SEO, security, migration, and monetization path already assembled.</p>
+      <h2>A practical middle path between legacy CMS and headless sprawl.</h2>
+      <p>Traditional CMS stacks can become slow and plugin-heavy. Headless stacks often add build pipelines, paid hosting assumptions, and too many moving parts. VonCMS keeps the runtime ordinary and the source customizable.</p>
     </div>
     <div class="compare-table-wrapper">
       <table class="compare-table">
         <thead>
           <tr>
             <th>Area</th>
-            <th>Plugin-heavy stack</th>
+            <th>Common trade-off</th>
             <th>VonCMS baseline</th>
           </tr>
         </thead>
         <tbody>
           <tr>
+            <td>Hosting</td>
+            <td>Plugin stack or hosted platform dependency</td>
+            <td>PHP and MySQL on standard hosting</td>
+          </tr>
+          <tr>
+            <td>Admin</td>
+            <td>Legacy screens or external content APIs</td>
+            <td>Compiled React 19 dashboard</td>
+          </tr>
+          <tr>
             <td>SEO</td>
-            <td>External plugin configuration</td>
-            <td>Native controls and crawler files</td>
+            <td>Extra plugin setup or frontend-only metadata</td>
+            <td>Server-rendered public metadata and crawler files</td>
           </tr>
           <tr>
-            <td>Publishing</td>
-            <td>Mixed editor and plugin screens</td>
-            <td>Focused admin workflow</td>
+            <td>Customization</td>
+            <td>Marketplace lock-in or full stack rebuild</td>
+            <td>Theme, plugin, PHP API, and source-level extension points</td>
           </tr>
           <tr>
-            <td>Performance</td>
-            <td>Theme and plugin dependent</td>
-            <td>React frontend with lean PHP APIs</td>
-          </tr>
-          <tr>
-            <td>Security</td>
-            <td>Patchwork of add-ons</td>
-            <td>Hardened application baseline</td>
-          </tr>
-          <tr>
-            <td>Ownership</td>
-            <td>Marketplace dependency</td>
-            <td>Self-hosted package</td>
+            <td>Production</td>
+            <td>Build tools required on the server</td>
+            <td>Deploy ZIP install, no Node required for runtime hosting</td>
           </tr>
         </tbody>
       </table>
     </div>
   </section>
 
-  <section class="migration-section reveal" id="migration">
+  <section class="migration-section reveal" id="paths">
     <div class="section-copy">
-      <span class="section-kicker">Migration</span>
-      <h2>Bring WordPress content over without dragging the old stack with it.</h2>
-      <p>Upload a WXR export, process posts in batches, extract images, avoid duplicate imports, and recover incomplete runs.</p>
+      <span class="section-kicker">Choose your path</span>
+      <h2>Install a site or build from source.</h2>
+      <p>VonCMS separates runtime users from source users. Site owners start with the Deploy ZIP. Developers fork or clone the repository when they want to study, customize, contribute, or package.</p>
     </div>
-    <div class="steps">
-      <div><strong>01</strong><span>Export WordPress WXR</span></div>
-      <div><strong>02</strong><span>Upload into WP Bridge</span></div>
-      <div><strong>03</strong><span>Import posts and media</span></div>
-      <div><strong>04</strong><span>Review and publish on VonCMS</span></div>
+    <div class="path-grid">
+      <article class="path-card">
+        <strong>Runtime site owners</strong>
+        <p>Use this path for normal shared-hosting installs.</p>
+        <ul>
+          <li>Download the Deploy ZIP from releases.</li>
+          <li>Extract into the hosting web root.</li>
+          <li>Create a MySQL database.</li>
+          <li>Open `/install`, create admin, then publish.</li>
+        </ul>
+      </article>
+      <article class="path-card">
+        <strong>Developers and agencies</strong>
+        <p>Use this path for code, themes, plugins, APIs, and release work.</p>
+        <ul>
+          <li>Fork or clone the repository.</li>
+          <li>Install Node dependencies for source work.</li>
+          <li>Run typecheck and build while editing.</li>
+          <li>Use docs for themes, plugins, routing, and security.</li>
+        </ul>
+      </article>
     </div>
   </section>
 
   <section class="theme-section reveal">
     <div class="section-copy centered">
-      <span class="section-kicker">Design system</span>
-      <h2>Premium themes and extension surfaces from the first install.</h2>
+      <span class="section-kicker">Themes and extensions</span>
+      <h2>Presentation and optional behavior stay close to the product.</h2>
+      <p>Bundled themes give fresh installs a real public shape. Extensions add optional behavior without turning the site into a plugin marketplace dependency.</p>
     </div>
     <div class="theme-grid">
       <article>
         <img src="upload/TechpressDemo.webp" alt="TechPress theme preview" loading="lazy" width="600" height="380">
-        <div><strong>TechPress</strong><span>News and magazine publishing baseline</span></div>
+        <div><strong>TechPress</strong><span>News and magazine publishing preview.</span></div>
       </article>
       <article>
-        <img src="upload/extension.webp" alt="VonCMS extensions manager preview" loading="lazy" width="600" height="380">
-        <div><strong>Extensions</strong><span>Built-in extension management surface</span></div>
+        <img src="upload/extension.webp" alt="VonCMS extension manager preview" loading="lazy" width="600" height="380">
+        <div><strong>Extensions</strong><span>Activation controls for built-in optional features.</span></div>
+      </article>
+      <article>
+        <img src="upload/banner1.png" alt="VonCMS brand and publishing software banner" loading="lazy" width="600" height="338">
+        <div><strong>OpenGate</strong><span>Open-source release line focused on onboarding and packaging.</span></div>
       </article>
     </div>
   </section>
 
-  <section class="quickstart-section reveal" id="quickstart">
+  <section class="quickstart-section reveal" id="install">
     <div class="section-copy">
       <span class="section-kicker">Install</span>
-      <h2>Upload, connect, publish.</h2>
-      <p>No local build chain is required for normal deployment. Download the release, upload it to hosting, connect the database, and finish the browser installer.</p>
+      <h2>Upload the Deploy ZIP and finish the browser installer.</h2>
+      <p>Production hosting does not need Node.js, Vite, npm, or a separate frontend server. Source development does.</p>
     </div>
     <div class="terminal-card">
-      <div class="terminal-head"><span></span><span></span><span></span><p>production setup</p></div>
+      <div class="terminal-head"><span></span><span></span><span></span><p>runtime install</p></div>
       <pre><code># Requirements
 PHP 8.2+ / MySQL 5.7+ or MariaDB 10.3+ / Apache or LiteSpeed
 
 # Download
-https://github.com/Vondereich/VonCMS/releases
+VonCMS_v1.25.1_Deploy.zip
 
 # Upload and install
-unzip <span data-gh-zip-name>voncms-latest.zip</span> -d public_html/
-open https://yourdomain.com
+extract into public_html/
+open https://yourdomain.com/install
 
-# Done
-database connected
-admin account created
-VonCMS is live</code></pre>
+# Finish
+connect database
+create admin account
+publish or import content</code></pre>
+    </div>
+  </section>
+
+  <section class="developer-section reveal" id="developers">
+    <div class="section-copy">
+      <span class="section-kicker">Developer surface</span>
+      <h2>Open-source workflow for real customization.</h2>
+      <p>Fork the source when you want custom themes, plugins, extensions, PHP API changes, installer work, routing work, or release packaging.</p>
+    </div>
+    <div class="surface-grid">
+      <article class="surface-card"><span>Theme</span><strong>Theme registry</strong><span>Bundled theme implementations live under the source theme system.</span></article>
+      <article class="surface-card"><span>Plugin</span><strong>Plugin registration</strong><span>Built-in plugin code supports optional behavior with activation controls.</span></article>
+      <article class="surface-card"><span>Runtime</span><strong>PHP APIs</strong><span>Authentication, settings, posts, media, comments, analytics, imports, and repair tools.</span></article>
+      <article class="surface-card"><span>Release</span><strong>Packaging checks</strong><span>Typecheck, formatting, BOM cleanup, build, smoke tests, PHP lint, and release ZIP creation.</span></article>
     </div>
   </section>
 
@@ -312,7 +340,7 @@ VonCMS is live</code></pre>
     <div class="section-copy centered">
       <span class="section-kicker">Walkthrough</span>
       <h2>See the product in motion.</h2>
-      <p>Watch a technical walkthrough and product baseline overview.</p>
+      <p>Watch the VonCMS walkthrough and product baseline overview.</p>
     </div>
     <a href="https://www.youtube.com/watch?v=glbqEG37aiM" target="_blank" rel="noopener noreferrer" class="video-card">
       <img src="https://img.youtube.com/vi/glbqEG37aiM/maxresdefault.jpg" alt="VonCMS walkthrough video thumbnail" loading="lazy" width="960" height="540">
@@ -322,13 +350,13 @@ VonCMS is live</code></pre>
 
   <section class="cta-section reveal">
     <span class="section-kicker">Get started</span>
-    <h2>Launch a faster publishing stack.</h2>
-    <p>Free to download, self-hosted, and designed for serious publishing without CMS bloat.</p>
+    <h2>Build on a CMS you can host, inspect, and modify.</h2>
+    <p>Download the runtime ZIP for a site install, or open the repository when you want source-level customization.</p>
     <div class="hero-actions center">
       <a href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer" class="btn-primary">Download VonCMS</a>
-      <a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="btn-secondary">Star on GitHub</a>
+      <a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="btn-secondary">View source</a>
     </div>
-    <p class="cta-note" data-gh-cta-note>Latest stable: v1.24.2 - PHP 8.2+ - MySQL - Apache</p>
+    <p class="cta-note" data-gh-cta-note>Latest stable: v1.25.1 OpenGate - PHP 8.2+ - MySQL - Apache or LiteSpeed</p>
   </section>
 </main>
 
@@ -339,11 +367,11 @@ VonCMS is live</code></pre>
   </div>
   <ul class="footer-links">
     <li><a href="#product">Product</a></li>
-    <li><a href="#features">Features</a></li>
+    <li><a href="#included">Included</a></li>
     <li><a href="philosophy.html">Philosophy</a></li>
     <li><a href="docs.html">Docs</a></li>
   </ul>
-  <p>React 19 + Vite + PHP 8.2+ &middot; GPL-3.0 Licensed</p>
+  <p>React 19 + Vite + PHP 8.2+ + MySQL - GPL-3.0-only</p>
 </footer>
 
 <script src="js/main.js" defer></script>

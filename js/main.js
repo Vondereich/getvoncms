@@ -46,8 +46,9 @@ async function fetchLatestRelease() {
     const publishedAt = new Date(data.published_at);
     const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
 
-    const badge = document.querySelector('[data-gh-version-badge]');
-    if (badge) badge.textContent = `${version} · Stable Release · ${monthYear}`;
+    document.querySelectorAll('[data-gh-version-badge]').forEach(badge => {
+      badge.textContent = `${version} · Stable Release · ${monthYear}`;
+    });
 
     const zipName = document.querySelector('[data-gh-zip-name]');
     if (zipName) zipName.textContent = `voncms-${version.replace(/\./g, '-')}.zip`;
@@ -173,7 +174,7 @@ const toastHTML = `
   <div class="toast" id="engagement-toast">
     <div class="toast-x-close" id="toast-x-btn">&times;</div>
     <div class="toast-title"><span></span> Interested in VonCMS?</div>
-    <div class="toast-desc">If you find VonCMS useful, consider giving us a star on GitHub. It helps the rebel cause grow.</div>
+    <div class="toast-desc">If VonCMS looks useful for your publishing stack, consider giving the project a star on GitHub.</div>
     <div class="toast-actions">
       <a href="https://github.com/Vondereich/VonCMS" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-star-btn">⭐ Give a Star</a>
       <div class="toast-btn toast-btn-secondary" id="toast-close-btn">Next time</div>

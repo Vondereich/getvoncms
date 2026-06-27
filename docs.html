@@ -3,23 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Documentation · VonCMS · The Pragmatic Rebel</title>
-<meta name="description" content="Official VonCMS Documentation. Installation guides, security hardening, performance benchmarks, and system architecture deep-dives." />
+<title>Documentation · VonCMS</title>
+<meta name="description" content="VonCMS documentation overview for installation, requirements, architecture, themes, plugins, security, routing, upgrades, and release checks." />
 <link rel="icon" type="image/png" href="upload/logo.png">
 <link rel="apple-touch-icon" href="upload/logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 <link rel="preload" href="css/manifesto.css" as="style">
 <link rel="stylesheet" href="css/manifesto.css">
-
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="upload/logo.png" alt="VonCMS Logo" style="height: 32px; width: auto;">
+    <img src="upload/logo.png" alt="VonCMS logo" width="34" height="34">
     VonCMS
   </a>
   <button class="burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -35,228 +34,199 @@
 <div class="layout">
   <aside>
     <div class="sidebar-group">
-      <div class="sidebar-label">Getting Started</div>
+      <div class="sidebar-label">Start</div>
       <ul class="sidebar-links">
-        <li><a href="#introduction" class="active">Introduction</a></li>
+        <li><a href="#overview" class="active">Overview</a></li>
         <li><a href="#requirements">Requirements</a></li>
+        <li><a href="#install">Deploy ZIP Install</a></li>
       </ul>
     </div>
 
     <div class="sidebar-group">
-      <div class="sidebar-label">Core Systems</div>
+      <div class="sidebar-label">Product</div>
       <ul class="sidebar-links">
         <li><a href="#architecture">Architecture</a></li>
-        <li><a href="#api">API Handlers</a></li>
+        <li><a href="#included">Included Systems</a></li>
+        <li><a href="#themes">Themes</a></li>
+        <li><a href="#plugins">Plugins</a></li>
       </ul>
     </div>
 
     <div class="sidebar-group">
-      <div class="sidebar-label">Performance</div>
+      <div class="sidebar-label">Operations</div>
       <ul class="sidebar-links">
-        <li><a href="#benchmarks">Benchmarks</a></li>
-        <li><a href="#optimization">Optimization</a></li>
-      </ul>
-    </div>
-
-    <div class="sidebar-group">
-      <div class="sidebar-label">Extensions</div>
-      <ul class="sidebar-links">
-        <li><a href="#themes">Theme Engine</a></li>
-        <li><a href="#plugins">Built-in Plugins</a></li>
+        <li><a href="#routing">Routing</a></li>
+        <li><a href="#security">Security</a></li>
+        <li><a href="#release">Release Checks</a></li>
       </ul>
     </div>
   </aside>
 
   <main>
-    <!-- HERO SECTION -->
-    <header class="hero" id="introduction">
-      <div class="hero-badge">Documentation v1.24.2</div>
-      <h1>Official <em>VonCMS</em><br>Documentation.</h1>
+    <header class="hero" id="overview">
+      <div class="hero-badge">Documentation v1.25.1</div>
+      <h1>Run it on hosting. Extend it from source.</h1>
       <p class="lead">
-        Learn how to install, secure, and scale your publishing engine. Built for speed, hardened by design.
+        VonCMS is a lightweight PHP and React CMS for shared hosting. Use the Deploy ZIP for runtime installs, or use the source repository when you want custom themes, plugins, APIs, fixes, and release packages.
       </p>
     </header>
 
-    <!-- INSTALLATION -->
-    <section id="install">
-      <h2>Installation Guide</h2>
-      <p>
-        VonCMS is designed to be installed in under 2 minutes. We've eliminated the need for complex CLI tools, Node.js dependencies, or build steps on your production server.
-      </p>
-      <div class="quote-block">
-        <blockquote>
-          "The fastest installation is the one that doesn't require a terminal."
-        </blockquote>
-      </div>
-      <h3>Steps to Install:</h3>
-      <ol style="color:var(--muted); line-height:2; margin-top:1.5rem;">
-        <li><strong>Download:</strong> Get the latest stable release from GitHub.</li>
-        <li><strong>Upload:</strong> Extract the contents into your web root (e.g., <code>public_html</code>).</li>
-        <li><strong>Launch:</strong> Navigate to your domain in the browser.</li>
-        <li><strong>Wizard:</strong> Follow the intuitive 2-minute setup wizard to connect your database and create your admin account.</li>
-      </ol>
-    </section>
-
-    <!-- REQUIREMENTS -->
     <section id="requirements">
-      <h2>System Requirements</h2>
-      <p>VonCMS runs on standard LAMP/LEMP stacks. We prioritize stability and modern PHP features.</p>
+      <h2>Requirements</h2>
+      <p>VonCMS keeps the production server ordinary. Source development needs Node tooling, but runtime hosting does not.</p>
       <div class="grid">
         <div class="card">
-          <h4>Server</h4>
-          <p>Apache or LiteSpeed (preferred). Nginx is supported with custom rewrite rules.</p>
-        </div>
-        <div class="card">
           <h4>PHP</h4>
-          <p>PHP 8.2 or higher. We optimized the core for PHP 8.5 performance.</p>
+          <p>PHP 8.2 or newer for the runtime and API layer.</p>
         </div>
         <div class="card">
           <h4>Database</h4>
-          <p>MySQL 5.7+ or MariaDB 10.3+. Full-text search enabled for elite performance.</p>
+          <p>MySQL 5.7 or newer, or MariaDB 10.3 or newer.</p>
+        </div>
+        <div class="card">
+          <h4>Web Server</h4>
+          <p>Apache or LiteSpeed with `.htaccess`. Nginx deployments need focused rewrite configuration.</p>
+        </div>
+        <div class="card">
+          <h4>Source Work</h4>
+          <p>Node.js LTS and npm are only needed when building or modifying the source.</p>
         </div>
       </div>
     </section>
 
-    <!-- SECURITY -->
-    <section id="security">
-      <h2>Security Hardening</h2>
-      <p>
-        VonCMS features a "Hardened by Default" architecture. Unlike other systems where you need to install security plugins, VonCMS has deep-level protection baked into every handler.
-      </p>
-      <ul>
-        <li><strong>CSRF Protection:</strong> Token-based validation on all state-changing requests.</li>
-        <li><strong>Integrity Radar:</strong> The core monitors its own file integrity and alerts you to tampered files.</li>
-        <li><strong>Path Guard:</strong> Advanced absolute path resolution to prevent directory traversal attacks.</li>
-        <li><strong>API Binding:</strong> All 73+ API endpoints are bound to strict session and role checks.</li>
-      </ul>
-    </section>
-
-    <!-- ARCHITECTURE -->
-    <section id="architecture">
-      <h2>Architecture Deep-Dive</h2>
-      <p>
-        We use a <strong>Hybrid Decoupled Architecture</strong>. The admin panel is a modern React 19 application bundled with Vite for surgical responsiveness, while the theme layer uses high-performance PHP templates for maximum SEO and sub-second Time to First Byte (TTFB).
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h4>React 19 Admin</h4>
-          <p>A fast, reactive state management system for managing complex content without page reloads.</p>
-        </div>
-        <div class="card">
-          <h4>PHP 8 Core</h4>
-          <p>Lean, specialized handlers that process requests up to 56x faster than legacy monoliths.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- API HANDLERS -->
-    <section id="api">
-      <h2>API Handlers</h2>
-      <p>
-        VonCMS uses a specialized API routing system that eliminates the overhead of traditional MVC frameworks. Each of the 73+ handlers is a standalone unit of logic designed for maximum speed.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h4>Stateless Design</h4>
-          <p>Most API requests are processed without full framework booting, saving significant CPU cycles.</p>
-        </div>
-        <div class="card">
-          <h4>JSON-First</h4>
-          <p>Native JSON responses for perfect integration with the React 19 administration panel.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- OPTIMIZATION -->
-    <section id="optimization">
-      <h2>Optimization Strategy</h2>
-      <p>
-        Speed is not an afterthought in VonCMS; it's the core. We employ several "Pragmatic" optimization techniques that deliver results without complexity.
-      </p>
-      <ul>
-        <li><strong>OPcache Preloading:</strong> Optimized for PHP 8.2+ preloading to keep hot-path code in memory.</li>
-        <li><strong>Zero-Dependency Frontend:</strong> The theme layer requires zero external JS frameworks to render content.</li>
-        <li><strong>Smart Query Mapping:</strong> Automatic query optimization to ensure DB calls never bottleneck your site.</li>
-      </ul>
-    </section>
-
-    <!-- THEME ENGINE -->
-    <section id="themes">
-      <h2>Theme Engine</h2>
-      <p>
-        The VonCMS Theme Engine is built for developers who love clean HTML and powerful PHP. No complicated template syntax to learn—just standard PHP with our elite helper functions.
-      </p>
+    <section id="install">
+      <h2>Deploy ZIP Install</h2>
+      <p>Use this path for normal site owners and shared-hosting installs.</p>
+      <ol>
+        <li><strong>Download:</strong> Get `VonCMS_v1.25.1_Deploy.zip` from GitHub Releases.</li>
+        <li><strong>Upload:</strong> Extract the ZIP into the hosting web root.</li>
+        <li><strong>Database:</strong> Create a MySQL database and database user.</li>
+        <li><strong>Installer:</strong> Open `https://yourdomain.com/install` and complete the wizard.</li>
+        <li><strong>Admin:</strong> Sign in at `/admin`, choose a theme, then publish or import content.</li>
+      </ol>
       <div class="quote-block">
-        <blockquote>
-          "If you know PHP and HTML, you already know how to build a VonCMS theme."
-        </blockquote>
+        <blockquote>Production hosting does not need Node.js, Vite, npm, or a separate frontend server.</blockquote>
       </div>
-      <h3>Theme Components:</h3>
+    </section>
+
+    <section id="architecture">
+      <h2>Architecture</h2>
+      <p>VonCMS is a compiled React application plus a PHP API/runtime. The public entry point handles routing, crawler metadata, install checks, maintenance mode, canonical URLs, redirects, and hydration data.</p>
+      <div class="tech-spec">
+        <header>
+          <span>Runtime Flow</span>
+          <span>PHP + React + MySQL</span>
+        </header>
+        <div class="tech-line">
+          <span class="tech-label">Browser</span>
+          <span class="tech-val">Requests public routes, admin routes, and built assets.</span>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">public/index.php</span>
+          <span class="tech-val">Owns install checks, metadata, routing, redirects, and hydration bridge.</span>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">public/api/*.php</span>
+          <span class="tech-val">Handles authentication, settings, content, media, comments, imports, backups, and repair tools.</span>
+        </div>
+        <div class="tech-line">
+          <span class="tech-label">MySQL</span>
+          <span class="tech-val">Stores content, settings, users, comments, and operational data.</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="included">
+      <h2>Included Systems</h2>
+      <p>VonCMS ships the core publishing surface as baseline product behavior.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>Content</h4>
+          <p>Posts, pages, drafts, scheduled publishing, TipTap editor, media manager, categories, metadata, keywords, and quick edit.</p>
+        </div>
+        <div class="card">
+          <h4>Admin</h4>
+          <p>Dashboard, settings, users, role boundaries, comments moderation, contact forms, newsletter tools, database utilities, audit logs, and repair tools.</p>
+        </div>
+        <div class="card">
+          <h4>Public Site</h4>
+          <p>Themes, navigation menus, profiles, category views, search, comments, feeds, sitemap, robots output, llms.txt, JSON-LD, canonical URLs, Open Graph, and Twitter cards.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="themes">
+      <h2>Themes</h2>
+      <p>VonCMS ships with Default, TechPress, Digest, Portfolio, Prism, and Corporate Pro themes. Theme code belongs in the source theme system and should preserve shared renderers, SEO ownership, and public runtime behavior.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>Theme Registry</h4>
+          <p>Theme registration lives in the core theme registry, while theme implementations live under the source theme folders.</p>
+        </div>
+        <div class="card">
+          <h4>Local Fonts</h4>
+          <p>Fresh installs use Inter locally. VonCMS does not need Google Fonts at runtime for bundled themes.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="plugins">
+      <h2>Plugins And Extensions</h2>
+      <p>Plugins and extensions are for optional behavior such as SEO helpers, analytics, widgets, article blocks, campaign bars, integrations, and admin tools.</p>
       <ul>
-        <li><strong>Layouts:</strong> Global wrappers for your site structure.</li>
-        <li><strong>Partials:</strong> Reusable snippets like headers, footers, and sidebars.</li>
-        <li><strong>Assets:</strong> Managed through our built-in asset pipeline for automatic versioning and compression.</li>
+        <li>Keep plugin settings explicit.</li>
+        <li>Sanitize public HTML before output.</li>
+        <li>Verify activation state in both admin UI and public theme runtime.</li>
+        <li>Use existing APIs and shared renderers instead of duplicating runtime behavior.</li>
       </ul>
     </section>
 
-    <!-- BUILT-IN PLUGINS -->
-    <section id="plugins">
-      <h2>Built-in Plugins (Core Extensions)</h2>
-      <p>
-        We believe the most important features should be part of the core, not third-party plugins. This ensures maximum stability and security.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h4>Native SEO</h4>
-          <p>Schema.org, Meta tags, and XML sitemaps handled natively without extra bloat.</p>
-        </div>
-        <div class="card">
-          <h4>Media Manager</h4>
-          <p>Advanced WebP conversion and image optimization built directly into the upload flow.</p>
-        </div>
-        <div class="card">
-          <h4>Security Radar</h4>
-          <p>Real-time monitoring and login protection out of the box.</p>
-        </div>
+    <section id="routing">
+      <h2>Installer, Routing, And Updates</h2>
+      <p>The installer uses `public/install.sql` and PHP installer endpoints under `public/api/`. Public routing is handled by `public/index.php` and `.htaccess` rules.</p>
+      <div class="quote-block">
+        <blockquote>If updating an older site through OTA to v1.25.0, run System Tools &gt; Repair `.htaccess` once after the update.</blockquote>
       </div>
     </section>
 
-    <section id="benchmarks">
-      <h2>Performance Benchmarks</h2>
-      <p>We don't just say we're fast; we prove it. VonCMS is built to handle high-traffic publishers without the need for expensive caching layers.</p>
-      <table style="width:100%; border-collapse:collapse; margin-top:2rem; font-size:0.9rem;">
-        <tr style="border-bottom:1px solid var(--border);">
-          <th style="text-align:left; padding:12px; color:var(--text);">Metric</th>
-          <th style="text-align:left; padding:12px; color:var(--muted);">WordPress</th>
-          <th style="text-align:left; padding:12px; color:var(--green-accent);">VonCMS</th>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px;">Base Size</td>
-          <td style="padding:12px;">72MB+</td>
-          <td style="padding:12px;">Under 1MB</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px;">DB Queries (Home)</td>
-          <td style="padding:12px;">40-120</td>
-          <td style="padding:12px;">2-5</td>
-        </tr>
-        <tr style="border-bottom:1px solid var(--border);">
-          <td style="padding:12px;">Search Speed</td>
-          <td style="padding:12px;">800ms+</td>
-          <td style="padding:12px;">133ms</td>
-        </tr>
-      </table>
+    <section id="security">
+      <h2>Security Notes</h2>
+      <p>Security guidance belongs in focused docs and code review, not marketing claims. The v1.25.1 release tightened SSR JSON-LD escaping, Root-account boundaries, guest comment CSRF coverage, and WordPress XML importer handling.</p>
+      <ul>
+        <li>Do not publish exploit details in public issues.</li>
+        <li>Back up files and database before upgrades.</li>
+        <li>Review security-sensitive PHP API changes with focused tests.</li>
+      </ul>
+    </section>
+
+    <section id="release">
+      <h2>Release Checks</h2>
+      <p>Maintainer-level release work should run the full gate before packaging.</p>
+      <div class="tech-spec">
+        <header>
+          <span>Release Gate</span>
+          <span>Before ZIP creation</span>
+        </header>
+        <div class="tech-line"><span class="tech-label">TypeScript</span><span class="tech-val">npm run typecheck</span></div>
+        <div class="tech-line"><span class="tech-label">Formatting</span><span class="tech-val">npx prettier --check .</span></div>
+        <div class="tech-line"><span class="tech-label">Encoding</span><span class="tech-val">node remove-bom.cjs</span></div>
+        <div class="tech-line"><span class="tech-label">Build</span><span class="tech-val">npm run build</span></div>
+        <div class="tech-line"><span class="tech-label">Smoke</span><span class="tech-val">npm run test:integration</span></div>
+        <div class="tech-line"><span class="tech-label">PHP</span><span class="tech-val">npm run lint:php</span></div>
+        <div class="tech-line"><span class="tech-label">Package</span><span class="tech-val">node create_release.cjs</span></div>
+      </div>
     </section>
 
     <footer>
       <div class="footer-brand">
-        <img src="upload/logo.png" alt="VonCMS Logo" style="height: 24px; width: auto; vertical-align: middle; margin-right: 8px;">
+        <img src="upload/logo.png" alt="" width="28" height="28">
         VonCMS
       </div>
       <ul class="footer-links">
-        <li><a href="index.html#features">Features</a></li>
+        <li><a href="index.html#included">Included</a></li>
+        <li><a href="philosophy.html">Philosophy</a></li>
       </ul>
-      <div class="footer-right">Built with React 19 + Vite 6 + PHP 8.2--8.5 &middot; GPL-3.0 Licensed</div>
+      <div class="footer-right">React 19 + PHP 8.2+ + MySQL - GPL-3.0-only</div>
     </footer>
   </main>
 </div>

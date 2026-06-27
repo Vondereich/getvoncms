@@ -3,23 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Philosophy & Manifesto · VonCMS · The Pragmatic Rebel</title>
-<meta name="description" content="The Pragmatic Rebel Manifesto. Why VonCMS exists, the problems with WordPress legacy, the trap of modern Headless CMS, and the scalability wall of Flat-File systems." />
+<title>Philosophy · VonCMS</title>
+<meta name="description" content="The VonCMS product philosophy: practical self-hosted publishing, shared-hosting deployment, source-level customization, and less plugin dependency." />
 <link rel="icon" type="image/png" href="upload/logo.png">
 <link rel="apple-touch-icon" href="upload/logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 <link rel="preload" href="css/manifesto.css" as="style">
 <link rel="stylesheet" href="css/manifesto.css">
-
 </head>
 <body>
 
 <nav>
   <a href="index.html" class="nav-logo">
-    <img src="upload/logo.png" alt="VonCMS Logo" style="height: 32px; width: auto;">
+    <img src="upload/logo.png" alt="VonCMS logo" width="34" height="34">
     VonCMS
   </a>
   <button class="burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
@@ -35,275 +34,158 @@
 <div class="layout">
   <aside>
     <div class="sidebar-group">
-      <div class="sidebar-label">Manifesto</div>
+      <div class="sidebar-label">Philosophy</div>
       <ul class="sidebar-links">
-        <li><a href="#the-rebel" class="active">The Pragmatic Rebel</a></li>
+        <li><a href="#principle" class="active">The Principle</a></li>
+        <li><a href="#problem">The Problem</a></li>
+        <li><a href="#ownership">Ownership</a></li>
+        <li><a href="#workflow">Daily Workflow</a></li>
       </ul>
     </div>
 
     <div class="sidebar-group">
-      <div class="sidebar-label">The Critique</div>
+      <div class="sidebar-label">Design Choices</div>
       <ul class="sidebar-links">
-        <li><a href="#why-us">Why VonCMS?</a></li>
-        <li><a href="#workflow">The Workflow Choice</a></li>
-        <li><a href="#headless-trap">The Headless Trap</a></li>
-        <li><a href="#flat-file-myth">The Flat-File Myth</a></li>
-        <li><a href="#infra-illusion">Infrastructure Illusion</a></li>
-        <li><a href="#wp-legacy">WordPress Legacy</a></li>
-      </ul>
-    </div>
-
-    <div class="sidebar-group">
-      <div class="sidebar-label">The Solution</div>
-      <ul class="sidebar-links">
-        <li><a href="#scaling">Scaling Without Bloat</a></li>
-        <li><a href="#php-power">PHP 8.5 Performance</a></li>
-        <li><a href="#ai-partnership">Human-AI Partnership</a></li>
-        <li><a href="#sovereignty">Data Sovereignty</a></li>
-        <li><a href="#beliefs">Core Beliefs</a></li>
+        <li><a href="#runtime">Ordinary Runtime</a></li>
+        <li><a href="#source">Open Source</a></li>
+        <li><a href="#seo">SEO Ownership</a></li>
+        <li><a href="#security">Security Posture</a></li>
+        <li><a href="#beliefs">Product Beliefs</a></li>
       </ul>
     </div>
   </aside>
 
   <main>
-    <!-- HERO SECTION -->
-    <header class="hero" id="the-rebel">
-      <div class="hero-badge">The Manifesto v1.1</div>
-      <h1>The <em>Pragmatic</em><br>Rebel Manifesto.</h1>
+    <header class="hero" id="principle">
+      <div class="hero-badge">VonCMS Philosophy</div>
+      <h1>Publishing software should stay practical.</h1>
       <p class="lead">
-        We are building VonCMS for the publishers who are tired of being held hostage by bloated legacy monoliths and expensive subscription traps.
+        VonCMS is built around a simple idea: most publishing sites should be easy to host, easy to inspect, and easy to extend without turning every owner into a plugin manager or DevOps operator.
       </p>
     </header>
 
-    <!-- SECTION 1: WHY US -->
-    <section id="why-us">
-      <h2>Why VonCMS Exists</h2>
-      <p>
-        The modern web is suffering from an <strong>Efficiency Crisis</strong>. In an era where hardware is faster than ever, our software has become inexplicably slower. We have reached a point where a simple content site requires a 500MB installation, 40 plugins, and a specialized sysadmin just to survive a minor update.
-      </p>
-      <p>
-        This isn't progress; it's a <strong>Maintenance Trap</strong>.
-      </p>
-      <p>
-        VonCMS was born out of a simple, rebellious desire: to build a professional-grade publishing engine that respects the publisher's time, the server's resources, and the reader's patience. We stripped away 20 years of legacy baggage to create a sharp, surgical blade in a world of rusty, oversized axes.
-      </p>
+    <section id="problem">
+      <h2>The Problem</h2>
+      <p>Many publishing stacks drift toward one of two extremes. Legacy CMS installs can become plugin-heavy and fragile. Modern headless stacks can add hosting assumptions, build pipelines, paid platform surfaces, and operational overhead that ordinary content sites do not need.</p>
+      <p>VonCMS is not trying to win by having the longest feature list. It tries to make the common publishing path calmer: install the runtime, own the database, publish content, and customize from source when the project actually needs it.</p>
       <div class="quote-block">
-        <blockquote>
-          "Elite software is defined not by how much you can add, but by how much you can take away without losing the soul of the product."
-        </blockquote>
-        <cite>— The VonCMS Engineering Philosophy</cite>
+        <blockquote>Less dependency surface is a product decision, not just an engineering preference.</blockquote>
       </div>
     </section>
 
-    <!-- SECTION: THE WORKFLOW CHOICE -->
+    <section id="ownership">
+      <h2>Ownership</h2>
+      <p>A site owner should be able to move hosts, inspect the source, back up the database, replace files manually, and keep publishing without asking a platform for permission. That is why VonCMS uses standard PHP and MySQL for runtime hosting.</p>
+      <div class="grid">
+        <div class="card">
+          <h4>Files you can replace</h4>
+          <p>The Deploy ZIP path keeps runtime deployment understandable for shared hosting and VPS users.</p>
+        </div>
+        <div class="card">
+          <h4>Data you can back up</h4>
+          <p>Content and settings live in a database the site owner controls.</p>
+        </div>
+        <div class="card">
+          <h4>Source you can study</h4>
+          <p>Developers can fork the repository, change themes, build plugins, edit APIs, and create releases.</p>
+        </div>
+      </div>
+    </section>
+
     <section id="workflow">
-      <h2>The Daily Workflow Choice</h2>
-      <p>
-        Most people think they are choosing a CMS based on a feature list. They are wrong. You're not just picking a CMS; <strong>you're picking your daily frustration for the next three years.</strong>
-      </p>
-      <p>
-        When you choose WordPress, you're choosing to be a "Plugin Manager." When you choose Headless, you're choosing to be a "DevOps Orchestrator." When you choose VonCMS, you're choosing to be a <strong>Publisher</strong>.
-      </p>
+      <h2>Daily Workflow</h2>
+      <p>A CMS choice is not only a technical architecture choice. It is a daily workflow choice. If the system constantly pushes the owner into plugin maintenance, broken updates, or tooling chores, the software is taking time away from publishing.</p>
       <div class="grid">
         <div class="card">
-          <h4>The Maintenance Reality</h4>
-          <p>WordPress Year 3: Plugin costs add up, security overhead grows, and the site gets slower. You spend more time "fixing" than "writing."</p>
+          <h4>For site owners</h4>
+          <p>Install from Deploy ZIP, finish the browser installer, sign in, choose a theme, publish, and maintain the site through admin tools.</p>
         </div>
         <div class="card">
-          <h4>The VonCMS Reality</h4>
-          <p>Install once, works forever. OTA (Over-The-Air) updates keep the core fresh while you focus 100% on your content strategy.</p>
+          <h4>For developers</h4>
+          <p>Use the source repository when custom code is needed. Keep changes focused, run the relevant checks, and package deliberately.</p>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 2: THE HEADLESS TRAP -->
-    <section id="headless-trap">
-      <h2>The Headless Trap</h2>
-      <p>
-        The "Headless Revolution" promised freedom from the monolith, but for many, it delivered a <strong>Subscription Prison</strong>. Most modern Headless CMS solutions operate on a "Nickel and Dime" model. They charge you per user seat, per API call, per content type, and even per image transformation.
-      </p>
-      <p>
-        As your business grows, their bill grows faster. You end up in a situation where you're afraid to scale because every new visitor or content piece increases your monthly overhead. That's not a partnership; that's <strong>Digital Serfdom</strong>.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h4>No Metered Scaling</h4>
-          <p>VonCMS is yours. Whether you have 10 visitors or 10 million, your cost remains the same. We don't believe in taxing your success.</p>
-        </div>
-        <div class="card">
-          <h4>Where does your data live?</h4>
-          <p>With headless platforms, your content sits on their servers. If they change pricing or shut down, your site goes dark. With VonCMS, you own the keys.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- SECTION 3: THE FLAT-FILE MYTH -->
-    <section id="flat-file-myth">
-      <h2>The Flat-File Myth</h2>
-      <p>
-        Markdown-based "Flat-File" CMSs look beautiful at 10 posts. They feel fast at 50 posts. But then, you reach the <strong>Scaling Wall</strong>.
-      </p>
-      <p>
-        Once you hit 1,000+ content files, the system begins to choke. Every page load requires the CMS to scan directories, parse file metadata, and read raw text from the disk. Without a database to index your content, complex operations like <strong>searching, filtering by tags, or generating related posts</strong> become resource-intensive nightmares.
-      </p>
+    <section id="runtime">
+      <h2>Ordinary Runtime</h2>
+      <p>The production runtime should not require Node.js, npm, Vite, or a separate frontend server. VonCMS uses those tools for source development, then ships built assets for runtime hosting.</p>
       <div class="tech-spec">
         <header>
-          <span>Analysis: Flat-File vs Database Scaling</span>
-          <span>v1.24 Performance Audit</span>
+          <span>Design Boundary</span>
+          <span>Runtime vs Source</span>
         </header>
         <div class="tech-line">
-          <span class="tech-label">Directory Scan</span>
-          <span class="tech-val">O(n) - Slows down linearly with content growth</span>
+          <span class="tech-label">Runtime</span>
+          <span class="tech-val">PHP, MySQL, Apache or LiteSpeed, built assets, installer, admin, and public routes.</span>
         </div>
         <div class="tech-line">
-          <span class="tech-label">Query Speed</span>
-          <span class="tech-val">Requires full file parsing into RAM</span>
-        </div>
-        <div class="tech-line">
-          <span class="tech-label">VonCMS Approach</span>
-          <span class="tech-val">Lean SQL Indexing (O(log n)) - Instant at any scale</span>
-        </div>
-      </div>
-      <p>
-        VonCMS is <strong>Database-Powered but Lean</strong>. We use a highly optimized SQL structure to ensure that whether you have 10 posts or 100,000 posts, your query speed remains in the sub-millisecond range.
-      </p>
-    </section>
-
-    <!-- SECTION: THE INFRASTRUCTURE ILLUSION -->
-    <section id="infra-illusion">
-      <h2>The Infrastructure Illusion</h2>
-      <p>Platforms like <strong>EmDash</strong> claim to be open-source but are practically hard-locked to specific cloud providers (Cloudflare). They rely on proprietary primitives that make it almost impossible to migrate elsewhere without a total rewrite.</p>
-      <p><strong>VonCMS is Infrastructure-Agnostic.</strong></p>
-      <p>Whether it's a $3 shared host, a VPS, or a Raspberry Pi, VonCMS runs because it uses standard LAMP/LEMP primitives. True freedom isn't just about the license; it's about the ability to move your business whenever you want.</p>
-    </section>
-
-    <!-- SECTION 4: WORDPRESS LEGACY -->
-    <section id="wp-legacy">
-      <h2>The WordPress Legacy Debt</h2>
-      <p>
-        WordPress is the 2003 solution for a 2026 world. It carries two decades of backward compatibility debt. This has created the <strong>Plugin Industrial Complex</strong>—a system where WordPress intentionally leaves gaps in its core functionality so a marketplace of developers can sell you solutions for problems that shouldn't exist.
-      </p>
-      <div class="grid">
-        <div class="card">
-          <h4>56x Lighter</h4>
-          <p>A fresh VonCMS install is ~2.5MB. A "Modern" WP install with SEO/Security plugins often exceeds 150MB. That's pure bloat.</p>
-        </div>
-        <div class="card">
-          <h4>The Maintenance Roulette</h4>
-          <p>The average WP site runs 20-30 plugins. Each one is a dependency you didn't write and can't audit. Each update is a gamble.</p>
+          <span class="tech-label">Source</span>
+          <span class="tech-val">Node.js, npm, Vite, React, TypeScript checks, build steps, tests, and release packaging.</span>
         </div>
       </div>
     </section>
 
-    <!-- SECTION 5: SCALING -->
-    <section id="scaling">
-      <h2>Scaling Without Bloat</h2>
-      <p>
-        Traditional scaling means "Throw more RAM at it." The VonCMS way is "Make the code more efficient." By utilizing React 19's sub-second UI responsiveness and a lean PHP core, we reduce the server load significantly.
-      </p>
+    <section id="source">
+      <h2>Open Source</h2>
+      <p>Open source should mean more than a public download. The repository needs to be understandable enough for someone to inspect architecture, build a theme, change a plugin, review security-sensitive code, and reproduce release checks.</p>
+      <ul>
+        <li>Docs should point developers toward the right files.</li>
+        <li>Release packages should avoid private workspace artifacts.</li>
+        <li>Checks should be explicit enough to rerun later.</li>
+        <li>Marketing copy should not claim more than the source proves.</li>
+      </ul>
+    </section>
+
+    <section id="seo">
+      <h2>SEO Ownership</h2>
+      <p>Publishing software should own its public output. VonCMS keeps crawler-facing behavior in the runtime path: metadata, social cards, sitemaps, feeds, canonical URLs, robots output, llms.txt, and JSON-LD belong to the site, not to an afterthought plugin.</p>
     </section>
 
     <section id="security">
-      <h2>Security via Minimalism</h2>
-      <p>In the world of security, <strong>Surface Area is Everything</strong>. Every line of code, every plugin, and every external dependency is a potential door for an attacker.</p>
-      <div class="grid">
-        <div class="card">
-          <h4>Hardened API Handlers</h4>
-          <p>We only have 73 strictly defined API handlers. Each one is audited for CSRF, XSS, and SQL injection.</p>
-        </div>
-        <div class="card">
-          <h4>No Execution in Assets</h4>
-          <p>User-uploaded assets can never be executed as scripts. We kill the "Web Shell" threat at the source.</p>
-        </div>
+      <h2>Security Posture</h2>
+      <p>Security should be handled with evidence and scope, not slogans. VonCMS favors focused boundaries: role checks, CSRF coverage, safe importer behavior, routing rules, sensitive-file protections, and release checks that can be re-run.</p>
+      <div class="quote-block">
+        <blockquote>Do not call a claim secure because it sounds secure. Prove the specific boundary.</blockquote>
       </div>
-    </section>
-
-    <section id="php-power">
-      <h2>The PHP 8.2--8.5 Powerhouse</h2>
-      <p>There is a myth that PHP is slow. That myth was born in the era of PHP 5. Today, with **PHP 8.2, 8.3, and the upcoming 8.5**, the language has transformed into a high-performance engine that rivals Node.js and Go in many real-world scenarios.</p>
-      <p>VonCMS leverages the latest features of modern PHP to achieve its "Rebel" speeds:</p>
-      <div class="tech-spec">
-        <header>
-          <span>Kernel Performance Profile</span>
-          <span>v1.24 Benchmarks</span>
-        </header>
-        <div class="tech-line">
-          <span class="tech-label">JIT Compilation</span>
-          <span class="tech-val">Enabled - Sub-millisecond opcode execution</span>
-        </div>
-        <div class="tech-line">
-          <span class="tech-label">Strict Typing</span>
-          <span class="tech-val">100% Coverage - Zero runtime type errors</span>
-        </div>
-        <div class="tech-line">
-          <span class="tech-label">Memory Usage</span>
-          <span class="tech-val">&lt; 2.5MB per standard request cycle</span>
-        </div>
-      </div>
-      <p>While legacy systems struggle to maintain backward compatibility with PHP 7.4, VonCMS is built exclusively for the modern era. We use <strong>Readonly Properties, Enums, and Constructor Property Promotion</strong> to keep the code clean, fast, and remarkably stable.</p>
-    </section>
-
-    <!-- SECTION: HUMAN-AI PARTNERSHIP -->
-    <section id="ai-partnership">
-      <h2>The Human-AI Partnership</h2>
-      <p>
-        In 2026, AI is everywhere. But most CMS platforms use AI as a blunt instrument to "Replace Writing." We believe this leads to a generic, soulless web.
-      </p>
-      <p>
-        In VonCMS, <strong>AI is an Assistant, not a Dictator.</strong>
-      </p>
-      <p>
-        We've separated the AI into its own authoring panel. It doesn't overwrite your content without your permission. It suggests, it checks grammar, it researches—but the "Publish" button belongs to a human. We prioritize the <strong>Authoring Experience</strong>, ensuring that AI enhances your creativity rather than automating your soul out of the process.
-      </p>
-    </section>
-
-    <section id="sovereignty">
-      <h2>Data Sovereignty</h2>
-      <p>
-        If you don't own the database, you don't own the content. When you build on "Cloud-Only" platforms, you are a tenant. If they raise prices by 300% or pivot their business model, your entire digital asset is at risk.
-      </p>
-      <p>
-        VonCMS is <strong>100% Self-Hosted</strong>. You own the files. You own the data. You own the future of your business.
-      </p>
     </section>
 
     <section id="beliefs">
-      <h2>Core Beliefs</h2>
+      <h2>Product Beliefs</h2>
       <div class="grid">
         <div class="card">
-          <h4>Performance is a Right</h4>
-          <p>A slow site is a barrier to information. We aim for 100/100 Lighthouse scores by architecture, not by luck.</p>
+          <h4>Hostability matters</h4>
+          <p>A CMS that cannot run on ordinary hosting excludes too many real publishing use cases.</p>
         </div>
         <div class="card">
-          <h4>Security via Minimalism</h4>
-          <p>You can't hack what isn't there. Fewer moving parts means fewer attack vectors. 73 audited API handlers, that's it.</p>
+          <h4>Source should be useful</h4>
+          <p>Public code should help developers modify and verify the product, not just satisfy a license checkbox.</p>
         </div>
         <div class="card">
-          <h4>The Publisher is King</h4>
-          <p>Software should serve the writer, not the developers. We prioritize "Writing Time" over "Configuration Hell."</p>
+          <h4>Core should carry the basics</h4>
+          <p>Publishing, SEO, themes, extensions, media, users, comments, and repair tools should not require a shopping list.</p>
         </div>
         <div class="card">
-          <h4>No Pro-Walls</h4>
-          <p>We don't hide essential features behind a paywall. What you see is the full-powered, battle-ready engine.</p>
+          <h4>Claims need restraint</h4>
+          <p>A professional product page should say what changed and what exists, without pretending every feature is revolutionary.</p>
         </div>
       </div>
     </section>
 
     <footer>
       <div class="footer-brand">
-        <img src="upload/logo.png" alt="VonCMS Logo" style="height: 24px; width: auto; vertical-align: middle; margin-right: 8px;">
+        <img src="upload/logo.png" alt="" width="28" height="28">
         VonCMS
       </div>
       <ul class="footer-links">
         <li><a href="docs.html">Documentation</a></li>
+        <li><a href="index.html#product">Product</a></li>
       </ul>
-      <div class="footer-right">Built with React 19 + Vite 6 + PHP 8.2--8.5 &middot; GPL-3.0 Licensed</div>
+      <div class="footer-right">Practical self-hosted publishing - GPL-3.0-only</div>
     </footer>
   </main>
 </div>
 
 <script src="js/main.js" defer></script>
-
-
 </body>
 </html>
