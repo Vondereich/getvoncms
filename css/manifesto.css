@@ -66,18 +66,18 @@ nav {
 .nav-logo {
   display: inline-flex;
   align-items: center;
-  gap: 0.7rem;
+  gap: 0.78rem;
   color: var(--navy);
   font-family: "Outfit", Arial, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.22rem;
   font-weight: 900;
   letter-spacing: 0;
   transition: color 180ms ease, transform 180ms ease;
 }
 
 .nav-logo img {
-  width: 34px !important;
-  height: 34px !important;
+  width: 40px !important;
+  height: 40px !important;
   object-fit: contain;
   transition: transform 220ms ease, filter 220ms ease;
 }
@@ -475,30 +475,38 @@ footer {
 .footer-brand {
   display: inline-flex;
   align-items: center;
+  gap: 0.72rem;
   color: var(--navy);
   font-family: "Outfit", Arial, sans-serif;
-  font-size: 1.1rem;
+  font-size: 1.16rem;
   font-weight: 900;
+  line-height: 1;
 }
 
 .footer-brand img {
-  width: 28px !important;
-  height: 28px !important;
+  width: 34px !important;
+  height: 34px !important;
   object-fit: contain;
 }
 
 .footer-links {
   display: flex;
+  align-items: center;
   gap: 1rem;
   list-style: none;
   padding: 0;
   margin: 0;
+  transform: translateY(-2px);
 }
 
 .footer-links a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 34px;
   color: var(--body);
-  font-size: 0.9rem;
+  font-size: 0.94rem;
   font-weight: 750;
+  line-height: 1;
 }
 
 .footer-right {
