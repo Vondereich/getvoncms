@@ -1,0 +1,95 @@
+<h2>Which VonCMS landing direction feels right?</h2>
+<p class="subtitle">Pick the professional tone before we redesign sections. These are direction mockups, not final pixels.</p>
+
+<div class="cards">
+  <div class="card" data-choice="a-premium-developer" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#090a0a;color:#f5f2eb;min-height:280px;padding:22px;font-family:Inter,Arial,sans-serif;border-radius:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(255,255,255,.12);padding-bottom:14px;">
+          <strong style="font-size:14px;letter-spacing:.02em;">VonCMS</strong>
+          <div style="display:flex;gap:14px;color:#a7ada4;font-size:11px;"><span>Product</span><span>Docs</span><span>GitHub</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1.05fr;gap:22px;align-items:end;margin-top:38px;">
+          <div>
+            <div style="color:#8ee86c;font:700 10px monospace;text-transform:uppercase;">Self-hosted publishing CMS</div>
+            <div style="font-size:42px;line-height:.92;font-weight:850;letter-spacing:0;margin-top:10px;">VonCMS for serious publishing teams.</div>
+            <div style="color:#b8bbb2;font-size:13px;line-height:1.5;margin-top:14px;">Fast editorial workflow, native SEO, migration tools, and clean ownership without plugin sprawl.</div>
+            <div style="display:flex;gap:8px;margin-top:18px;"><span style="background:#a7ff4f;color:#070706;padding:9px 12px;border-radius:6px;font-weight:800;font-size:12px;">Download</span><span style="border:1px solid rgba(255,255,255,.16);padding:8px 12px;border-radius:6px;font-size:12px;">View demo</span></div>
+          </div>
+          <div style="border:1px solid rgba(255,255,255,.14);border-radius:8px;overflow:hidden;background:#151616;box-shadow:0 20px 60px rgba(0,0,0,.35);">
+            <div style="height:28px;background:#202222;border-bottom:1px solid rgba(255,255,255,.1);"></div>
+            <div style="height:142px;background:linear-gradient(140deg,#222622,#101111 55%,#1f2a1b);padding:16px;">
+              <div style="height:14px;width:70%;background:#e8ece3;border-radius:3px;margin-bottom:10px;"></div>
+              <div style="height:8px;width:86%;background:#5a6258;border-radius:3px;margin-bottom:8px;"></div>
+              <div style="height:8px;width:56%;background:#5a6258;border-radius:3px;"></div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:28px;">
+                <div style="height:42px;background:#232923;border:1px solid rgba(142,232,108,.25);border-radius:5px;"></div>
+                <div style="height:42px;background:#232923;border-radius:5px;"></div>
+                <div style="height:42px;background:#232923;border-radius:5px;"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>A. Premium Developer Tool</h3>
+      <p>Clean, restrained, product-led. Best if VonCMS should feel like a polished open-source CMS with serious technical credibility.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="b-enterprise-cms" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#f6f3ed;color:#151513;min-height:280px;padding:22px;font-family:Inter,Arial,sans-serif;border-radius:8px;">
+        <div style="display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid rgba(0,0,0,.12);padding-bottom:14px;">
+          <strong style="font-size:14px;">VonCMS</strong>
+          <div style="display:flex;gap:14px;color:#676761;font-size:11px;"><span>Platform</span><span>Security</span><span>Docs</span></div>
+        </div>
+        <div style="display:grid;grid-template-columns:.95fr 1.05fr;gap:22px;align-items:center;margin-top:34px;">
+          <div>
+            <div style="color:#2c6f45;font:700 10px monospace;text-transform:uppercase;">Publishing infrastructure</div>
+            <div style="font-size:34px;line-height:1;font-weight:850;margin-top:10px;">A controlled CMS baseline for owned publishing.</div>
+            <div style="color:#5f625b;font-size:13px;line-height:1.55;margin-top:14px;">Security, SEO, migration, and deployment clarity for teams that want fewer moving parts.</div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div style="background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:8px;padding:14px;height:94px;"><strong style="font-size:18px;">SEO</strong><p style="font-size:11px;color:#6b6b64;margin-top:10px;">Native controls</p></div>
+            <div style="background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:8px;padding:14px;height:94px;"><strong style="font-size:18px;">Security</strong><p style="font-size:11px;color:#6b6b64;margin-top:10px;">Hardened app</p></div>
+            <div style="background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:8px;padding:14px;height:94px;"><strong style="font-size:18px;">Migration</strong><p style="font-size:11px;color:#6b6b64;margin-top:10px;">WordPress bridge</p></div>
+            <div style="background:#15391f;color:#fff;border-radius:8px;padding:14px;height:94px;"><strong style="font-size:18px;">Own it</strong><p style="font-size:11px;color:#d4ded2;margin-top:10px;">Self-hosted</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>B. Enterprise CMS</h3>
+      <p>More sober and trust-focused. Good for selling stability, ownership, and security, but less distinctive for open-source audiences.</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="c-bold-open-source" onclick="toggleSelect(this)">
+    <div class="card-image">
+      <div style="background:#060606;color:#fff;min-height:280px;padding:22px;font-family:Inter,Arial,sans-serif;border-radius:8px;border:1px solid #252525;">
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+          <strong style="font-size:14px;text-transform:uppercase;">VonCMS</strong>
+          <span style="background:#a7ff4f;color:#050505;padding:6px 9px;border-radius:999px;font-weight:800;font-size:10px;">GitHub</span>
+        </div>
+        <div style="margin-top:32px;">
+          <div style="font-size:54px;line-height:.84;font-weight:900;text-transform:uppercase;">No plugin maze.</div>
+          <div style="font-size:54px;line-height:.84;font-weight:900;text-transform:uppercase;color:#a7ff4f;">Just publish.</div>
+          <div style="display:grid;grid-template-columns:1.2fr .8fr;gap:14px;margin-top:24px;">
+            <div style="border:1px solid rgba(167,255,79,.3);background:#10130f;border-radius:8px;height:86px;padding:14px;color:#cfd8cb;font-size:12px;">React 19, PHP 8.2+, native SEO, AI writing, migration, ads, security.</div>
+            <div style="background:#181818;border-radius:8px;height:86px;padding:14px;">
+              <div style="height:10px;background:#a7ff4f;border-radius:2px;width:62%;"></div>
+              <div style="height:8px;background:#50564d;border-radius:2px;width:90%;margin-top:14px;"></div>
+              <div style="height:8px;background:#50564d;border-radius:2px;width:70%;margin-top:8px;"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <h3>C. Bold Open Source</h3>
+      <p>Still aggressive and memorable, but cleaner than current. Best if you want energy, less ideal if “professional” means calm and premium.</p>
+    </div>
+  </div>
+</div>
