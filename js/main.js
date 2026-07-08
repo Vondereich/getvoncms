@@ -4,11 +4,13 @@ if (window.top !== window.self) {
 }
 
 // Force scroll to top on reload
-if (history.scrollRestoration) {
+if (history.scrollRestoration && !window.location.hash) {
   history.scrollRestoration = 'manual';
 }
 window.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => window.scrollTo(0, 0), 10);
+  if (!window.location.hash) {
+    setTimeout(() => window.scrollTo(0, 0), 10);
+  }
 });
 
 // Scroll reveal
