@@ -112,11 +112,17 @@ img {
   list-style: none;
 }
 
+.nav-links > li {
+  display: flex;
+  align-items: center;
+}
+
 .nav-links a,
 .footer-links a {
   display: inline-flex;
   align-items: center;
-  min-height: 34px;
+  justify-content: center;
+  height: 34px;
   color: var(--body);
   font-size: 0.9rem;
   font-weight: 750;
@@ -129,9 +135,18 @@ img {
   color: var(--blue);
 }
 
+.nav-links a[aria-current="page"] {
+  color: var(--navy);
+  background: rgba(255, 203, 5, 0.16);
+  border: 1px solid rgba(255, 203, 5, 0.42);
+  border-radius: 6px;
+  padding: 0 0.72rem;
+}
+
 .nav-cta {
   color: var(--navy) !important;
   background: var(--yellow);
+  height: 34px;
   padding: 0.62rem 0.9rem;
   border-radius: 6px;
   box-shadow: 0 10px 24px rgba(255, 203, 5, 0.28);
@@ -139,6 +154,7 @@ img {
 
 .nav-link-strong {
   color: var(--navy) !important;
+  height: 34px;
   padding: 0.56rem 0.78rem;
   border: 1px solid rgba(17, 41, 107, 0.18);
   border-radius: 6px;
