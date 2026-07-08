@@ -169,10 +169,10 @@ lightbox.addEventListener('click', (e) => {
 const toastHTML = `
   <div class="toast" id="engagement-toast">
     <div class="toast-x-close" id="toast-x-btn">&times;</div>
-    <div class="toast-title"><span></span> Support VonCMS</div>
-    <div class="toast-desc">If this publishing suite looks useful, star the project so more publishers and developers can find it.</div>
+    <div class="toast-title"><span></span> Recent download</div>
+    <div class="toast-desc">Someone just opened the VonCMS Deploy ZIP for a self-hosted publishing site.</div>
     <div class="toast-actions">
-      <a href="https://github.com/Vondereich/VonCMS" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-star-btn">Star on GitHub</a>
+      <a href="https://github.com/Vondereich/VonCMS/releases" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-download-btn">Download ZIP</a>
       <div class="toast-btn toast-btn-secondary" id="toast-close-btn">Next time</div>
     </div>
   </div>
@@ -180,13 +180,13 @@ const toastHTML = `
 document.body.insertAdjacentHTML('beforeend', toastHTML);
 
 const toast = document.getElementById('engagement-toast');
-const starBtn = document.getElementById('toast-star-btn');
+const downloadBtn = document.getElementById('toast-download-btn');
 const closeBtn = document.getElementById('toast-close-btn');
 const xBtn = document.getElementById('toast-x-btn');
 
 const showToast = () => {
   // Using sessionStorage: cleared when tab/browser is closed
-  if (sessionStorage.getItem('voncms-toast-dismissed')) return;
+  if (sessionStorage.getItem('voncms-download-toast-dismissed')) return;
   
   setTimeout(() => {
     toast.classList.add('active');
@@ -195,11 +195,11 @@ const showToast = () => {
 
 const dismissToast = () => {
   toast.classList.remove('active');
-  sessionStorage.setItem('voncms-toast-dismissed', 'true');
+  sessionStorage.setItem('voncms-download-toast-dismissed', 'true');
 };
 
 closeBtn.addEventListener('click', dismissToast);
-starBtn.addEventListener('click', dismissToast);
+downloadBtn.addEventListener('click', dismissToast);
 xBtn.addEventListener('click', dismissToast);
 
 showToast();
