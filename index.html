@@ -4,22 +4,22 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>VonCMS - Open Source Publishing CMS for News & Blogs</title>
-<meta name="description" content="VonCMS is an open-source publishing CMS for blogs and news portals. Self-host React 19 + PHP REST API on normal hosting with SEO, ad support, and fast publishing." />
-<meta name="keywords" content="VonCMS, open source publishing CMS, news CMS, blog CMS, self-hosted CMS, CMS for publishers, news portal CMS, PHP CMS, React CMS, hybrid CMS, headless CMS alternative, SEO CMS, ad-friendly CMS, normal hosting CMS" />
+<title>VonCMS - WordPress Alternative for News & Blogs</title>
+<meta name="description" content="VonCMS is an open-source WordPress alternative for publishers. Self-host a React 19 + PHP CMS on normal hosting with SEO output, ad support, and fewer plugin dependencies." />
+<meta name="keywords" content="VonCMS, WordPress alternative, open source publishing CMS, lightweight CMS, news CMS, blog CMS, self-hosted CMS, CMS for publishers, news portal CMS, PHP CMS, React CMS, hybrid CMS, headless CMS alternative, SEO CMS, ad-friendly CMS, normal hosting CMS" />
 <link rel="icon" type="image/x-icon" href="upload/favicon.ico?v=20260708">
 <link rel="apple-touch-icon" href="upload/logo2.png">
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://getvoncms.com/" />
-<meta property="og:title" content="VonCMS - Open Source Publishing CMS for News & Blogs" />
-<meta property="og:description" content="Open-source publishing CMS for blogs, publisher sites, and news portals. Self-host React 19 + PHP REST API on normal hosting with SEO, ad support, and fast publishing." />
+<meta property="og:title" content="VonCMS - WordPress Alternative for News & Blogs" />
+<meta property="og:description" content="Open-source WordPress alternative for publishers. Self-host a React 19 + PHP CMS on normal hosting with SEO output, ad support, and fewer plugin dependencies." />
 <meta property="og:image" content="https://getvoncms.com/upload/owlr.png" />
 
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://getvoncms.com/" />
-<meta property="twitter:title" content="VonCMS - Open Source Publishing CMS for News & Blogs" />
-<meta property="twitter:description" content="Self-hosted publishing CMS with React 19 frontend, PHP REST API backend, single deploy, and no Node.js required in production." />
+<meta property="twitter:title" content="VonCMS - WordPress Alternative for News & Blogs" />
+<meta property="twitter:description" content="Self-hosted WordPress alternative with React 19 frontend, PHP REST API backend, single deploy, and no Node.js required in production." />
 <meta property="twitter:image" content="https://getvoncms.com/upload/owlr.png" />
 
 <link rel="canonical" href="https://getvoncms.com/" />
@@ -36,7 +36,7 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "VonCMS is an open-source publishing CMS for blogs, publisher sites, and news portals. Self-host React 19 frontend and a PHP REST API backend on normal hosting with SEO, ad support, fast publishing, single deploy, and no Node.js required in production.",
+  "description": "VonCMS is an open-source WordPress alternative for publishers, blogs, and news portals. Self-host React 19 frontend and a PHP REST API backend on normal hosting with SEO output, ad support, fast publishing, fewer plugin dependencies, single deploy, and no Node.js required in production.",
   "softwareVersion": "1.25.3",
   "releaseNotes": "https://github.com/Vondereich/VonCMS/releases/latest",
   "author": {
@@ -46,11 +46,52 @@
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Is VonCMS a WordPress alternative?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. VonCMS is an open-source publishing CMS for publishers who want normal hosting, a React 19 dashboard, PHP and MySQL runtime, SEO output, ad support, and fewer plugin dependencies."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How much lighter is VonCMS than WordPress?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "VonCMS is designed to avoid a heavy third-party plugin stack, but the exact weight depends on the installed site, theme, content, and hosting setup. Use release builds and your own production benchmark before making numeric comparisons."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Do I need Node.js to run VonCMS?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No. Production hosting does not need Node.js, Vite, npm, or a separate frontend server. Node.js is only needed for source development and custom builds."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is VonCMS free and open source?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes. VonCMS is open-source software released under GPL-3.0-only, with Deploy ZIP releases for runtime installs and source packages for developers."
+      }
+    }
+  ]
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-<link rel="preload" href="css/style.css?v=20260708-nav-box" as="style">
-<link rel="stylesheet" href="css/style.css?v=20260708-nav-box">
+<link rel="preload" href="css/style.css?v=20260708-faq-seo" as="style">
+<link rel="stylesheet" href="css/style.css?v=20260708-faq-seo">
 </head>
 <body>
 <nav class="site-nav">
@@ -81,7 +122,7 @@
     </div>
     <h1>Publishing suite for owned websites.</h1>
     <p class="hero-lede">
-      VonCMS is built for publishers, from personal blogs to high-traffic news portals. It pairs a React 19 frontend with a PHP REST API backend for SEO, ad compatibility, fast publishing, and single-deploy hosting without Node.js in production.
+      A self-hosted WordPress alternative for publishers who want a React 19 dashboard, PHP hosting, SEO control, ad compatibility, fast publishing, and fewer plugin dependencies.
     </p>
     <div class="hero-actions">
       <a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="btn-primary">Download Deploy ZIP</a>
@@ -134,7 +175,7 @@
           <span></span><span></span><span></span>
           <p>public theme preview</p>
         </div>
-        <img src="upload/TechpressDemo.webp" alt="VonCMS TechPress public site preview" class="lightbox-trigger" loading="lazy" width="1200" height="720">
+        <img src="upload/TechpressDemo.webp" alt="VonCMS TechPress news theme preview for a self-hosted publishing CMS" class="lightbox-trigger" loading="lazy" width="1200" height="720">
       </div>
       <div class="proof-panel">
         <div><strong>Public themes</strong><span>Default, TechPress, Digest, Portfolio, Prism, and Corporate Pro.</span></div>
@@ -208,7 +249,7 @@
           <span></span><span></span><span></span>
           <p>admin / editor</p>
         </div>
-        <img src="upload/Editor.webp" alt="VonCMS editor interface with writing and SEO controls" class="lightbox-trigger" loading="lazy" width="1200" height="760">
+        <img src="upload/Editor.webp" alt="VonCMS admin editor with TipTap writing, metadata, and SEO controls" class="lightbox-trigger" loading="lazy" width="1200" height="760">
       </div>
     </div>
     <div class="section-copy">
@@ -257,15 +298,15 @@
   <section class="comparison-band reveal" id="positioning">
     <div class="section-copy">
       <span class="section-kicker">Positioning</span>
-      <h2>A practical middle path between legacy CMS and headless publishing sprawl.</h2>
-      <p>Traditional CMS stacks can become slow and plugin-heavy. Headless stacks often add build pipelines, paid hosting assumptions, and too many moving parts. VonCMS keeps the runtime ordinary and the source customizable.</p>
+      <h2>A practical WordPress alternative without headless publishing sprawl.</h2>
+      <p>WordPress can become slow and plugin-heavy as publisher workflows grow. Headless stacks often add build pipelines, paid hosting assumptions, and too many moving parts. VonCMS keeps the runtime ordinary and the source customizable.</p>
     </div>
     <div class="compare-table-wrapper">
       <table class="compare-table">
         <thead>
           <tr>
             <th>Area</th>
-            <th>Common trade-off</th>
+            <th>Common WordPress/headless trade-off</th>
             <th>VonCMS baseline</th>
           </tr>
         </thead>
@@ -338,11 +379,11 @@
     </div>
     <div class="theme-grid">
       <article>
-        <img src="upload/TechpressDemo.webp" alt="TechPress theme preview" class="lightbox-trigger" loading="lazy" width="600" height="380">
+        <img src="upload/TechpressDemo.webp" alt="VonCMS TechPress theme preview for news and magazine publishing" class="lightbox-trigger" loading="lazy" width="600" height="380">
         <div><strong>TechPress</strong><span>News and magazine publishing preview.</span></div>
       </article>
       <article>
-        <img src="upload/extension.webp" alt="VonCMS extension manager preview" class="lightbox-trigger" loading="lazy" width="600" height="380">
+        <img src="upload/extension.webp" alt="VonCMS extension manager with built-in plugin activation controls" class="lightbox-trigger" loading="lazy" width="600" height="380">
         <div><strong>Extensions</strong><span>Activation controls for built-in optional features.</span></div>
       </article>
       <article>
@@ -401,6 +442,32 @@ publish or import content</code></pre>
       <img src="https://img.youtube.com/vi/glbqEG37aiM/maxresdefault.jpg" alt="VonCMS walkthrough video thumbnail" loading="lazy" width="960" height="540">
       <span>Watch walkthrough</span>
     </a>
+  </section>
+
+  <section class="faq-section reveal" id="faq">
+    <div class="section-copy centered">
+      <span class="section-kicker">FAQ</span>
+      <h2>WordPress alternative questions, answered plainly.</h2>
+      <p>Short answers for publishers comparing VonCMS with traditional CMS and headless stacks.</p>
+    </div>
+    <div class="faq-grid">
+      <article>
+        <h3>Is VonCMS a WordPress alternative?</h3>
+        <p>Yes. VonCMS is built for publishers who want normal hosting, a React 19 dashboard, PHP and MySQL runtime, SEO output, ad support, and fewer plugin dependencies.</p>
+      </article>
+      <article>
+        <h3>How much lighter is VonCMS than WordPress?</h3>
+        <p>VonCMS avoids a heavy third-party plugin stack, but exact weight depends on the site, theme, content, and host. Use your own production benchmark before making numeric claims.</p>
+      </article>
+      <article>
+        <h3>Do I need Node.js to run VonCMS?</h3>
+        <p>No. Production hosting does not need Node.js, Vite, npm, or a separate frontend server. Node.js is only needed for source development and custom builds.</p>
+      </article>
+      <article>
+        <h3>Is VonCMS free and open source?</h3>
+        <p>Yes. VonCMS is GPL-3.0-only open-source software with Deploy ZIP releases for runtime installs and source packages for developers.</p>
+      </article>
+    </div>
   </section>
 
   <section class="cta-section reveal">
