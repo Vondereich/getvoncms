@@ -102,9 +102,13 @@ nav {
 }
 
 .nav-links-manifesto a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
   color: var(--body);
   font-size: 0.9rem;
   font-weight: 760;
+  line-height: 1;
   transition: color 160ms ease, background 160ms ease;
 }
 
@@ -115,7 +119,7 @@ nav {
 .nav-links-manifesto .nav-cta {
   color: var(--navy) !important;
   background: var(--yellow);
-  padding: 0.62rem 0.9rem;
+  padding: 0 0.9rem;
   border-radius: 6px;
   font-weight: 900;
   box-shadow: 0 10px 24px rgba(255, 203, 5, 0.2);
@@ -496,12 +500,12 @@ footer {
   list-style: none;
   padding: 0;
   margin: 0;
-  transform: translateY(-2px);
 }
 
 .footer-links a {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   min-height: 34px;
   color: var(--body);
   font-size: 0.94rem;
