@@ -161,6 +161,12 @@ nav {
   transform: translateY(-1px);
 }
 
+@media (min-width: 821px) {
+  .site-nav .nav-links > li:first-child > a {
+    transform: translateY(4px);
+  }
+}
+
 .burger {
   display: none;
   width: 38px;
