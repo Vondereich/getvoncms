@@ -127,13 +127,15 @@ nav {
   background: var(--yellow);
   padding: 0.62rem 0.9rem;
   border-radius: 6px;
-  font-weight: 900;
-  box-shadow: 0 10px 24px rgba(255, 203, 5, 0.2);
+  box-shadow: 0 10px 24px rgba(255, 203, 5, 0.28);
 }
 
 .nav-link-strong {
   color: var(--navy) !important;
-  font-weight: 900 !important;
+  padding: 0.56rem 0.78rem;
+  border: 1px solid rgba(17, 41, 107, 0.18);
+  border-radius: 6px;
+  background: var(--white);
 }
 
 .nav-cta:hover,
