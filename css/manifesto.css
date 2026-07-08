@@ -94,35 +94,52 @@ nav {
     drop-shadow(0 8px 18px rgba(0, 80, 157, 0.18));
 }
 
+.nav-links,
 .nav-links-manifesto {
   display: flex;
   align-items: center;
   gap: clamp(1rem, 2vw, 1.5rem);
   list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
+.nav-links a,
 .nav-links-manifesto a {
   display: inline-flex;
   align-items: center;
-  min-height: 36px;
+  min-height: 34px;
   color: var(--body);
   font-size: 0.9rem;
-  font-weight: 760;
+  font-weight: 750;
   line-height: 1;
-  transition: color 160ms ease, background 160ms ease;
+  transition: color 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
 }
 
+.nav-links a:hover,
 .nav-links-manifesto a:hover {
   color: var(--blue);
 }
 
+.nav-cta,
 .nav-links-manifesto .nav-cta {
   color: var(--navy) !important;
   background: var(--yellow);
-  padding: 0 0.9rem;
+  padding: 0.62rem 0.9rem;
   border-radius: 6px;
   font-weight: 900;
   box-shadow: 0 10px 24px rgba(255, 203, 5, 0.2);
+}
+
+.nav-link-strong {
+  color: var(--navy) !important;
+  font-weight: 900 !important;
+}
+
+.nav-cta:hover,
+.nav-link-strong:hover {
+  color: var(--navy) !important;
+  transform: translateY(-1px);
 }
 
 .burger {
@@ -469,11 +486,14 @@ tr:last-child td {
 }
 
 footer {
-  padding: 2.2rem 0 0;
+  width: min(1180px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: 2.2rem 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  border-top: 1px solid var(--line);
 }
 
 .footer-brand {
@@ -513,6 +533,7 @@ footer {
   line-height: 1;
 }
 
+footer p,
 .footer-right {
   color: var(--muted);
   font-family: "JetBrains Mono", Consolas, monospace;
@@ -679,6 +700,7 @@ footer {
     display: flex;
   }
 
+  .nav-links,
   .nav-links-manifesto {
     display: none;
     position: fixed;
@@ -694,16 +716,19 @@ footer {
     box-shadow: var(--shadow);
   }
 
+  .nav-links.open,
   .nav-links-manifesto.open {
     display: flex;
   }
 
+  .nav-links a,
   .nav-links-manifesto a {
     display: block;
     padding: 0.85rem 0;
     border-bottom: 1px solid var(--line);
   }
 
+  .nav-links li:last-child a,
   .nav-links-manifesto li:last-child a {
     border-bottom: 0;
     margin-top: 0.5rem;
