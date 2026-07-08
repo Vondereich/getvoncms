@@ -470,15 +470,16 @@ tr:last-child td {
 
 footer {
   padding: 2.4rem 0 0;
-  display: flex;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
   align-items: center;
-  justify-content: space-between;
   gap: 1.2rem;
 }
 
 .footer-brand {
   display: inline-flex;
   align-items: center;
+  justify-self: start;
   gap: 0.72rem;
   color: var(--navy);
   font-family: "Outfit", Arial, sans-serif;
@@ -496,6 +497,7 @@ footer {
 .footer-links {
   display: flex;
   align-items: center;
+  justify-self: center;
   gap: 1rem;
   list-style: none;
   padding: 0;
@@ -514,9 +516,12 @@ footer {
 }
 
 .footer-right {
+  justify-self: end;
   color: var(--muted);
   font-family: "JetBrains Mono", Consolas, monospace;
   font-size: 0.72rem;
+  line-height: 1;
+  text-align: right;
 }
 
 #lightbox {
@@ -732,7 +737,18 @@ footer {
   }
 
   footer {
-    flex-direction: column;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+  }
+
+  .footer-brand,
+  .footer-links,
+  .footer-right {
+    justify-self: center;
+  }
+
+  .footer-right {
     text-align: center;
   }
 
