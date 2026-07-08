@@ -9,17 +9,17 @@
 <link rel="icon" type="image/x-icon" href="upload/favicon.ico?v=20260708">
 <link rel="apple-touch-icon" href="upload/logo2.png">
 
-<link rel="canonical" href="https://github.com/Vondereich/VonCMS" />
+<link rel="canonical" href="https://getvoncms.com/docs.html" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://github.com/Vondereich/VonCMS" />
+<meta property="og:url" content="https://getvoncms.com/docs.html" />
 <meta property="og:title" content="VonCMS Docs - Install the Open Source Publishing CMS" />
 <meta property="og:description" content="Deploy ZIP installation, React 19 dashboard, PHP REST API backend, MySQL, SEO output, ad compatibility, themes, plugins, routing, upgrades, and release checks for VonCMS." />
-<meta property="og:image" content="upload/owlr.png" />
+<meta property="og:image" content="https://getvoncms.com/upload/owlr.png" />
 <meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content="https://github.com/Vondereich/VonCMS" />
+<meta property="twitter:url" content="https://getvoncms.com/docs.html" />
 <meta property="twitter:title" content="VonCMS Docs - Install the Open Source Publishing CMS" />
 <meta property="twitter:description" content="Guides for installing, operating, extending, and verifying the self-hosted VonCMS publishing CMS." />
-<meta property="twitter:image" content="upload/owlr.png" />
+<meta property="twitter:image" content="https://getvoncms.com/upload/owlr.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -44,7 +44,7 @@
     <li><a href="index.html#install">Install</a></li>
     <li><a href="docs.html" aria-current="page">Docs</a></li>
     <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="nav-link-strong">GitHub</a></li>
-    <li><a href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer" class="nav-cta">Download</a></li>
+    <li><a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="nav-cta">Download</a></li>
   </ul>
 </nav>
 
@@ -82,7 +82,7 @@
 
   <main>
     <header class="hero" id="overview">
-      <div class="hero-badge">Documentation v1.25.1</div>
+      <div class="hero-badge">VonCMS Documentation</div>
       <h1>Run it on hosting. Extend it from source.</h1>
       <p class="lead">
         VonCMS is a hybrid publishing suite for publishers, from personal blogs to high-traffic news portals. Use the Deploy ZIP for runtime installs, or use the source repository when you want custom themes, plugins, APIs, fixes, and release packages.
@@ -116,7 +116,7 @@
       <h2>Deploy ZIP Install</h2>
       <p>Use this path for normal site owners and shared-hosting installs.</p>
       <ol>
-        <li><strong>Download:</strong> Get `VonCMS_v1.25.1_Deploy.zip` from GitHub Releases.</li>
+        <li><strong>Download:</strong> Get the latest VonCMS Deploy ZIP from GitHub Releases.</li>
         <li><strong>Upload:</strong> Extract the ZIP into the hosting web root.</li>
         <li><strong>Database:</strong> Create a MySQL database and database user.</li>
         <li><strong>Installer:</strong> Open `https://yourdomain.com/install` and complete the wizard.</li>
@@ -203,13 +203,13 @@
       <h2>Installer, Routing, And Updates</h2>
       <p>The installer uses `public/install.sql` and PHP installer endpoints under `public/api/`. Public routing is handled by `public/index.php` and `.htaccess` rules.</p>
       <div class="quote-block">
-        <blockquote>If updating an older site through OTA to v1.25.0, run System Tools &gt; Repair `.htaccess` once after the update.</blockquote>
+        <blockquote>If updating an older site through OTA, run System Tools &gt; Repair `.htaccess` once after the update.</blockquote>
       </div>
     </section>
 
     <section id="security">
       <h2>Security Notes</h2>
-      <p>Security guidance belongs in focused docs and code review, not marketing claims. The v1.25.1 release tightened SSR JSON-LD escaping, Root-account boundaries, guest comment CSRF coverage, and WordPress XML importer handling.</p>
+      <p>Security guidance belongs in focused docs and code review, not marketing claims. Review release notes for version-specific security and maintenance changes before upgrading production sites.</p>
       <ul>
         <li>Do not publish exploit details in public issues.</li>
         <li>Back up files and database before upgrades.</li>
@@ -275,6 +275,6 @@
   <p>React 19 + Vite + PHP 8.2+ + MySQL - GPL-3.0-only</p>
 </footer>
 
-<script src="js/main.js?v=20260708-download-toast" defer></script>
+<script src="js/main.js?v=20260708-release-latest" defer></script>
 </body>
 </html>

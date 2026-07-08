@@ -172,7 +172,7 @@ const toastHTML = `
     <div class="toast-title"><span></span> Recent download</div>
     <div class="toast-desc">Someone just opened the VonCMS Deploy ZIP for a self-hosted publishing site.</div>
     <div class="toast-actions">
-      <a href="https://github.com/Vondereich/VonCMS/releases" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-download-btn">Download ZIP</a>
+      <a href="https://github.com/Vondereich/VonCMS/releases/latest" target="_blank" rel="noopener noreferrer" class="toast-btn toast-btn-primary" id="toast-download-btn">Download ZIP</a>
       <div class="toast-btn toast-btn-secondary" id="toast-close-btn">Next time</div>
     </div>
   </div>
