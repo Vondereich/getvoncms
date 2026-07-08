@@ -1059,6 +1059,9 @@ main > section {
 }
 
 .faq-section {
+  width: 100%;
+  max-width: none;
+  padding-inline: max(1rem, calc((100% - 1180px) / 2));
   background: linear-gradient(180deg, rgba(255, 255, 255, 0.72), rgba(245, 247, 251, 0.84));
   border-block: 1px solid var(--line);
 }
