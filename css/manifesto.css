@@ -785,7 +785,7 @@ footer p,
   }
 
   h2 {
-    align-items: flex-start;
+    align-items: center;
     font-size: clamp(1.9rem, 9vw, 3rem);
   }
 
