@@ -428,19 +428,43 @@ img {
 
 .mascot-poster {
   position: relative;
+  z-index: 0;
   aspect-ratio: 1 / 1;
   border: 0;
   background: transparent;
   box-shadow: none;
   overflow: visible;
+  isolation: isolate;
+}
+
+.mascot-poster::before {
+  content: "";
+  position: absolute;
+  left: 6%;
+  top: 14%;
+  z-index: 0;
+  width: 92%;
+  height: 66%;
+  border-radius: 50%;
+  background:
+    radial-gradient(circle at 58% 42%, rgba(255, 203, 5, 0.16), transparent 24%),
+    radial-gradient(circle at 50% 50%, rgba(17, 41, 107, 0.24), rgba(17, 41, 107, 0.12) 44%, transparent 72%);
+  filter: blur(18px);
+  pointer-events: none;
 }
 
 .mascot-poster img {
+  position: relative;
+  z-index: 1;
   width: min(142%, 820px);
   max-width: none;
   height: auto;
   object-fit: contain;
-  filter: drop-shadow(0 30px 48px rgba(17, 41, 107, 0.18));
+  filter:
+    contrast(1.05)
+    saturate(1.06)
+    drop-shadow(0 22px 36px rgba(17, 41, 107, 0.24))
+    drop-shadow(0 0 18px rgba(255, 203, 5, 0.08));
 }
 
 .release-card {
