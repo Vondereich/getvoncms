@@ -289,6 +289,32 @@ img {
   justify-content: center;
 }
 
+.release-note {
+  max-width: 100%;
+  margin: -0.35rem 0 1rem;
+  color: var(--muted);
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.55;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
+.release-note a {
+  color: var(--blue);
+  font-weight: 850;
+}
+
+.release-note a:hover {
+  color: var(--navy);
+}
+
+.release-note a + span::before {
+  content: " · ";
+  color: var(--muted);
+}
+
 .btn-primary,
 .btn-secondary {
   display: inline-flex;
@@ -1458,6 +1484,14 @@ footer p {
 
   .hero h1 {
     font-size: clamp(3rem, 16vw, 4.4rem);
+  }
+
+  .release-note {
+    font-size: 0.7rem;
+  }
+
+  .release-note a + span {
+    display: none;
   }
 
   .hero-visual {

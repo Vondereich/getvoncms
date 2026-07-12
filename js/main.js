@@ -47,6 +47,11 @@ async function fetchLatestRelease() {
 
     const publishedAt = new Date(data.published_at);
     const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    const releaseLabel = fullName
+      .replace(/^VonCMS\s*/i, '')
+      .replace(version, '')
+      .replace(/^[\s\-–—·:]+/, '')
+      .trim();
 
     document.querySelectorAll('[data-gh-version-badge]').forEach(badge => {
       badge.textContent = `${version} · Stable Release · ${monthYear}`;
@@ -57,6 +62,15 @@ async function fetchLatestRelease() {
 
     const ctaNote = document.querySelector('[data-gh-cta-note]');
     if (ctaNote) ctaNote.textContent = `Latest Stable: ${version} · PHP 8.2+ · MySQL · Apache`;
+
+    const releaseLink = document.querySelector('[data-gh-release-link]');
+    if (releaseLink && data.html_url) releaseLink.href = data.html_url;
+
+    const releaseTitle = document.querySelector('[data-gh-release-title]');
+    if (releaseTitle) releaseTitle.textContent = releaseLabel ? `${version} ${releaseLabel}` : version;
+
+    const releaseDate = document.querySelector('[data-gh-release-date]');
+    if (releaseDate) releaseDate.textContent = monthYear;
 
     console.log(`VonCMS: Version ${version} fetched successfully.`);
     // The toast initializes below; release fetch only updates visible metadata.
