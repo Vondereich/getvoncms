@@ -1518,6 +1518,11 @@ footer p {
     font-size: clamp(3rem, 16vw, 4.4rem);
   }
 
+  .hero-lede {
+    max-width: 34ch;
+    font-size: 1.04rem;
+  }
+
   .release-note {
     font-size: 0.7rem;
   }
