@@ -158,6 +158,14 @@ img {
   padding-inline: 0.78rem;
   border-color: rgba(17, 41, 107, 0.18);
   background: var(--white);
+  gap: 0.42rem;
+}
+
+.nav-github-icon {
+  width: 1rem;
+  height: 1rem;
+  flex: 0 0 auto;
+  fill: currentColor;
 }
 
 .nav-cta:hover,
