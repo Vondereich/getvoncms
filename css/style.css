@@ -230,6 +230,11 @@ img {
   color: var(--blue);
 }
 
+.release-label {
+  color: var(--body);
+  font-weight: 700;
+}
+
 .release-meta strong {
   font-weight: 900;
 }
@@ -245,7 +250,7 @@ img {
 }
 
 .release-date::before {
-  content: "— ";
+  content: "· ";
 }
 
 .section-kicker {
