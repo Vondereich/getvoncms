@@ -4,23 +4,23 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="referrer" content="strict-origin-when-cross-origin">
-<title>VonCMS - Open Source CMS for News Websites &amp; Blogs</title>
-<meta name="description" content="VonCMS is a self-hosted, open-source CMS for news websites and blogs. Run it on standard PHP hosting with built-in SEO, ads, themes, and fewer plugin dependencies." />
+<title>VonCMS - Open Source Publishing CMS for News & Blogs</title>
+<meta name="description" content="VonCMS is an open-source publishing CMS for blogs and news portals. A practical option beside larger CMS stacks, with React 19, PHP hosting, SEO output, and fewer plugin dependencies." />
+<meta name="keywords" content="VonCMS, WordPress alternative, open source publishing CMS, lightweight CMS, news CMS, blog CMS, self-hosted CMS, CMS for publishers, news portal CMS, PHP CMS, React CMS, hybrid CMS, headless CMS alternative, SEO CMS, ad-friendly CMS, normal hosting CMS" />
 <link rel="icon" type="image/x-icon" href="upload/favicon.ico?v=20260708">
 <link rel="apple-touch-icon" href="upload/logo2.png">
 
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://getvoncms.com/" />
-<meta property="og:title" content="VonCMS - Open Source CMS for News Websites &amp; Blogs" />
-<meta property="og:description" content="A self-hosted, open-source CMS for news websites and blogs, built for standard PHP hosting with built-in SEO and fewer plugin dependencies." />
+<meta property="og:title" content="VonCMS - Open Source Publishing CMS for News & Blogs" />
+<meta property="og:description" content="Open-source publishing CMS for blogs and news portals. A practical option beside larger CMS stacks, with React 19, PHP hosting, SEO output, and fewer plugin dependencies." />
 <meta property="og:image" content="https://getvoncms.com/upload/owlr.png" />
-<meta property="og:image:alt" content="VonCMS open-source publishing CMS" />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="VonCMS - Open Source CMS for News Websites &amp; Blogs" />
-<meta name="twitter:description" content="A self-hosted, open-source CMS for news websites and blogs, built for standard PHP hosting with built-in SEO and fewer plugin dependencies." />
-<meta name="twitter:image" content="https://getvoncms.com/upload/owlr.png" />
-<meta name="twitter:image:alt" content="VonCMS open-source publishing CMS" />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content="https://getvoncms.com/" />
+<meta property="twitter:title" content="VonCMS - Open Source Publishing CMS for News & Blogs" />
+<meta property="twitter:description" content="Self-hosted publishing CMS with React 19 frontend, PHP REST API backend, single deploy, and no Node.js required in production." />
+<meta property="twitter:image" content="https://getvoncms.com/upload/owlr.png" />
 
 <link rel="canonical" href="https://getvoncms.com/" />
 
@@ -36,7 +36,8 @@
     "price": "0",
     "priceCurrency": "USD"
   },
-  "description": "VonCMS is a self-hosted, open-source CMS for news websites and blogs. It runs on standard PHP hosting with built-in SEO, ad support, themes, and fewer plugin dependencies.",
+  "description": "VonCMS is an open-source publishing CMS for publishers, blogs, and news portals. It is a practical option beside larger CMS stacks, with React 19 frontend, PHP REST API backend, SEO output, ad support, fast publishing, fewer plugin dependencies, single deploy, and no Node.js required in production.",
+  "softwareVersion": "1.25.6",
   "releaseNotes": "https://github.com/Vondereich/VonCMS/releases/latest",
   "author": {
     "@type": "Organization",
@@ -89,8 +90,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-<link rel="preload" href="css/style.css?v=20260713-copy-polish" as="style">
-<link rel="stylesheet" href="css/style.css?v=20260713-copy-polish">
+<link rel="preload" href="css/style.css?v=20260802-mobile-showcase" as="style">
+<link rel="stylesheet" href="css/style.css?v=20260802-mobile-showcase">
 </head>
 <body>
 <nav class="site-nav">
@@ -114,14 +115,19 @@
 
 <header class="hero" id="top">
   <div class="hero-content">
-    <p class="release-meta">
-      <span class="release-label">Current release:</span>
-      <a href="https://github.com/Vondereich/VonCMS/releases/tag/v1.25.12" rel="noopener noreferrer" data-gh-release-link>
-        <strong data-gh-version-badge>v1.25.12</strong>
+    <div class="eyebrow-row">
+      <span class="eyebrow">Hybrid publishing suite</span>
+      <span class="eyebrow muted" data-gh-version-badge>v1.25.6 · Stable Release · July 2026</span>
+      <span class="eyebrow license-badge">100% Free &amp; Open Source · GPL-3.0</span>
+    </div>
+    <p class="release-note">
+      Latest update:
+      <a href="https://github.com/Vondereich/VonCMS/releases/tag/v1.25.6" rel="noopener noreferrer" data-gh-release-link>
+        <span data-gh-release-title>v1.25.6 Small patch update</span>
       </a>
-      <span class="release-date" data-gh-release-date>July 2026</span>
+      <span data-gh-release-date>July 2026</span>
     </p>
-    <h1>Open source CMS for news websites and blogs.</h1>
+    <h1>Publishing suite for owned websites.</h1>
     <p class="hero-lede">
       For publishers who want fast publishing without a plugin stack. VonCMS runs on PHP hosting, gives editors a React 19 dashboard, and keeps SEO and ads in the workflow.
     </p>
@@ -263,6 +269,43 @@
         <div><strong>Admin tools</strong><span>Users, roles, comments, settings, forms, newsletters, logs, and database utilities.</span></div>
         <div><strong>Repair flow</strong><span>Operational tools for routing, upgrades, and production maintenance.</span></div>
       </div>
+    </div>
+  </section>
+
+  <section class="mobile-section reveal" id="post-anywhere">
+    <div class="section-copy centered">
+      <span class="section-kicker">Mobile workflow</span>
+      <h2>Post from anywhere when the story cannot wait.</h2>
+      <p>VonCMS keeps the admin usable on phone screens for quick editorial moves: check the site, draft a post, review SEO fields, and adjust key settings while the full desktop workflow stays available for heavier work.</p>
+    </div>
+    <div class="mobile-device-grid">
+      <article class="mobile-device-card">
+        <div class="mobile-device-frame">
+          <img src="upload/m2.png" alt="VonCMS mobile dashboard showing articles, pages, comments, active users, media usage, and traffic" class="lightbox-trigger" loading="lazy" width="501" height="810">
+        </div>
+        <div class="mobile-device-copy">
+          <strong>Dashboard checks</strong>
+          <span>See content totals, active users, media usage, and traffic from the same admin surface.</span>
+        </div>
+      </article>
+      <article class="mobile-device-card mobile-device-card-featured">
+        <div class="mobile-device-frame">
+          <img src="upload/m1.png" alt="VonCMS mobile post editor with writing tab, SEO tab, AI tab, draft action, and publish action" class="lightbox-trigger" loading="lazy" width="501" height="810">
+        </div>
+        <div class="mobile-device-copy">
+          <strong>Quick post edits</strong>
+          <span>Draft, attach metadata, review SEO controls, and publish urgent stories without leaving the browser.</span>
+        </div>
+      </article>
+      <article class="mobile-device-card">
+        <div class="mobile-device-frame">
+          <img src="upload/m3.png" alt="VonCMS mobile system settings screen for website name, SEO description, tagline, and save action" class="lightbox-trigger" loading="lazy" width="501" height="810">
+        </div>
+        <div class="mobile-device-copy">
+          <strong>Site settings</strong>
+          <span>Update identity, SEO defaults, and operational settings when a small change needs to ship now.</span>
+        </div>
+      </article>
     </div>
   </section>
 
@@ -479,7 +522,7 @@ publish or import content</code></pre>
       <a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="btn-primary">Download VonCMS</a>
       <a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="btn-secondary">View source</a>
     </div>
-    <p class="cta-note" data-gh-cta-note>Latest stable: v1.25.12 - PHP 8.2+ - MySQL - Apache or LiteSpeed</p>
+    <p class="cta-note" data-gh-cta-note>Latest stable: v1.25.6 - PHP 8.2+ - MySQL - Apache or LiteSpeed</p>
   </section>
 </main>
 
@@ -497,6 +540,6 @@ publish or import content</code></pre>
   <p>&copy; <span data-current-year>2026</span> VonCMS - React 19 + Vite + PHP 8.2+ + MySQL - GPL-3.0-only</p>
 </footer>
 
-<script src="js/main.js?v=20260722-current-release" defer></script>
+<script src="js/main.js?v=20260713-auto-year" defer></script>
 </body>
 </html>

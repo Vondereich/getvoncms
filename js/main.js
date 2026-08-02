@@ -32,14 +32,29 @@ async function fetchLatestRelease() {
     if (!response.ok) return;
     const data = await response.json();
     
-    const version = data.tag_name;
-    if (!version || !data.published_at) return;
+    let version = data.tag_name;
+    let fullName = data.name;
+    if (!version || !fullName) return;
+
+    // Extract only the series name (e.g., "Rentaka") from "v1.23.10 · Rentaka"
+    let seriesName = fullName;
+    const dash = fullName.includes('—') ? '—' : (fullName.includes('·') ? '·' : null);
+    if (dash) {
+      seriesName = seriesName.split(dash)[1].trim().split(' ')[0];
+    } else if (seriesName.includes('"')) {
+      seriesName = seriesName.split('"')[1];
+    }
 
     const publishedAt = new Date(data.published_at);
     const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
+    const releaseLabel = fullName
+      .replace(/^VonCMS\s*/i, '')
+      .replace(version, '')
+      .replace(/^[\s\-–—·:]+/, '')
+      .trim();
 
     document.querySelectorAll('[data-gh-version-badge]').forEach(badge => {
-      badge.textContent = version;
+      badge.textContent = `${version} · Stable Release · ${monthYear}`;
     });
 
     const zipName = document.querySelector('[data-gh-zip-name]');
@@ -50,6 +65,9 @@ async function fetchLatestRelease() {
 
     const releaseLink = document.querySelector('[data-gh-release-link]');
     if (releaseLink && data.html_url) releaseLink.href = data.html_url;
+
+    const releaseTitle = document.querySelector('[data-gh-release-title]');
+    if (releaseTitle) releaseTitle.textContent = releaseLabel ? `${version} ${releaseLabel}` : version;
 
     const releaseDate = document.querySelector('[data-gh-release-date]');
     if (releaseDate) releaseDate.textContent = monthYear;
