@@ -3,29 +3,29 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>VonCMS Docs - Install the Open Source Publishing CMS</title>
-<meta name="description" content="Install and run VonCMS, an open-source publishing CMS with React 19 dashboard, PHP REST API, MySQL, themes, plugins, SEO output, and no Node.js required in production." />
-<meta name="keywords" content="VonCMS docs, VonCMS install, open source CMS documentation, publishing CMS setup, news CMS setup, self-hosted CMS install, PHP REST API CMS docs, React 19 CMS docs, MySQL CMS, no Node.js CMS production" />
+<title>VonCMS Docs - Install the Self-Hosted PHP Publishing CMS</title>
+<meta name="description" content="Install VonCMS, a self-hosted PHP CMS for news websites and blogs. Deploy ZIP setup, React 19 admin, MySQL, themes, extensions, SEO output, upgrades, and no Node.js required in production." />
+<meta name="keywords" content="VonCMS docs, VonCMS install, self-hosted CMS install, PHP CMS install, open source CMS documentation, CMS for news websites, blog CMS setup, MySQL CMS, React admin CMS, no Node.js CMS production" />
 <link rel="icon" type="image/x-icon" href="upload/favicon.ico?v=20260708">
 <link rel="apple-touch-icon" href="upload/logo2.png">
 
 <link rel="canonical" href="https://getvoncms.com/docs.html" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://getvoncms.com/docs.html" />
-<meta property="og:title" content="VonCMS Docs - Install the Open Source Publishing CMS" />
-<meta property="og:description" content="Deploy ZIP installation, React 19 dashboard, PHP REST API backend, MySQL, SEO output, ad compatibility, themes, plugins, routing, upgrades, and release checks for VonCMS." />
+<meta property="og:title" content="VonCMS Docs - Install the Self-Hosted PHP Publishing CMS" />
+<meta property="og:description" content="Deploy ZIP installation for a self-hosted PHP CMS with React 19 admin, MySQL, SEO output, ad compatibility, themes, extensions, routing, upgrades, and release checks." />
 <meta property="og:image" content="https://getvoncms.com/upload/owlr.png" />
 <meta property="twitter:card" content="summary_large_image" />
 <meta property="twitter:url" content="https://getvoncms.com/docs.html" />
-<meta property="twitter:title" content="VonCMS Docs - Install the Open Source Publishing CMS" />
-<meta property="twitter:description" content="Guides for installing, operating, extending, and verifying the self-hosted VonCMS publishing CMS." />
+<meta property="twitter:title" content="VonCMS Docs - Install the Self-Hosted PHP Publishing CMS" />
+<meta property="twitter:description" content="Guides for installing, operating, extending, and verifying the self-hosted VonCMS publishing CMS for news websites and blogs." />
 <meta property="twitter:image" content="https://getvoncms.com/upload/owlr.png" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="preload" href="css/manifesto.css?v=20260713-heading-align" as="style">
-<link rel="stylesheet" href="css/manifesto.css?v=20260713-heading-align">
+<link rel="preload" href="css/manifesto.css?v=20260811-docs-refresh" as="style">
+<link rel="stylesheet" href="css/manifesto.css?v=20260811-docs-refresh">
 </head>
 <body>
 
@@ -85,7 +85,7 @@
       <div class="hero-badge">VonCMS Documentation</div>
       <h1>Run it on hosting. Extend it from source.</h1>
       <p class="lead">
-        VonCMS is a hybrid publishing suite for publishers, from personal blogs to high-traffic news portals. Use the Deploy ZIP for runtime installs, or use the source repository when you want custom themes, plugins, APIs, fixes, and release packages.
+        VonCMS is a publishing CMS for news websites, blogs, and independent publishers. Use the Deploy ZIP for normal hosting installs, or use the source repository when you want custom themes, extensions, APIs, fixes, and release packages.
       </p>
     </header>
 
@@ -107,7 +107,7 @@
         </div>
         <div class="card">
           <h4>Source Work</h4>
-          <p>Node.js LTS and npm are only needed when building or modifying the source.</p>
+          <p>Node.js 22.22 or newer and npm are only needed when building or modifying the source.</p>
         </div>
       </div>
     </section>
@@ -160,26 +160,26 @@
       <div class="grid">
         <div class="card">
           <h4>Content</h4>
-          <p>Posts, pages, drafts, scheduled publishing, TipTap editor, media manager, categories, metadata, keywords, and quick edit.</p>
+          <p>Posts, pages, drafts, scheduled publishing, rich TipTap editing, media manager, categories, excerpts, metadata, keywords, responsive images, and quick edit.</p>
         </div>
         <div class="card">
           <h4>Admin</h4>
-          <p>Dashboard, settings, users, role boundaries, comments moderation, contact forms, newsletter tools, database utilities, audit logs, and repair tools.</p>
+          <p>Dashboard, settings, users, role boundaries, comments moderation, contact forms, newsletter tools, analytics, database utilities, audit logs, and repair tools.</p>
         </div>
         <div class="card">
           <h4>Public Site</h4>
-          <p>Themes, navigation menus, profiles, category views, search, comments, feeds, sitemap, robots output, llms.txt, JSON-LD, canonical URLs, Open Graph, and Twitter cards.</p>
+          <p>Bundled themes, navigation menus, profiles, category views, search, comments, feeds, sitemap, robots output, llms.txt, JSON-LD, canonical URLs, Open Graph, and Twitter cards.</p>
         </div>
       </div>
     </section>
 
     <section id="themes">
       <h2>Themes</h2>
-      <p>VonCMS ships with Default, TechPress, Digest, Portfolio, Prism, and Corporate Pro themes. Theme code belongs in the source theme system and should preserve shared renderers, SEO ownership, and public runtime behavior.</p>
+      <p>VonCMS ships with Default, TechPress, Digest, Portfolio, Prism, and Corporate Pro themes. Theme registration lives in the core theme registry, while implementations live under the source theme folders.</p>
       <div class="grid">
         <div class="card">
           <h4>Theme Registry</h4>
-          <p>Theme registration lives in the core theme registry, while theme implementations live under the source theme folders.</p>
+          <p>The registry connects bundled and custom themes to the admin and public runtime.</p>
         </div>
         <div class="card">
           <h4>Local Fonts</h4>
@@ -190,20 +190,21 @@
 
     <section id="plugins">
       <h2>Plugins And Extensions</h2>
-      <p>Plugins and extensions are for optional behavior such as SEO helpers, analytics, widgets, article blocks, campaign bars, integrations, and admin tools.</p>
+      <p>Plugins and extensions are for optional behavior such as SEO helpers, analytics, widgets, related posts, article blocks, campaign bars, integrations, and admin tools.</p>
       <ul>
         <li>Keep plugin settings explicit.</li>
         <li>Sanitize public HTML before output.</li>
         <li>Verify activation state in both admin UI and public theme runtime.</li>
         <li>Use existing APIs and shared renderers instead of duplicating runtime behavior.</li>
+        <li>Start from the focused extension development guide when adding custom behavior.</li>
       </ul>
     </section>
 
     <section id="routing">
       <h2>Installer, Routing, And Updates</h2>
-      <p>The installer uses `public/install.sql` and PHP installer endpoints under `public/api/`. Public routing is handled by `public/index.php` and `.htaccess` rules.</p>
+      <p>The installer uses `public/install.sql` and PHP installer endpoints under `public/api/`. Public routing is handled by `public/index.php` and `.htaccess` rules for install checks, maintenance mode, crawler metadata, canonical URLs, redirects, and SPA hydration.</p>
       <div class="quote-block">
-        <blockquote>If updating an older site through OTA, run System Tools &gt; Repair `.htaccess` once after the update.</blockquote>
+        <blockquote>For affected older builds, install the current Deploy ZIP manually once before relying on later OTA discovery. If updating from the v1.25 routing baseline, run System Tools &gt; Repair `.htaccess` after the update.</blockquote>
       </div>
     </section>
 
@@ -223,7 +224,7 @@
       <div class="grid">
         <div class="card">
           <h4>Install &amp; Upgrade</h4>
-          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md" rel="noopener noreferrer">Installation</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/UPGRADE.md" rel="noopener noreferrer">Upgrade</a>, and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/VPS.md" rel="noopener noreferrer">VPS deployment</a> cover hosting, updates, and server notes.</p>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md" rel="noopener noreferrer">Installation</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/FEATURES.md" rel="noopener noreferrer">Features</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/UPGRADE.md" rel="noopener noreferrer">Upgrade</a>, and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/VPS.md" rel="noopener noreferrer">VPS deployment</a> cover hosting, product scope, updates, and server notes.</p>
         </div>
         <div class="card">
           <h4>Runtime Internals</h4>
@@ -231,7 +232,7 @@
         </div>
         <div class="card">
           <h4>Customization</h4>
-          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/THEME_DEVELOPMENT.md" rel="noopener noreferrer">Theme development</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/PLUGIN_DEVELOPMENT.md" rel="noopener noreferrer">Plugin development</a>, and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/CUSTOM_FONTS.md" rel="noopener noreferrer">Custom fonts</a> cover source-level changes.</p>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/EXTENSION_DEVELOPMENT.md" rel="noopener noreferrer">Extension development</a> and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/CUSTOM_FONTS.md" rel="noopener noreferrer">Custom fonts</a> cover source-level themes, plugins, optional behavior, and typography changes.</p>
         </div>
         <div class="card">
           <h4>Project Truth</h4>
