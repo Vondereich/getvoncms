@@ -40,8 +40,8 @@
     "priceCurrency": "USD"
   },
   "description": "VonCMS is open-source publishing software for news websites, blogs, and independent publishers. It is a self-hosted PHP CMS with a React 19 admin, PHP REST API backend, SEO output, ad support, public themes, fewer plugin dependencies, single deploy, and no Node.js required in production.",
-  "softwareVersion": "1.26.6",
-  "releaseNotes": "https://github.com/Vondereich/VonCMS/releases/latest",
+  "softwareVersion": "1.26.9",
+  "releaseNotes": "https://getvoncms.com/whats-new.html",
   "author": {
     "@type": "Organization",
     "name": "Vondereich"
@@ -93,8 +93,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-<link rel="preload" href="css/style.css?v=20260811-seo-meta" as="style">
-<link rel="stylesheet" href="css/style.css?v=20260811-seo-meta">
+<link rel="preload" href="css/style.css?v=20260824-whats-new-button" as="style">
+<link rel="stylesheet" href="css/style.css?v=20260824-whats-new-button">
 </head>
 <body>
 <nav class="site-nav">
@@ -111,6 +111,7 @@
     <li><a href="philosophy.html">Philosophy</a></li>
     <li><a href="#install">Install</a></li>
     <li><a href="docs.html">Docs</a></li>
+    <li><a href="whats-new.html">What's New</a></li>
     <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="nav-link-strong"><svg class="nav-github-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0.2a8 8 0 0 0-2.53 15.59c0.4 0.07 0.55-0.17 0.55-0.38v-1.36c-2.23 0.49-2.7-0.95-2.7-0.95-0.36-0.92-0.89-1.17-0.89-1.17-0.73-0.5 0.06-0.49 0.06-0.49 0.8 0.06 1.23 0.83 1.23 0.83 0.72 1.22 1.87 0.87 2.33 0.67 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.65-0.89-3.65-3.96 0-0.88 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.22 2.2 0.82A7.6 7.6 0 0 1 8 3.7c0.68 0 1.36 0.09 2 0.27 1.52-1.04 2.19-0.82 2.19-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.08-1.87 3.75-3.66 3.95 0.29 0.25 0.54 0.74 0.54 1.49v2.21c0 0.21 0.15 0.46 0.55 0.38A8 8 0 0 0 8 0.2Z"/></svg><span>GitHub</span></a></li>
     <li><a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="nav-cta">Download</a></li>
   </ul>
@@ -118,20 +119,10 @@
 
 <header class="hero" id="top">
   <div class="hero-content">
-    <div class="hero-meta">
-      <span class="hero-kicker">Hybrid publishing suite</span>
-      <span class="hero-release-line">
-        <span data-gh-version-badge>v1.26.6 · Stable Release · August 2026</span>
-        <span>Free and open source · GPL-3.0</span>
-      </span>
-    </div>
-    <p class="release-note">
-      Latest update:
-      <a href="https://github.com/Vondereich/VonCMS/releases/tag/v1.26.6" rel="noopener noreferrer" data-gh-release-link>
-        <span data-gh-release-title>v1.26.6 Stable Release</span>
-      </a>
-      <span data-gh-release-date>August 2026</span>
-    </p>
+    <a href="whats-new.html" class="hero-whats-new" aria-label="Read what's new in VonCMS">
+      <span>What's New</span>
+      <span aria-hidden="true">&#8594;</span>
+    </a>
     <h1><span>Publishing CMS</span> <span>for news</span> <span>websites and</span> <span>blogs.</span></h1>
     <p class="hero-lede">
       For independent publishers who want fast editorial work without a plugin stack. VonCMS runs on PHP hosting, gives editors a React 19 dashboard, and keeps SEO, ads, themes, and public output close to the workflow.
@@ -146,6 +137,7 @@
       <div><dt>PHP REST</dt><dd>API backend</dd></div>
     </dl>
   </div>
+
   <div class="hero-visual">
     <div class="brand-poster mascot-poster">
       <img src="upload/owlr.png" alt="Vorro, the VonCMS owl mascot" width="1024" height="1024">
@@ -531,7 +523,7 @@ publish or import content</code></pre>
       <a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="btn-primary">Download VonCMS</a>
       <a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="btn-secondary">View source</a>
     </div>
-    <p class="cta-note" data-gh-cta-note>Latest stable: v1.26.6 - PHP 8.2+ - MySQL - Apache or LiteSpeed</p>
+    <p class="cta-note" data-gh-cta-note>Latest stable: v1.26.9 - PHP 8.2+ - MySQL - Apache or LiteSpeed</p>
   </section>
 </main>
 
@@ -545,10 +537,11 @@ publish or import content</code></pre>
     <li><a href="#included">Included</a></li>
     <li><a href="philosophy.html">Philosophy</a></li>
     <li><a href="docs.html">Docs</a></li>
+    <li><a href="whats-new.html">What's New</a></li>
   </ul>
   <p>&copy; <span data-current-year>2026</span> VonCMS - React 19 + Vite + PHP 8.2+ + MySQL - GPL-3.0-only</p>
 </footer>
 
-<script src="js/main.js?v=20260713-auto-year" defer></script>
+<script src="js/main.js?v=20260824-whats-new" defer></script>
 </body>
 </html>

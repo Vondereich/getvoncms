@@ -31,26 +31,20 @@ async function fetchLatestRelease() {
     const response = await fetch('https://api.github.com/repos/Vondereich/VonCMS/releases/latest');
     if (!response.ok) return;
     const data = await response.json();
-    
-    let version = data.tag_name;
-    let fullName = data.name;
-    if (!version || !fullName) return;
 
-    // Extract only the series name (e.g., "Rentaka") from "v1.23.10 · Rentaka"
-    let seriesName = fullName;
-    const dash = fullName.includes('—') ? '—' : (fullName.includes('·') ? '·' : null);
-    if (dash) {
-      seriesName = seriesName.split(dash)[1].trim().split(' ')[0];
-    } else if (seriesName.includes('"')) {
-      seriesName = seriesName.split('"')[1];
-    }
+    const tagVersion = data.tag_name;
+    const fullName = data.name;
+    if (!tagVersion || !fullName) return;
+
+    const version = tagVersion.replace(/^v\./i, 'v');
 
     const publishedAt = new Date(data.published_at);
     const monthYear = publishedAt.toLocaleString('en-US', { month: 'long', year: 'numeric' });
     const releaseLabel = fullName
       .replace(/^VonCMS\s*/i, '')
-      .replace(version, '')
+      .replace(/^v\.?\d+(?:\.\d+)+/i, '')
       .replace(/^[\s\-–—·:]+/, '')
+      .replace(/^["']|["']$/g, '')
       .trim();
 
     document.querySelectorAll('[data-gh-version-badge]').forEach(badge => {
@@ -121,7 +115,9 @@ document.addEventListener('DOMContentLoaded', () => {
     year.textContent = new Date().getFullYear();
   });
 
-  fetchLatestRelease();
+  if (document.querySelector('[data-gh-version-badge], [data-gh-release-link], [data-gh-cta-note]')) {
+    fetchLatestRelease();
+  }
   initSidebarLogic();
 
   // ── BURGER MENU TOGGLE ──

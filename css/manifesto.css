@@ -169,6 +169,23 @@ nav {
   transform: translateY(-1px);
 }
 
+@media (max-width: 1180px) and (min-width: 821px) {
+  .site-nav {
+    padding-inline: 1rem;
+  }
+
+  .nav-links,
+  .nav-links-manifesto {
+    gap: 0.25rem;
+  }
+
+  .nav-links a,
+  .nav-links-manifesto a {
+    padding-inline: 0.48rem;
+    font-size: 0.82rem;
+  }
+}
+
 @media (min-width: 821px) {
   .site-nav .nav-links > li:first-child > a {
     transform: translateY(4px);
