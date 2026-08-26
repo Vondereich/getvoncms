@@ -813,7 +813,7 @@ main > section {
 
 .why-section {
   display: grid;
-  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
   gap: clamp(1.5rem, 5vw, 4.5rem);
   align-items: center;
 }
@@ -859,9 +859,11 @@ main > section {
 
 .why-visual img {
   width: 100%;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 10;
+  max-height: 520px;
   object-fit: cover;
   border: 1px solid var(--line-strong);
+  border-radius: 8px;
   box-shadow: var(--shadow);
   cursor: zoom-in;
 }
