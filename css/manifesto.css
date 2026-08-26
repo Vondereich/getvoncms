@@ -832,11 +832,24 @@ footer p,
     border-bottom: 1px solid var(--line);
   }
 
-  .nav-links li:last-child a,
-  .nav-links-manifesto li:last-child a {
+  .nav-links .nav-link-strong,
+  .nav-links .nav-cta,
+  .nav-links-manifesto .nav-link-strong,
+  .nav-links-manifesto .nav-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 0.72rem 1rem;
     border-bottom: 0;
     margin-top: 0.5rem;
     text-align: center;
+  }
+
+  .nav-links .nav-cta,
+  .nav-links-manifesto .nav-cta {
+    margin-top: 0.65rem;
   }
 
   nav {
