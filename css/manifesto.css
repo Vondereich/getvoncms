@@ -152,11 +152,11 @@ nav {
 }
 
 .nav-link-strong {
-  color: var(--navy) !important;
+  color: #ffffff !important;
   height: 34px;
   padding-inline: 0.78rem;
-  border-color: rgba(17, 41, 107, 0.18);
-  background: var(--white);
+  border-color: #343a40;
+  background: #343a40;
   gap: 0.42rem;
 }
 
@@ -171,6 +171,12 @@ nav {
 .nav-link-strong:hover {
   color: var(--navy) !important;
   transform: translateY(-1px);
+}
+
+.nav-link-strong:hover {
+  color: #ffffff !important;
+  border-color: #23272b;
+  background: #23272b;
 }
 
 @media (max-width: 1180px) and (min-width: 821px) {
