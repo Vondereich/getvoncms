@@ -6,6 +6,7 @@
 
   const releasesApi = 'https://api.github.com/repos/Vondereich/VonCMS/releases?per_page=6';
   const repositoryUrl = 'https://github.com/Vondereich/VonCMS/';
+  const trustedHosts = new Set(['github.com', 'www.github.com']);
   const cacheKey = 'voncms-public-releases-v1';
   const cacheLifetime = 15 * 60 * 1000;
 
@@ -29,7 +30,10 @@
 
     try {
       const url = new URL(value, repositoryUrl);
-      return url.protocol === 'https:' || url.protocol === 'http:' ? url.href : null;
+      if (url.protocol !== 'https:') return null;
+      if (!trustedHosts.has(url.hostname.toLowerCase())) return null;
+      if (!url.pathname.startsWith('/Vondereich/VonCMS/')) return null;
+      return url.href;
     } catch {
       return null;
     }

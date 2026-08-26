@@ -58,7 +58,18 @@ async function fetchLatestRelease() {
     if (ctaNote) ctaNote.textContent = `Latest Stable: ${version} · PHP 8.2+ · MySQL · Apache`;
 
     const releaseLink = document.querySelector('[data-gh-release-link]');
-    if (releaseLink && data.html_url) releaseLink.href = data.html_url;
+    if (releaseLink && data.html_url) {
+      try {
+        const url = new URL(data.html_url);
+        const isTrustedRelease =
+          url.protocol === 'https:' &&
+          url.hostname === 'github.com' &&
+          url.pathname.startsWith('/Vondereich/VonCMS/');
+        if (isTrustedRelease) releaseLink.href = url.href;
+      } catch {
+        // Ignore malformed release URLs from the remote API.
+      }
+    }
 
     const releaseTitle = document.querySelector('[data-gh-release-title]');
     if (releaseTitle) releaseTitle.textContent = releaseLabel ? `${version} ${releaseLabel}` : version;
