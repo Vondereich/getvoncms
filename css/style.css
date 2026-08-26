@@ -112,6 +112,10 @@ img {
   list-style: none;
 }
 
+.nav-links {
+  gap: clamp(0.6rem, 1.4vw, 1.1rem);
+}
+
 .nav-links > li {
   display: flex;
   align-items: center;
@@ -1614,6 +1618,11 @@ footer p {
   .path-grid,
   .mobile-device-grid {
     grid-template-columns: 1fr;
+  }
+
+  .why-visual img {
+    aspect-ratio: 3 / 2;
+    max-height: none;
   }
 
   .mobile-device-card-featured {

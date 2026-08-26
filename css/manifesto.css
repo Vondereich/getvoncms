@@ -104,6 +104,10 @@ nav {
   margin: 0;
 }
 
+.nav-links {
+  gap: clamp(0.6rem, 1.4vw, 1.1rem);
+}
+
 .nav-links > li,
 .nav-links-manifesto > li {
   display: flex;
