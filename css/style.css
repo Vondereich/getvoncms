@@ -542,9 +542,9 @@ img {
 .ticker-track {
   display: flex;
   width: max-content;
-  gap: 2.2rem;
+  gap: 1.55rem;
   padding: 0.72rem 0;
-  animation: ticker 46s linear infinite;
+  animation: ticker 52s linear infinite;
 }
 
 .ticker-track:hover {
@@ -554,26 +554,31 @@ img {
 .ticker span {
   display: flex;
   align-items: center;
-  gap: 2.2rem;
+  gap: 1.55rem;
   color: var(--body);
-  font-family: "JetBrains Mono", Consolas, monospace;
-  font-size: 0.84rem;
-  font-weight: 800;
-  letter-spacing: 0.02em;
+  font-family: "Inter", Arial, sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   white-space: nowrap;
-  text-transform: uppercase;
 }
 
 .ticker span::after {
   content: "";
-  width: 6px;
-  height: 6px;
-  border-radius: 999px;
+  width: 20px;
+  height: 1px;
   background: var(--yellow);
 }
 
 @keyframes ticker {
   to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track {
+    animation: none;
+    transform: none;
+  }
 }
 
 main > section {
@@ -1678,13 +1683,13 @@ footer p {
   }
 
   .ticker-track {
-    gap: 1.9rem;
+    gap: 1.35rem;
     padding: 0.68rem 0;
   }
 
   .ticker span {
-    gap: 1.9rem;
-    font-size: 0.8rem;
+    gap: 1.35rem;
+    font-size: 0.76rem;
   }
 }
 
@@ -1735,13 +1740,13 @@ footer p {
   }
 
   .ticker-track {
-    gap: 1.55rem;
+    gap: 1.2rem;
     padding: 0.58rem 0;
   }
 
   .ticker span {
-    gap: 1.55rem;
-    font-size: 0.75rem;
+    gap: 1.2rem;
+    font-size: 0.72rem;
   }
 
   .hero-actions,
