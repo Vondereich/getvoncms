@@ -1516,6 +1516,10 @@ footer p {
     margin-bottom: 1rem;
   }
 
+  .why-visual img {
+    max-height: 420px;
+  }
+
   .mascot-poster {
     overflow: hidden;
   }
@@ -1621,8 +1625,8 @@ footer p {
   }
 
   .why-visual img {
-    aspect-ratio: 3 / 2;
-    max-height: none;
+    aspect-ratio: 16 / 10;
+    max-height: 280px;
   }
 
   .mobile-device-card-featured {
