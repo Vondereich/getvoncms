@@ -420,6 +420,35 @@ code {
   font-size: 0.9em;
 }
 
+.install-terminal {
+  margin: 1.5rem 0;
+  padding: 1.35rem 1.5rem;
+  overflow-x: auto;
+  border: 1px solid #111111;
+  border-radius: 8px;
+  background: #000000;
+  color: #d8f7bd;
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.18);
+  font-family: "JetBrains Mono", Consolas, monospace;
+  font-size: 0.86rem;
+  line-height: 1.8;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.install-terminal code {
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  font: inherit;
+}
+
+.terminal-comment {
+  color: #b6ff4a;
+  font-weight: 800;
+}
+
 .quote-block,
 .tech-spec,
 .card {
