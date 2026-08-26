@@ -36,7 +36,7 @@ jobs:
       - name: Build public artifact
         run: |
           mkdir -p _site
-          cp -f index.html docs.html philosophy.html CNAME _site/
+          cp -f index.html docs.html philosophy.html whats-new.html CNAME _site/
           cp -R css js upload _site/
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
