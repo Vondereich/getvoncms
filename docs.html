@@ -80,6 +80,7 @@
         <li><a href="#overview" class="active">Overview</a></li>
         <li><a href="#requirements">Requirements</a></li>
         <li><a href="#install">Deploy ZIP Install</a></li>
+        <li><a href="#source">Source Setup</a></li>
       </ul>
     </div>
 
@@ -97,6 +98,7 @@
       <div class="sidebar-label">Operations</div>
       <ul class="sidebar-links">
         <li><a href="#routing">Routing</a></li>
+        <li><a href="#upgrade">Upgrade Path</a></li>
         <li><a href="#security">Security</a></li>
         <li><a href="#docs-map">Documentation Map</a></li>
         <li><a href="#release">Release Checks</a></li>
@@ -151,6 +153,22 @@
       </div>
     </section>
 
+    <section id="source">
+      <h2>Source Setup</h2>
+      <p>Use the source repository when you want to build a custom theme, extension, API change, or release package. Keep the terminal at the repository root so the project scripts resolve correctly.</p>
+      <div class="tech-spec">
+        <header>
+          <span>Source Workflow</span>
+          <span>Node.js 22.22+ and npm</span>
+        </header>
+        <div class="tech-line"><span class="tech-label">Clone</span><span class="tech-val">git clone https://github.com/Vondereich/VonCMS.git</span></div>
+        <div class="tech-line"><span class="tech-label">Install</span><span class="tech-val">cd VonCMS &amp;&amp; npm install</span></div>
+        <div class="tech-line"><span class="tech-label">Develop</span><span class="tech-val">npm run dev</span></div>
+        <div class="tech-line"><span class="tech-label">Verify</span><span class="tech-val">npm run typecheck &amp;&amp; npm run build</span></div>
+      </div>
+      <p class="small-note">Use a Git fork when you plan to contribute changes back. Production hosting still runs the Deploy ZIP and does not need Node.js.</p>
+    </section>
+
     <section id="architecture">
       <h2>Architecture</h2>
       <p>VonCMS is a compiled React application plus a PHP API/runtime. The public entry point handles routing, crawler metadata, install checks, maintenance mode, canonical URLs, redirects, and hydration data.</p>
@@ -194,6 +212,10 @@
           <h4>Public Site</h4>
           <p>Bundled themes, navigation menus, profiles, category views, search, comments, feeds, sitemap, robots output, llms.txt, JSON-LD, canonical URLs, Open Graph, and Twitter cards.</p>
         </div>
+        <div class="card">
+          <h4>Developer Surface</h4>
+          <p>Theme registry, plugin registration, PHP APIs, source documentation, integration smoke tests, release packaging, and GPL-3.0-only licensing.</p>
+        </div>
       </div>
     </section>
 
@@ -203,18 +225,22 @@
       <div class="grid">
         <div class="card">
           <h4>Theme Registry</h4>
-          <p>The registry connects bundled and custom themes to the admin and public runtime.</p>
+          <p>The registry connects bundled and custom themes to the admin and public runtime. Theme implementations live under <code>src/themes/</code>.</p>
         </div>
         <div class="card">
           <h4>Local Fonts</h4>
-          <p>Fresh installs use Inter locally. VonCMS does not need Google Fonts at runtime for bundled themes.</p>
+          <p>Fresh installs use Inter locally. Read the <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/CUSTOM_FONTS.md" rel="noopener noreferrer">Custom Fonts guide</a> when a theme needs a licensed typeface.</p>
+        </div>
+        <div class="card">
+          <h4>Theme Contract</h4>
+          <p>Custom themes should preserve shared theme props, SEO ownership, the public content renderer, and the existing runtime APIs.</p>
         </div>
       </div>
     </section>
 
     <section id="plugins">
       <h2>Plugins And Extensions</h2>
-      <p>Plugins and extensions are for optional behavior such as SEO helpers, analytics, widgets, related posts, article blocks, campaign bars, integrations, and admin tools.</p>
+      <p>Plugins and extensions are for optional behavior such as SEO helpers, analytics, widgets, related posts, article blocks, campaign bars, integrations, and admin tools. Start with the <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/EXTENSION_DEVELOPMENT.md" rel="noopener noreferrer">Extension Development guide</a>.</p>
       <ul>
         <li>Keep plugin settings explicit.</li>
         <li>Sanitize public HTML before output.</li>
@@ -230,6 +256,18 @@
       <div class="quote-block">
         <blockquote>For affected older builds, install the current Deploy ZIP manually once before relying on later OTA discovery. If updating from the v1.25 routing baseline, run System Tools &gt; Repair `.htaccess` after the update.</blockquote>
       </div>
+    </section>
+
+    <section id="upgrade">
+      <h2>Upgrade Path</h2>
+      <p>Back up the database and site files before every upgrade. Use the Deploy ZIP for a normal production replacement, and preserve site-owned files and directories during the process.</p>
+      <ol>
+        <li>Review the current <a href="https://github.com/Vondereich/VonCMS/blob/main/CHANGELOG.md" rel="noopener noreferrer">changelog</a> and release notes.</li>
+        <li>Back up the database, configuration, uploads, and backups.</li>
+        <li>Replace the release-managed application files with the new Deploy ZIP.</li>
+        <li>Open the homepage, one post, one page, and `/admin` after the upgrade.</li>
+        <li>Follow the focused <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/UPGRADE.md" rel="noopener noreferrer">Upgrade guide</a> for version-specific notes.</li>
+      </ol>
     </section>
 
     <section id="security">
@@ -252,15 +290,15 @@
         </div>
         <div class="card">
           <h4>Runtime Internals</h4>
-          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/API.md" rel="noopener noreferrer">API</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/ROUTING.md" rel="noopener noreferrer">Routing</a>, and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/SECURITY.md" rel="noopener noreferrer">Security</a> explain the PHP runtime, route handling, and review boundaries.</p>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/API.md" rel="noopener noreferrer">API</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/ROUTING.md" rel="noopener noreferrer">Routing</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/VPS.md" rel="noopener noreferrer">VPS deployment</a>, and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/SECURITY.md" rel="noopener noreferrer">Security</a> cover runtime operation and review boundaries.</p>
         </div>
         <div class="card">
           <h4>Customization</h4>
-          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/EXTENSION_DEVELOPMENT.md" rel="noopener noreferrer">Extension development</a> and <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/CUSTOM_FONTS.md" rel="noopener noreferrer">Custom fonts</a> cover source-level themes, plugins, optional behavior, and typography changes.</p>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/docs/EXTENSION_DEVELOPMENT.md" rel="noopener noreferrer">Extension development</a>, <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/CUSTOM_FONTS.md" rel="noopener noreferrer">Custom fonts</a>, and the source workflow cover themes, plugins, optional behavior, and typography changes.</p>
         </div>
         <div class="card">
           <h4>Project Truth</h4>
-          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/CHANGELOG.md" rel="noopener noreferrer">Changelog</a> is shipped release truth. <a href="https://github.com/Vondereich/VonCMS/blob/main/CONTRIBUTING.md" rel="noopener noreferrer">Contributing</a> covers issues, pull requests, and security reporting.</p>
+          <p><a href="https://github.com/Vondereich/VonCMS/blob/main/CHANGELOG.md" rel="noopener noreferrer">Changelog</a> is shipped release truth. <a href="https://github.com/Vondereich/VonCMS/blob/main/CONTRIBUTING.md" rel="noopener noreferrer">Contributing</a> covers issues, pull requests, and security reporting. <a href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer">Release Notes</a> cover package-specific changes.</p>
         </div>
       </div>
     </section>

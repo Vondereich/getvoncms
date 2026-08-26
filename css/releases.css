@@ -79,7 +79,7 @@
 .release-button-primary {
   color: var(--navy);
   background: var(--yellow);
-  box-shadow: 0 12px 26px rgba(255, 203, 5, 0.26);
+  box-shadow: 0 12px 26px rgba(252, 163, 17, 0.26);
 }
 
 .release-button-secondary {
