@@ -50,6 +50,7 @@ footer .footer-links {
 footer .footer-links li {
   display: flex;
   align-items: center;
+  margin: 0;
 }
 
 footer .footer-links a {
