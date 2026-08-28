@@ -581,7 +581,7 @@ tr:last-child td {
 }
 
 footer {
-  width: min(1180px, calc(100% - 2rem));
+  width: min(1280px, calc(100% - 2rem));
   margin: 0 auto;
   padding: 2.2rem 0;
   display: flex;
@@ -827,24 +827,42 @@ footer p,
 
   .nav-links a,
   .nav-links-manifesto a {
-    display: block;
-    padding: 0.72rem 0.75rem;
-    border-bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 42px;
+    padding: 0.72rem 1rem;
+    border: 1px solid var(--line);
     border-radius: 6px;
+    background: var(--white);
+    box-shadow: 0 2px 8px rgba(17, 41, 107, 0.06);
     -webkit-tap-highlight-color: transparent;
   }
 
   .nav-links li + li,
   .nav-links-manifesto li + li {
-    margin-top: 0.12rem;
+    margin-top: 0.4rem;
   }
 
   .nav-links a[aria-current="page"],
   .nav-links-manifesto a[aria-current="page"] {
     color: var(--navy);
-    background: transparent;
-    border-left: 3px solid var(--yellow);
-    padding-left: calc(0.75rem - 3px);
+    background: var(--white);
+    border-color: rgba(20, 33, 61, 0.3);
+    box-shadow: inset 3px 0 0 var(--yellow), 0 2px 8px rgba(17, 41, 107, 0.06);
+  }
+
+  .nav-links a:not(.nav-link-strong):not(.nav-cta):hover,
+  .nav-links a:not(.nav-link-strong):not(.nav-cta):active,
+  .nav-links a:not(.nav-link-strong):not(.nav-cta):focus,
+  .nav-links-manifesto a:not(.nav-link-strong):not(.nav-cta):hover,
+  .nav-links-manifesto a:not(.nav-link-strong):not(.nav-cta):active,
+  .nav-links-manifesto a:not(.nav-link-strong):not(.nav-cta):focus {
+    color: var(--navy);
+    background: var(--white);
+    border-color: rgba(20, 33, 61, 0.3);
+    transform: none;
   }
 
   .nav-links .nav-link-strong,
