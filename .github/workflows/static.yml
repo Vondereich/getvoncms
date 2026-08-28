@@ -9,6 +9,10 @@ on:
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
 
+  # Refresh the static release fallback for crawlers once a day.
+  schedule:
+    - cron: "17 2 * * *"
+
 # Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
 permissions:
   contents: read
@@ -35,6 +39,7 @@ jobs:
         uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5.0.0
       - name: Build public artifact
         run: |
+          node scripts/sync-release-fallback.mjs
           mkdir -p _site
           cp -f index.html docs.html philosophy.html whats-new.html CNAME _site/
           cp -R css js upload _site/
