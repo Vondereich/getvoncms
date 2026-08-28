@@ -828,8 +828,23 @@ footer p,
   .nav-links a,
   .nav-links-manifesto a {
     display: block;
-    padding: 0.85rem 0;
-    border-bottom: 1px solid var(--line);
+    padding: 0.72rem 0.75rem;
+    border-bottom: 0;
+    border-radius: 6px;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-links li + li,
+  .nav-links-manifesto li + li {
+    margin-top: 0.12rem;
+  }
+
+  .nav-links a[aria-current="page"],
+  .nav-links-manifesto a[aria-current="page"] {
+    color: var(--navy);
+    background: transparent;
+    border-left: 3px solid var(--yellow);
+    padding-left: calc(0.75rem - 3px);
   }
 
   .nav-links .nav-link-strong,
@@ -845,11 +860,36 @@ footer p,
     border-bottom: 0;
     margin-top: 0.5rem;
     text-align: center;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .nav-links .nav-link-strong:hover,
+  .nav-links .nav-link-strong:active,
+  .nav-links .nav-link-strong:focus,
+  .nav-links-manifesto .nav-link-strong:hover,
+  .nav-links-manifesto .nav-link-strong:active,
+  .nav-links-manifesto .nav-link-strong:focus {
+    color: #ffffff !important;
+    background: #343a40;
+    border-color: #343a40;
+    transform: none;
+  }
+
+  .nav-links .nav-cta:hover,
+  .nav-links .nav-cta:active,
+  .nav-links .nav-cta:focus,
+  .nav-links-manifesto .nav-cta:hover,
+  .nav-links-manifesto .nav-cta:active,
+  .nav-links-manifesto .nav-cta:focus {
+    color: var(--navy) !important;
+    background: var(--yellow);
+    border-color: var(--yellow);
+    transform: none;
   }
 
   .nav-links .nav-cta,
   .nav-links-manifesto .nav-cta {
-    margin-top: 0.65rem;
+    margin-top: 0.75rem;
   }
 
   nav {
