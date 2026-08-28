@@ -77,6 +77,11 @@ img {
   letter-spacing: 0;
 }
 
+.footer-brand,
+.footer-links {
+  line-height: 1;
+}
+
 .nav-logo {
   transition: color 180ms ease, transform 180ms ease;
 }
@@ -1355,6 +1360,7 @@ footer p {
   color: var(--muted);
   font-family: "JetBrains Mono", Consolas, monospace;
   font-size: 0.72rem;
+  line-height: 1.4;
   text-align: right;
 }
 
