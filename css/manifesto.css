@@ -625,6 +625,10 @@ footer .footer-links {
   line-height: 1;
 }
 
+footer .footer-links li {
+  margin: 0;
+}
+
 .footer-links a {
   display: inline-flex;
   align-items: center;
