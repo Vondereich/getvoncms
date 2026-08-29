@@ -65,7 +65,19 @@ img {
   -webkit-backdrop-filter: blur(20px) saturate(150%);
 }
 
-.nav-logo,
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.82rem;
+  color: var(--navy);
+  font-family: "Outfit", Arial, sans-serif;
+  font-size: 1.42rem;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  transition: color 180ms ease, transform 180ms ease;
+}
+
 .footer-brand {
   display: inline-flex;
   align-items: center;
@@ -75,6 +87,7 @@ img {
   font-size: 1.2rem;
   font-weight: 900;
   letter-spacing: 0;
+  line-height: 1;
 }
 
 .footer-brand,
@@ -82,19 +95,17 @@ img {
   line-height: 1;
 }
 
-.nav-logo {
-  transition: color 180ms ease, transform 180ms ease;
-}
-
-.nav-logo img,
-.footer-brand img {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-}
-
 .nav-logo img {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
   transition: transform 220ms ease, filter 220ms ease;
+}
+
+.footer-brand img {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
 }
 
 .nav-logo:hover {
