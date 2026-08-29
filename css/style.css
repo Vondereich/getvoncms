@@ -1532,40 +1532,76 @@ footer p {
   .hero {
     min-height: auto;
     gap: 2.5rem;
-    padding-bottom: 3rem;
+    padding-top: clamp(2.5rem, 5vw, 4rem);
+    padding-bottom: 3.5rem;
   }
 
   .hero-content {
     width: 100%;
-    max-width: none;
+    max-width: 100%;
+  }
+
+  .hero h1 {
+    max-width: min(100%, 860px);
+    font-size: clamp(2.85rem, 6.2vw, 4.5rem);
+    line-height: 0.96;
+  }
+
+  .hero-lede {
+    max-width: min(100%, 740px);
+    font-size: clamp(1.1rem, 2.1vw, 1.25rem);
+    line-height: 1.6;
+    margin-top: 1.4rem;
+  }
+
+  .hero-actions {
+    margin-top: 1.8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-proof {
+    width: min(100%, 740px);
+    margin-top: 2rem;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.75rem;
   }
 
   .hero-visual {
     justify-self: center;
-    width: min(520px, 100%);
-    margin-bottom: 1rem;
+    width: min(480px, 100%);
+    margin: 1.5rem auto 0;
   }
 
   .mascot-poster {
-    display: grid;
-    place-items: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: visible;
+    position: relative;
+    aspect-ratio: auto;
+    padding: 1rem 0;
+  }
+
+  .mascot-poster::before {
+    left: 8%;
+    top: 10%;
+    width: 84%;
+    height: 80%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 50% 50%, rgba(252, 163, 17, 0.2), rgba(0, 80, 157, 0.12) 50%, transparent 72%);
+    filter: blur(24px);
   }
 
   .mascot-poster img {
     justify-self: center;
-  }
-
-  .why-visual img {
-    max-height: 420px;
-  }
-
-  .mascot-poster {
-    overflow: hidden;
-  }
-
-  .mascot-poster img {
-    width: min(116%, 590px);
-    max-width: none;
+    width: min(100%, 420px);
+    max-width: 420px;
+    height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    filter: contrast(1.05) saturate(1.06) drop-shadow(0 18px 36px rgba(17, 41, 107, 0.22));
   }
 
   .features-grid,
@@ -1732,7 +1768,6 @@ footer p {
     width: 112%;
   }
 
-  .hero-proof,
   .proof-panel,
   .mini-grid,
   .features-grid,
@@ -1744,6 +1779,12 @@ footer p {
   .path-grid,
   .mobile-device-grid {
     grid-template-columns: 1fr;
+  }
+
+  .hero-proof {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+    width: 100%;
   }
 
   .why-visual img {
@@ -1826,6 +1867,10 @@ footer p {
   .hero-lede {
     max-width: 34ch;
     font-size: 1.04rem;
+  }
+
+  .hero-proof {
+    grid-template-columns: 1fr;
   }
 
   .hero-visual {
