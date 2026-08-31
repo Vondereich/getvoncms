@@ -153,10 +153,10 @@
     </a>
     <h1><span>Publishing CMS</span> <span>for newsrooms</span> <span>and independent</span> <span>publishers.</span></h1>
     <p class="hero-lede">
-      VonCMS is a self-hosted publishing CMS for newsrooms, independent publishers, and bloggers. It pairs a React 19 editorial dashboard with an ordinary PHP and MySQL runtime, keeping native SEO, public themes, ad placements, and media management in one product.
+      Write, schedule, optimize, and publish from one editorial dashboard. This self-hosted CMS runs on ordinary PHP hosting, keeps your publication under your control, and includes the essentials without a heavy plugin stack.
     </p>
     <div class="hero-actions">
-      <a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="btn-primary">Download Deploy ZIP</a>
+      <a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="btn-primary">Download VonCMS</a>
       <a href="https://skripglobal.com/" rel="noopener noreferrer" class="btn-secondary">View live demo</a>
     </div>
     <dl class="hero-proof" aria-label="VonCMS product facts">
@@ -197,7 +197,7 @@
     <div class="section-copy">
       <span class="section-kicker">Product</span>
       <h2>Built for publishers who want control without extra ceremony.</h2>
-      <p>Install the runtime ZIP, publish on ordinary hosting, and keep the source available when the site needs custom work. VonCMS keeps daily publishing simple without locking the people maintaining it out of the code.</p>
+      <p>Move from draft to publication with editorial tools, native SEO output, ad-ready themes, and a public site that remains under your control.</p>
     </div>
     <div class="product-showcase">
       <div class="browser-frame">
@@ -212,36 +212,6 @@
         <div><strong>SEO built in</strong><span>Server-rendered metadata, sitemap, feeds, JSON-LD, canonical URLs, and social cards.</span></div>
         <div><strong>Your hosting</strong><span>Standard PHP and MySQL deployment on Apache or LiteSpeed hosting.</span></div>
       </div>
-    </div>
-  </section>
-
-  <section class="audience-section reveal" id="audience">
-    <div class="section-copy centered">
-      <span class="section-kicker">Who is this for?</span>
-      <h2>Start simple. Go deeper when the project needs it.</h2>
-      <p>Site owners can install and publish without touching a build pipeline. Developers still get a source tree they can inspect, change, and package when a client, newsroom, or niche publication needs more control.</p>
-    </div>
-    <div class="audience-grid">
-      <article>
-        <span class="audience-label">Publishers &amp; newsrooms</span>
-        <h3>Publish the essentials without a plugin pile.</h3>
-        <p>Start from the Deploy ZIP on standard PHP &amp; MySQL hosting. Posts, drafts, categories, native SEO, responsive themes, ad placements, and media management are ready from the start.</p>
-        <ul>
-          <li>Fast React 19 + TipTap workflow</li>
-          <li>Built-in SEO &amp; ad-ready themes</li>
-          <li>No Node.js needed in production</li>
-        </ul>
-      </article>
-      <article>
-        <span class="audience-label">Agencies &amp; developers</span>
-        <h3>Full source control when the job needs custom work.</h3>
-        <p>Fork the repository when a client or newsroom project requires custom themes, plugin behavior, PHP REST APIs, or verifiable release builds without platform lock-in.</p>
-        <ul>
-          <li>React 19 editorial frontend</li>
-          <li>PHP REST API backend</li>
-          <li>GPL-3.0 source-level customization</li>
-        </ul>
-      </article>
     </div>
   </section>
 
@@ -272,33 +242,6 @@
     </figure>
   </section>
 
-  <section class="architecture-section reveal" id="architecture">
-    <div class="section-copy">
-      <span class="section-kicker">Architecture</span>
-      <h2>Modern admin, ordinary production hosting.</h2>
-      <p>Use modern frontend tooling while building the product. Ship a normal PHP runtime when the site goes live.</p>
-    </div>
-    <div class="architecture-diagram" aria-label="VonCMS architecture flow">
-      <div class="arch-node">
-        <span>01</span>
-        <strong>React 19 Dashboard</strong>
-        <p>The editorial workspace for posts, media, themes, users, settings, and maintenance tools.</p>
-      </div>
-      <div class="arch-connector" aria-hidden="true">REST</div>
-      <div class="arch-node">
-        <span>02</span>
-        <strong>PHP REST API</strong>
-        <p>The runtime layer for auth, content, metadata, imports, settings, and repair tools.</p>
-      </div>
-      <div class="arch-connector" aria-hidden="true">Runtime</div>
-      <div class="arch-node">
-        <span>03</span>
-        <strong>MySQL + Public Themes</strong>
-        <p>Your database, public themes, crawler-facing output, SEO files, and built assets.</p>
-      </div>
-    </div>
-  </section>
-
   <section class="split-section reveal" id="publishing">
     <div class="visual-stack">
       <div class="browser-frame">
@@ -312,7 +255,7 @@
     <div class="section-copy">
       <span class="section-kicker">Publishing workflow</span>
       <h2>Write, manage, optimize, and publish in one place.</h2>
-      <p>The admin dashboard keeps daily editorial work together: posts, pages, drafts, schedules, rich editing, media, settings, users, comments, forms, newsletters, logs, and repair tools.</p>
+      <p>Move from draft to scheduled or published content without jumping between separate tools. Posts, media, SEO fields, comments, users, and site settings stay in the same workspace.</p>
       <div class="mini-grid">
         <div><strong>TipTap editor</strong><span>Rich authoring surface for posts, pages, excerpts, metadata, keywords, and responsive images.</span></div>
         <div><strong>Media manager</strong><span>Upload, organize, select, and reuse media inside the publishing flow.</span></div>
@@ -326,7 +269,7 @@
     <div class="section-copy centered">
       <span class="section-kicker">Mobile workflow</span>
       <h2>Post from anywhere when the story cannot wait.</h2>
-      <p>VonCMS keeps the admin usable on phone screens for quick editorial moves: check the site, draft a post, review SEO fields, and adjust key settings while the full desktop workflow stays available for heavier work.</p>
+      <p>Check the site, draft a post, review SEO fields, and handle urgent changes from a phone. The full desktop workspace remains ready for heavier editorial work.</p>
     </div>
     <div class="mobile-device-grid">
       <article class="mobile-device-card">
@@ -359,11 +302,41 @@
     </div>
   </section>
 
+  <section class="audience-section reveal" id="audience">
+    <div class="section-copy centered">
+      <span class="section-kicker">Who is this for?</span>
+      <h2>A practical fit for publishers and the people who build with them.</h2>
+      <p>Run the publication without managing a build pipeline. Open the source when a newsroom, client, or specialist project needs something more.</p>
+    </div>
+    <div class="audience-grid">
+      <article>
+        <span class="audience-label">Publishers &amp; newsrooms</span>
+        <h3>Keep daily publishing in one place.</h3>
+        <p>Write, schedule, manage media, tune SEO, and publish from one dashboard. Start with a bundled theme and shape the site as the publication grows.</p>
+        <ul>
+          <li>Posts, pages, drafts, and schedules</li>
+          <li>Native SEO and ad-ready themes</li>
+          <li>Mobile-friendly editorial workflow</li>
+        </ul>
+      </article>
+      <article>
+        <span class="audience-label">Agencies &amp; developers</span>
+        <h3>Take over when the job needs custom work.</h3>
+        <p>Fork the repository for custom themes, plugin behavior, PHP APIs, or release builds without handing the project to a hosted platform.</p>
+        <ul>
+          <li>React 19 editorial frontend</li>
+          <li>PHP REST API backend</li>
+          <li>GPL-3.0 source-level customization</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
   <section class="feature-section reveal" id="included">
     <div class="section-copy centered">
       <span class="section-kicker">Included baseline</span>
-      <h2>Core publishing features without a plugin pile.</h2>
-      <p>The pieces most publishers need are already part of the baseline, so a fresh site does not start with a long shopping list of plugins.</p>
+      <h2>Publishing essentials, already included.</h2>
+      <p>Start with the tools a publication needs day to day, then activate or extend optional behavior when it earns its place.</p>
     </div>
     <div class="features-grid">
       <article>
@@ -438,8 +411,8 @@
   <section class="migration-section reveal" id="paths">
     <div class="section-copy">
       <span class="section-kicker">Choose your path</span>
-      <h2>Install a site today, or build from source.</h2>
-      <p>Site owners can start with the Deploy ZIP. Developers can fork the repository when they want to study the code, customize behavior, contribute fixes, or package a release.</p>
+      <h2>Choose how you want to start.</h2>
+      <p>Install the runtime package for a working site, or use the source repository when the project calls for development and deeper customization.</p>
     </div>
     <div class="path-grid">
       <article class="path-card">
@@ -469,7 +442,7 @@
     <div class="section-copy centered">
       <span class="section-kicker">Themes and extensions</span>
       <h2>Themes and extensions ship close to the product.</h2>
-      <p>Bundled themes give fresh installs a real public shape. Built-in extensions add optional behavior without making the site depend on a marketplace just to feel complete.</p>
+      <p>Start with a working public theme instead of a blank frontend. Activate optional extensions from the dashboard, then customize either when the publication needs a different direction.</p>
     </div>
     <div class="theme-grid">
       <article>
@@ -513,6 +486,33 @@ open https://yourdomain.com/install
 connect database
 create admin account
 publish or import content</code></pre>
+    </div>
+  </section>
+
+  <section class="architecture-section reveal" id="architecture">
+    <div class="section-copy">
+      <span class="section-kicker">Architecture</span>
+      <h2>Modern admin, ordinary production hosting.</h2>
+      <p>The editorial dashboard, runtime API, database, and public themes stay within one inspectable project.</p>
+    </div>
+    <div class="architecture-diagram" aria-label="VonCMS architecture flow">
+      <div class="arch-node">
+        <span>01</span>
+        <strong>React 19 Dashboard</strong>
+        <p>The editorial workspace for posts, media, themes, users, settings, and maintenance tools.</p>
+      </div>
+      <div class="arch-connector" aria-hidden="true">REST</div>
+      <div class="arch-node">
+        <span>02</span>
+        <strong>PHP REST API</strong>
+        <p>The runtime layer for auth, content, metadata, imports, settings, and repair tools.</p>
+      </div>
+      <div class="arch-connector" aria-hidden="true">Runtime</div>
+      <div class="arch-node">
+        <span>03</span>
+        <strong>MySQL + Public Themes</strong>
+        <p>Your database, public themes, crawler-facing output, SEO files, and built assets.</p>
+      </div>
     </div>
   </section>
 
@@ -570,11 +570,11 @@ publish or import content</code></pre>
 
   <section class="cta-section reveal">
     <span class="section-kicker">Get started</span>
-    <h2>Start with the Deploy ZIP. Fork the source when you need custom work.</h2>
-    <p>Use the runtime package for normal hosting installs. Use the GitHub repository for themes, extensions, API work, release packaging, and deeper customization.</p>
+    <h2>Start your publication with VonCMS.</h2>
+    <p>Download the ready-to-install package for standard hosting, or explore the live product before setting up your own site.</p>
     <div class="hero-actions center">
       <a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="btn-primary">Download VonCMS</a>
-      <a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="btn-secondary">View source</a>
+      <a href="https://skripglobal.com/" rel="noopener noreferrer" class="btn-secondary">View live demo</a>
     </div>
     <p class="cta-note" data-gh-cta-note>Latest stable: v1.26.11 - PHP 8.2+ - MySQL - Apache or LiteSpeed</p>
   </section>
