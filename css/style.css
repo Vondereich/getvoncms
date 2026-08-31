@@ -286,18 +286,14 @@ img {
 }
 
 .hero h1 {
-  max-width: 620px;
+  max-width: 700px;
   color: var(--navy);
   font-family: "Outfit", Arial, sans-serif;
-  font-size: clamp(3.35rem, 7.2vw, 6.7rem);
+  font-size: clamp(3rem, 5.8vw, 5.35rem);
   font-weight: 900;
-  line-height: 0.93;
+  line-height: 0.96;
   letter-spacing: 0;
   overflow-wrap: break-word;
-}
-
-.hero h1 span {
-  display: inline;
 }
 
 .hero-whats-new {
@@ -305,7 +301,7 @@ img {
   align-items: center;
   gap: 0.6rem;
   min-height: 40px;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.9rem;
   padding: 0.58rem 0.8rem;
   border: 1px solid rgba(17, 41, 107, 0.3);
   border-radius: 6px;
@@ -1553,9 +1549,9 @@ footer p {
   }
 
   .hero h1 {
-    max-width: min(100%, 860px);
-    font-size: clamp(2.85rem, 6.2vw, 4.5rem);
-    line-height: 0.96;
+    max-width: min(100%, 760px);
+    font-size: clamp(2.55rem, 5.5vw, 4rem);
+    line-height: 0.98;
   }
 
   .hero-lede {
@@ -1867,12 +1863,8 @@ footer p {
 
   .hero h1 {
     max-width: 100%;
-    font-size: clamp(2.05rem, 9.8vw, 2.8rem);
-    line-height: 1;
-  }
-
-  .hero h1 span {
-    display: block;
+    font-size: clamp(1.95rem, 8.4vw, 2.45rem);
+    line-height: 0.98;
   }
 
   .hero-lede {
