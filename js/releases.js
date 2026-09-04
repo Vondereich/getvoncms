@@ -39,6 +39,55 @@
     }
   }
 
+  function toSafeImageUrl(value) {
+    if (typeof value !== 'string' || !value.trim()) return null;
+
+    try {
+      const url = new URL(value);
+      if (url.protocol !== 'https:') return null;
+
+      const host = url.hostname.toLowerCase();
+      const isGitHubAttachment = host === 'github.com'
+        && /^\/user-attachments\/assets\/[0-9a-f-]+\/?$/i.test(url.pathname);
+      const isGitHubImage = host === 'user-images.githubusercontent.com'
+        || host === 'private-user-images.githubusercontent.com';
+      const isRepositoryImage = host === 'raw.githubusercontent.com'
+        && url.pathname.startsWith('/Vondereich/VonCMS/');
+
+      return isGitHubAttachment || isGitHubImage || isRepositoryImage ? url.href : null;
+    } catch {
+      return null;
+    }
+  }
+
+  function parseReleaseImage(value) {
+    const htmlMatch = value.match(/^<img\b([^>]*)\/?\s*>$/i);
+    if (htmlMatch) {
+      const attributes = {};
+      const attributePattern = /(?:^|\s)(src|alt|width|height)\s*=\s*(?:"([^"]*)"|'([^']*)')/gi;
+
+      for (const match of htmlMatch[1].matchAll(attributePattern)) {
+        attributes[match[1].toLowerCase()] = match[2] ?? match[3] ?? '';
+      }
+
+      const src = toSafeImageUrl(attributes.src);
+      if (!src) return null;
+
+      return {
+        src,
+        alt: attributes.alt || 'VonCMS release screenshot',
+        width: Number.parseInt(attributes.width, 10),
+        height: Number.parseInt(attributes.height, 10),
+      };
+    }
+
+    const markdownMatch = value.match(/^!\[([^\]]*)\]\((https:\/\/[^\s)]+)(?:\s+["'][^"']*["'])?\)$/i);
+    if (!markdownMatch) return null;
+
+    const src = toSafeImageUrl(markdownMatch[2]);
+    return src ? { src, alt: markdownMatch[1] || 'VonCMS release screenshot' } : null;
+  }
+
   function formatDate(value) {
     const date = new Date(value);
     if (Number.isNaN(date.getTime())) return '';
@@ -198,6 +247,29 @@
       if (!line) {
         flushParagraph();
         closeList();
+        continue;
+      }
+
+      const releaseImage = parseReleaseImage(line);
+      if (releaseImage) {
+        flushParagraph();
+        closeList();
+
+        const figure = document.createElement('figure');
+        figure.className = 'release-media';
+        const image = document.createElement('img');
+        image.src = releaseImage.src;
+        image.alt = releaseImage.alt;
+        image.loading = 'lazy';
+        image.decoding = 'async';
+        if (Number.isInteger(releaseImage.width) && releaseImage.width > 0 && releaseImage.width <= 10000) {
+          image.width = releaseImage.width;
+        }
+        if (Number.isInteger(releaseImage.height) && releaseImage.height > 0 && releaseImage.height <= 10000) {
+          image.height = releaseImage.height;
+        }
+        figure.append(image);
+        fragment.append(figure);
         continue;
       }
 

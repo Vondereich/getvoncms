@@ -28,6 +28,66 @@ function safeUrl(value) {
   }
 }
 
+function safeImageUrl(value) {
+  if (typeof value !== 'string' || !value.trim()) return null;
+
+  try {
+    const url = new URL(value);
+    if (url.protocol !== 'https:') return null;
+
+    const host = url.hostname.toLowerCase();
+    const isGitHubAttachment = host === 'github.com'
+      && /^\/user-attachments\/assets\/[0-9a-f-]+\/?$/i.test(url.pathname);
+    const isGitHubImage = host === 'user-images.githubusercontent.com'
+      || host === 'private-user-images.githubusercontent.com';
+    const isRepositoryImage = host === 'raw.githubusercontent.com'
+      && url.pathname.startsWith('/Vondereich/VonCMS/');
+
+    return isGitHubAttachment || isGitHubImage || isRepositoryImage ? url.href : null;
+  } catch {
+    return null;
+  }
+}
+
+function parseReleaseImage(value) {
+  const htmlMatch = value.match(/^<img\b([^>]*)\/?\s*>$/i);
+  if (htmlMatch) {
+    const attributes = {};
+    const attributePattern = /(?:^|\s)(src|alt|width|height)\s*=\s*(?:"([^"]*)"|'([^']*)')/gi;
+
+    for (const match of htmlMatch[1].matchAll(attributePattern)) {
+      attributes[match[1].toLowerCase()] = match[2] ?? match[3] ?? '';
+    }
+
+    const src = safeImageUrl(attributes.src);
+    if (!src) return null;
+
+    return {
+      src,
+      alt: attributes.alt || 'VonCMS release screenshot',
+      width: Number.parseInt(attributes.width, 10),
+      height: Number.parseInt(attributes.height, 10),
+    };
+  }
+
+  const markdownMatch = value.match(/^!\[([^\]]*)\]\((https:\/\/[^\s)]+)(?:\s+["'][^"']*["'])?\)$/i);
+  if (!markdownMatch) return null;
+
+  const src = safeImageUrl(markdownMatch[2]);
+  return src ? { src, alt: markdownMatch[1] || 'VonCMS release screenshot' } : null;
+}
+
+function renderReleaseImage(image) {
+  const width = Number.isInteger(image.width) && image.width > 0 && image.width <= 10000
+    ? ` width="${image.width}"`
+    : '';
+  const height = Number.isInteger(image.height) && image.height > 0 && image.height <= 10000
+    ? ` height="${image.height}"`
+    : '';
+
+  return `<figure class="release-media"><img src="${escapeHtml(image.src)}" alt="${escapeHtml(image.alt)}"${width}${height} loading="lazy" decoding="async"></figure>`;
+}
+
 function formatVersion(value) {
   return typeof value === 'string' ? value.replace(/^v\./i, 'v') : '';
 }
@@ -136,6 +196,14 @@ function renderMarkdown(markdown) {
     if (!line) {
       flushParagraph();
       closeList();
+      continue;
+    }
+
+    const releaseImage = parseReleaseImage(line);
+    if (releaseImage) {
+      flushParagraph();
+      closeList();
+      output.push(renderReleaseImage(releaseImage));
       continue;
     }
 

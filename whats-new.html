@@ -60,7 +60,7 @@
 <link rel="preconnect" href="https://api.github.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="css/manifesto.css?v=20260829-logo-up-1">
-<link rel="stylesheet" href="css/releases.css?v=20260824-whats-new">
+<link rel="stylesheet" href="css/releases.css?v=20260904-release-images">
 <link rel="stylesheet" href="css/footer.css?v=20260829-footer-master-5">
 </head>
 <body>
@@ -91,17 +91,17 @@
       <span class="release-kicker">What's new</span>
       <h1>Welcome to the latest <em>VonCMS release.</em></h1>
       <p class="release-lead" data-release-summary>
-        VonCMS v1.26.11 closes the current After Hours release cycle with a canonical first-publication timestamp, explicit and data-preserving database repair, cleaner public discovery, safer admin mutations, and final compatible dependency maintenance.
+        OverDrive opens the v1.27 series with a structured Writer review workflow, shared AI writing, crawlable public pagination, stronger role boundaries, and consent-aware analytics.
       </p>
       <div class="release-actions">
-        <a class="release-button release-button-primary" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.26.11/VonCMS_v1.26.11_Deploy.zip" rel="noopener noreferrer" data-deploy-download>Download Deploy ZIP</a>
+        <a class="release-button release-button-primary" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.27.0/VonCMS_v1.27.0_Deploy.zip" rel="noopener noreferrer" data-deploy-download>Download Deploy ZIP</a>
         <a class="release-button release-button-secondary" href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" data-release-page>View on GitHub</a>
       </div>
     </div>
     <dl class="release-facts" aria-label="Current VonCMS release">
-      <div><dt>Version</dt><dd data-release-version>v1.26.11</dd></div>
+      <div><dt>Version</dt><dd data-release-version>v1.27.0</dd></div>
       <div><dt>Status</dt><dd>Stable Release</dd></div>
-      <div><dt>Published</dt><dd data-release-date>August 28, 2026</dd></div>
+      <div><dt>Published</dt><dd data-release-date>September 4, 2026</dd></div>
       <div><dt>License</dt><dd>GPL-3.0-only</dd></div>
     </dl>
   </header>
@@ -113,81 +113,93 @@
       <header class="release-document-header">
         <div>
           <span>Latest stable release</span>
-          <h2 id="release-title" data-release-name> VonCMS v1.26.11 - After Hours Finale</h2>
+          <h2 id="release-title" data-release-name>VonCMS v1.27.0 &quot;OverDrive&quot;</h2>
         </div>
-        <a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.26.11" rel="noopener noreferrer" data-release-page>Original notes</a>
+        <a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.27.0" rel="noopener noreferrer" data-release-page>Original notes</a>
       </header>
 
       <div class="release-body" data-release-body>
-        <h3>VonCMS v1.26.11 - After Hours</h3>
-<p>VonCMS v1.26.11 closes the current After Hours release cycle with a canonical first-publication timestamp, explicit and data-preserving database repair, cleaner public discovery, safer admin mutations, and final compatible dependency maintenance.</p>
-<p>This release also includes the v1.26.10 canary baseline that was tested in development but not published as a separate GitHub release.</p>
+        <h3>VonCMS v1.27.0 &quot;OverDrive&quot;</h3>
+<p>OverDrive opens the v1.27 series with a structured Writer review workflow, shared AI writing, crawlable public pagination, stronger role boundaries, and consent-aware analytics.</p>
 <h3>Highlights</h3>
+<figure class="release-media"><img src="https://github.com/user-attachments/assets/7b341fc5-43a5-42c4-8f31-ecb3b1cf0c3e" alt="capture-20260904-211134" width="1920" height="957" loading="lazy" decoding="async"></figure>
 <ul>
-<li>Added <code>published_at</code> to posts and pages so creation time, first publication time, scheduled time, and edit time remain separate.</li>
-<li>Kept first-publication dates stable when published content returns to Draft or Archived and is published again.</li>
-<li>Aligned public APIs, SSR hydration, visible dates, ordering, schema, RSS, <code>llms.txt</code>, Related Posts, and sidebar freshness to one publication-time resolver.</li>
-<li>Moved permanent schema creation and alteration out of ordinary public and authentication traffic.</li>
-<li>Added explicit Primary Admin Database Repair with exact schema ownership, advisory locking, safe preflights, resumable operations, and controlled stops for unsafe populated drift.</li>
-<li>Kept the database status check read-only and added a short healthy-result reuse window for lighter admin navigation.</li>
-<li>Improved RSS reader interoperability, Gallery file-size accuracy, crawlable public links, maintenance boundaries, plugin delegation, embedded-video fullscreen support, and canonical admin mutation responses.</li>
-<li>Updated compatible dependencies, including <code>@openrouter/sdk</code> 1.2.81, <code>react-router</code> 8.3.1, TipTap 3.30.5, <code>lucide-react</code> 1.35.0, <code>@vitejs/plugin-react</code> 6.1.1, and <code>@types/node</code> 26.4.0.</li>
+<li>Added Writer draft submission and staff review workflow.</li>
+<li>Added reviewer <strong>Review</strong> queue and Writer <strong>Submitted</strong> tab.</li>
+<li>Writers can submit, withdraw, and revise drafts without gaining publishing authority.</li>
+<li>Moderators, Admins, and Root can return, schedule, or publish submitted posts.</li>
+<li>Added shared AI writing for authorized staff without exposing the central API key.</li>
+<li>Refreshed supported Gemini models and strengthened HTML-preserving AI review.</li>
+<li>Added crawlable, base-path-safe <code>?page=N</code> pagination across all six bundled themes.</li>
+<li>Improved no-JavaScript pagination, metadata, search, category, RSS, sitemap, and public rendering consistency.</li>
+<li>Added consent-aware Native Analytics and Google Analytics handling.</li>
+<li>Removed duplicate article view counting.</li>
 </ul>
-<h3>Included v1.26.10 Canary Baseline</h3>
+<figure class="release-media"><img src="https://github.com/user-attachments/assets/c241b23d-b515-4ef0-b99f-ce3619ad0f01" alt="capture-20260904-211434" width="1920" height="957" loading="lazy" decoding="async"></figure>
+<h3>Editor And Admin</h3>
 <ul>
-<li>RSS Atom self references now match the clean feed alias, while feed output removes unsafe inline styles and embedded elements for conservative readers.</li>
-<li>Gallery lightbox metadata reuses the media API file-size value without double conversion.</li>
-<li>Public account, 404 Home, and valid Holiday Gift Widget destinations use safe anchors with SPA and subfolder behavior preserved.</li>
-<li>Admin user and comment mutations are idempotent, serialized, method-checked, and based on canonical server state.</li>
-<li>Homepage and post hydration share one content source with the no-JavaScript fallback, while explicit runtime schema ownership keeps DDL out of ordinary traffic.</li>
-<li>Database Repair is resumable and data-preserving across owned columns, indexes, foreign keys, optional tables, and compatibility stops; unsafe populated drift stops for operator review.</li>
-<li>Database status remains read-only, missing optional storage fails safely, and bounded status reuse avoids repeated metadata scans during rapid admin navigation.</li>
-<li>Appointed admins can manage ordinary plugin activation without receiving primary-admin access to credentials, custom code, analytics ownership, or media storage.</li>
-<li>Nginx VPS guidance, maintenance mode failure boundaries, and embedded-video fullscreen persistence are aligned with the shared-hosting runtime.</li>
+<li>Improved editor spacing and toolbar contrast.</li>
+<li>Added consistent title, excerpt, and keyword limits across frontend and server APIs.</li>
+<li>Fixed Archived workflow labels and saved-state feedback.</li>
+<li>Fixed Page navigation checkbox persistence.</li>
+<li>Added clearer post-loading and failure messages.</li>
+<li>Strengthened account boundaries between Super Admin, appointed Admins, and lower roles.</li>
+<li>Added the red <strong>Super Admin</strong> identity throughout relevant admin and profile surfaces.</li>
+<li>Improved TechPress contrast, card truncation, author-name handling, and metadata layout.</li>
 </ul>
-<h3>Existing Site Upgrade</h3>
+<h3>Security And Reliability</h3>
+<ul>
+<li>Rejects appended path segments after PHP entry points.</li>
+<li>Protects internal helper files from direct requests.</li>
+<li>Strengthened POST-only enforcement for database import and logout.</li>
+<li>Added stale-review conflict protection using canonical row locking and <code>409</code> responses.</li>
+<li>Added bounded AI quotas, controlled provider failures, and safe model fallback behavior.</li>
+<li>Added bounded SMTP delivery deadlines and strict response validation.</li>
+<li>Split public bootstrap responsibilities into guarded helpers while preserving root, subdomain, and subfolder behavior.</li>
+<li>Updated OpenRouter, TipTap, Multer, Express Rate Limit, Lucide React, PostCSS, type packages, and related dependencies.</li>
+</ul>
+<h3>Upgrade Notes</h3>
 <ol>
 <li>Back up the website files and database.</li>
-<li>Update through Dashboard OTA or upload the complete v1.26.11 Deploy ZIP.</li>
-<li>Sign in as the Primary Admin.</li>
-<li>Open <strong>Settings &gt; Tools &gt; Repair Database</strong> and run it once.</li>
-<li>Review the repair result and confirm <strong>Database schema is healthy</strong>.</li>
-<li>Verify the homepage, one post, one page, login, and the admin dashboard.</li>
+<li>Upload the v1.27.0 Deploy ZIP using the normal VonCMS update process.</li>
+<li>Sign in as the primary administrator.</li>
+<li>If integrity checks report outdated rules, run <strong>System Tools &gt; Repair `.htaccess`</strong>.</li>
+<li>Nginx deployments must apply the equivalent rules documented in <code>docs/VPS.md</code>.</li>
+<li>v1.27.0 itself introduces no new database migration.</li>
+<li>Sites that have not completed the earlier v1.26.11 schema upgrade must run <strong>Settings &gt; Tools &gt; Repair Database</strong> once.</li>
+<li>Verify the homepage, one article, one page, search, pagination, and the admin dashboard after updating.</li>
 </ol>
-<p>Fresh installations already create the current schema and do not need this upgrade repair.</p>
-<p>Database Repair is separate from <strong>System Tools &gt; Repair `.htaccess`</strong>. OTA protects the live <code>.htaccess</code>. Manual Deploy ZIP users must preserve their live <code>.htaccess</code>; the dedicated <code>.htaccess</code> repair remains the earlier one-time v1.25.0 managed-block migration step.</p>
-<h3>Release Assets</h3>
-<ul>
-<li><code>VonCMS_v1.26.11_Deploy.zip</code></li>
-<li>SHA256: <code>9C77B02A4FA6E7005F7BB920EC1B97501D31EA256CDBFCF047328B44701D0AA5</code></li>
-<li><code>VonCMS_v1.26.11_Source.zip</code></li>
-<li>SHA256: <code>005902569F1F0FFFBEF9A01069AC61C2E37EECBCED1D65BEFF6C50BC806514D8</code></li>
-</ul>
-<p>Release commit: <code>7e66851e5ad25d26bcb738be6e61986f67c5e1f5</code></p>
-<h3>Verification</h3>
+<h3>Release Verification</h3>
 <ul>
 <li>TypeScript typecheck passed.</li>
-<li>Prettier formatting check passed.</li>
-<li>PHP 8.3 lint passed for 103 PHP files.</li>
-<li>Integration Smoke Gate passed.</li>
-<li>Production build and release packaging passed.</li>
-<li><code>npm outdated --json</code> returned an empty result.</li>
-<li>npm audit reported zero vulnerabilities.</li>
-<li>Deploy and Source ZIP audits found no duplicate entries, unsafe paths, or sensitive runtime files.</li>
+<li>PHP lint passed across 108 PHP files.</li>
+<li>Prettier formatting passed.</li>
+<li>Production build passed.</li>
+<li>Integration tests passed before and after packaging.</li>
+<li><code>npm audit --audit-level=high</code> reported zero vulnerabilities.</li>
+<li>Deploy and Source ZIP contents were verified.</li>
 </ul>
-<p>See <code>CHANGELOG.md</code> for the complete technical record.</p>
-<p>See you in v1.27 OverDrive. The next release line will move more systematically, with clearer scope, longer testing, and fewer rushed updates.</p>
+<h3>SHA256 Checksums</h3>
+<ul>
+<li><code>VonCMS_v1.27.0_Deploy.zip</code></li>
+</ul>
+<p><code>1B43AD525B0165A0F163BB1B46013C3F173F38243A81881EC0DDE6A2970634B0</code></p>
+<ul>
+<li><code>VonCMS_v1.27.0_Source.zip</code></li>
+</ul>
+<p><code>275F21C2321E11E244528D2814FF7904C9259922107A2528A271651907B5E962</code></p>
+<p>Welcome to OverDrive.</p>
       </div>
     </article>
 
     <aside class="release-sidebar" aria-label="Release downloads and history">
       <section class="release-sidebar-section">
         <h2>Downloads</h2>
-        <a class="release-download" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.26.11/VonCMS_v1.26.11_Deploy.zip" rel="noopener noreferrer" data-deploy-download>
+        <a class="release-download" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.27.0/VonCMS_v1.27.0_Deploy.zip" rel="noopener noreferrer" data-deploy-download>
           <strong>Deploy ZIP</strong>
           <span data-deploy-meta>For normal hosting installs</span>
         </a>
-        <a class="release-download" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.26.11/VonCMS_v1.26.11_Source.zip" rel="noopener noreferrer" data-source-download>
+        <a class="release-download" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.27.0/VonCMS_v1.27.0_Source.zip" rel="noopener noreferrer" data-source-download>
           <strong>Source package</strong>
           <span data-source-meta>For development and code review</span>
         </a>
@@ -196,12 +208,12 @@
       <section class="release-sidebar-section">
         <h2>Recent releases</h2>
         <ol class="recent-releases" data-release-list>
+          <li><a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.27.0" rel="noopener noreferrer"><strong>v1.27.0</strong><span>September 4, 2026</span></a></li>
           <li><a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.26.11" rel="noopener noreferrer"><strong>v1.26.11</strong><span>August 28, 2026</span></a></li>
           <li><a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.26.9" rel="noopener noreferrer"><strong>v1.26.9</strong><span>August 24, 2026</span></a></li>
           <li><a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.26.7" rel="noopener noreferrer"><strong>v1.26.7</strong><span>August 20, 2026</span></a></li>
           <li><a href="https://github.com/Vondereich/VonCMS/releases/tag/v1.26.6" rel="noopener noreferrer"><strong>v1.26.6</strong><span>August 10, 2026</span></a></li>
           <li><a href="https://github.com/Vondereich/VonCMS/releases/tag/v1.26.5" rel="noopener noreferrer"><strong>v1.26.5</strong><span>August 9, 2026</span></a></li>
-          <li><a href="https://github.com/Vondereich/VonCMS/releases/tag/v1.26.4" rel="noopener noreferrer"><strong>v1.26.4</strong><span>August 8, 2026</span></a></li>
         </ol>
         <a class="release-archive-link" href="https://github.com/Vondereich/VonCMS/releases" rel="noopener noreferrer">Browse the full release archive</a>
       </section>
@@ -225,6 +237,6 @@
 </footer>
 
 <script src="js/main.js?v=20260824-release-page" defer></script>
-<script src="js/releases.js?v=20260824-live-release" defer></script>
+<script src="js/releases.js?v=20260904-release-images" defer></script>
 </body>
 </html>

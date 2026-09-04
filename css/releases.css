@@ -280,6 +280,19 @@
   background: var(--line);
 }
 
+.release-media {
+  margin: 1.5rem 0 2rem;
+}
+
+.release-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--line-strong);
+  border-radius: 6px;
+  background: #ffffff;
+}
+
 aside.release-sidebar {
   position: sticky;
   top: calc(var(--nav-height) + 1.5rem);
