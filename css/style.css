@@ -465,7 +465,7 @@ img {
   box-shadow: var(--shadow);
 }
 
-.brand-poster img {
+.brand-poster:not(.mascot-poster) img {
   width: 100%;
   height: 100%;
   aspect-ratio: 16 / 9;
@@ -506,6 +506,7 @@ img {
   width: min(142%, 820px);
   max-width: none;
   height: auto;
+  aspect-ratio: 1 / 1;
   object-fit: contain;
   filter:
     contrast(1.05)
