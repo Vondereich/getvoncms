@@ -264,9 +264,13 @@
         image.decoding = 'async';
         if (Number.isInteger(releaseImage.width) && releaseImage.width > 0 && releaseImage.width <= 10000) {
           image.width = releaseImage.width;
+        } else {
+          image.width = 1920;
         }
         if (Number.isInteger(releaseImage.height) && releaseImage.height > 0 && releaseImage.height <= 10000) {
           image.height = releaseImage.height;
+        } else {
+          image.height = 957;
         }
         figure.append(image);
         fragment.append(figure);

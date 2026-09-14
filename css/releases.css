@@ -288,6 +288,7 @@
   display: block;
   width: 100%;
   height: auto;
+  aspect-ratio: 1920 / 957;
   border: 1px solid var(--line-strong);
   border-radius: 6px;
   background: #ffffff;
