@@ -120,8 +120,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet" />
-<link rel="preload" href="css/style.css?v=20260907-hero-heading" as="style">
-<link rel="stylesheet" href="css/style.css?v=20260907-hero-heading">
+<link rel="preload" href="css/style.css?v=20260930-comparison-table" as="style">
+<link rel="stylesheet" href="css/style.css?v=20260930-comparison-table">
 <link rel="stylesheet" href="css/footer.css?v=20260829-footer-master-5">
 </head>
 <body>
@@ -362,49 +362,83 @@
     </div>
   </section>
 
-  <section class="comparison-band reveal" id="positioning">
-    <div class="section-copy">
-      <span class="section-kicker">Positioning</span>
-      <h2>A practical WordPress alternative for publishers who want fewer moving parts.</h2>
-      <p>WordPress is powerful, but some publishing teams outgrow a plugin-heavy workflow. Headless stacks can swing too far the other way with extra services and build pipelines. VonCMS sits in the middle: normal runtime, customizable source.</p>
+  <section class="comparison-section reveal" id="positioning">
+    <div class="section-copy centered">
+      <span class="section-kicker">Comparison</span>
+      <h2>Built for publishers. Compared plainly.</h2>
+      <p>How VonCMS compares with traditional platforms, newsletter engines, and modern edge builders.</p>
     </div>
-    <div class="compare-table-wrapper">
-      <table class="compare-table">
-        <thead>
-          <tr>
-            <th>Area</th>
-            <th>Common CMS trade-off</th>
-            <th>VonCMS baseline</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Hosting</td>
-            <td>Plugin stack or hosted platform dependency</td>
-            <td>PHP and MySQL on standard hosting</td>
-          </tr>
-          <tr>
-            <td>Admin</td>
-            <td>Legacy screens or external content APIs</td>
-            <td>Compiled React 19 dashboard</td>
-          </tr>
-          <tr>
-            <td>SEO</td>
-            <td>Extra plugin setup or frontend-only metadata</td>
-            <td>Server-rendered public metadata and crawler files</td>
-          </tr>
-          <tr>
-            <td>Customization</td>
-            <td>Marketplace lock-in or full stack rebuild</td>
-            <td>Theme, plugin, PHP API, and source-level extension points</td>
-          </tr>
-          <tr>
-            <td>Production</td>
-            <td>Build tools required on the server</td>
-            <td>Deploy ZIP install, no Node required for runtime hosting</td>
-          </tr>
-        </tbody>
-      </table>
+
+    <div class="matrix-card">
+      <div class="matrix-table-scroller">
+        <table class="matrix-table">
+          <thead>
+            <tr>
+              <th scope="col" class="th-feature">Capability</th>
+              <th scope="col" class="th-voncms">
+                <div class="th-brand">
+                  <span>VonCMS</span>
+                  <em class="badge-featured">Featured</em>
+                </div>
+              </th>
+              <th scope="col">WordPress</th>
+              <th scope="col">Ghost</th>
+              <th scope="col">Emdash CMS</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Target Focus</th>
+              <td class="td-voncms"><strong>Newsrooms &amp; Publishers</strong></td>
+              <td>General Websites &amp; Blogs</td>
+              <td>Newsletters &amp; Paywalls</td>
+              <td>AI Sites &amp; General Pages</td>
+            </tr>
+            <tr>
+              <th scope="row">Production Runtime</th>
+              <td class="td-voncms"><strong>PHP 8.2+ / MySQL (0 Node.js)</strong></td>
+              <td>PHP &amp; MySQL</td>
+              <td>Node.js / Ghost(Pro) PaaS</td>
+              <td>Cloudflare Workers / Edge</td>
+            </tr>
+            <tr>
+              <th scope="row">Editorial Queue</th>
+              <td class="td-voncms"><strong>Writer submit &amp; Staff review</strong></td>
+              <td>Needs 3rd-party plugins</td>
+              <td>Basic author roles</td>
+              <td>Basic roles &amp; AI builder</td>
+            </tr>
+            <tr>
+              <th scope="row">SEO &amp; Feeds</th>
+              <td class="td-voncms"><strong>Native SSR, JSON-LD &amp; RSS</strong></td>
+              <td>Needs Yoast / RankMath</td>
+              <td>Native metadata &amp; feeds</td>
+              <td>Astro SSR metadata</td>
+            </tr>
+            <tr>
+              <th scope="row">Ad Monetization</th>
+              <td class="td-voncms"><strong>Built into bundled themes</strong></td>
+              <td>Needs Ad Inserter plugins</td>
+              <td>Custom theme coding</td>
+              <td>Custom integration</td>
+            </tr>
+            <tr>
+              <th scope="row">Hosting Freedom</th>
+              <td class="td-voncms"><strong>Standard cPanel / LiteSpeed / Apache</strong></td>
+              <td>Any standard PHP host</td>
+              <td>VPS or Node.js host</td>
+              <td>Cloudflare ecosystem</td>
+            </tr>
+            <tr>
+              <th scope="row">Deployment</th>
+              <td class="td-voncms"><strong>Single Deploy ZIP (Web install)</strong></td>
+              <td>5-minute install</td>
+              <td>Ghost CLI / Docker</td>
+              <td>Wrangler / Git pipeline</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </section>
 
@@ -595,6 +629,6 @@ publish or import content</code></pre>
   <p>&copy; <span data-current-year>2026</span> VonCMS - React 19 + Vite + PHP 8.2+ + MySQL - GPL-3.0-only</p>
 </footer>
 
-<script src="js/main.js?v=20260824-whats-new" defer></script>
+<script src="js/main.js?v=20260930-comparison-tabs" defer></script>
 </body>
 </html>

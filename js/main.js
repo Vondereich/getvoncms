@@ -230,3 +230,4 @@ downloadBtn.addEventListener('click', dismissToast);
 xBtn.addEventListener('click', dismissToast);
 
 showToast();
+
