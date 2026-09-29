@@ -47,21 +47,26 @@
       if (url.protocol !== 'https:') return null;
 
       const host = url.hostname.toLowerCase();
-      const isGitHubAttachment = host === 'github.com'
-        && /^\/user-attachments\/assets\/[0-9a-f-]+\/?$/i.test(url.pathname);
+      const isGitHubAttachment = (host === 'github.com' || host === 'www.github.com')
+        && /^\/(?:user-attachments\/assets|Vondereich\/VonCMS\/assets)\/[0-9a-f-]+\/?$/i.test(url.pathname);
       const isGitHubImage = host === 'user-images.githubusercontent.com'
-        || host === 'private-user-images.githubusercontent.com';
+        || host === 'private-user-images.githubusercontent.com'
+        || host === 'camo.githubusercontent.com'
+        || host === 'github-production-user-asset-6210df.s3.amazonaws.com';
       const isRepositoryImage = host === 'raw.githubusercontent.com'
         && url.pathname.startsWith('/Vondereich/VonCMS/');
 
-      return isGitHubAttachment || isGitHubImage || isRepositoryImage ? url.href : null;
+      return (isGitHubAttachment || isGitHubImage || isRepositoryImage) ? url.href : null;
     } catch {
       return null;
     }
   }
 
   function parseReleaseImage(value) {
-    const htmlMatch = value.match(/^<img\b([^>]*)\/?\s*>$/i);
+    if (typeof value !== 'string' || !value.trim()) return null;
+    const trimmed = value.trim();
+
+    const htmlMatch = trimmed.match(/^<img\b([^>]*)\/?\s*>$/i);
     if (htmlMatch) {
       const attributes = {};
       const attributePattern = /(?:^|\s)(src|alt|width|height)\s*=\s*(?:"([^"]*)"|'([^']*)')/gi;
@@ -81,7 +86,7 @@
       };
     }
 
-    const markdownMatch = value.match(/^!\[([^\]]*)\]\((https:\/\/[^\s)]+)(?:\s+["'][^"']*["'])?\)$/i);
+    const markdownMatch = trimmed.match(/^!\[([^\]]*)\]\((https:\/\/[^\s)]+)(?:\s+["'][^"']*["'])?\)$/i);
     if (!markdownMatch) return null;
 
     const src = toSafeImageUrl(markdownMatch[2]);
@@ -113,7 +118,8 @@
 
   function stripInlineMarkdown(value) {
     return value
-      .replace(/!\[([^\]]*)\]\([^)]*\)/g, '$1')
+      .replace(/<img\b[^>]*>/gi, '')
+      .replace(/!\[([^\]]*)\]\([^)]*\)/g, '')
       .replace(/\[([^\]]+)\]\([^)]*\)/g, '$1')
       .replace(/[*_~`>#]/g, '')
       .replace(/\s+/g, ' ')
@@ -134,6 +140,7 @@
       }
       if (inCodeBlock || !line) continue;
       if (/^(#{1,6}\s|[-*+]\s|\d+\.\s|>|---+$)/.test(line)) continue;
+      if (parseReleaseImage(line)) continue;
 
       const summary = stripInlineMarkdown(line);
       if (summary.length >= 35) return summary;
@@ -143,7 +150,7 @@
   }
 
   function appendInlineMarkdown(parent, value) {
-    const pattern = /(`[^`\n]+`|\*\*[^*\n]+\*\*|\[[^\]\n]+\]\([^)\n]+\))/g;
+    const pattern = /(`[^`\n]+`|\*\*[^*\n]+\*\*|!\[([^\]\n]*)\]\((https:\/\/[^\s)\n]+)(?:\s+["'][^"']*["'])?\)|<img\b([^>\n]*)\/?>|\[([^\]\n]+)\]\([^)\n]+\))/gi;
     let lastIndex = 0;
     let match;
 
@@ -161,6 +168,29 @@
         const strong = document.createElement('strong');
         strong.textContent = token.slice(2, -2);
         parent.append(strong);
+      } else if (token.startsWith('![')) {
+        const alt = match[2] || 'VonCMS release screenshot';
+        const src = toSafeImageUrl(match[3]);
+        if (src) {
+          const img = document.createElement('img');
+          img.src = src;
+          img.alt = alt;
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          parent.append(img);
+        }
+      } else if (token.toLowerCase().startsWith('<img')) {
+        const imgObj = parseReleaseImage(token);
+        if (imgObj && imgObj.src) {
+          const img = document.createElement('img');
+          img.src = imgObj.src;
+          img.alt = imgObj.alt;
+          img.loading = 'lazy';
+          img.decoding = 'async';
+          if (Number.isInteger(imgObj.width) && imgObj.width > 0) img.width = imgObj.width;
+          if (Number.isInteger(imgObj.height) && imgObj.height > 0) img.height = imgObj.height;
+          parent.append(img);
+        }
       } else {
         const separator = token.indexOf('](');
         const label = token.slice(1, separator);
