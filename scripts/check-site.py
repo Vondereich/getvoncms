@@ -20,6 +20,9 @@ class Page(HTMLParser):
         self.schemas = []
         self.navigation = []
         self.footer = []
+        self.comparison_buttons = []
+        self.comparison_headers = []
+        self.comparison_cells = []
         self.in_nav = False
         self.in_footer = False
         self.h1_count = 0
@@ -62,6 +65,13 @@ class Page(HTMLParser):
         if tag == "img":
             self.images.append(attrs)
             self.assets.append(attrs.get("src", ""))
+        if tag == "button" and "data-compare" in attrs:
+            self.comparison_buttons.append(attrs)
+        if "data-cms" in attrs:
+            if tag == "th":
+                self.comparison_headers.append(attrs["data-cms"])
+            elif tag == "td":
+                self.comparison_cells.append(attrs)
 
     def handle_startendtag(self, tag, attrs):
         self.handle_starttag(tag, attrs)
@@ -146,6 +156,17 @@ def check(root):
     require(len({p.metadata.get('description', [''])[0] for p in pages.values()}) == len(pages),
             "Duplicate descriptions")
     home = pages["index.html"]
+    comparison_keys = ["wordpress", "ghost", "emdash", "grav", "strapi", "payload", "october"]
+    require([b["data-compare"] for b in home.comparison_buttons] == comparison_keys,
+            "Homepage: comparison controls missing or duplicated")
+    require(home.comparison_headers == comparison_keys,
+            "Homepage: comparison column headings do not match controls")
+    require(sum(b.get("aria-pressed") == "true" for b in home.comparison_buttons) == 1,
+            "Homepage: expected one selected comparison")
+    for key in comparison_keys:
+        cells = [c for c in home.comparison_cells if c["data-cms"] == key]
+        require(len(cells) == 4 and all(c.get("data-label") for c in cells),
+                f"Homepage: incomplete or unlabeled comparison for {key}")
     required_guides = {
         "API.md", "CUSTOM_FONTS.md", "DATABASE_MANAGER.md", "EXTENSION_DEVELOPMENT.md",
         "FEATURES.md", "INSTALL.md", "LICENSE.md", "MANUAL.md", "ROUTING.md",

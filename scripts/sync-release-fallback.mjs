@@ -92,6 +92,10 @@ function formatVersion(value) {
   return typeof value === 'string' ? value.replace(/^v\./i, 'v') : '';
 }
 
+function isStableVersionTag(value) {
+  return typeof value === 'string' && /^v\.?\d+(?:\.\d+)+$/i.test(value);
+}
+
 function formatDate(value) {
   const date = new Date(value);
   if (Number.isNaN(date.getTime())) return '';
@@ -276,7 +280,8 @@ async function syncReleaseFallback() {
   if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
 
   const releases = await response.json();
-  const stableReleases = releases.filter(release => !release.draft && !release.prerelease && release.tag_name);
+  const stableReleases = releases.filter(release =>
+    !release.draft && !release.prerelease && isStableVersionTag(release.tag_name));
   const latest = stableReleases[0];
   if (!latest) throw new Error('No stable release returned');
 
@@ -326,7 +331,8 @@ async function syncReleaseFallback() {
       const data = JSON.parse(json);
       if (data['@type'] !== 'SoftwareApplication') return match;
       data.softwareVersion = version.replace(/^v/i, '');
-      return `${start}\n${JSON.stringify(data, null, 2)}\n${end}`;
+      const serialized = JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
+      return `${start}\n${serialized}\n${end}`;
     });
   await writeFile(homePath, home, 'utf8');
   console.log(`VonCMS: generated static release fallback for ${version}.`);

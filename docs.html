@@ -23,11 +23,13 @@
 <meta property="og:image:width" content="1024" />
 <meta property="og:image:height" content="1024" />
 <meta property="og:image:type" content="image/png" />
+<meta property="og:image:alt" content="Vorro, the VonCMS owl mascot" />
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:url" content="https://getvoncms.com/docs.html" />
 <meta name="twitter:title" content="VonCMS Documentation | Install a Self-Hosted Publishing CMS" />
 <meta name="twitter:description" content="Install, configure, and deploy VonCMS, a self-hosted publishing CMS for news websites, publishers, and journalists, on standard PHP and MySQL hosting." />
 <meta name="twitter:image" content="https://getvoncms.com/upload/owlr.png" />
+<meta name="twitter:image:alt" content="Vorro, the VonCMS owl mascot" />
 
 <script type="application/ld+json">
 {
@@ -63,8 +65,8 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="stylesheet" href="css/site.css?v=20260930-editorial">
-<link rel="stylesheet" href="css/manifesto.css?v=20260930-editorial">
+<link rel="stylesheet" href="css/site.css?v=20261001-glass">
+<link rel="stylesheet" href="css/manifesto.css?v=20261001-royal">
 </head>
 <body>
 <a class="skip-link" href="#page-content">Skip to content</a>
@@ -90,6 +92,19 @@
   </ul>
   </div>
 </nav>
+
+<header class="subpage-masthead" id="overview" data-mark="DOCS">
+  <div class="shell">
+    <p class="page-trail"><a href="index.html">Home</a><span>/</span>Documentation</p>
+    <div class="hero-badge">VonCMS Documentation</div>
+    <h1>Install VonCMS. Start publishing.</h1>
+    <p class="lead">
+      A practical guide to running a self-hosted publishing CMS for your news website or blog. Start with the Deploy ZIP; use the source repository when you need a custom build.
+    </p>
+    <div class="guide-links"><a class="btn-primary" href="#install">Install a site</a><a class="btn-secondary" href="#workflow">Manage publishing</a><a class="btn-secondary" href="#source">Develop from source</a></div>
+    <p class="page-note">This guide summarizes the official repository docs. For changes tied to a specific version, use the published <a href="whats-new.html">release notes</a>.</p>
+  </div>
+</header>
 
 <div class="layout shell">
   <aside aria-label="Documentation contents">
@@ -143,16 +158,6 @@
   </aside>
 
   <main id="page-content">
-    <header class="hero" id="overview">
-      <p class="page-trail"><a href="index.html">Home</a><span>/</span>Documentation</p>
-      <div class="hero-badge">VonCMS Documentation</div>
-      <h1>Install VonCMS. Start publishing.</h1>
-      <p class="lead">
-        A practical guide to running a self-hosted publishing CMS for your news website or blog. Start with the Deploy ZIP; use the source repository when you need a custom build.
-      </p>
-      <div class="guide-links"><a class="btn-primary" href="#install">Install a site &#8594;</a><a class="btn-secondary" href="#workflow">Manage publishing &#8594;</a><a class="btn-secondary" href="#source">Develop from source &#8594;</a></div>
-      <p class="page-note">This guide summarizes the official repository docs. For changes tied to a specific version, use the published <a href="whats-new.html">release notes</a>.</p>
-    </header>
 
     <section id="requirements">
       <h2>Requirements</h2>
@@ -206,7 +211,7 @@ publish or import content</code></pre>
       <div class="quote-block">
         <blockquote>Production hosting does not need Node.js, Vite, npm, or a separate frontend server.</blockquote>
       </div>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md">Read the full installation guide &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md">Read the full installation guide</a></p>
     </section>
 
     <section id="first-run">
@@ -221,7 +226,7 @@ publish or import content</code></pre>
         <li>Make an external backup of the database, configuration, and uploads.</li>
       </ol>
       <p class="small-note">If an admin menu is missing, check your role and whether its module is enabled. Not every account can access owner-only settings or maintenance tools.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/MANUAL.md">Official user manual &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/MANUAL.md">Official user manual</a></p>
     </section>
 
 
@@ -273,7 +278,7 @@ publish or import content</code></pre>
         <li>Plan redirects before changing domains or public URLs. WordPress themes and plugins are not VonCMS extensions.</li>
       </ol>
       <p class="small-note">Back up files before using orphan-media cleanup or other destructive tools. Image conversion and available controls depend on settings and permissions.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/FEATURES.md">Media and import capabilities &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/FEATURES.md">Media and import capabilities</a></p>
     </section>
 
     <section id="seo">
@@ -287,7 +292,7 @@ publish or import content</code></pre>
         <li>For a subfolder installation, configure the host-root <code>/robots.txt</code> to reference the publication's sitemap. A subfolder robots file does not replace the host-root policy.</li>
       </ul>
       <p>An orphan-page audit warning means the crawler did not find an incoming internal link during that crawl. Inspect actual navigation and article links, rerun the crawl after an upgrade, and compare with Search Console rather than adding hidden crawler-only links.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/MANUAL.md#seo">Official SEO operating notes &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/MANUAL.md#seo">Official SEO operating notes</a></p>
     </section>
 
     <section id="engagement">
@@ -299,7 +304,7 @@ publish or import content</code></pre>
         <div class="card"><h3>Optional AI writing</h3><p>Staff drafting and review tools require a configured external provider. The local AI Summary extension is a separate feature that does not call an external API.</p></div>
       </div>
       <p class="small-note">Authenticated SMTP requires encrypted TLS or SSL transport. Confirm your provider details and test delivery before relying on contact or account emails.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/MANUAL.md#settings">Settings and audience tools &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/MANUAL.md#settings">Settings and audience tools</a></p>
     </section>
 
     <section id="themes">
@@ -336,7 +341,7 @@ publish or import content</code></pre>
         <blockquote>Use the upgrade guide for the release you are installing. Repair rules or the database only when the release notes or System Tools identify a mismatch.</blockquote>
       </div>
       <p>Scheduled posts are checked during normal public traffic. If your site can be idle at a scheduled publish time, configure the optional hosting cron described in the installation guide. Keep its secret in the <code>X-Cron-Key</code> header, not in the URL.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md#optional-cpanel-cron-for-quiet-sites">Optional cron setup &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md#optional-cpanel-cron-for-quiet-sites">Optional cron setup</a></p>
     </section>
 
     <section id="upgrade">
@@ -363,7 +368,7 @@ publish or import content</code></pre>
         <li><strong>Repair:</strong> reconciles known VonCMS schema gaps. It does not repair low-level MySQL corruption.</li>
       </ul>
       <p>If a restore fails after tables have changed, treat the database state as uncertain. Restore a known-good backup or follow the recovery guidance instead of repeatedly retrying on the live site.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/DATABASE_MANAGER.md">Full Database Manager and restore guide &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/DATABASE_MANAGER.md">Full Database Manager and restore guide</a></p>
     </section>
 
     <section id="troubleshooting">
@@ -377,7 +382,7 @@ publish or import content</code></pre>
         <div class="tech-line"><span class="tech-label">Old UI after update</span><span class="tech-val">Verify that the matching built assets were deployed, then check browser/CDN caches and release-specific upgrade instructions.</span></div>
       </div>
       <p>Compare the public site and admin separately. Before destructive recovery, take an external backup and inspect the relevant server logs privately.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md#troubleshooting">Hosting troubleshooting &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/INSTALL.md#troubleshooting">Hosting troubleshooting</a></p>
     </section>
 
     <section id="security">
@@ -496,7 +501,7 @@ publish or import content</code></pre>
       <h2>License and Brand Use</h2>
       <p>VonCMS is licensed under GPL-3.0-only. You may use, study, modify, and redistribute the software under its terms; third-party dependencies keep their own licenses. The software is provided without warranty.</p>
       <p>The software license does not grant permission to use VonCMS names or logos to imply official endorsement of a modified distribution. Keep modified distributions clearly identified.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/LICENSE.md">License and trademark notes &#8599;</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/LICENSE.md">License and trademark notes</a></p>
     </section>
 
   </main>
@@ -507,6 +512,6 @@ publish or import content</code></pre>
   <div class="footer-bottom"><p>&copy; <span data-current-year>2026</span> VonCMS. A publishing CMS for publishers.</p><p>Free and open source &middot; <a href="https://github.com/Vondereich/VonCMS/blob/main/LICENSE.md">GPL-3.0-only</a></p></div>
 </footer>
 
-<script src="js/main.js?v=20260930-editorial" defer></script>
+<script src="js/main.js?v=20261001-polish" defer></script>
 </body>
 </html>

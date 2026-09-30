@@ -1,19 +1,27 @@
-.release-masthead { padding-block: 42px 32px; background: var(--paper); border-bottom: 1px solid var(--line); }
+.release-masthead { position: relative; overflow: hidden; padding-block: 42px 32px; background: #11296b; border-bottom: 6px solid var(--yellow); color: white; }
+.release-masthead::after { content: "RELEASE"; position: absolute; right: -25px; bottom: -28px; color: rgba(255,255,255,.045); font: 900 clamp(90px, 14vw, 190px)/.8 "Outfit", Arial, sans-serif; pointer-events: none; }
+.release-masthead .shell { position: relative; z-index: 1; }
+.release-masthead .page-trail, .release-masthead .release-intro { color: #dce4f1; }
+.release-masthead .page-trail a, .release-masthead .text-link { color: white; text-decoration-color: #ffdb57; }
+.release-masthead .page-trail a:hover, .release-masthead .text-link:hover { color: #ffdb57; }
+.release-masthead .release-kicker { color: #ffdb57; }
 .release-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
 .release-heading h1 { font-size: 46px; }
 .release-heading > a { flex-shrink: 0; margin-bottom: 4px; font-size: 13px; }
 .release-intro { margin-top: 18px; font-size: 16px; line-height: 1.7; }
 .release-main { width: min(var(--shell), calc(100% - 64px)); margin-inline: auto; padding: 24px 0 70px; }
 .release-lead { margin-top: 24px; max-width: 74ch; color: var(--navy); font-weight: 550; }
-.release-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 30px 0 0; border-top: 1px solid var(--line-strong); padding-top: 22px; }
-.release-facts div { padding-left: 24px; border-left: 1px solid var(--line-strong); }
+.release-facts { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin: 30px 0 0; border-top: 1px solid rgba(255,255,255,.28); padding-top: 22px; }
+.release-facts div { padding-left: 24px; border-left: 1px solid rgba(255,255,255,.28); }
 .release-facts div:first-child { padding-left: 0; border-left: 0; }
-.release-facts dt { font-size: 11px; color: var(--muted); text-transform: uppercase; font-weight: 700; }
+.release-facts dt { font-size: 11px; color: #bfcbe0; text-transform: uppercase; font-weight: 700; }
 .release-facts dd { margin: 6px 0 0; font-size: 16px; font-weight: 750; }
 .release-facts [data-release-version] { font-family: "Outfit", Arial, sans-serif; font-size: 27px; line-height: 1.2; }
 .release-toolbar { display: flex; justify-content: space-between; align-items: center; gap: 30px; padding-bottom: 24px; border-bottom: 1px solid var(--line); }
 .release-toolbar .release-actions { margin: 0; flex-shrink: 0; }
 .release-toolbar .release-button { min-height: 44px; padding: 10px 16px; font-size: 13px; }
+.release-button-primary[data-deploy-download]::after { content: "\2193"; }
+.release-button-secondary::after { content: "\2192"; }
 .release-sync { max-width: 65ch; min-height: 20px; font-size: 12px; color: var(--muted); }
 .release-layout { display: grid; grid-template-columns: minmax(0, 1fr) 250px; gap: 70px; margin-top: 40px; }
 .release-document { min-width: 0; }

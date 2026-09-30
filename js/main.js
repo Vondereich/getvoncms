@@ -154,7 +154,7 @@ function initComparison() {
     table.querySelectorAll('[data-cms]').forEach(cell => {
       cell.hidden = cell.dataset.cms !== button.dataset.compare;
     });
-    table.querySelector('caption').textContent = 'VonCMS and ' + button.textContent + ': publishing and hosting';
+    table.querySelector('caption').textContent = 'VonCMS vs ' + button.textContent.trim();
   }
   buttons.forEach(button => button.addEventListener('click', () => select(button)));
   controls.hidden = false;
