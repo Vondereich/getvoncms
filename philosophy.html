@@ -39,7 +39,7 @@
   "about": {
     "@type": "SoftwareApplication",
     "name": "VonCMS",
-    "applicationCategory": "PublishingApplication"
+    "applicationCategory": "BusinessApplication"
   },
   "isPartOf": {
     "@type": "WebSite",
@@ -63,18 +63,19 @@
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Outfit:wght@700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet" />
-<link rel="preload" href="css/manifesto.css?v=20260829-logo-up-1" as="style">
-<link rel="stylesheet" href="css/manifesto.css?v=20260829-logo-up-1">
-<link rel="stylesheet" href="css/footer.css?v=20260829-footer-master-5">
+<link rel="stylesheet" href="css/site.css?v=20260930-editorial">
+<link rel="stylesheet" href="css/manifesto.css?v=20260930-editorial">
 </head>
 <body>
+<a class="skip-link" href="#page-content">Skip to content</a>
 
-<nav class="site-nav">
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
   <a class="nav-logo" href="index.html" aria-label="VonCMS home">
     <img src="upload/logo2.png" alt="" width="34" height="34">
     <span>VonCMS</span>
   </a>
-  <button class="burger" id="burger-btn" aria-label="Toggle menu" aria-expanded="false">
+  <button class="burger" id="burger-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
     <span></span><span></span><span></span>
   </button>
   <ul class="nav-links" id="nav-links" aria-label="Primary navigation">
@@ -87,10 +88,13 @@
     <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="nav-link-strong"><svg class="nav-github-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0.2a8 8 0 0 0-2.53 15.59c0.4 0.07 0.55-0.17 0.55-0.38v-1.36c-2.23 0.49-2.7-0.95-2.7-0.95-0.36-0.92-0.89-1.17-0.89-1.17-0.73-0.5 0.06-0.49 0.06-0.49 0.8 0.06 1.23 0.83 1.23 0.83 0.72 1.22 1.87 0.87 2.33 0.67 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.65-0.89-3.65-3.96 0-0.88 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.22 2.2 0.82A7.6 7.6 0 0 1 8 3.7c0.68 0 1.36 0.09 2 0.27 1.52-1.04 2.19-0.82 2.19-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.08-1.87 3.75-3.66 3.95 0.29 0.25 0.54 0.74 0.54 1.49v2.21c0 0.21 0.15 0.46 0.55 0.38A8 8 0 0 0 8 0.2Z"/></svg><span>GitHub</span></a></li>
     <li><a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="nav-cta">Download</a></li>
   </ul>
+  </div>
 </nav>
 
-<div class="layout">
-  <aside>
+<div class="layout shell">
+  <aside aria-label="Philosophy contents">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="page-toc" hidden>On this page</button>
+    <div class="toc-content" id="page-toc">
     <div class="sidebar-group">
       <div class="sidebar-label">Philosophy</div>
       <ul class="sidebar-links">
@@ -111,23 +115,26 @@
         <li><a href="#beliefs">Product Beliefs</a></li>
       </ul>
     </div>
+    </div>
   </aside>
 
-  <main>
+  <main id="page-content">
     <header class="hero" id="principle">
-      <div class="hero-badge">VonCMS Philosophy</div>
+      <p class="page-trail"><a href="index.html">Home</a><span>/</span>Philosophy</p>
+      <div class="hero-badge">Why VonCMS</div>
       <h1>Publishing software should stay practical.</h1>
       <p class="lead">
-        VonCMS is built around a simple idea: most publishing sites should be easy to host, easy to inspect, and easy to extend without turning every owner into a plugin manager or DevOps operator.
+        Your publication should be yours to run. VonCMS brings an editorial workspace and a public website together, with hosting, content, and source under your control.
       </p>
     </header>
+    <figure class="principle-image"><img src="upload/publisher.webp" alt="Illustration of an independent publisher working on their own publication" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>Built for people who have something to publish.</figcaption></figure>
 
     <section id="problem">
       <h2>The Problem</h2>
-      <p>Many publishing stacks drift toward one of two extremes. Legacy CMS installs can become plugin-heavy and fragile. Modern headless stacks can add hosting assumptions, build pipelines, paid platform surfaces, and operational overhead that ordinary content sites do not need.</p>
-      <p>VonCMS is not trying to win by having the longest feature list. It tries to make the common publishing path calmer: install the runtime, own the database, publish content, and customize from source when the project actually needs it.</p>
+      <p>Choosing a CMS means choosing the work that comes with it. A general-purpose platform offers a broad ecosystem; a headless stack offers architectural flexibility. Either can be the right choice, but not every independent publication needs that much setup.</p>
+      <p>VonCMS takes a narrower approach: a publishing workflow, bundled themes, and a PHP runtime in one deployable application. Start with those defaults, then customize when your project needs it.</p>
       <div class="quote-block">
-        <blockquote>Less dependency surface is a product decision, not just an engineering preference.</blockquote>
+        <blockquote>A publication should be judged by its stories, not the complexity of its stack.</blockquote>
       </div>
     </section>
 
@@ -136,15 +143,15 @@
       <p>A site owner should be able to move hosts, inspect the source, back up the database, replace files manually, and keep publishing without asking a platform for permission. That is why VonCMS uses standard PHP and MySQL for runtime hosting.</p>
       <div class="grid">
         <div class="card">
-          <h4>Files you can replace</h4>
+          <h3>Files you can replace</h3>
           <p>The Deploy ZIP path keeps runtime deployment understandable for shared hosting and VPS users.</p>
         </div>
         <div class="card">
-          <h4>Data you can back up</h4>
+          <h3>Data you can back up</h3>
           <p>Content and settings live in a database the site owner controls.</p>
         </div>
         <div class="card">
-          <h4>Source you can study</h4>
+          <h3>Source you can study</h3>
           <p>Developers can fork the repository, change themes, build plugins, edit APIs, and create releases.</p>
         </div>
       </div>
@@ -152,14 +159,14 @@
 
     <section id="workflow">
       <h2>Daily Workflow</h2>
-      <p>A CMS choice is not only a technical architecture choice. It is a daily workflow choice. If the system constantly pushes the owner into plugin maintenance, broken updates, or tooling chores, the software is taking time away from publishing.</p>
+      <p>A CMS is something you use every day. Writers need space to draft; reviewers need a clear queue; publishers need to decide when a story goes live. VonCMS separates those responsibilities without granting every writer publishing access.</p>
       <div class="grid">
         <div class="card">
-          <h4>For site owners</h4>
-          <p>Install from Deploy ZIP, finish the browser installer, sign in, choose a theme, publish, and maintain the site through admin tools.</p>
+          <h3>For site owners</h3>
+          <p>Install the Deploy ZIP, choose a theme, and work from the dashboard. Publish alone, or use Writer submissions and staff review when a team is involved.</p>
         </div>
         <div class="card">
-          <h4>For developers</h4>
+          <h3>For developers</h3>
           <p>Use the source repository when custom code is needed. Keep changes focused, run the relevant checks, and package deliberately.</p>
         </div>
       </div>
@@ -186,6 +193,7 @@
 
     <section id="source">
       <h2>Open Source</h2>
+      <p>VonCMS is free software under <a href="https://github.com/Vondereich/VonCMS/blob/main/LICENSE.md">GPL-3.0-only</a>. You can study, modify, and redistribute it under the license terms. Distribution of modified copies carries obligations; hosting and optional services are separate costs.</p>
       <p>Open source should mean more than a public download. The repository needs to be understandable enough for someone to inspect architecture, build a theme, change a plugin, review security-sensitive code, and reproduce release checks.</p>
       <ul>
         <li>Docs should point developers toward the right files.</li>
@@ -197,14 +205,14 @@
 
     <section id="seo">
       <h2>SEO Ownership</h2>
-      <p>Publishing software should own its public output. VonCMS keeps crawler-facing behavior in the runtime path: metadata, social cards, sitemaps, feeds, canonical URLs, robots output, llms.txt, and JSON-LD belong to the site, not to an afterthought plugin.</p>
+      <p>Readers and search engines need usable public pages. VonCMS handles metadata, social cards, sitemaps, feeds, canonical URLs, robots output, llms.txt, and structured data in the runtime. These are foundations for discovery, not a promise of search rankings.</p>
     </section>
 
     <section id="security">
       <h2>Security Posture</h2>
       <p>Security should be handled with evidence and scope, not slogans. VonCMS favors focused boundaries: role checks, CSRF coverage, safe importer behavior, routing rules, sensitive-file protections, and release checks that can be re-run.</p>
       <div class="quote-block">
-        <blockquote>Do not call a claim secure because it sounds secure. Prove the specific boundary.</blockquote>
+        <blockquote>Security is ongoing maintenance and verification, not a badge on a landing page.</blockquote>
       </div>
     </section>
 
@@ -212,19 +220,19 @@
       <h2>Product Beliefs</h2>
       <div class="grid">
         <div class="card">
-          <h4>Hostability matters</h4>
+          <h3>Hostability matters</h3>
           <p>A CMS that cannot run on ordinary hosting excludes too many real publishing use cases.</p>
         </div>
         <div class="card">
-          <h4>Source should be useful</h4>
+          <h3>Source should be useful</h3>
           <p>Public code should help developers modify and verify the product, not just satisfy a license checkbox.</p>
         </div>
         <div class="card">
-          <h4>Core should carry the basics</h4>
+          <h3>Core should carry the basics</h3>
           <p>Publishing, SEO, themes, extensions, media, users, comments, and repair tools should not require a shopping list.</p>
         </div>
         <div class="card">
-          <h4>Claims need restraint</h4>
+          <h3>Claims need restraint</h3>
           <p>A professional product page should say what changed and what exists, without pretending every feature is revolutionary.</p>
         </div>
       </div>
@@ -233,21 +241,11 @@
   </main>
 </div>
 
-<footer class="site-footer-wide">
-  <div class="footer-brand">
-    <img src="upload/logo2.png" alt="" width="28" height="28">
-    <span>VonCMS</span>
-  </div>
-  <ul class="footer-links">
-    <li><a href="index.html#product">Product</a></li>
-    <li><a href="index.html#included">Included</a></li>
-    <li><a href="philosophy.html">Philosophy</a></li>
-    <li><a href="docs.html">Docs</a></li>
-    <li><a href="whats-new.html">What's New</a></li>
-  </ul>
-  <p>&copy; <span data-current-year>2026</span> VonCMS - React 19 + Vite + PHP 8.2+ + MySQL - GPL-3.0-only</p>
+<footer class="site-footer">
+  <div class="footer-top"><a class="footer-brand" href="index.html"><img src="upload/logo2.png" alt="" width="38" height="38"><span>VonCMS</span></a><ul class="footer-links"><li><a href="index.html#product">Product</a></li><li><a href="index.html#included">Included</a></li><li><a href="philosophy.html" aria-current="page">Philosophy</a></li><li><a href="docs.html">Docs</a></li><li><a href="whats-new.html">What's New</a></li></ul></div>
+  <div class="footer-bottom"><p>&copy; <span data-current-year>2026</span> VonCMS. A publishing CMS for publishers.</p><p>Free and open source &middot; <a href="https://github.com/Vondereich/VonCMS/blob/main/LICENSE.md">GPL-3.0-only</a></p></div>
 </footer>
 
-<script src="js/main.js?v=20260824-release-page" defer></script>
+<script src="js/main.js?v=20260930-editorial" defer></script>
 </body>
 </html>

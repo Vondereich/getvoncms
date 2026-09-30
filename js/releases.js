@@ -101,6 +101,7 @@
       month: 'long',
       day: 'numeric',
       year: 'numeric',
+      timeZone: 'UTC',
     });
   }
 
@@ -428,6 +429,9 @@
 
     const body = document.querySelector('[data-release-body]');
     renderMarkdown(latest.body, body);
+    if (summary && body?.firstElementChild?.tagName === 'P' && body.firstElementChild.textContent === summary) {
+      body.firstElementChild.remove();
+    }
 
     const sync = document.querySelector('[data-release-sync]');
     if (sync) {
@@ -466,6 +470,7 @@
     try {
       const response = await fetch(releasesApi, {
         headers: { Accept: 'application/vnd.github+json' },
+        signal: AbortSignal.timeout(8000),
       });
       if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
 

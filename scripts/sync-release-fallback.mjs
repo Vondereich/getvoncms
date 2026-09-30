@@ -254,9 +254,8 @@ function renderMarkdown(markdown) {
 }
 
 function replaceInner(source, expression, replacement) {
-  const next = source.replace(expression, (_match, prefix, suffix) => `${prefix}${replacement}${suffix}`);
-  if (next === source) throw new Error(`Could not find expected HTML anchor: ${expression}`);
-  return next;
+  if (!expression.test(source)) throw new Error(`Could not find expected HTML anchor: ${expression}`);
+  return source.replace(expression, (_match, prefix, suffix) => `${prefix}${replacement}${suffix}`);
 }
 
 function releaseListMarkup(releases) {
@@ -272,6 +271,7 @@ function releaseListMarkup(releases) {
 async function syncReleaseFallback() {
   const response = await fetch(repositoryApi, {
     headers: { Accept: 'application/vnd.github+json' },
+    signal: AbortSignal.timeout(15000),
   });
   if (!response.ok) throw new Error(`GitHub returned ${response.status}`);
 
@@ -292,6 +292,11 @@ async function syncReleaseFallback() {
   const sourceAsset = assets.find(asset => /source.*\.zip$/i.test(asset.name || ''));
   const deployUrl = safeUrl(deployAsset?.browser_download_url) || releaseUrl;
   const sourceUrl = safeUrl(sourceAsset?.browser_download_url) || releaseUrl;
+  const renderedBody = renderMarkdown(latest.body);
+  const summaryParagraph = `<p>${inlineMarkdown(summary)}</p>`;
+  const bodyMarkup = renderedBody.startsWith(summaryParagraph)
+    ? renderedBody.slice(summaryParagraph.length).trimStart()
+    : renderedBody;
   const page = await readFile(pagePath, 'utf8');
 
   let next = page;
@@ -299,13 +304,31 @@ async function syncReleaseFallback() {
   next = replaceInner(next, /(<dd data-release-version>)[\s\S]*?(<\/dd>)/, escapeHtml(version));
   next = replaceInner(next, /(<dd data-release-date>)[\s\S]*?(<\/dd>)/, escapeHtml(date));
   next = replaceInner(next, /(<h2 id="release-title" data-release-name>)[\s\S]*?(<\/h2>)/, escapeHtml(name));
-  next = replaceInner(next, /(<div class="release-body" data-release-body>)[\s\S]*?(<\/div>\s*<\/article>)/, `\n        ${renderMarkdown(latest.body)}\n      `);
+  next = replaceInner(next, /(<div class="release-body" data-release-body>)[\s\S]*?(<\/div>\s*<\/article>)/, `\n        ${bodyMarkup}\n      `);
   next = next.replace(/https:\/\/github\.com\/Vondereich\/VonCMS\/releases\/download\/[^"\s]+\/VonCMS_[^"\s]+_Deploy\.zip/g, deployUrl);
   next = next.replace(/https:\/\/github\.com\/Vondereich\/VonCMS\/releases\/download\/[^"\s]+\/VonCMS_[^"\s]+_Source\.zip/g, sourceUrl);
   next = next.replace(/(<a href=")https:\/\/github\.com\/Vondereich\/VonCMS\/releases\/tag\/[^"\s]+(" rel="noopener noreferrer" data-release-page>Original notes<\/a>)/, `$1${releaseUrl}$2`);
   next = replaceInner(next, /(<ol class="recent-releases" data-release-list>)[\s\S]*?(<\/ol>)/, `\n${releaseListMarkup(stableReleases)}\n        `);
 
   await writeFile(pagePath, next, 'utf8');
+  const homePath = join(root, 'index.html');
+  let home = await readFile(homePath, 'utf8');
+  const month = new Date(latest.published_at).toLocaleDateString('en-US', {
+    month: 'long', year: 'numeric', timeZone: 'UTC',
+  });
+  home = replaceInner(home, /(<span data-gh-version-badge>)[\s\S]*?(<\/span>)/,
+    `${escapeHtml(version)} &middot; Stable Release &middot; ${escapeHtml(month)}`);
+  home = replaceInner(home, /(<p class="cta-note" data-gh-cta-note>)[\s\S]*?(<\/p>)/,
+    `Latest stable: ${escapeHtml(version)} &middot; Free and open source &middot; GPL-3.0-only`);
+  home = home.replace(/https:\/\/github\.com\/Vondereich\/VonCMS\/releases\/download\/[^"\s]+\/VonCMS_[^"\s]+_Deploy\.zip/g, deployUrl);
+  home = home.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g,
+    (match, start, json, end) => {
+      const data = JSON.parse(json);
+      if (data['@type'] !== 'SoftwareApplication') return match;
+      data.softwareVersion = version.replace(/^v/i, '');
+      return `${start}\n${JSON.stringify(data, null, 2)}\n${end}`;
+    });
+  await writeFile(homePath, home, 'utf8');
   console.log(`VonCMS: generated static release fallback for ${version}.`);
 }
 
