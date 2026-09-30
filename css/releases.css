@@ -2,9 +2,9 @@
 .release-masthead::after { content: "RELEASE"; position: absolute; right: -25px; bottom: -28px; color: rgba(255,255,255,.045); font: 900 clamp(90px, 14vw, 190px)/.8 "Outfit", Arial, sans-serif; pointer-events: none; }
 .release-masthead .shell { position: relative; z-index: 1; }
 .release-masthead .page-trail, .release-masthead .release-intro { color: #dce4f1; }
-.release-masthead .page-trail a, .release-masthead .text-link { color: white; text-decoration-color: #ffdb57; }
-.release-masthead .page-trail a:hover, .release-masthead .text-link:hover { color: #ffdb57; }
-.release-masthead .release-kicker { color: #ffdb57; }
+.release-masthead .page-trail a, .release-masthead .text-link { color: white; text-decoration-color: var(--yellow); }
+.release-masthead .page-trail a:hover, .release-masthead .text-link:hover { color: var(--yellow); }
+.release-masthead .release-kicker { color: var(--yellow); }
 .release-heading { display: flex; justify-content: space-between; align-items: end; gap: 40px; }
 .release-heading h1 { font-size: 46px; }
 .release-heading > a { flex-shrink: 0; margin-bottom: 4px; font-size: 13px; }
@@ -51,7 +51,7 @@
 .release-download:hover strong { color: var(--blue); }
 .recent-releases { list-style: none; padding: 0; margin: 0; }
 .recent-releases li { border-bottom: 1px solid var(--line); }
-.recent-releases li:first-child { border-left: 2px solid var(--yellow); padding-left: 12px; background: #fff6e7; }
+.recent-releases li:first-child { border-left: 2px solid var(--yellow); padding-left: 12px; background: var(--yellow-soft); }
 .recent-releases a { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 15px 0; font-size: 12px; }
 .recent-releases a:hover { color: var(--blue); }
 .recent-releases span { color: var(--muted); font-size: 10px; }

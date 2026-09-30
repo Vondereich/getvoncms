@@ -12,8 +12,8 @@
 .subpage-masthead h1 { max-width: 800px; font-size: 52px; }
 .subpage-masthead .lead { max-width: 68ch; margin-top: 22px; color: #dce4f1; font-size: 17px; }
 .subpage-masthead .page-trail { color: #dce4f1; }
-.subpage-masthead .page-trail a, .subpage-masthead .page-note a { color: white; text-decoration: underline; text-decoration-color: #ffdb57; text-underline-offset: 4px; }
-.subpage-masthead .hero-badge { color: #ffdb57; }
+.subpage-masthead .page-trail a, .subpage-masthead .page-note a { color: white; text-decoration: underline; text-decoration-color: var(--yellow); text-underline-offset: 4px; }
+.subpage-masthead .hero-badge { color: var(--yellow); }
 .subpage-masthead .btn-secondary { border-color: rgba(255,255,255,.65); background: transparent; color: white; }
 .subpage-masthead .btn-secondary:hover { border-color: white; background: white; color: #11296b; }
 .subpage-masthead .page-note { color: #c4cee0; }
@@ -39,7 +39,7 @@
 .tech-label { font-weight: 750; }
 .tech-val { color: var(--body); overflow-wrap: anywhere; }
 .install-terminal { margin-block: 24px; }
-.terminal-comment { color: #8cacb5; }
+.terminal-comment { color: #dce4f1; }
 .doc-figure { margin: 28px 0; }
 .doc-figure img { width: 100%; aspect-ratio: 2/1; object-fit: contain; box-shadow: 0 10px 30px rgba(20,33,61,.08); }
 .doc-figure figcaption { margin-top: 10px; font-size: 12px; color: var(--muted); }
