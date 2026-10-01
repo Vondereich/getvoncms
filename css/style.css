@@ -16,15 +16,24 @@
 .hero-release span { color: #c4cee0; }
 .home-section { padding-block: 76px; scroll-margin-top: 88px; }
 .home-section.soft { background: var(--paper); }
+#product { padding-top: 44px; }
+.product-heading { grid-template-columns: 1fr 1fr; align-items: center; gap: 8px 48px; margin-bottom: 24px; }
+.product-heading .section-kicker { grid-column: 1; margin-bottom: 0; }
+.product-heading h2 { grid-column: 1; grid-row: 2; font-size: 36px; }
+.product-heading p { grid-column: 2; grid-row: 1 / span 2; }
 .product-tabs { display: flex; flex-wrap: wrap; gap: 8px 24px; margin-bottom: 22px; border-bottom: 1px solid var(--line); }
 .product-tabs a { padding: 12px 0; border-bottom: 3px solid transparent; font-size: 14px; font-weight: 700; color: var(--body); }
 .product-tabs a[aria-selected="true"], .product-tabs a:hover { border-bottom-color: var(--yellow); color: var(--navy); }
 .product-panel { margin-bottom: 32px; scroll-margin-top: 100px; }
 .product-panel img { width: 100%; aspect-ratio: 16 / 8.8; object-fit: cover; object-position: top; background: var(--paper); box-shadow: 0 12px 35px rgba(20,33,61,.1); }
+.product-panel[data-view="dashboard"] img { aspect-ratio: 1920 / 957; object-fit: contain; }
 .product-panel[data-view="editor"] img { aspect-ratio: 16 / 8.8; }
 .product-panel figcaption { display: flex; justify-content: space-between; gap: 24px; margin-top: 14px; color: var(--body); font-size: 14px; }
 .product-panel figcaption strong { color: var(--navy); }
 .product-panel figcaption a { flex-shrink: 0; }
+.production-example { display: flex; align-items: center; justify-content: space-between; gap: 12px 24px; margin-bottom: 28px; font-size: 14px; }
+.production-example strong { color: var(--navy); }
+.production-example a { flex-shrink: 0; }
 .benefit-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; border-top: 1px solid var(--line); padding-top: 28px; }
 .benefit-row h3 { font-size: 21px; }
 .benefit-row p { font-size: 14px; margin-top: 10px; }
@@ -135,7 +144,12 @@
 @media (min-width: 601px) and (max-width: 760px) {
   .hero h1 { font-size: 34px; }
 }
-@media (max-width: 1000px) { .split { gap: 36px; } }
+@media (max-width: 1000px) {
+  .split { gap: 36px; }
+  #product { padding-top: 36px; }
+  .product-heading { gap: 8px 32px; }
+  .product-heading h2 { font-size: 32px; }
+}
 @media (max-width: 800px) {
   .home-section { padding-block: 56px; }
   .split, .theme-feature, .install-layout, .install-source, .faq-layout, .video-section .split { grid-template-columns: 1fr; gap: 30px; }
@@ -166,8 +180,13 @@
   .hero-visual img { top: auto; bottom: 0; width: 100%; height: 280px; object-position: 30% bottom; -webkit-mask-image: radial-gradient(ellipse 90% 85% at 63% 54%, #000 46%, rgba(0,0,0,.86) 70%, transparent); mask-image: radial-gradient(ellipse 90% 85% at 63% 54%, #000 46%, rgba(0,0,0,.86) 70%, transparent); }
   .hero-content .hero-actions > a { flex-basis: 120px; }
   .hero-actions > a { flex: 1 1 140px; gap: 6px; padding-inline: 8px; font-size: 13px; text-align: center; }
-  .product-tabs { gap: 8px 18px; }
-  .product-tabs a { font-size: 13px; }
+  #product { padding-top: 32px; }
+  .product-heading { grid-template-columns: 1fr; gap: 10px; }
+  .product-heading h2, .product-heading p { grid-column: 1; grid-row: auto; }
+  .product-heading h2 { font-size: 30px; }
+  .production-example { flex-direction: column; align-items: flex-start; gap: 8px; }
+  .product-tabs { flex-wrap: nowrap; gap: 0 24px; overflow-x: auto; scrollbar-width: thin; }
+  .product-tabs a { flex-shrink: 0; font-size: 13px; }
   .product-panel figcaption { flex-direction: column; gap: 8px; }
   .benefit-row { grid-template-columns: 1fr; gap: 24px; }
   .mobile-device-grid { display: flex; gap: 18px; max-width: none; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 16px; }
