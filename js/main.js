@@ -212,7 +212,15 @@ function initDownloadReminder() {
   const toast = document.createElement('aside');
   toast.className = 'toast';
   toast.setAttribute('aria-label', 'VonCMS download');
-  toast.innerHTML = '<button type="button" class="toast-x-close" aria-label="Dismiss download reminder">&times;</button><p class="toast-title">Start your own publication.</p><p class="toast-desc">The Deploy ZIP includes the production app. Your hosting and database are yours to choose.</p><div class="toast-actions"><a class="toast-btn toast-btn-primary" href="https://github.com/Vondereich/VonCMS/releases/latest">Download ZIP</a><button type="button" class="toast-btn toast-btn-secondary">Later</button></div>';
+  toast.innerHTML = `
+    <div class="toast-visual" aria-hidden="true"><img src="upload/journalism.webp" alt="" width="1200" height="675" loading="lazy" decoding="async"><span class="toast-brand">VonCMS</span></div>
+    <button type="button" class="toast-x-close" aria-label="Dismiss download reminder">&times;</button>
+    <div class="toast-content">
+      <p class="toast-title">Start your own publication.</p>
+      <p class="toast-desc">Make a home for your news, ideas, and stories. Run it on your own hosting.</p>
+      <div class="toast-actions"><a class="toast-btn toast-btn-primary" href="https://github.com/Vondereich/VonCMS/releases/latest">Download VonCMS</a><button type="button" class="toast-btn toast-btn-secondary">Not now</button></div>
+      <p class="toast-note">Free and open source &middot; GPL-3.0-only</p>
+    </div>`;
   document.body.append(toast);
   function dismiss() {
     toast.classList.remove('active');
