@@ -160,6 +160,14 @@ function initComparison() {
   controls.hidden = false;
   table.classList.add('comparison-ready');
   select(buttons[0]);
+  const disclosure = table.closest('details');
+  if (disclosure) {
+    function openLinkedComparison() {
+      if (location.hash === '#positioning' || location.hash === '#' + disclosure.id) disclosure.open = true;
+    }
+    openLinkedComparison();
+    window.addEventListener('hashchange', openLinkedComparison);
+  }
 }
 
 function initLightbox() {
