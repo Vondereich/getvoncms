@@ -40,9 +40,8 @@ jobs:
       - name: Build public artifact
         run: |
           node scripts/sync-release-fallback.mjs
-          mkdir -p _site
-          cp -f index.html docs.html philosophy.html whats-new.html CNAME robots.txt sitemap.xml _site/
-          cp -R css js upload _site/
+          python3 scripts/test_build_site.py
+          python3 scripts/build_site.py _site
           python3 scripts/check-site.py _site
       - name: Upload artifact
         uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3.0.1

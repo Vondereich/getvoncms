@@ -1,9 +1,10 @@
 """Validate the public source or GitHub Pages artifact without third-party packages."""
 import json
+import re
 import sys
 from html.parser import HTMLParser
 from pathlib import Path
-from urllib.parse import unquote, urlsplit
+from urllib.parse import unquote, urljoin, urlsplit
 import xml.etree.ElementTree as ET
 
 
@@ -18,6 +19,7 @@ class Page(HTMLParser):
         self.assets = []
         self.images = []
         self.schemas = []
+        self.inline_styles = []
         self.navigation = []
         self.footer = []
         self.comparison_buttons = []
@@ -28,6 +30,8 @@ class Page(HTMLParser):
         self.h1_count = 0
         self.in_title = False
         self.in_schema = False
+        self.in_style = False
+        self.style = ""
         self.schema = ""
         self.feed(source)
 
@@ -49,8 +53,11 @@ class Page(HTMLParser):
                 self.metadata.setdefault(name, []).append(attrs.get("content", ""))
         if tag == "link" and attrs.get("rel") == "canonical":
             self.canonicals.append(attrs.get("href"))
-        if tag == "link" and attrs.get("rel") in ("stylesheet", "icon", "apple-touch-icon"):
+        if tag == "link" and attrs.get("rel") in ("stylesheet", "icon", "apple-touch-icon", "preload"):
             self.assets.append(attrs.get("href", ""))
+        if tag == "style":
+            self.in_style = True
+            self.style = ""
         if tag == "a":
             self.links.append(attrs.get("href", ""))
             if self.in_nav:
@@ -83,6 +90,9 @@ class Page(HTMLParser):
             self.in_footer = False
         if tag == "title":
             self.in_title = False
+        if tag == "style" and self.in_style:
+            self.inline_styles.append(self.style)
+            self.in_style = False
         if tag == "script" and self.in_schema:
             self.schemas.append(json.loads(self.schema))
             self.in_schema = False
@@ -90,6 +100,8 @@ class Page(HTMLParser):
     def handle_data(self, value):
         if self.in_title:
             self.title += value
+        if self.in_style:
+            self.style += value
         if self.in_schema:
             self.schema += value
 
@@ -127,6 +139,20 @@ def check(root):
         require("page-content" in page.ids, f"{name}: missing skip-link target")
         require(page.navigation == pages["index.html"].navigation, f"{name}: navigation differs from homepage")
         require(page.footer == pages["index.html"].footer, f"{name}: footer differs from homepage")
+        styles = [(name, css) for css in page.inline_styles]
+        for asset in page.assets:
+            path = urlsplit(asset).path
+            if path.endswith(".css") and not urlsplit(asset).scheme and (root / path).is_file():
+                styles.append((path, (root / path).read_text(encoding="utf-8")))
+        for base, css in styles:
+            for _, value in re.findall(r"url\(\s*(['\"])([^'\"]+)\1\s*\)", css, re.IGNORECASE):
+                reference = urlsplit(urljoin(base, value))
+                if not reference.scheme and not reference.netloc and not value.startswith("#"):
+                    target = (root / unquote(reference.path)).resolve()
+                    require(target.is_relative_to(root) and target.is_file(),
+                            f"{name}: missing or out-of-root CSS asset: {value}")
+        require(not any("fonts.googleapis.com" in asset or "fonts.gstatic.com" in asset for asset in page.assets),
+                f"{name}: external Google Fonts dependency")
         for image in page.images:
             require("alt" in image, f"{name}: image missing alt: {image.get('src')}")
             if not urlsplit(image.get("src", "")).scheme:
