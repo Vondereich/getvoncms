@@ -31,7 +31,6 @@
 .product-panel figcaption { display: flex; justify-content: space-between; gap: 24px; margin-top: 14px; color: var(--body); font-size: 14px; }
 .product-panel figcaption strong { color: var(--navy); }
 .product-panel figcaption a { flex-shrink: 0; }
-.product-theme-note { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 24px; margin-bottom: 24px; font-size: 14px; color: var(--body); }
 .product-proof { display: grid; grid-template-columns: 1.15fr 1fr; align-items: center; gap: 32px; padding-top: 24px; border-top: 1px solid var(--line); }
 .production-example { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; font-size: 14px; }
 .production-example strong { color: var(--navy); }
@@ -71,7 +70,7 @@
 .mobile-device-screen img { max-width: none; width: auto; height: 100%; object-fit: contain; }
 .mobile-device-copy { padding-top: 18px; }
 .mobile-device-copy strong { display: block; font-size: 16px; }
-.product-theme-note, .why-points, .mobile-publishing, .install-guides a, .comparison-overview, .comparison-detail, .walkthrough-link { scroll-margin-top: calc(var(--nav-height) + 24px); }
+#themes, .why-points, .mobile-publishing, .install-guides a, .comparison-overview, .comparison-detail, .walkthrough-link { scroll-margin-top: calc(var(--nav-height) + 24px); }
 .comparison-overview { margin-top: 44px; padding-top: 28px; border-top: 1px solid var(--line); }
 .comparison-heading { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; margin-bottom: 24px; }
 .comparison-heading h3 { font-size: 23px; }
