@@ -182,7 +182,7 @@ def check(root):
     require(len({p.metadata.get('description', [''])[0] for p in pages.values()}) == len(pages),
             "Duplicate descriptions")
     home = pages["index.html"]
-    comparison_keys = ["wordpress", "ghost", "emdash", "grav", "strapi", "payload", "october"]
+    comparison_keys = ["wordpress", "ghost", "emdash", "grav", "statamic", "strapi", "payload", "october"]
     require([b["data-compare"] for b in home.comparison_buttons] == comparison_keys,
             "Homepage: comparison controls missing or duplicated")
     require(home.comparison_headers == comparison_keys,

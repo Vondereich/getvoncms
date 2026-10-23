@@ -84,6 +84,9 @@
 {
   "@context": "https://schema.org", "@type": "FAQPage",
   "mainEntity": [
+    { "@type": "Question", "name": "Is VonCMS suitable for small newsrooms?", "acceptedAnswer": { "@type": "Answer", "text": "VonCMS is a self-hosted publishing CMS for independent publishers, local news websites, and small editorial teams. It brings writing, staff review, scheduling, and a public website together. Check the hosting requirements and test your workflow before moving a live publication." } },
+    { "@type": "Question", "name": "Can writers submit stories without publishing access?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Writers can prepare and submit drafts for staff review without permission to publish them. Moderators, Admins, and Root can return a submission for changes, schedule it, or publish it." } },
+    { "@type": "Question", "name": "Who handles hosting, updates, and backups?", "acceptedAnswer": { "@type": "Answer", "text": "Your publication is responsible for hosting, CMS updates, and backups. Manage them yourself or arrange help with a developer or hosting provider. The free software download does not include managed hosting." } },
     { "@type": "Question", "name": "Is VonCMS meant to replace WordPress?", "acceptedAnswer": { "@type": "Answer", "text": "Not for everyone. WordPress has a mature ecosystem and serves many kinds of websites. VonCMS is a smaller, publishing-focused alternative for people who want a self-hosted editorial workflow, bundled themes, and direct access to their source and data. Choose the CMS that fits your publication." } },
     { "@type": "Question", "name": "Do I need Node.js to run VonCMS?", "acceptedAnswer": { "@type": "Answer", "text": "No. The Deploy ZIP includes built frontend assets and runs on PHP and MySQL hosting. Node.js and npm are only needed if you develop from source or create a custom build." } },
     { "@type": "Question", "name": "Is VonCMS free and open source?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. VonCMS is released under GPL-3.0-only. The software is free; your hosting, domain, and any optional paid services are separate costs. If you distribute modified copies, follow the license requirements." } },
@@ -138,7 +141,7 @@
       <div class="product-tabs" id="themes" aria-label="Product views">
         <a id="tab-dashboard" href="#view-dashboard">Dashboard</a><a id="tab-editor" href="#view-editor">Editor</a><a id="tab-public" href="#view-public">Public site</a>
       </div>
-      <figure class="product-panel" id="view-dashboard" data-view="dashboard"><img class="lightbox-trigger" src="upload/dashboard.png" alt="VonCMS React admin dashboard for managing a publishing website" width="1920" height="957" loading="lazy" decoding="async"><figcaption><span><strong>Your publication at a glance.</strong> Manage content and site tools from the admin dashboard.</span><a class="text-link" href="docs.html#included">Explore the tools</a></figcaption></figure>
+      <figure class="product-panel" id="view-dashboard" data-view="dashboard"><img class="lightbox-trigger" src="upload/dashboard.png" alt="VonCMS React admin dashboard for managing a publishing website" width="1920" height="957" loading="lazy" decoding="async"><figcaption><span><strong>Your publication at a glance.</strong> Manage content and site tools from the admin dashboard.</span><a class="text-link" href="docs.html#included">Publishing tools</a></figcaption></figure>
       <figure class="product-panel" id="view-editor" data-view="editor"><img class="lightbox-trigger" src="upload/Editor.webp" alt="VonCMS TipTap article editor with publishing and SEO settings" width="1920" height="2213" loading="lazy" decoding="async"><figcaption><span><strong>Give the story your attention.</strong> Write with rich text, media, metadata, and publishing controls.</span><a class="text-link" href="docs.html#workflow">Editorial workflow</a></figcaption></figure>
       <figure class="product-panel" id="view-public" data-view="public"><img class="lightbox-trigger" src="upload/TechpressDemo.webp" alt="VonCMS TechPress news website with featured stories and category sections" width="864" height="1582" loading="lazy" decoding="async"><figcaption><span><strong>A website your readers can browse.</strong> TechPress brings your stories and categories together.</span><a class="text-link" href="https://skripglobal.com/">See VonCMS in action</a></figcaption></figure>
       <div class="product-proof">
@@ -149,7 +152,7 @@
   </section>
   <section class="home-section soft" id="why">
     <div class="shell split">
-      <div class="section-copy"><span class="section-kicker">Why VonCMS</span><h2>Built for publishers and small newsrooms.</h2><p id="audience">Start a blog, cover your community, or run a small newsroom. Keep the tools for writing, reviewing, and reaching readers in one place.</p><div class="why-points" id="included"><div class="why-point"><strong>Spend your time on the story.</strong><span>The editor, media library, staff review, and scheduling are included. No need to piece together the basics.</span></div><div class="why-point"><strong>Give readers a way to find you.</strong><span>Article metadata, sitemaps, and feeds are built in. Search rankings still depend on your content and site.</span></div><div class="why-point"><strong>Keep your site in your hands.</strong><span>Your hosting, content, and database. Use a bundled theme or work with a developer on something custom.</span></div></div><div class="section-links"><a class="text-link" href="docs.html#included">Full feature guide</a><a class="text-link" href="philosophy.html">Our approach</a></div></div>
+      <div class="section-copy"><span class="section-kicker">Why VonCMS</span><h2>Built for publishers and small newsrooms.</h2><p id="audience">Start a blog, cover your community, or run a small newsroom. Keep the tools for writing, reviewing, and reaching readers in one place.</p><div class="why-points" id="included"><div class="why-point"><strong>Spend your time on the story.</strong><span>The editor, media library, staff review, and scheduling are included. No need to piece together the basics.</span></div><div class="why-point"><strong>Give readers a way to find you.</strong><span>Article metadata, sitemaps, and feeds are built in. Search rankings still depend on your content and site.</span></div><div class="why-point"><strong>Keep your site in your hands.</strong><span>Your hosting, content, and database. Use a bundled theme or work with a developer on something custom.</span></div></div><div class="section-links"><a class="text-link" href="docs.html#included">VonCMS feature guide</a><a class="text-link" href="philosophy.html">Why VonCMS</a></div></div>
       <figure class="why-visual"><img src="upload/publisher.webp" alt="Illustration of an independent publisher working on a publication" width="1536" height="1024" loading="lazy" decoding="async"><figcaption>One story is enough to begin.</figcaption></figure>
     </div>
   </section>
@@ -158,7 +161,7 @@
       <div class="section-heading"><span class="section-kicker">Editorial workflow</span><h2>From a first draft to a published story.</h2><p>Writers prepare the story. Authorized reviewers decide when it goes live.</p></div>
       <ol class="workflow-list"><li><span>01</span><h3>Write</h3><p>Prepare the article with text, images, and publishing details.</p></li><li><span>02</span><h3>Submit</h3><p>Send the draft for review without giving writers publishing access.</p></li><li><span>03</span><h3>Review</h3><p>Return it for changes, schedule it, or approve it for publication.</p></li><li><span>04</span><h3>Publish</h3><p>The story goes live on your website for readers to find.</p></li></ol>
       <figure class="workflow-preview"><img class="lightbox-trigger" src="upload/reviewtab.png" alt="VonCMS Article Manager with Published, Draft, Scheduled, Review, and Archived tabs" width="1920" height="960" loading="lazy" decoding="async"><figcaption>Article Manager brings your publishing states and the staff Review tab together.</figcaption></figure>
-      <div class="workflow-foot"><p>Writers can withdraw and revise drafts. Publishing permissions stay with authorized staff.</p><a class="text-link" href="docs.html#workflow">Editorial guide</a></div>
+      <div class="workflow-foot"><p>Writers can withdraw and revise drafts. Publishing permissions stay with authorized staff.</p><a class="text-link" href="docs.html#workflow">Staff review workflow</a></div>
       <div class="mobile-publishing" id="post-anywhere">
       <div class="mobile-heading"><h3>Away from your desk?</h3><p>Check your publication, work on a draft, or update site settings from your phone.</p></div>
       <div class="mobile-device-grid" role="region" aria-label="VonCMS mobile publishing screens" tabindex="0">
@@ -178,16 +181,19 @@
   </section>
   <section class="home-section" id="faq">
     <div class="shell">
-      <div class="faq-layout"><div><span class="section-kicker">Before you start</span><h2>A few practical answers.</h2><p class="faq-intro">Need hosting or installation details? <a class="text-link" href="docs.html">Start with the docs.</a></p></div><div class="faq-list">
+      <div class="faq-layout"><div><span class="section-kicker">Before you start</span><h2>A few practical answers.</h2><p class="faq-intro">Need hosting or installation details? <a class="text-link" href="docs.html#install">Read the installation guide.</a></p></div><div class="faq-list">
+        <details><summary>Is VonCMS suitable for small newsrooms?</summary><p>VonCMS is a self-hosted publishing CMS for independent publishers, local news websites, and small editorial teams. It brings writing, staff review, scheduling, and a public website together. Check the <a class="text-link" href="docs.html#requirements">hosting requirements</a> and test your workflow before moving a live publication.</p></details>
+        <details><summary>Can writers submit stories without publishing access?</summary><p>Yes. Writers can prepare and submit drafts for <a class="text-link" href="docs.html#workflow">staff review</a> without permission to publish them. Moderators, Admins, and Root can return a submission for changes, schedule it, or publish it.</p></details>
+        <details><summary>Who handles hosting, updates, and backups?</summary><p>Your publication is responsible for hosting, <a class="text-link" href="docs.html#upgrade">CMS updates</a>, and <a class="text-link" href="docs.html#database">backups</a>. Manage them yourself or arrange help with a developer or hosting provider. The free software download does not include managed hosting.</p></details>
         <details><summary>Is VonCMS meant to replace WordPress?</summary><p>Not for everyone. WordPress has a mature ecosystem and serves many kinds of websites. VonCMS is a smaller, publishing-focused alternative for people who want a self-hosted editorial workflow, bundled themes, and direct access to their source and data. Choose the CMS that fits your publication.</p></details>
         <details><summary>Do I need Node.js to run VonCMS?</summary><p>No. The Deploy ZIP includes built frontend assets and runs on PHP and MySQL hosting. Node.js and npm are only needed if you develop from source or create a custom build.</p></details>
         <details><summary>Is VonCMS free and open source?</summary><p>Yes. VonCMS is released under <a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/LICENSE.md">GPL-3.0-only</a>. The software is free; your hosting, domain, and any optional paid services are separate costs. If you distribute modified copies, follow the license requirements.</p></details>
         <details><summary>Can I bring content from WordPress?</summary><p>VonCMS includes a WordPress XML importer. Test an import on a staging site first, and check articles, media, categories, and links before changing your live website. WordPress themes and plugins are not interchangeable with VonCMS.</p></details>
       </div></div>
       <div class="comparison-overview" id="positioning">
-        <div class="comparison-heading"><h3>Compare publishing CMS options.</h3><p>Check hosting, editorial tools, and the setup you want to maintain. VonCMS is one option, not the answer to every website.</p></div>
+        <div class="comparison-heading"><h3>VonCMS vs WordPress, Ghost, Statamic, and other CMSs.</h3><p>Compare hosting requirements, editorial workflows, and public SEO capabilities. Choose the CMS that fits your publication and the setup you want to maintain.</p></div>
         <details class="comparison-detail" id="compare-options">
-        <summary>Compare with WordPress, Ghost, and other CMSs</summary>
+        <summary>Compare hosting, publishing workflows, and SEO</summary>
         <div class="comparison-content">
       <div class="comparison-controls" role="group" aria-label="Compare VonCMS with another CMS" hidden>
         <span>Compare with</span>
@@ -196,13 +202,14 @@
           <button type="button" data-compare="ghost" aria-pressed="false">Ghost</button>
           <button type="button" data-compare="emdash" aria-pressed="false">EmDash</button>
           <button type="button" data-compare="grav" aria-pressed="false">Grav</button>
+          <button type="button" data-compare="statamic" aria-pressed="false">Statamic</button>
           <button type="button" data-compare="strapi" aria-pressed="false">Strapi</button>
           <button type="button" data-compare="payload" aria-pressed="false">Payload</button>
           <button type="button" data-compare="october" aria-pressed="false">October CMS</button>
         </div>
       </div>
-      <div class="comparison-frame"><table class="comparison-table"><caption>Publishing CMS comparison</caption>
-        <thead><tr><th scope="col">What matters</th><th scope="col" class="th-voncms">VonCMS</th><th scope="col" data-cms="wordpress">WordPress</th><th scope="col" data-cms="ghost">Ghost</th><th scope="col" data-cms="emdash">EmDash</th><th scope="col" data-cms="grav">Grav</th><th scope="col" data-cms="strapi">Strapi</th><th scope="col" data-cms="payload">Payload</th><th scope="col" data-cms="october">October CMS</th></tr></thead>
+      <div class="comparison-frame"><table class="comparison-table"><caption>VonCMS vs other publishing CMSs</caption>
+        <thead><tr><th scope="col">What matters</th><th scope="col" class="th-voncms">VonCMS</th><th scope="col" data-cms="wordpress">WordPress</th><th scope="col" data-cms="ghost">Ghost</th><th scope="col" data-cms="emdash">EmDash</th><th scope="col" data-cms="grav">Grav</th><th scope="col" data-cms="statamic">Statamic</th><th scope="col" data-cms="strapi">Strapi</th><th scope="col" data-cms="payload">Payload</th><th scope="col" data-cms="october">October CMS</th></tr></thead>
         <tbody>
           <tr>
             <th scope="row">Hosting</th>
@@ -211,6 +218,7 @@
             <td data-cms="ghost" data-label="Ghost"><strong>Node.js or Ghost(Pro)</strong><span>Self-host the app or use its managed service.</span></td>
             <td data-cms="emdash" data-label="EmDash"><strong>Workers or Node.js</strong><span>A TypeScript CMS built on Astro.</span></td>
             <td data-cms="grav" data-label="Grav"><strong>PHP + files</strong><span>Flat-file CMS with no database required.</span></td>
+            <td data-cms="statamic" data-label="Statamic"><strong>PHP + Composer</strong><span>Laravel-based CMS with flat-file or database storage.</span></td>
             <td data-cms="strapi" data-label="Strapi"><strong>Node.js + SQL database</strong><span>Headless APIs with a frontend you build or integrate.</span></td>
             <td data-cms="payload" data-label="Payload"><strong>Node.js + Next.js</strong><span>MongoDB, PostgreSQL, or SQLite adapters.</span></td>
             <td data-cms="october" data-label="October CMS"><strong>PHP + database</strong><span>Composer-based setup with a required license key.</span></td>
@@ -222,6 +230,7 @@
             <td data-cms="ghost" data-label="Ghost"><strong>Staff roles</strong><span>Contributor, author, editor, and admin permissions.</span></td>
             <td data-cms="emdash" data-label="EmDash"><strong>Role permissions</strong><span>Administrator, editor, author, and contributor.</span></td>
             <td data-cms="grav" data-label="Grav"><strong>Admin users and permissions</strong><span>Check your review workflow and permission setup.</span></td>
+            <td data-cms="statamic" data-label="Statamic"><strong>Users, roles, and revisions</strong><span>Multiple users and revisions require Pro.</span></td>
             <td data-cms="strapi" data-label="Strapi"><strong>Draft &amp; Publish</strong><span>Review Workflows require the Enterprise plan.</span></td>
             <td data-cms="payload" data-label="Payload"><strong>Drafts and access control</strong><span>Configure publishing rules for your collections.</span></td>
             <td data-cms="october" data-label="October CMS"><strong>Backend roles and permissions</strong><span>Build the workflow with your chosen content tools.</span></td>
@@ -233,6 +242,7 @@
             <td data-cms="ghost" data-label="Ghost"><strong>Built-in SEO</strong><span>Metadata, canonicals, schema, sitemaps, and social cards.</span></td>
             <td data-cms="emdash" data-label="EmDash"><strong>Astro-based rendering</strong><span>Check current theme and metadata requirements.</span></td>
             <td data-cms="grav" data-label="Grav"><strong>Page metadata controls</strong><span>Check theme output, sitemap, and feed plugins.</span></td>
+            <td data-cms="statamic" data-label="Statamic"><strong>Templates + SEO add-ons</strong><span>SEO Pro adds metadata, social cards, schema, and sitemaps.</span></td>
             <td data-cms="strapi" data-label="Strapi"><strong>Frontend implementation</strong><span>Your frontend controls metadata and crawlable pages.</span></td>
             <td data-cms="payload" data-label="Payload"><strong>SEO plugin + frontend</strong><span>Store SEO fields and render metadata in your site.</span></td>
             <td data-cms="october" data-label="October CMS"><strong>Theme templates and metadata</strong><span>Configure page metadata and additional SEO output.</span></td>
@@ -244,6 +254,7 @@
             <td data-cms="ghost" data-label="Ghost"><strong>Publication and membership tools</strong><span>Evaluate newsletters, memberships, and subscriptions.</span></td>
             <td data-cms="emdash" data-label="EmDash"><strong>A TypeScript stack</strong><span>Evaluate sandboxed plugins and deployment options.</span></td>
             <td data-cms="grav" data-label="Grav"><strong>Flat-file site management</strong><span>Markdown content, themes, and plugin options.</span></td>
+            <td data-cms="statamic" data-label="Statamic"><strong>Laravel-based content modeling</strong><span>Blueprints, Antlers or Blade templates, and starter kits.</span></td>
             <td data-cms="strapi" data-label="Strapi"><strong>Structured content APIs</strong><span>Model content and connect it to your chosen frontend.</span></td>
             <td data-cms="payload" data-label="Payload"><strong>Code-first customization</strong><span>Define collections, permissions, and frontend behavior.</span></td>
             <td data-cms="october" data-label="October CMS"><strong>Laravel-based customization</strong><span>Themes, components, and plugins for custom sites.</span></td>
@@ -266,6 +277,10 @@
           <li><a href="https://learn.getgrav.org/2/basics/what-is-grav">Grav overview</a></li>
           <li><a href="https://learn.getgrav.org/2/admin-panel">Grav administration</a></li>
           <li><a href="https://learn.getgrav.org/2/content/headers">Grav page metadata</a></li>
+          <li><a href="https://statamic.dev/getting-started/requirements">Statamic requirements</a></li>
+          <li><a href="https://statamic.dev/control-panel/users">Statamic users and permissions</a></li>
+          <li><a href="https://statamic.com/pricing">Statamic Core and Pro features</a></li>
+          <li><a href="https://statamic.com/addons/statamic/seo-pro/docs">Statamic SEO Pro</a></li>
           <li><a href="https://docs.strapi.io/cms/deployment">Strapi deployment</a></li>
           <li><a href="https://docs.strapi.io/cms/features/draft-and-publish">Strapi drafts</a></li>
           <li><a href="https://docs.strapi.io/cms/features/review-workflows">Strapi review workflows</a></li>
