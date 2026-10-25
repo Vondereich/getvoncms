@@ -8,7 +8,7 @@ import shutil
 from urllib.parse import unquote, urljoin, urlsplit
 
 
-PAGES = ("index.html", "docs.html", "philosophy.html", "whats-new.html")
+PAGES = ("index.html", "docs.html", "philosophy.html", "whats-new.html", "roadmap.html")
 ASSETS = ("CNAME", "robots.txt", "sitemap.xml", "css", "js", "upload")
 CSS_URL = re.compile(r"url\(\s*(['\"])([^'\"]+)\1\s*\)", re.IGNORECASE)
 
@@ -93,7 +93,7 @@ def build(source, output):
             shutil.copy2(entry, output / name)
     for name, document in html.items():
         (output / name).write_text(document, encoding="utf-8")
-    print(f"Built four static pages with inline CSS: {output}")
+    print(f"Built {len(PAGES)} static pages with inline CSS: {output}")
 
 
 if __name__ == "__main__":

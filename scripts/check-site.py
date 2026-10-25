@@ -25,6 +25,7 @@ class Page(HTMLParser):
         self.comparison_buttons = []
         self.comparison_headers = []
         self.comparison_cells = []
+        self.roadmap_releases = []
         self.in_nav = False
         self.in_footer = False
         self.h1_count = 0
@@ -74,6 +75,8 @@ class Page(HTMLParser):
             self.assets.append(attrs.get("src", ""))
         if tag == "button" and "data-compare" in attrs:
             self.comparison_buttons.append(attrs)
+        if tag == "section" and "data-roadmap-version" in attrs:
+            self.roadmap_releases.append((attrs["data-roadmap-version"], attrs.get("data-roadmap-status")))
         if "data-cms" in attrs:
             if tag == "th":
                 self.comparison_headers.append(attrs["data-cms"])
@@ -107,7 +110,7 @@ class Page(HTMLParser):
 
 
 def check(root):
-    names = ("index.html", "docs.html", "philosophy.html", "whats-new.html")
+    names = ("index.html", "docs.html", "philosophy.html", "whats-new.html", "roadmap.html")
     pages = {name: Page((root / name).read_text(encoding="utf-8")) for name in names}
     errors = []
 
@@ -206,6 +209,10 @@ def check(root):
     release = pages["whats-new.html"]
     release_version = next((v for v in release.ids if v == "release-title"), None)
     require(bool(release_version), "Release page: missing static release heading")
+    roadmap = pages["roadmap.html"]
+    require(roadmap.roadmap_releases == [(f"1.28.{patch}", "in-progress" if patch == 0 else "planned")
+                                        for patch in range(6)],
+            "Roadmap: expected only v1.28.0 in progress and v1.28.1-v1.28.5 planned")
     require((root / "robots.txt").is_file(), "Missing robots.txt")
     sitemap = ET.parse(root / "sitemap.xml")
     locations = {node.text for node in sitemap.findall(".//{*}loc")}
@@ -215,7 +222,7 @@ def check(root):
             "robots.txt missing sitemap")
     if errors:
         raise SystemExit("\n".join(errors))
-    print("PASS: four public pages, unique SEO metadata, structured data, local links/assets, robots and sitemap.")
+    print(f"PASS: {len(pages)} public pages, unique SEO metadata, structured data, local links/assets, robots and sitemap.")
 
 
 if __name__ == "__main__":

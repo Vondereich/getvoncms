@@ -124,6 +124,7 @@ pre code { padding: 0; background: none; color: inherit; overflow-wrap: normal; 
   html:not(.js) .nav-links { position: static; display: grid; grid-template-columns: 1fr 1fr; width: 100%; padding: 0; box-shadow: none; border: 0; }
   .nav-links { position: absolute; top: 100%; left: 0; right: 0; display: none; padding: 16px 32px 24px; gap: 8px; background: rgba(255,255,255,.88); -webkit-backdrop-filter: blur(20px) saturate(135%); backdrop-filter: blur(20px) saturate(135%); border-bottom: 1px solid var(--line); box-shadow: 0 12px 20px rgba(20,33,61,.08); max-height: calc(100svh - var(--nav-height)); overflow-y: auto; }
   .nav-links.open { display: grid; grid-template-columns: 1fr 1fr; }
+  .nav-links .nav-roadmap { grid-column: 1 / -1; }
   .nav-links a { width: 100%; min-height: 46px; padding: 10px; font-size: 14px; background: var(--paper); border-color: var(--line); border-radius: 4px; }
   .nav-links a[aria-current="page"] { border-color: var(--yellow); background: var(--yellow-soft); border-radius: 4px; }
   .nav-links .nav-link-strong, .nav-links .nav-cta { margin: 4px 0 0; }

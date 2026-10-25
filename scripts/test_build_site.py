@@ -7,6 +7,10 @@ from build_site import ASSETS, PAGES, build, inline_stylesheets
 
 
 class BuildSiteTests(unittest.TestCase):
+    def test_roadmap_is_in_public_manifest(self):
+        self.assertIn("roadmap.html", PAGES)
+        self.assertEqual(len(PAGES), len(set(PAGES)))
+
     def setUp(self):
         self.directory = tempfile.TemporaryDirectory()
         self.addCleanup(self.directory.cleanup)
