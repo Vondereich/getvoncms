@@ -38,6 +38,18 @@
 .walkthrough-link { display: grid; grid-template-columns: 128px minmax(0, 1fr); align-items: center; gap: 18px; justify-self: end; font-size: 14px; font-weight: 700; color: var(--blue); }
 .walkthrough-link img { width: 128px; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px; }
 .walkthrough-link:hover { color: var(--navy); }
+.release-preview { margin-top: 44px; padding-top: 36px; border-top: 1px solid var(--line); scroll-margin-top: calc(var(--nav-height) + 24px); }
+.release-preview .section-heading { gap: 12px 48px; }
+.release-preview .section-kicker { margin-bottom: 0; }
+.release-preview-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.release-preview-grid img { width: 100%; aspect-ratio: 1920 / 959; object-fit: contain; border: 1px solid var(--line); border-radius: 4px; background: var(--paper); }
+.release-preview-grid figcaption { margin-top: 16px; }
+.release-preview-grid figcaption strong { display: block; font-size: 18px; }
+.release-preview-grid figcaption span { display: block; margin-top: 8px; font-size: 14px; color: var(--body); }
+.release-highlights { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 28px; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
+.release-highlights dt { font-size: 14px; font-weight: 700; }
+.release-highlights dd { margin: 8px 0 0; font-size: 14px; color: var(--body); }
+.release-preview-note { margin-top: 24px; max-width: 90ch; font-size: 13px; color: var(--muted); }
 .section-links { display: flex; flex-wrap: wrap; gap: 12px 28px; margin-top: 24px; font-size: 14px; }
 .split { display: grid; grid-template-columns: 1fr 1fr; align-items: center; gap: 64px; }
 .section-copy > p { margin-top: 20px; }
@@ -157,6 +169,8 @@
   .home-section { padding-block: 56px; }
   .split, .faq-layout { grid-template-columns: 1fr; gap: 30px; }
   .product-proof { gap: 24px; }
+  .release-preview-grid { grid-template-columns: 1fr; gap: 28px; }
+  .release-highlights { grid-template-columns: 1fr; gap: 22px; }
   .mobile-heading, .comparison-heading { grid-template-columns: 1fr; gap: 12px; }
   .install-steps { gap: 24px; }
   .workflow-list { grid-template-columns: 1fr 1fr; }
