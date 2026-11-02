@@ -210,9 +210,10 @@ def check(root):
     release_version = next((v for v in release.ids if v == "release-title"), None)
     require(bool(release_version), "Release page: missing static release heading")
     roadmap = pages["roadmap.html"]
-    require(roadmap.roadmap_releases == [(f"1.28.{patch}", "in-progress" if patch == 0 else "planned")
-                                        for patch in range(6)],
-            "Roadmap: expected only v1.28.0 in progress and v1.28.1-v1.28.5 planned")
+    expected_roadmap = [("1.28.0", "released"), ("1.28.1", "in-progress")]
+    expected_roadmap.extend((f"1.28.{patch}", "planned") for patch in range(2, 6))
+    require(roadmap.roadmap_releases == expected_roadmap,
+            "Roadmap: expected v1.28.0 released, v1.28.1 in progress and v1.28.2-v1.28.5 planned")
     require((root / "robots.txt").is_file(), "Missing robots.txt")
     sitemap = ET.parse(root / "sitemap.xml")
     locations = {node.text for node in sitemap.findall(".//{*}loc")}
