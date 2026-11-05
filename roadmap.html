@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <title>VonCMS Roadmap | v1.28 Publishing CMS Development</title>
-<meta name="description" content="Explore the VonCMS v1.28 roadmap: released editorial tools, Hybrid analytics in development, and planned updates for publishing teams. No fixed release dates.">
+<meta name="description" content="Follow the VonCMS v1.28 roadmap: released Calendar, Hybrid analytics and News Sitemap, plus planned tools for publishing teams. Future dates are not promised.">
 <link rel="canonical" href="https://getvoncms.com/roadmap.html">
 <link rel="alternate" hreflang="en" href="https://getvoncms.com/roadmap.html">
 <link rel="alternate" hreflang="x-default" href="https://getvoncms.com/roadmap.html">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getvoncms.com/roadmap.html">
 <meta property="og:title" content="VonCMS Roadmap | v1.28 Publishing CMS Development">
-<meta property="og:description" content="Explore the VonCMS v1.28 roadmap: released editorial tools, Hybrid analytics in development, and planned updates for publishing teams. No fixed release dates.">
+<meta property="og:description" content="Follow the VonCMS v1.28 roadmap: released Calendar, Hybrid analytics and News Sitemap, plus planned tools for publishing teams. Future dates are not promised.">
 <meta property="og:site_name" content="VonCMS">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://getvoncms.com/upload/owlr.png">
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://getvoncms.com/roadmap.html">
 <meta name="twitter:title" content="VonCMS Roadmap | v1.28 Publishing CMS Development">
-<meta name="twitter:description" content="Explore the VonCMS v1.28 roadmap: released editorial tools, Hybrid analytics in development, and planned updates for publishing teams. No fixed release dates.">
+<meta name="twitter:description" content="Follow the VonCMS v1.28 roadmap: released Calendar, Hybrid analytics and News Sitemap, plus planned tools for publishing teams. Future dates are not promised.">
 <meta name="twitter:image" content="https://getvoncms.com/upload/owlr.png">
 <meta name="twitter:image:alt" content="Vorro, the VonCMS owl mascot">
 <script type="application/ld+json">
@@ -33,9 +33,9 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "VonCMS Roadmap | v1.28 Publishing CMS Development",
-  "description": "Explore the VonCMS v1.28 roadmap: released editorial tools, Hybrid analytics in development, and planned updates for publishing teams. No fixed release dates.",
+  "description": "Follow the VonCMS v1.28 roadmap: released Calendar, Hybrid analytics and News Sitemap, plus planned tools for publishing teams. Future dates are not promised.",
   "url": "https://getvoncms.com/roadmap.html",
-  "dateModified": "2026-11-03",
+  "dateModified": "2026-11-06",
   "about": { "@type": "SoftwareApplication", "name": "VonCMS", "applicationCategory": "BusinessApplication" },
   "isPartOf": { "@type": "WebSite", "name": "VonCMS", "url": "https://getvoncms.com/" }
 }
@@ -78,8 +78,8 @@
     <p class="page-trail"><a href="index.html">Home</a><span>/</span>Roadmap</p>
     <div class="hero-badge">The BluePrint / v1.28.x</div>
     <h1>VonCMS Roadmap</h1>
-    <p class="lead">The BluePrint begins with released tools for editorial planning. Follow the work on analytics, content recovery, and a clearer publishing workspace.</p>
-    <p class="page-note">Status checked: <time datetime="2026-11-03">3 November 2026</time>. This page covers the v1.28.x series only.</p>
+    <p class="lead">The BluePrint brings editorial planning, optional Hybrid analytics, and a News Sitemap. Follow the released updates and the plans for a clearer publishing workspace.</p>
+    <p class="page-note">Status checked: <time datetime="2026-11-06">6 November 2026</time>. This page covers the v1.28.x series only.</p>
   </div>
 </header>
 <div class="layout shell">
@@ -91,12 +91,12 @@
         <ul class="sidebar-links">
           <li><a href="#overview" class="active">The BluePrint</a></li>
           <li><a href="#v1-28-0">1.28.0 / Editorial planning</a></li>
+          <li><a href="#v1-28-1">1.28.1 / Publishing tools</a></li>
         </ul>
       </div>
       <div class="sidebar-group">
-        <div class="sidebar-label">Development &amp; plans</div>
+        <div class="sidebar-label">Planned next</div>
         <ul class="sidebar-links">
-          <li><a href="#v1-28-1">1.28.1 / Hybrid analytics</a></li>
           <li><a href="#v1-28-2">1.28.2 / Leaner public settings</a></li>
           <li><a href="#v1-28-3">1.28.3 / Personal AI key</a></li>
           <li><a href="#v1-28-4">1.28.4 / Staff activity</a></li>
@@ -121,11 +121,16 @@
       </ul>
       <p>Existing sites need Primary Admin Schema Repair for Calendar and Balanced analytics storage. <a href="docs.html#upgrade">Review the upgrade guidance</a> before updating.</p>
     </section>
-    <section id="v1-28-1" data-roadmap-version="1.28.1" data-roadmap-status="in-progress">
-      <h2>v1.28.1: Hybrid analytics</h2>
-      <p><strong>In development, not released.</strong> Add an opt-in Hybrid collection mode and improve Dashboard reporting clarity. Installed-site verification is still pending.</p>
-      <p>Hybrid records Strict and Balanced measurements independently, with separate reports rather than adding their totals. Existing collection settings are retained unless the Primary Admin explicitly changes them. Dashboard presentation and Strict visit reservation corrections are also in this development cycle.</p>
-      <p>Trash and Restore has moved out of this milestone and has no assigned release version.</p>
+    <section id="v1-28-1" data-roadmap-version="1.28.1" data-roadmap-status="released">
+      <h2>v1.28.1: Publishing tools and reliability</h2>
+      <p><strong>Released.</strong> The <a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.28.1">published v1.28.1 update</a> adds optional tools and targeted corrections without a new database table or required migration from v1.28.0.</p>
+      <ul>
+        <li><strong>Opt-in Hybrid analytics.</strong> Collect Strict and Balanced measurements independently, with separate reports. Existing settings and history stay intact; only the Primary Admin can change collection.</li>
+        <li><strong>Post/Page deletion previews.</strong> Review records before single or bulk permanent deletion. Cancellation sends no delete request, and partial failures retain unconfirmed items for review. This is not Trash, Restore, or Undo.</li>
+        <li><strong>Optional News Sitemap.</strong> Publish a feed of eligible news articles from the preceding 48 hours, with publication, language, and category controls. It supplements the ordinary sitemap and does not guarantee Google News inclusion.</li>
+        <li><strong>Reliability and access corrections.</strong> Refined protected Post reads, delegated permissions, native measurement filtering, public read requests, Related Posts handling, and Dashboard presentation.</li>
+      </ul>
+      <p>Hybrid and News Sitemap require explicit configuration. <a href="docs.html#upgrade">Read the upgrade guidance</a>; earlier Calendar and analytics storage prerequisites still apply.</p>
     </section>
     <section id="v1-28-2" data-roadmap-version="1.28.2" data-roadmap-status="planned">
       <h2>v1.28.2: Leaner public settings</h2>
@@ -149,7 +154,7 @@
     </section>
     <section id="trash-restore">
       <h2>Unassigned: Trash and restore</h2>
-      <p><strong>Planned, version not assigned.</strong> Give deleted posts and pages a recovery step before permanent removal. This is not included in v1.28.0 or the current v1.28.1 scope.</p>
+      <p><strong>Planned, version not assigned.</strong> Give deleted posts and pages a recovery step before permanent removal. The confirmation preview in v1.28.1 is not a recovery feature.</p>
       <p>Move content to Trash, restore it as a draft, or explicitly delete it permanently. Restoring an item is intended to keep it off the public site until an authorized publisher chooses to publish it again.</p>
     </section>
     <section id="delivery">

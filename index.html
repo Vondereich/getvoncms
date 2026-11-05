@@ -38,7 +38,7 @@
   "operatingSystem": "Linux, Windows",
   "applicationCategory": "BusinessApplication",
   "applicationSubCategory": "Publishing CMS",
-  "softwareVersion": "1.28.0",
+  "softwareVersion": "1.28.1",
   "description": "VonCMS is a self-hosted content management system (CMS) for publishers, journalists, and small newsrooms. Run news websites and blogs on your own hosting.",
   "publisher": {
     "@id": "https://getvoncms.com/#project"
@@ -126,11 +126,11 @@
       <h1>Publishing CMS for <span class="hero-emphasis">independent publishers.</span></h1>
       <p class="hero-lede">Start your own news website or blog. Write, review, and publish with your team, on hosting you control.</p>
       <div class="hero-actions">
-        <a class="btn-primary" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.28.0/VonCMS_v1.28.0_Deploy.zip" data-gh-deploy-download><span>Download VonCMS</span></a>
+        <a class="btn-primary" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.28.1/VonCMS_v1.28.1_Deploy.zip" data-gh-deploy-download><span>Download VonCMS</span></a>
         <a class="btn-secondary" href="https://skripglobal.com/">See VonCMS in action</a>
       </div>
       <div class="hero-release">
-        <span data-gh-version-badge>v1.28.0 &middot; Stable Release &middot; November 2026</span>
+        <span data-gh-version-badge>v1.28.1 &middot; Stable Release &middot; November 2026</span>
       </div>
     </div>
   </div>
@@ -150,18 +150,18 @@
         <a class="walkthrough-link" id="walkthrough" href="https://www.youtube.com/watch?v=glbqEG37aiM"><img src="upload/ytthumbnail.jpg" alt="VonCMS product walkthrough video thumbnail" width="1280" height="720" loading="lazy" decoding="async"><span>Watch the walkthrough</span></a>
       </div>
       <section class="release-preview" id="blueprint" aria-labelledby="blueprint-title">
-        <div class="section-heading"><span class="section-kicker">Available in v1.28.0</span><h2 id="blueprint-title">VonCMS 1.28: The BluePrint.</h2><p>Plan coverage with a private Editorial Calendar, find your tools in grouped navigation, and choose how to measure visits. The first BluePrint release is ready to download.</p></div>
+        <div class="section-heading"><span class="section-kicker">New in v1.28.1</span><h2 id="blueprint-title">VonCMS 1.28: The BluePrint.</h2><p>Plan coverage, choose how to measure visits, and review content before permanent deletion. The latest BluePrint update adds an optional News Sitemap for your recent reporting.</p></div>
         <div class="release-preview-grid">
           <figure><img class="lightbox-trigger" src="upload/calendar.png" alt="VonCMS v1.28 Editorial Calendar showing a month view, internal events, content filters, and day details" width="1920" height="959" loading="lazy" decoding="async"><figcaption><strong>See the work ahead.</strong><span>Admins and Moderators can manage internal events and review publication dates in Month or Agenda views, without changing article schedules.</span></figcaption></figure>
           <figure><img class="lightbox-trigger" src="upload/new%20dropdown.png" alt="VonCMS v1.28 dashboard with grouped Content, Extensions, and Monitoring navigation and analytics report controls" width="1920" height="959" loading="lazy" decoding="async"><figcaption><strong>Get to the right tool.</strong><span>Grouped navigation and role-aware Create actions bring posts, pages, and events within reach. Your account's existing permissions still apply.</span></figcaption></figure>
         </div>
         <dl class="release-highlights">
-          <div><dt>Analytics with clearer counting</dt><dd>Keep Strict as the default or choose Balanced to distinguish browsers behind a shared IP. Reports separate the modes; neither counts verified people.</dd></div>
-          <div><dt>Shared AI key protection</dt><dd>The owner's shared Gemini key is stored encrypted and masked in Settings responses, with owner-controlled encryption-key rotation.</dd></div>
-          <div><dt>A more careful WordPress import</dt><dd>Supported metadata and internal links carry over, password-protected items become drafts, and interrupted imports retain a checkpoint for retry.</dd></div>
+          <div><dt>A sitemap for recent news</dt><dd>Choose which news categories to include, with publication and language settings. The optional News Sitemap covers published articles from the last 48 hours; Google News inclusion is not guaranteed.</dd></div>
+          <div><dt>More choice in analytics</dt><dd>Keep your current mode or enable Hybrid to collect Strict and Balanced measurements independently. Reports stay separate; counts are estimates, not verified people.</dd></div>
+          <div><dt>Check before you delete</dt><dd>Review selected Post/Page titles and statuses before single or bulk permanent deletion. Cancel before confirming, or review unconfirmed items after a partial failure. This is not Trash or Undo.</dd></div>
         </dl>
-        <p class="release-preview-note">Upgrading an existing site? Back up first and run Database &gt; Schema Repair as Primary Admin for Calendar and optional Balanced analytics storage. Read the upgrade guide before replacing files; uploading alone does not enable the new storage.</p>
-        <div class="section-links"><a class="text-link" href="whats-new.html">Read the release notes</a><a class="text-link" href="docs.html#upgrade">Upgrade guidance</a><a class="text-link" href="roadmap.html#v1-28-1">What's planned next</a></div>
+        <p class="release-preview-note">Back up before updating. Moving from v1.28.0 needs no new database migration. Hybrid analytics and News Sitemap are opt-in; older sites still need the existing Calendar and analytics storage checks.</p>
+        <div class="section-links"><a class="text-link" href="whats-new.html">Read the release notes</a><a class="text-link" href="docs.html#news-sitemap">Set up News Sitemap</a><a class="text-link" href="roadmap.html#v1-28-2">What's planned next</a></div>
       </section>
     </div>
   </section>
@@ -314,7 +314,7 @@
       </div>
     </div>
   </section>
-  <section class="home-section cta-section" id="get-voncms"><div class="shell"><span class="section-kicker">Your publication, your way</span><h2>Give your next story a home.</h2><p>See VonCMS in use, or download it to start your own news website or blog.</p><div class="hero-actions"><a class="btn-primary" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.28.0/VonCMS_v1.28.0_Deploy.zip" data-gh-deploy-download><span>Download VonCMS</span></a><a class="btn-secondary" href="https://skripglobal.com/">See VonCMS in action</a></div><p class="cta-note" data-gh-cta-note>Latest stable: v1.28.0 &middot; Free and open source &middot; GPL-3.0-only</p></div></section>
+  <section class="home-section cta-section" id="get-voncms"><div class="shell"><span class="section-kicker">Your publication, your way</span><h2>Give your next story a home.</h2><p>See VonCMS in use, or download it to start your own news website or blog.</p><div class="hero-actions"><a class="btn-primary" href="https://github.com/Vondereich/VonCMS/releases/download/v.1.28.1/VonCMS_v1.28.1_Deploy.zip" data-gh-deploy-download><span>Download VonCMS</span></a><a class="btn-secondary" href="https://skripglobal.com/">See VonCMS in action</a></div><p class="cta-note" data-gh-cta-note>Latest stable: v1.28.1 &middot; Free and open source &middot; GPL-3.0-only</p></div></section>
 </main>
 <footer class="site-footer">
   <div class="footer-top"><a class="footer-brand" href="index.html"><img src="upload/logo-mark-128.webp" alt="" width="38" height="38"><span>VonCMS</span></a><ul class="footer-links"><li><a href="index.html#product">Product</a></li><li><a href="index.html#included">Included</a></li><li><a href="philosophy.html">Philosophy</a></li><li><a href="docs.html">Docs</a></li><li><a href="whats-new.html">What's New</a></li><li><a href="roadmap.html">Roadmap</a></li></ul></div>

@@ -101,7 +101,7 @@
       A practical guide to running a self-hosted publishing CMS for your news website or blog. Start with the Deploy ZIP; use the source repository when you need a custom build.
     </p>
     <div class="guide-links"><a class="btn-primary" href="#install">Install a site</a><a class="btn-secondary" href="#workflow">Manage publishing</a><a class="btn-secondary" href="#source">Develop from source</a></div>
-    <p class="page-note">Updated for the released v1.28.0 BluePrint baseline. The active source repo is developing v1.28.1; unreleased features are listed on the <a href="roadmap.html">roadmap</a>, not as available tools here.</p>
+    <p class="page-note">Updated for the released v1.28.1 BluePrint baseline. Check the <a href="whats-new.html">published release notes</a> for package-specific changes. Future tools stay separate on the <a href="roadmap.html">roadmap</a>.</p>
   </div>
 </header>
 
@@ -123,9 +123,11 @@
       <div class="sidebar-label">Product</div>
       <ul class="sidebar-links">
         <li><a href="#workflow">Editorial Workflow</a></li>
+        <li><a href="#deletion">Deleting Posts &amp; Pages</a></li>
         <li><a href="#calendar">Editorial Calendar</a></li>
         <li><a href="#media">Media &amp; Import</a></li>
         <li><a href="#seo">SEO &amp; Discovery</a></li>
+        <li><a href="#news-sitemap">News Sitemap</a></li>
         <li><a href="#engagement">Audience &amp; Analytics</a></li>
         <li><a href="#analytics">VonAnalytics Modes</a></li>
         <li><a href="#included">Included Systems</a></li>
@@ -252,6 +254,14 @@ publish or import content</code></pre>
       <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/MANUAL.md">Official Writer and staff review instructions</a></p>
     </section>
 
+    <section id="deletion">
+      <h2>Deleting Posts and Pages</h2>
+      <p>Delete opens a preview of selected titles, IDs, status, and available summaries. Bulk Delete lists the selected records from the current manager page. Review them before choosing <strong>Delete permanently</strong>.</p>
+      <p>Cancel, Escape, or dismissing the preview before confirmation sends no delete request. If a bulk operation partly fails, successful deletions are not rolled back; unconfirmed records remain for review or retry. Reload the list if a network response is lost.</p>
+      <p class="small-note">Deletion is permanent. There is no Trash, Restore, or Undo in this release, and deleting a Post/Page does not remove its uploaded media files. Back up the database first if you need a recovery point.</p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/v.1.28.1/docs/MANUAL.md">Released deletion and content management instructions</a></p>
+    </section>
+
     <section id="calendar">
       <h2>Editorial Calendar</h2>
       <p>Open <strong>Content &gt; Calendar</strong> as an Admin or Moderator to review publication dates alongside your team's private events. Writers, Members, and guests do not have Calendar access.</p>
@@ -261,7 +271,7 @@ publish or import content</code></pre>
         <li>Review existing Post/Page publication entries without changing their status or schedule. Opening an editor still requires the account's existing edit permission.</li>
       </ul>
       <p class="small-note">Existing sites need Primary Admin Database &gt; Schema Repair to enable Calendar storage; opening Calendar does not create tables. This release has no public calendar, recurring events, reminder delivery, or external calendar sync.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/v.1.28.0/docs/MANUAL.md#editorial-calendar">Released Calendar instructions</a></p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/v.1.28.1/docs/MANUAL.md#editorial-calendar">Released Calendar instructions</a></p>
     </section>
 
     <section id="included">
@@ -314,12 +324,25 @@ publish or import content</code></pre>
       <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/main/docs/MANUAL.md#seo">Official SEO operating notes</a></p>
     </section>
 
+    <section id="news-sitemap">
+      <h2>Optional News Sitemap</h2>
+      <p>In <strong>Extensions &gt; VonSEO &gt; Advanced</strong>, enable XML Sitemap, then News Sitemap. It is off by default and supplements the ordinary sitemap; it does not replace it.</p>
+      <ul>
+        <li>Set the publication name and language, or leave them blank to inherit General Settings. Choose all categories for a news publication or select specific news categories.</li>
+        <li>Check <code>/sitemap-news.xml</code> on your publication's own domain. It lists eligible Published articles from the preceding 48 hours, with up to 1,000 articles per file. The ordinary sitemap index links additional News files automatically.</li>
+        <li>Drafts, future articles, Pages, and profiles are excluded. Editing an old article does not make it new; articles leaving the 48-hour window are not deleted.</li>
+        <li>An empty recent window returns empty XML, not older filler. A disabled feed returns 404. These are dynamic responses, with no XML file to upload manually.</li>
+      </ul>
+      <p class="small-note">No database migration or cron job is needed just to enable News Sitemap. It helps discovery but does not guarantee Google News inclusion, indexing, or ranking.</p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/v.1.28.1/docs/MANUAL.md#optional-news-sitemap">News Sitemap configuration and publication metadata</a></p>
+    </section>
+
     <section id="engagement">
       <h2>Audience Tools and Analytics</h2>
       <div class="grid">
         <div class="card"><h3>Comments and subscribers</h3><p>Moderate comments and replies, manage newsletter subscribers, and export subscriber lists. Use the enabled widgets and modules that suit your publication.</p></div>
         <div class="card"><h3>Contact forms and ads</h3><p>Configure contact forms and delivery settings, then test a real submission. Verify ad and widget placements on desktop and mobile after changing a theme.</p></div>
-        <div class="card"><h3>Optional analytics</h3><p>VonAnalytics offers default Strict measurement or optional Balanced browser-based measurement. Plugin and consent settings govern collection; Google Analytics is configured separately.</p></div>
+        <div class="card"><h3>Optional analytics</h3><p>Choose Strict, Balanced, or opt-in Hybrid collection in VonAnalytics. Reports keep the measurements separate. Plugin and consent settings apply; Google Analytics is configured separately.</p></div>
         <div class="card"><h3>Optional AI writing</h3><p>Authorized staff can use the configured shared Gemini key, stored encrypted with masked Settings responses. The local AI Summary extension is separate and needs no external provider.</p></div>
       </div>
       <p class="small-note">Authenticated SMTP requires encrypted TLS or SSL transport. Confirm your provider details and test delivery before relying on contact or account emails.</p>
@@ -327,11 +350,12 @@ publish or import content</code></pre>
     </section>
 
     <section id="analytics">
-      <h2>VonAnalytics: Strict and Balanced</h2>
+      <h2>VonAnalytics: Strict, Balanced, and Hybrid</h2>
       <p>As Primary Admin, open <strong>Extensions &gt; Plugins &gt; VonAnalytics &gt; Settings</strong>. Strict uses an IP-based 30-minute recorded-visit window. Optional Balanced distinguishes browsers behind a shared IP using a first-party identifier retained for 30 days, with a new session after 30 minutes of inactivity.</p>
-      <p>Run Schema Repair before enabling Balanced on an existing site. Reports keep the modes separate, and collection does not reconstruct earlier browser history. Daily unique counts must not be added to obtain period-wide uniques; neither mode measures verified people. Cookie blocking, consent, and admission limits can reduce recorded visits.</p>
-      <p class="small-note">Hybrid collection is in development for v1.28.1, not part of the released v1.28.0 package. Personal staff AI key storage is also not included in v1.28.0.</p>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/v.1.28.0/docs/UPGRADE.md#v1280-analytics-and-account-links">Released analytics storage and upgrade notes</a></p>
+      <p>Hybrid explicitly enables both measurements independently. Existing settings and history are retained during an upgrade; switching Dashboard reports does not change collection. Never add Strict and Balanced totals together.</p>
+      <p>If Balanced storage is missing, run Schema Repair before enabling Balanced or Hybrid on an existing site. Collection does not reconstruct earlier browser history. Daily unique counts must not be added to obtain period-wide uniques; neither mode measures verified people. Cookie blocking, consent, and admission limits can reduce recorded visits.</p>
+      <p class="small-note">Recognized crawlers and automation are excluded from new native measurements without blocking public content. This is best-effort filtering, not proof of human visitors; historical records are not rewritten.</p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/v.1.28.1/docs/UPGRADE.md">Released analytics storage and upgrade notes</a></p>
     </section>
 
     <section id="themes">
@@ -374,17 +398,19 @@ publish or import content</code></pre>
     <section id="upgrade">
       <h2>Upgrade Path</h2>
       <p>Back up the database and site files before every upgrade. Use the Deploy ZIP for a normal production replacement, and preserve site-owned files and directories during the process.</p>
+      <p>Updating from v1.28.0 to v1.28.1 adds no new database table or required migration. Hybrid analytics and News Sitemap are not enabled automatically; configure them explicitly after updating. Sites coming from older versions still need the storage checks below.</p>
       <p>For supported installs, the dashboard updater is under <strong>Settings &gt; System</strong>. For manual replacement, follow the matching package's guide and keep the live <code>von_config.php</code>, uploads, backups, and host-managed routing rules. Do not replace the working configuration with a sample.</p>
       <ol>
         <li>Read the published release notes and the guide matching your package. The <a href="https://github.com/Vondereich/VonCMS/blob/main/CHANGELOG.md" rel="noopener noreferrer">main-branch changelog</a> can include unreleased work.</li>
         <li>Back up the database, configuration, and uploads. If using encrypted Gemini credentials, back up <code>data/credential_master.key.php</code> separately from SQL, including after encryption-key rotation.</li>
         <li>For the first transition from an older updater, follow the release's OTA staging-shield guidance or use a controlled manual Deploy replacement. Run Repair <code>.htaccess</code> when prompted; Nginx-only/OpenLiteSpeed hosts need equivalent server rules.</li>
         <li>Replace the release-managed application files with the new Deploy ZIP.</li>
-        <li>For v1.28.0 on an existing site, sign in as Primary Admin and run <strong>Database &gt; Schema Repair</strong> for Calendar and optional Balanced analytics storage. Fresh installs create these structures automatically.</li>
+        <li>If upgrading from before v1.28.0 or the relevant storage is missing, sign in as Primary Admin and run <strong>Database &gt; Schema Repair</strong> for Calendar and Balanced/Hybrid analytics storage. Fresh installs create these structures automatically.</li>
         <li>Check the homepage, one post, one page, Dashboard, Calendar, and a saved draft after updating. Existing articles and media are not rewritten or moved in bulk.</li>
         <li>Follow the focused <a href="https://github.com/Vondereich/VonCMS/blob/main/docs/UPGRADE.md" rel="noopener noreferrer">Upgrade guide</a> for version-specific notes.</li>
       </ol>
-      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/v.1.28.0/docs/UPGRADE.md">v1.28.0 upgrade and recovery instructions</a></p>
+      <p class="small-note">Before rolling back to v1.28.0, save Strict or Balanced in VonAnalytics first. Older code does not understand a saved Hybrid setting and will stop visitor analytics rather than silently change collection policy.</p>
+      <p><a class="text-link" href="https://github.com/Vondereich/VonCMS/blob/v.1.28.1/docs/UPGRADE.md">v1.28.1 upgrade and recovery instructions</a></p>
     </section>
 
     <section id="database">
