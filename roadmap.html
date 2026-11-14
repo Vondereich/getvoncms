@@ -6,7 +6,7 @@
 <meta name="referrer" content="strict-origin-when-cross-origin">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <title>VonCMS Roadmap | v1.28 Publishing CMS Development</title>
-<meta name="description" content="Follow the VonCMS v1.28 roadmap: released Calendar, Hybrid analytics and News Sitemap, plus planned tools for publishing teams. Future dates are not promised.">
+<meta name="description" content="Track the VonCMS v1.28 roadmap: released editorial tools, Lean Public Settings and personal AI keys, plus planned staff activity and interface languages.">
 <link rel="canonical" href="https://getvoncms.com/roadmap.html">
 <link rel="alternate" hreflang="en" href="https://getvoncms.com/roadmap.html">
 <link rel="alternate" hreflang="x-default" href="https://getvoncms.com/roadmap.html">
@@ -15,7 +15,7 @@
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://getvoncms.com/roadmap.html">
 <meta property="og:title" content="VonCMS Roadmap | v1.28 Publishing CMS Development">
-<meta property="og:description" content="Follow the VonCMS v1.28 roadmap: released Calendar, Hybrid analytics and News Sitemap, plus planned tools for publishing teams. Future dates are not promised.">
+<meta property="og:description" content="Track the VonCMS v1.28 roadmap: released editorial tools, Lean Public Settings and personal AI keys, plus planned staff activity and interface languages.">
 <meta property="og:site_name" content="VonCMS">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://getvoncms.com/upload/owlr.png">
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:url" content="https://getvoncms.com/roadmap.html">
 <meta name="twitter:title" content="VonCMS Roadmap | v1.28 Publishing CMS Development">
-<meta name="twitter:description" content="Follow the VonCMS v1.28 roadmap: released Calendar, Hybrid analytics and News Sitemap, plus planned tools for publishing teams. Future dates are not promised.">
+<meta name="twitter:description" content="Track the VonCMS v1.28 roadmap: released editorial tools, Lean Public Settings and personal AI keys, plus planned staff activity and interface languages.">
 <meta name="twitter:image" content="https://getvoncms.com/upload/owlr.png">
 <meta name="twitter:image:alt" content="Vorro, the VonCMS owl mascot">
 <script type="application/ld+json">
@@ -33,9 +33,9 @@
   "@context": "https://schema.org",
   "@type": "WebPage",
   "name": "VonCMS Roadmap | v1.28 Publishing CMS Development",
-  "description": "Follow the VonCMS v1.28 roadmap: released Calendar, Hybrid analytics and News Sitemap, plus planned tools for publishing teams. Future dates are not promised.",
+  "description": "Track the VonCMS v1.28 roadmap: released editorial tools, Lean Public Settings and personal AI keys, plus planned staff activity and interface languages.",
   "url": "https://getvoncms.com/roadmap.html",
-  "dateModified": "2026-11-06",
+  "dateModified": "2026-11-14",
   "about": { "@type": "SoftwareApplication", "name": "VonCMS", "applicationCategory": "BusinessApplication" },
   "isPartOf": { "@type": "WebSite", "name": "VonCMS", "url": "https://getvoncms.com/" }
 }
@@ -78,8 +78,8 @@
     <p class="page-trail"><a href="index.html">Home</a><span>/</span>Roadmap</p>
     <div class="hero-badge">The BluePrint / v1.28.x</div>
     <h1>VonCMS Roadmap</h1>
-    <p class="lead">The BluePrint brings editorial planning, optional Hybrid analytics, and a News Sitemap. Follow the released updates and the plans for a clearer publishing workspace.</p>
-    <p class="page-note">Status checked: <time datetime="2026-11-06">6 November 2026</time>. This page covers the v1.28.x series only.</p>
+    <p class="lead">The BluePrint brings editorial planning, leaner public settings, and personal Gemini keys for eligible staff. Follow the released updates and the plans for your publishing workspace.</p>
+    <p class="page-note">Status checked: <time datetime="2026-11-14">14 November 2026</time>. This page covers the v1.28.x series only.</p>
   </div>
 </header>
 <div class="layout shell">
@@ -92,13 +92,13 @@
           <li><a href="#overview" class="active">The BluePrint</a></li>
           <li><a href="#v1-28-0">1.28.0 / Editorial planning</a></li>
           <li><a href="#v1-28-1">1.28.1 / Publishing tools</a></li>
+          <li><a href="#v1-28-2">1.28.2 / Leaner public settings</a></li>
+          <li><a href="#v1-28-3">1.28.3 / Personal AI keys</a></li>
         </ul>
       </div>
       <div class="sidebar-group">
         <div class="sidebar-label">Planned next</div>
         <ul class="sidebar-links">
-          <li><a href="#v1-28-2">1.28.2 / Leaner public settings</a></li>
-          <li><a href="#v1-28-3">1.28.3 / Personal AI key</a></li>
           <li><a href="#v1-28-4">1.28.4 / Staff activity</a></li>
           <li><a href="#v1-28-5">1.28.5 / Interface languages</a></li>
           <li><a href="#delivery">How releases move forward</a></li>
@@ -116,7 +116,7 @@
         <li><strong>Grouped navigation and quick actions.</strong> Organize admin destinations by purpose, with role-aware actions for creating content and events.</li>
         <li><strong>Editorial Calendar.</strong> Review publication dates and authors alongside internal events, meetings, and agenda entries in month and list views. Viewing the calendar does not change an article's publication schedule.</li>
         <li><strong>VonAnalytics measurement choices.</strong> Keep Strict as the default and offer an optional Balanced, browser-based mode. Reports distinguish the measurement methods; browser counts are not verified people.</li>
-        <li><strong>Shared AI credential protection.</strong> Encrypted owner Gemini key storage, masked Settings responses, and owner-only encryption-key rotation. This is separate from the planned personal staff key feature.</li>
+        <li><strong>Shared AI credential protection.</strong> Encrypted owner Gemini key storage, masked Settings responses, and owner-only encryption-key rotation. Personal staff keys were added separately in v1.28.3.</li>
       </ul>
       <p>Existing sites need Primary Admin Schema Repair for Calendar and Balanced analytics storage. <a href="docs.html#upgrade">Review the upgrade guidance</a> before updating.</p>
     </section>
@@ -131,15 +131,22 @@
       </ul>
       <p>Hybrid and News Sitemap require explicit configuration. <a href="docs.html#upgrade">Read the upgrade guidance</a>; earlier Calendar and analytics storage prerequisites still apply.</p>
     </section>
-    <section id="v1-28-2" data-roadmap-version="1.28.2" data-roadmap-status="planned">
+    <section id="v1-28-2" data-roadmap-version="1.28.2" data-roadmap-status="released">
       <h2>v1.28.2: Leaner public settings</h2>
-      <p><strong>Planned.</strong> Send public pages only the configuration their active theme and features need.</p>
-      <p>Keep inactive theme settings saved for later without sending them to every visitor. This work targets smaller settings payloads while preserving disabled features and existing site behavior.</p>
+      <p><strong>Released.</strong> The <a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.28.2">published v1.28.2 update</a> sends visitors the active bundled theme's configuration and shared appearance settings. Inactive configuration stays saved for authorized admins and reactivation.</p>
+      <p>This release also updates the Dashboard, editor contrast and spacing, collapsed AI Assistant, Promo Bar controls, and admin action feedback. It adds no required database migration from v1.28.1 and does not change analytics collection.</p>
+      <p><a href="docs.html#public-settings">Read about Lean Public Settings</a>.</p>
     </section>
-    <section id="v1-28-3" data-roadmap-version="1.28.3" data-roadmap-status="planned">
-      <h2>v1.28.3: Your personal AI key</h2>
-      <p><strong>Planned.</strong> Let eligible staff save a personal AI key in their own account profile, building on the existing editor key entry.</p>
-      <p>The scope is personal credential storage and explicit key selection for supported AI tools. It does not add new providers, image generation, or AI access for ordinary members.</p>
+    <section id="v1-28-3" data-roadmap-version="1.28.3" data-roadmap-status="released">
+      <h2>v1.28.3: Personal AI keys</h2>
+      <p><strong>Released.</strong> The <a href="https://github.com/Vondereich/VonCMS/releases/tag/v.1.28.3">published v1.28.3 update</a> adds private personal Gemini keys and targeted publishing, routing, and interface corrections.</p>
+      <ul>
+        <li><strong>Your own credential.</strong> Primary Admin, appointed Admins, Moderators, and Writers can save an encrypted personal key. Writer/Moderator access is self-only, without general user-management permission.</li>
+        <li><strong>Server-owned key selection.</strong> Personal keys take priority. Expired, damaged, or rejected personal keys do not silently fall back to the shared paid key. Optional local expiry stops use of the saved key 30 days after Save/Replace.</li>
+        <li><strong>Encryption and recovery.</strong> Primary Admin rotation covers shared and personal keys, currently requiring an encrypted shared key. Keep the matching private encryption-key backup separate from SQL.</li>
+        <li><strong>Publishing corrections.</strong> Slug routing, public name/title encoding, new first-publication timestamps, News Sitemap readiness, responsive actions, and theme feedback receive focused fixes.</li>
+      </ul>
+      <p>Existing sites must run Primary Admin Database Repair for credential storage and System Tools &gt; Repair .htaccess after updating. <a href="docs.html#personal-ai">Read the personal-key guide</a> and <a href="docs.html#upgrade">upgrade instructions</a>. Future providers, image generation, and AI access for ordinary members are not included.</p>
     </section>
     <section id="v1-28-4" data-roadmap-version="1.28.4" data-roadmap-status="planned">
       <h2>v1.28.4: Staff activity log</h2>
