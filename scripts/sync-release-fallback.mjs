@@ -262,6 +262,17 @@ function replaceInner(source, expression, replacement) {
   return source.replace(expression, (_match, prefix, suffix) => `${prefix}${replacement}${suffix}`);
 }
 
+function updateSchema(source, type, values) {
+  return source.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g,
+    (match, start, json, end) => {
+      const data = JSON.parse(json);
+      if (data['@type'] !== type) return match;
+      Object.assign(data, values);
+      const serialized = JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
+      return `${start}\n${serialized}\n${end}`;
+    });
+}
+
 function releaseListMarkup(releases) {
   return releases.map(release => {
     const url = safeUrl(release.html_url);
@@ -288,6 +299,9 @@ async function syncReleaseFallback() {
   const version = formatVersion(latest.tag_name);
   const releaseUrl = safeUrl(latest.html_url);
   if (!version || !releaseUrl) throw new Error('Latest release data failed validation');
+  const timestamps = [latest.published_at, latest.updated_at].map(Date.parse).filter(Number.isFinite);
+  if (!timestamps.length) throw new Error('Latest release date failed validation');
+  const modified = new Date(Math.max(...timestamps)).toISOString();
 
   const date = formatDate(latest.published_at) || 'Latest stable release';
   const name = latest.name || latest.tag_name;
@@ -314,6 +328,7 @@ async function syncReleaseFallback() {
   next = next.replace(/https:\/\/github\.com\/Vondereich\/VonCMS\/releases\/download\/[^"\s]+\/VonCMS_[^"\s]+_Source\.zip/g, sourceUrl);
   next = next.replace(/(<a href=")https:\/\/github\.com\/Vondereich\/VonCMS\/releases\/tag\/[^"\s]+(" rel="noopener noreferrer" data-release-page>Original notes<\/a>)/, `$1${releaseUrl}$2`);
   next = replaceInner(next, /(<ol class="recent-releases" data-release-list>)[\s\S]*?(<\/ol>)/, `\n${releaseListMarkup(stableReleases)}\n        `);
+  next = updateSchema(next, 'WebPage', { dateModified: modified });
 
   await writeFile(pagePath, next, 'utf8');
   const homePath = join(root, 'index.html');
@@ -326,14 +341,7 @@ async function syncReleaseFallback() {
   home = replaceInner(home, /(<p class="cta-note" data-gh-cta-note>)[\s\S]*?(<\/p>)/,
     `Latest stable: ${escapeHtml(version)} &middot; Free and open source &middot; GPL-3.0-only`);
   home = home.replace(/https:\/\/github\.com\/Vondereich\/VonCMS\/releases\/download\/[^"\s]+\/VonCMS_[^"\s]+_Deploy\.zip/g, deployUrl);
-  home = home.replace(/(<script type="application\/ld\+json">)([\s\S]*?)(<\/script>)/g,
-    (match, start, json, end) => {
-      const data = JSON.parse(json);
-      if (data['@type'] !== 'SoftwareApplication') return match;
-      data.softwareVersion = version.replace(/^v/i, '');
-      const serialized = JSON.stringify(data, null, 2).replace(/</g, '\\u003c');
-      return `${start}\n${serialized}\n${end}`;
-    });
+  home = updateSchema(home, 'SoftwareApplication', { softwareVersion: version.replace(/^v/i, '') });
   await writeFile(homePath, home, 'utf8');
   console.log(`VonCMS: generated static release fallback for ${version}.`);
 }

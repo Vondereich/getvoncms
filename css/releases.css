@@ -29,7 +29,7 @@
 .release-document-header span { font-size: 12px; color: var(--muted); }
 .release-document-header h2 { font-size: 30px; margin-top: 8px; }
 .release-document-header > a { color: var(--blue); flex-shrink: 0; font-size: 13px; text-decoration: underline; text-underline-offset: 4px; }
-.release-body { padding-top: 24px; max-width: 76ch; }
+.release-body { padding-top: 24px; max-width: 76ch; overflow-wrap: anywhere; }
 .release-body h3 { font-size: 25px; margin: 38px 0 20px; padding-top: 28px; border-top: 1px solid var(--line); }
 .release-body > :first-child { margin-top: 0; padding-top: 0; border-top: 0; }
 .release-body h4, .release-body h5 { font-size: 21px; margin: 26px 0 16px; }

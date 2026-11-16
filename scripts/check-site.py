@@ -174,7 +174,7 @@ def check(root):
             if url.scheme or url.netloc:
                 require(url.scheme in ("https", "mailto"), f"{name}: unsafe link: {href}")
                 continue
-            target = unquote(url.path) or name
+            target = unquote(url.path).lstrip("/") or ("index.html" if url.path else name)
             require((root / target).is_file(), f"{name}: missing link target: {href}")
             if url.fragment:
                 require(target in pages and unquote(url.fragment) in pages[target].ids,
