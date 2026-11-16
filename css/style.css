@@ -27,7 +27,7 @@
 .product-panel { margin-bottom: 32px; scroll-margin-top: 100px; }
 .product-panel img { width: 100%; aspect-ratio: 16 / 8.8; object-fit: cover; object-position: top; background: var(--paper); box-shadow: 0 12px 35px rgba(20,33,61,.1); }
 .product-panel[data-view="dashboard"] img { aspect-ratio: 1920 / 957; object-fit: contain; }
-.product-panel[data-view="editor"] img { aspect-ratio: 16 / 8.8; }
+.product-panel[data-view="editor"] img, .product-panel[data-view="ai"] img { aspect-ratio: 1920 / 962; object-fit: contain; }
 .product-panel figcaption { display: flex; justify-content: space-between; gap: 24px; margin-top: 14px; color: var(--body); font-size: 14px; }
 .product-panel figcaption strong { color: var(--navy); }
 .product-panel figcaption a { flex-shrink: 0; }

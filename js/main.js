@@ -199,7 +199,7 @@ function initLightbox() {
     trigger.setAttribute('role', 'button');
     trigger.setAttribute('aria-label', 'View full screenshot: ' + trigger.alt);
     function open() {
-      image.src = trigger.currentSrc || trigger.src;
+      image.src = trigger.src;
       image.alt = trigger.alt;
       previousOverflow = document.body.style.overflow;
       dialog.classList.add('active');
