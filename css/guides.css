@@ -6,6 +6,7 @@
 .guide-table thead th { background: var(--paper); color: var(--navy); font-size: 12px; font-weight: 800; text-transform: uppercase; }
 .guide-table tbody th { color: var(--navy); font-weight: 750; }
 .guide-table tr:last-child th, .guide-table tr:last-child td { border-bottom: 0; }
+.layout main .grid + p, .layout main .guide-table-wrap + p:not(.small-note) { margin-top: 28px; }
 .guide-cta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
 .guide-cards .card h3 a { color: var(--navy); text-decoration: none; }
 .guide-cards .card h3 a:hover { text-decoration: underline; text-decoration-color: var(--yellow); }
