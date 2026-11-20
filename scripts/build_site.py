@@ -11,7 +11,9 @@ from urllib.parse import unquote, urljoin, urlsplit, urlunsplit
 import xml.etree.ElementTree as ET
 
 
-PAGES = ("index.html", "docs.html", "philosophy.html", "whats-new.html", "roadmap.html")
+PAGES = ("index.html", "docs.html", "philosophy.html", "whats-new.html", "roadmap.html",
+         "guides.html", "start-a-news-website.html", "wordpress-alternative-for-news.html", "newspack-alternative.html",
+         "enterprise-news-cms-alternative.html")
 ASSETS = ("CNAME", "robots.txt", "sitemap.xml", "css", "js", "upload")
 CSS_URL = re.compile(r"url\(\s*(['\"])([^'\"]+)\1\s*\)", re.IGNORECASE)
 

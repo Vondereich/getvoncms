@@ -110,7 +110,9 @@ class Page(HTMLParser):
 
 
 def check(root):
-    names = ("index.html", "docs.html", "philosophy.html", "whats-new.html", "roadmap.html")
+    names = ("index.html", "docs.html", "philosophy.html", "whats-new.html", "roadmap.html",
+         "guides.html", "start-a-news-website.html", "wordpress-alternative-for-news.html", "newspack-alternative.html",
+         "enterprise-news-cms-alternative.html")
     pages = {name: Page((root / name).read_text(encoding="utf-8")) for name in names}
     errors = []
 

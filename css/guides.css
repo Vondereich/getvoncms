@@ -1,0 +1,12 @@
+.guide-meta { margin-top: 18px; font-size: 13px; color: #c4cee0; }
+.guide-table-wrap { margin-block: 24px; overflow-x: auto; border-block: 1px solid var(--line); }
+.guide-table { width: 100%; min-width: 560px; border-collapse: collapse; font-size: 14px; }
+.guide-table caption { padding: 12px 16px; text-align: left; font-size: 12px; font-weight: 750; color: var(--muted); }
+.guide-table th, .guide-table td { padding: 12px 16px; border-bottom: 1px solid var(--line); text-align: left; vertical-align: top; color: var(--body); }
+.guide-table thead th { background: var(--paper); color: var(--navy); font-size: 12px; font-weight: 800; text-transform: uppercase; }
+.guide-table tbody th { color: var(--navy); font-weight: 750; }
+.guide-table tr:last-child th, .guide-table tr:last-child td { border-bottom: 0; }
+.guide-cta { margin-top: 26px; display: flex; flex-wrap: wrap; gap: 10px; }
+.guide-cards .card h3 a { color: var(--navy); text-decoration: none; }
+.guide-cards .card h3 a:hover { text-decoration: underline; text-decoration-color: var(--yellow); }
+@media (max-width: 600px) { .guide-table th, .guide-table td { padding: 10px 12px; } }

@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<title>How to Start a News Website on Your Own Hosting | VonCMS</title>
+<meta name="description" content="Plan, install, and launch a news website on PHP and MySQL hosting. A step-by-step guide covering hosting, setup, staff roles, SEO, and backups." />
+<link rel="icon" type="image/x-icon" href="upload/icon.ico?v=20260811">
+<link rel="apple-touch-icon" href="upload/logo2.png">
+
+<link rel="canonical" href="https://getvoncms.com/start-a-news-website.html" />
+<link rel="alternate" hreflang="en" href="https://getvoncms.com/start-a-news-website.html" />
+<link rel="alternate" hreflang="x-default" href="https://getvoncms.com/start-a-news-website.html" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://getvoncms.com/start-a-news-website.html" />
+<meta property="og:title" content="How to Start a News Website on Your Own Hosting | VonCMS" />
+<meta property="og:description" content="Plan, install, and launch a news website on PHP and MySQL hosting. A step-by-step guide covering hosting, setup, staff roles, SEO, and backups." />
+<meta property="og:site_name" content="VonCMS" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://getvoncms.com/upload/og-voncms-1200x630.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:alt" content="Vorro, the VonCMS owl mascot, writing a news story at a laptop" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://getvoncms.com/start-a-news-website.html" />
+<meta name="twitter:title" content="How to Start a News Website on Your Own Hosting | VonCMS" />
+<meta name="twitter:description" content="Plan, install, and launch a news website on PHP and MySQL hosting. A step-by-step guide covering hosting, setup, staff roles, SEO, and backups." />
+<meta name="twitter:image" content="https://getvoncms.com/upload/og-voncms-1200x630.jpg" />
+<meta name="twitter:image:alt" content="Vorro, the VonCMS owl mascot, writing a news story at a laptop" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "How to Start a News Website on Your Own Hosting",
+  "description": "Plan, install, and launch a news website on PHP and MySQL hosting. A step-by-step guide covering hosting, setup, staff roles, SEO, and backups.",
+  "url": "https://getvoncms.com/start-a-news-website.html",
+  "mainEntityOfPage": "https://getvoncms.com/start-a-news-website.html",
+  "image": "https://getvoncms.com/upload/og-voncms-1200x630.jpg",
+  "datePublished": "2026-11-20",
+  "dateModified": "2026-11-20",
+  "inLanguage": "en",
+  "author": { "@type": "Organization", "name": "VonCMS", "url": "https://getvoncms.com/" },
+  "publisher": { "@type": "Organization", "name": "VonCMS", "logo": { "@type": "ImageObject", "url": "https://getvoncms.com/upload/logo2.png" } },
+  "about": { "@type": "SoftwareApplication", "name": "VonCMS", "applicationCategory": "BusinessApplication" },
+  "isPartOf": { "@type": "WebSite", "name": "VonCMS", "url": "https://getvoncms.com/" }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getvoncms.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getvoncms.com/guides.html" },
+    { "@type": "ListItem", "position": 3, "name": "Start a News Website", "item": "https://getvoncms.com/start-a-news-website.html" }
+  ]
+}
+</script>
+
+<link rel="preload" href="upload/fonts/inter-latin-v20.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="upload/fonts/outfit-latin-v15.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css?v=20261002-local">
+<link rel="stylesheet" href="css/site.css?v=20261025-roadmap">
+<link rel="stylesheet" href="css/manifesto.css?v=20261001-yellow-cmd">
+<link rel="stylesheet" href="css/guides.css?v=20261120-guides">
+</head>
+<body>
+<a class="skip-link" href="#page-content">Skip to content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+  <a class="nav-logo" href="index.html" aria-label="VonCMS home">
+    <img src="upload/logo-mark-128.webp" alt="" width="34" height="34">
+    <span>VonCMS</span>
+  </a>
+  <button class="burger" id="burger-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links" aria-label="Primary navigation">
+    <li><a href="index.html#product">Product</a></li>
+    <li><a href="philosophy.html">Philosophy</a></li>
+    <li><a href="docs.html">Docs</a></li>
+    <li><a href="guides.html" aria-current="page">Guides</a></li>
+    <li><a href="whats-new.html">What's New</a></li>
+    <li class="nav-roadmap"><a href="roadmap.html">Roadmap</a></li>
+    <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="nav-link-strong"><svg class="nav-github-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0.2a8 8 0 0 0-2.53 15.59c0.4 0.07 0.55-0.17 0.55-0.38v-1.36c-2.23 0.49-2.7-0.95-2.7-0.95-0.36-0.92-0.89-1.17-0.89-1.17-0.73-0.5 0.06-0.49 0.06-0.49 0.8 0.06 1.23 0.83 1.23 0.83 0.72 1.22 1.87 0.87 2.33 0.67 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.65-0.89-3.65-3.96 0-0.88 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.22 2.2 0.82A7.6 7.6 0 0 1 8 3.7c0.68 0 1.36 0.09 2 0.27 1.52-1.04 2.19-0.82 2.19-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.08-1.87 3.75-3.66 3.95 0.29 0.25 0.54 0.74 0.54 1.49v2.21c0 0.21 0.15 0.46 0.55 0.38A8 8 0 0 0 8 0.2Z"/></svg><span>GitHub</span></a></li>
+    <li><a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="nav-cta">Download</a></li>
+  </ul>
+  </div>
+</nav>
+
+<header class="subpage-masthead" id="overview" data-mark="START">
+  <div class="shell">
+    <p class="page-trail"><a href="index.html">Home</a><span>/</span><a href="guides.html">Guides</a><span>/</span>Start a news website</p>
+    <div class="hero-badge">Guide</div>
+    <h1>How to start a news website on your own hosting.</h1>
+    <p class="lead">
+      A practical path from idea to first published story: plan your coverage, choose hosting, install a publishing CMS, add your team, and keep the site running.
+    </p>
+    <p class="guide-meta">Updated 20 November 2026 &middot; Written for VonCMS v1.28.3</p>
+  </div>
+</header>
+
+<div class="layout shell">
+  <aside aria-label="Guide contents">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="page-toc" hidden>On this page</button>
+    <div class="toc-content" id="page-toc">
+    <div class="sidebar-group">
+      <div class="sidebar-label">Steps</div>
+      <ul class="sidebar-links">
+        <li><a href="#overview" class="active">Overview</a></li>
+        <li><a href="#plan">1. Plan Coverage</a></li>
+        <li><a href="#hosting">2. Domain &amp; Hosting</a></li>
+        <li><a href="#install">3. Install</a></li>
+        <li><a href="#setup">4. Set Up the Site</a></li>
+        <li><a href="#team">5. Add Your Team</a></li>
+        <li><a href="#discovery">6. Get Discovered</a></li>
+        <li><a href="#maintain">7. Keep It Running</a></li>
+      </ul>
+    </div>
+    <div class="sidebar-group">
+      <div class="sidebar-label">More</div>
+      <ul class="sidebar-links">
+        <li><a href="#costs">What It Costs</a></li>
+        <li><a href="#next">Next Steps</a></li>
+      </ul>
+    </div>
+    </div>
+  </aside>
+
+  <main id="page-content">
+
+    <section id="plan">
+      <h2>1. Plan your coverage before your software</h2>
+      <p>The CMS matters less than knowing what you will publish. Before installing anything, write down:</p>
+      <ul>
+        <li><strong>Your beat.</strong> A town, a region, an industry, or a community. A focused beat is easier to cover well and easier for readers to find.</li>
+        <li><strong>Your sections.</strong> Three to six categories is a good start, for example News, Politics, Business, Sport, and Opinion. You can add more later.</li>
+        <li><strong>Your team.</strong> Who writes, who edits, and who decides when a story goes live. Even a two-person newsroom benefits from a second read before publication.</li>
+        <li><strong>Your publishing rhythm.</strong> Daily, weekly, or as stories break. A steady rhythm matters more than volume.</li>
+      </ul>
+    </section>
+
+    <section id="hosting">
+      <h2>2. Choose a domain and hosting</h2>
+      <p>Register a short domain that matches your publication's name. Then choose hosting. A self-hosted news website gives you control over your content and database, but your publication is responsible for keeping it running.</p>
+      <p>VonCMS runs on ordinary PHP and MySQL hosting, including many shared hosting plans:</p>
+      <div class="tech-spec">
+        <header><span>Hosting checklist</span><span>VonCMS runtime</span></header>
+        <div class="tech-line"><span class="tech-label">PHP</span><span class="tech-val">8.2 minimum; 8.3 or newer recommended, with the DOM extension enabled.</span></div>
+        <div class="tech-line"><span class="tech-label">Database</span><span class="tech-val">MySQL 5.7 or newer, or a compatible MariaDB.</span></div>
+        <div class="tech-line"><span class="tech-label">Web server</span><span class="tech-val">Apache or LiteSpeed with <code>.htaccess</code> support. Nginx needs equivalent rewrite rules.</span></div>
+        <div class="tech-line"><span class="tech-label">Not needed</span><span class="tech-val">Node.js, npm, or a separate frontend server.</span></div>
+        <div class="tech-line"><span class="tech-label">HTTPS</span><span class="tech-val">Use an SSL certificate from your host. Most hosts include one.</span></div>
+      </div>
+      <p>Ask your host whether these are available before you buy. See the full <a href="docs.html#requirements">hosting requirements</a>.</p>
+    </section>
+
+    <section id="install">
+      <h2>3. Install the CMS</h2>
+      <p>With VonCMS, installation uses the ready-to-install package, called the Deploy ZIP in each release:</p>
+      <ol>
+        <li>Download the latest Deploy ZIP from GitHub Releases.</li>
+        <li>Extract it into your hosting web root, such as <code>public_html/</code>.</li>
+        <li>Create a MySQL database and database user in your hosting control panel.</li>
+        <li>Open <code>https://yourdomain.com/install</code>. Read the setup key from <code>data/install_setup.key</code> using your host's File Manager or SFTP, and enter it in the installer.</li>
+        <li>Connect the database and create your admin account.</li>
+      </ol>
+      <p>The <a href="docs.html#install">installation guide</a> covers each step in more detail.</p>
+    </section>
+
+    <section id="setup">
+      <h2>4. Set up the site</h2>
+      <p>Sign in at <code>/admin</code> and work through the basics before you publish:</p>
+      <ol>
+        <li>Set your site name, tagline, and the exact public HTTPS address under <strong>Settings &gt; General &gt; Domain URL</strong>.</li>
+        <li>Choose one of the bundled themes, then upload your logo and favicon.</li>
+        <li>Create your categories and navigation menu. Add About and Contact pages, so readers know who is behind the publication.</li>
+        <li>Publish a test article and check it on a phone and a desktop.</li>
+      </ol>
+      <p>Moving from an existing WordPress site? VonCMS includes a WordPress XML importer. Read <a href="wordpress-alternative-for-news.html#migrate">how to migrate from WordPress</a> before you switch.</p>
+    </section>
+
+    <section id="team">
+      <h2>5. Add your team and a review step</h2>
+      <p>A news website needs more than a single login. Give each person an account with the access they need:</p>
+      <div class="grid">
+        <div class="card"><h3>Writers</h3><p>Draft stories and submit them for review. They cannot publish on their own.</p></div>
+        <div class="card"><h3>Moderators and Admins</h3><p>Review submissions, then return them for changes, schedule them, or publish them.</p></div>
+      </div>
+      <p>This keeps a second pair of eyes on every story. Writers can withdraw a submission, revise it, and submit it again. See the <a href="docs.html#workflow">editorial workflow</a>.</p>
+    </section>
+
+    <section id="discovery">
+      <h2>6. Help readers and search engines find you</h2>
+      <ul>
+        <li>Write a clear headline, an excerpt, and a meta description for each story.</li>
+        <li>Check your public <code>/sitemap.xml</code> and <code>/robots.txt</code>, then submit the sitemap in Google Search Console.</li>
+        <li>For time-sensitive reporting, consider the optional <a href="docs.html#news-sitemap">News Sitemap</a>. It helps discovery but does not guarantee Google News inclusion.</li>
+        <li>Share stories through your social channels and newsletter. Search traffic for a new site usually takes months to build.</li>
+      </ul>
+      <p>VonCMS outputs metadata, canonical URLs, structured data, sitemaps, and feeds by default. Rankings still depend on your reporting and your site.</p>
+    </section>
+
+    <section id="maintain">
+      <h2>7. Keep it running</h2>
+      <p>Self-hosting means you own the routine work. Put these on a calendar:</p>
+      <ul>
+        <li><strong>Backups:</strong> keep external copies of your database, configuration, and uploads. Test a restore at least once.</li>
+        <li><strong>Updates:</strong> back up first, then follow the <a href="docs.html#upgrade">upgrade guide</a> for each release.</li>
+        <li><strong>PHP version:</strong> updating the CMS does not update PHP. Keep your hosting on a supported version.</li>
+      </ul>
+      <p>If you would rather not handle this yourself, arrange help from a developer or hosting provider.</p>
+    </section>
+
+    <section id="costs">
+      <h2>What it costs</h2>
+      <p>VonCMS is free, open source software under GPL-3.0-only. Your running costs are:</p>
+      <ul>
+        <li>A domain name, renewed every year.</li>
+        <li>PHP and MySQL hosting, paid monthly or yearly.</li>
+        <li>Optional services you choose, such as email delivery, an AI provider key, or developer help.</li>
+      </ul>
+      <p>Comparing this with a managed platform? Read <a href="newspack-alternative.html">Newspack vs a self-hosted CMS</a>.</p>
+    </section>
+
+    <section id="next">
+      <h2>Next steps</h2>
+      <p>Download VonCMS, install it on a test domain or subdomain, and publish a few practice stories before you launch.</p>
+      <div class="guide-cta">
+        <a class="btn-primary" href="https://github.com/Vondereich/VonCMS/releases/latest">Download VonCMS</a>
+        <a class="btn-secondary" href="docs.html#install">Read the installation guide</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top"><a class="footer-brand" href="index.html"><img src="upload/logo-mark-128.webp" alt="" width="38" height="38"><span>VonCMS</span></a><ul class="footer-links"><li><a href="index.html#product">Product</a></li><li><a href="index.html#included">Included</a></li><li><a href="philosophy.html">Philosophy</a></li><li><a href="docs.html">Docs</a></li><li><a href="guides.html">Guides</a></li><li><a href="whats-new.html">What's New</a></li><li><a href="roadmap.html">Roadmap</a></li></ul></div>
+  <div class="footer-bottom"><p>&copy; <span data-current-year>2026</span> VonCMS. A publishing CMS for publishers.</p><p>Free and open source &middot; <a href="https://github.com/Vondereich/VonCMS/blob/main/LICENSE.md">GPL-3.0-only</a></p></div>
+</footer>
+
+<script src="js/main.js?v=20261001-toast" defer></script>
+</body>
+</html>

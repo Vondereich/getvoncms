@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<meta name="robots" content="index, follow, max-image-preview:large" />
+<title>VonCMS Guides | Run a Self-Hosted News Website</title>
+<meta name="description" content="Practical guides for starting and running a self-hosted news website: setup, newsroom workflow, and choosing between VonCMS, WordPress, and Newspack." />
+<link rel="icon" type="image/x-icon" href="upload/icon.ico?v=20260811">
+<link rel="apple-touch-icon" href="upload/logo2.png">
+
+<link rel="canonical" href="https://getvoncms.com/guides.html" />
+<link rel="alternate" hreflang="en" href="https://getvoncms.com/guides.html" />
+<link rel="alternate" hreflang="x-default" href="https://getvoncms.com/guides.html" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://getvoncms.com/guides.html" />
+<meta property="og:title" content="VonCMS Guides | Run a Self-Hosted News Website" />
+<meta property="og:description" content="Practical guides for starting and running a self-hosted news website: setup, newsroom workflow, and choosing between VonCMS, WordPress, and Newspack." />
+<meta property="og:site_name" content="VonCMS" />
+<meta property="og:locale" content="en_US" />
+<meta property="og:image" content="https://getvoncms.com/upload/og-voncms-1200x630.jpg" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:type" content="image/jpeg" />
+<meta property="og:image:alt" content="Vorro, the VonCMS owl mascot, writing a news story at a laptop" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:url" content="https://getvoncms.com/guides.html" />
+<meta name="twitter:title" content="VonCMS Guides | Run a Self-Hosted News Website" />
+<meta name="twitter:description" content="Practical guides for starting and running a self-hosted news website: setup, newsroom workflow, and choosing between VonCMS, WordPress, and Newspack." />
+<meta name="twitter:image" content="https://getvoncms.com/upload/og-voncms-1200x630.jpg" />
+<meta name="twitter:image:alt" content="Vorro, the VonCMS owl mascot, writing a news story at a laptop" />
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "VonCMS Guides",
+  "description": "Practical guides for starting and running a self-hosted news website: setup, newsroom workflow, and choosing between VonCMS, WordPress, and Newspack.",
+  "url": "https://getvoncms.com/guides.html",
+  "isPartOf": { "@type": "WebSite", "name": "VonCMS", "url": "https://getvoncms.com/" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "url": "https://getvoncms.com/start-a-news-website.html", "name": "How to Start a News Website on Your Own Hosting" },
+      { "@type": "ListItem", "position": 2, "url": "https://getvoncms.com/wordpress-alternative-for-news.html", "name": "A WordPress Alternative for News Websites" },
+      { "@type": "ListItem", "position": 3, "url": "https://getvoncms.com/newspack-alternative.html", "name": "Newspack or a Self-Hosted News CMS?" },
+      { "@type": "ListItem", "position": 4, "url": "https://getvoncms.com/enterprise-news-cms-alternative.html", "name": "Enterprise News CMS or a Self-Hosted CMS?" }
+    ]
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://getvoncms.com/" },
+    { "@type": "ListItem", "position": 2, "name": "Guides", "item": "https://getvoncms.com/guides.html" }
+  ]
+}
+</script>
+
+<link rel="preload" href="upload/fonts/inter-latin-v20.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="upload/fonts/outfit-latin-v15.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="css/fonts.css?v=20261002-local">
+<link rel="stylesheet" href="css/site.css?v=20261025-roadmap">
+<link rel="stylesheet" href="css/manifesto.css?v=20261001-yellow-cmd">
+<link rel="stylesheet" href="css/guides.css?v=20261120-guides">
+</head>
+<body>
+<a class="skip-link" href="#page-content">Skip to content</a>
+
+<nav class="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+  <a class="nav-logo" href="index.html" aria-label="VonCMS home">
+    <img src="upload/logo-mark-128.webp" alt="" width="34" height="34">
+    <span>VonCMS</span>
+  </a>
+  <button class="burger" id="burger-btn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="nav-links">
+    <span></span><span></span><span></span>
+  </button>
+  <ul class="nav-links" id="nav-links" aria-label="Primary navigation">
+    <li><a href="index.html#product">Product</a></li>
+    <li><a href="philosophy.html">Philosophy</a></li>
+    <li><a href="docs.html">Docs</a></li>
+    <li><a href="guides.html" aria-current="page">Guides</a></li>
+    <li><a href="whats-new.html">What's New</a></li>
+    <li class="nav-roadmap"><a href="roadmap.html">Roadmap</a></li>
+    <li><a href="https://github.com/Vondereich/VonCMS" rel="noopener noreferrer" class="nav-link-strong"><svg class="nav-github-icon" viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M8 0.2a8 8 0 0 0-2.53 15.59c0.4 0.07 0.55-0.17 0.55-0.38v-1.36c-2.23 0.49-2.7-0.95-2.7-0.95-0.36-0.92-0.89-1.17-0.89-1.17-0.73-0.5 0.06-0.49 0.06-0.49 0.8 0.06 1.23 0.83 1.23 0.83 0.72 1.22 1.87 0.87 2.33 0.67 0.07-0.52 0.28-0.87 0.51-1.07-1.78-0.2-3.65-0.89-3.65-3.96 0-0.88 0.31-1.59 0.82-2.15-0.08-0.2-0.36-1.02 0.08-2.12 0 0 0.67-0.22 2.2 0.82A7.6 7.6 0 0 1 8 3.7c0.68 0 1.36 0.09 2 0.27 1.52-1.04 2.19-0.82 2.19-0.82 0.44 1.1 0.16 1.92 0.08 2.12 0.51 0.56 0.82 1.27 0.82 2.15 0 3.08-1.87 3.75-3.66 3.95 0.29 0.25 0.54 0.74 0.54 1.49v2.21c0 0.21 0.15 0.46 0.55 0.38A8 8 0 0 0 8 0.2Z"/></svg><span>GitHub</span></a></li>
+    <li><a href="https://github.com/Vondereich/VonCMS/releases/latest" rel="noopener noreferrer" class="nav-cta">Download</a></li>
+  </ul>
+  </div>
+</nav>
+
+<header class="subpage-masthead" id="overview" data-mark="GUIDES">
+  <div class="shell">
+    <p class="page-trail"><a href="index.html">Home</a><span>/</span>Guides</p>
+    <div class="hero-badge">Guides</div>
+    <h1>Guides for independent publishers.</h1>
+    <p class="lead">
+      Plain-language guides for starting a news website, running a small newsroom, and choosing a publishing CMS. For setup details and configuration, see the documentation.
+    </p>
+  </div>
+</header>
+
+<div class="layout shell">
+  <aside aria-label="Guides contents">
+    <button class="toc-toggle" type="button" aria-expanded="false" aria-controls="page-toc" hidden>On this page</button>
+    <div class="toc-content" id="page-toc">
+    <div class="sidebar-group">
+      <div class="sidebar-label">Guides</div>
+      <ul class="sidebar-links">
+        <li><a href="#overview" class="active">Overview</a></li>
+        <li><a href="#getting-started">Getting Started</a></li>
+        <li><a href="#choosing">Choosing a CMS</a></li>
+        <li><a href="#reference">Reference</a></li>
+      </ul>
+    </div>
+    </div>
+  </aside>
+
+  <main id="page-content">
+
+    <section id="getting-started">
+      <h2>Getting started</h2>
+      <div class="grid guide-cards">
+        <div class="card">
+          <h3><a href="start-a-news-website.html">How to start a news website on your own hosting</a></h3>
+          <p>Plan your coverage, choose hosting, install VonCMS, add your team, and keep the site running.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="choosing">
+      <h2>Choosing a CMS</h2>
+      <div class="grid guide-cards">
+        <div class="card">
+          <h3><a href="wordpress-alternative-for-news.html">A WordPress alternative for news websites</a></h3>
+          <p>An honest comparison of WordPress and VonCMS for a newsroom, with notes on migrating your content.</p>
+        </div>
+        <div class="card">
+          <h3><a href="newspack-alternative.html">Newspack or a self-hosted news CMS?</a></h3>
+          <p>Managed platform or free software on your own hosting: costs, responsibilities, and which fits.</p>
+        </div>
+        <div class="card">
+          <h3><a href="enterprise-news-cms-alternative.html">Enterprise news CMS or a self-hosted CMS?</a></h3>
+          <p>Arc XP, Brightspot, RebelMouse, and Quintype compared with a free CMS for small and regional newsrooms.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="reference">
+      <h2>Reference</h2>
+      <ul>
+        <li><a href="docs.html">VonCMS documentation</a>: requirements, installation, workflow, SEO, and upgrades.</li>
+        <li><a href="philosophy.html">Why VonCMS</a>: the design choices behind the project.</li>
+        <li><a href="whats-new.html">Release notes</a>: what changed in each version.</li>
+      </ul>
+    </section>
+
+  </main>
+</div>
+
+<footer class="site-footer">
+  <div class="footer-top"><a class="footer-brand" href="index.html"><img src="upload/logo-mark-128.webp" alt="" width="38" height="38"><span>VonCMS</span></a><ul class="footer-links"><li><a href="index.html#product">Product</a></li><li><a href="index.html#included">Included</a></li><li><a href="philosophy.html">Philosophy</a></li><li><a href="docs.html">Docs</a></li><li><a href="guides.html" aria-current="page">Guides</a></li><li><a href="whats-new.html">What's New</a></li><li><a href="roadmap.html">Roadmap</a></li></ul></div>
+  <div class="footer-bottom"><p>&copy; <span data-current-year>2026</span> VonCMS. A publishing CMS for publishers.</p><p>Free and open source &middot; <a href="https://github.com/Vondereich/VonCMS/blob/main/LICENSE.md">GPL-3.0-only</a></p></div>
+</footer>
+
+<script src="js/main.js?v=20261001-toast" defer></script>
+</body>
+</html>
