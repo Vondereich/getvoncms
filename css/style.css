@@ -76,10 +76,11 @@
 .mobile-heading p { font-size: 14px; }
 .mobile-device-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 30px; max-width: 860px; margin-inline: auto; align-items: start; }
 /* Screen bounds match the transparent opening in phone-frame.svg. */
-.mobile-device-frame { position: relative; aspect-ratio: 1/2; }
+.mobile-device-frame { position: relative; aspect-ratio: 560/881; }
 .mobile-device-frame .mobile-device-shell { position: relative; z-index: 1; width: 100%; height: auto; pointer-events: none; }
-.mobile-device-screen { position: absolute; top: 2.142857%; left: 5%; width: 90%; height: 93.928571%; overflow: hidden; border-radius: 10.912698% / 5.228137%; background: white; }
-.mobile-device-screen img { max-width: none; width: auto; height: 100%; object-fit: contain; }
+/* The opening (504x813) matches the 502x810 phone screenshots, so nothing is cropped. */
+.mobile-device-screen { position: absolute; top: 2.724177%; left: 5%; width: 90%; height: 92.281498%; overflow: hidden; border-radius: 10.912698% / 6.765068%; background: white; }
+.mobile-device-screen img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top center; }
 .mobile-device-copy { padding-top: 18px; }
 .mobile-device-copy strong { display: block; font-size: 16px; }
 #themes, .why-points, .mobile-publishing, .install-guides a, .comparison-overview, .comparison-detail, .walkthrough-link { scroll-margin-top: calc(var(--nav-height) + 24px); }

@@ -215,6 +215,8 @@ function initLightbox() {
 
 function initDownloadReminder() {
   if (!document.querySelector('.hero-content')) return;
+  // Skip small screens, where the reminder would cover too much of the page.
+  if (window.matchMedia('(max-width: 700px)').matches) return;
   const key = 'voncms-download-toast-dismissed';
   try { if (sessionStorage.getItem(key)) return; } catch { /* Storage is optional. */ }
   const toast = document.createElement('aside');
@@ -235,7 +237,14 @@ function initDownloadReminder() {
     try { sessionStorage.setItem(key, 'true'); } catch { /* Keep dismissal local. */ }
   }
   toast.querySelectorAll('button, a').forEach(control => control.addEventListener('click', dismiss));
-  setTimeout(() => toast.classList.add('active'), 5000);
+  // Offer the download only once a visitor has read about half of the page.
+  function maybeShow() {
+    const doc = document.documentElement;
+    if (window.scrollY + window.innerHeight < doc.scrollHeight * 0.5) return;
+    window.removeEventListener('scroll', maybeShow);
+    toast.classList.add('active');
+  }
+  window.addEventListener('scroll', maybeShow, { passive: true });
 }
 
 document.querySelectorAll('[data-current-year]').forEach(el => { el.textContent = new Date().getFullYear(); });
